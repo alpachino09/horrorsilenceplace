@@ -41,8 +41,9 @@ namespace Silence.Networking
         {
             if (!IsLocalOwner(actor) || noiseSystem == null ||
                 float.IsNaN(intensity) || float.IsInfinity(intensity)) return;
+            // One registered actor per offline session; no Unity object ID is needed.
             noiseSystem.Publish(new NoiseEvent(actor.transform.position,
-                Mathf.Clamp01(intensity), 12f, kind, actor.GetInstanceID(), Time.timeAsDouble));
+                Mathf.Clamp01(intensity), 12f, kind, 1, Time.timeAsDouble));
         }
     }
 }
