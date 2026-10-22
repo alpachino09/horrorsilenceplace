@@ -1,0 +1,7 @@
+{
+  "name": "Silence.PlayModeTests",
+  "rootNamespace": "Silence.Tests",
+  "references": ["Silence.Runtime", "Silence.Core"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": false
+}

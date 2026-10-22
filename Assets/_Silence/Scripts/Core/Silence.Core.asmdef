@@ -1,0 +1,7 @@
+{
+  "name": "Silence.Core",
+  "rootNamespace": "Silence.Core",
+  "references": [],
+  "autoReferenced": true,
+  "noEngineReferences": true
+}

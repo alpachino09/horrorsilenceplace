@@ -1,0 +1,7 @@
+{
+  "name": "Silence.Editor",
+  "rootNamespace": "Silence.Editor",
+  "references": ["Silence.Runtime", "Silence.Core", "Unity.InputSystem"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

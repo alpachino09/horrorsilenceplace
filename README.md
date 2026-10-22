@@ -1,0 +1,24 @@
+# SILENCE — прототип фермы для Unity 6
+
+Пакет исходников Sprint 00–01. Это ещё не проверенный в Unity готовый проект:
+компиляция чистого C#-ядра и 41 NUnit-тест пройдены, запуск Unity Editor ожидается.
+
+## Самый простой способ установить
+
+1. На странице этой ветки нажми зелёную кнопку **Code → Download ZIP** и распакуй архив.
+2. В Unity удали ранее вставленный `SilenceInstaller.cs`: этот неудачный установщик больше не нужен.
+   Остальные свои скрипты и сцены сохраняй.
+3. В распакованном архиве открой `Assets`. Перетащи папку **`_Silence`** в **Assets** окна **Project** в Unity.
+4. Дождись окончания компиляции. Нажми **SILENCE → 01 Generate Farm Prototype**.
+5. Открой `Assets/_Silence/Generated/Sprint01/Bootstrap.unity`, нажми **Play**, затем **Продолжить**.
+
+Нужны Unity 6 с шаблоном **Universal 3D (URP)**, официальные пакеты **Input System** и **Test Framework**.
+Для Input System включи **Active Input Handling → Input System Package (New)** или **Both**.
+Если появились красные ошибки, открой **Window → General → Console** и передай текст первой ошибки.
+
+- [Подробная установка и управление](README_RU.md)
+- [Что реализовано и что действительно проверено](Docs/IMPLEMENTATION_STATUS.md)
+- [Ручная проверка в Unity](Docs/MANUAL_TESTS_RU.md)
+- [Все созданные файлы](Docs/CREATED_FILES.md)
+
+Сцены и префаб создаются генератором внутри Unity. Сетевой транспорт и рабочий кооператив пока не реализованы.

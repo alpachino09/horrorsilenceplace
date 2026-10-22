@@ -1,0 +1,6 @@
+{
+  "name": "Silence.Runtime",
+  "rootNamespace": "Silence",
+  "references": ["Silence.Core", "Unity.InputSystem"],
+  "autoReferenced": true
+}
