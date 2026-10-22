@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using UnityEditor;
-using UnityEditor.PackageManager;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,6 +19,16 @@ namespace Silence.Editor
     {
         [MenuItem("SILENCE/02 Validate Prototype")]
         public static void ValidateMenu() => ValidateProject();
+
+        private static bool IsReferenceResolvedOrEmpty(SerializedProperty property)
+        {
+            if (property.objectReferenceValue != null) return true;
+#if UNITY_6000_6_OR_NEWER
+            return property.objectReferenceEntityIdValue.Equals(default(UnityEngine.EntityId));
+#else
+            return property.objectReferenceInstanceIDValue == 0;
+#endif
+        }
 
         public static void ValidateBatch()
         {
@@ -40,7 +49,7 @@ namespace Silence.Editor
             Check(Application.unityVersion.StartsWith("6000.", StringComparison.Ordinal), "Unity 6");
             Check(GraphicsSettings.currentRenderPipeline != null &&
                 GraphicsSettings.currentRenderPipeline.GetType().Name == "UniversalRenderPipelineAsset", "URP active");
-            foreach (var package in PackageInfo.GetAllRegisteredPackages().OrderBy(p => p.name))
+            foreach (var package in UnityEditor.PackageManager.PackageInfo.GetAllRegisteredPackages().OrderBy(p => p.name))
                 report.AppendLine("PACKAGE " + package.name + " " + package.version);
 
             var input = AssetDatabase.LoadAssetAtPath<InputActionAsset>(SilenceSceneGenerator.InputPath);
@@ -74,7 +83,7 @@ namespace Silence.Editor
                             SerializedProperty property = serialized.GetIterator();
                             while (property.NextVisible(true))
                                 if (property.propertyType == SerializedPropertyType.ObjectReference)
-                                    Check(property.objectReferenceValue != null || property.objectReferenceInstanceIDValue == 0,
+                                    Check(IsReferenceResolvedOrEmpty(property),
                                         "Reference: " + go.name + "." + property.propertyPath);
                         }
                     }

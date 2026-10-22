@@ -16,17 +16,25 @@ internal static class Program
         string[] files = Directory.GetFiles(args[0], "*.cs", SearchOption.AllDirectories);
         if (files.Length == 0) return 2;
         int errors = 0;
+        string[][] configurations =
+        {
+            Array.Empty<string>(),
+            new[] { "UNITY_EDITOR", "UNITY_6000_6_OR_NEWER", "ENABLE_INPUT_SYSTEM" }
+        };
         foreach (string file in files.OrderBy(p => p))
         {
-            var tree = CSharpSyntaxTree.ParseText(File.ReadAllText(file),
-                new CSharpParseOptions(LanguageVersion.CSharp9), file);
-            foreach (var diagnostic in tree.GetDiagnostics().Where(d => d.Severity == DiagnosticSeverity.Error))
+            foreach (string[] symbols in configurations)
             {
-                Console.Error.WriteLine(diagnostic);
-                errors++;
+                var tree = CSharpSyntaxTree.ParseText(File.ReadAllText(file),
+                    new CSharpParseOptions(LanguageVersion.CSharp9, preprocessorSymbols: symbols), file);
+                foreach (var diagnostic in tree.GetDiagnostics().Where(d => d.Severity == DiagnosticSeverity.Error))
+                {
+                    Console.Error.WriteLine(diagnostic);
+                    errors++;
+                }
             }
         }
-        Console.WriteLine($"C# 9 syntax: {files.Length} files, {errors} errors. Unity API binding is NOT checked.");
+        Console.WriteLine($"C# 9 syntax: {files.Length} files, {configurations.Length} preprocessor configurations, {errors} errors. Unity API binding is NOT checked.");
         return errors == 0 ? 0 : 1;
     }
 }
