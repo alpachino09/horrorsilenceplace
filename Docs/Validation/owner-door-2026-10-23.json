@@ -1,0 +1,53 @@
+{
+  "kind": "owner-provided interaction trace plus explicit manual confirmation; not a cloud Unity test",
+  "diagnosticRevision": "0.2.4",
+  "unity": "6000.6.7f1",
+  "session": "single host, actor 0",
+  "registration": {
+    "playerServer": true,
+    "worldServer": false,
+    "gate": true
+  },
+  "interactions": [
+    {
+      "utc": "2026-10-23T02:12:28.6024160Z",
+      "sequence": 1,
+      "target": "Door",
+      "entity": 11,
+      "success": true,
+      "doorOpen": true,
+      "rotationBeforeAnimationY": 0
+    },
+    {
+      "utc": "2026-10-23T02:12:29.7788100Z",
+      "sequence": 2,
+      "target": "Door",
+      "entity": 11,
+      "success": true,
+      "doorOpen": false,
+      "rotationBeforeAnimationY": 100
+    },
+    {
+      "utc": "2026-10-23T02:12:30.7288190Z",
+      "sequence": 3,
+      "target": "Door",
+      "entity": 11,
+      "success": true,
+      "doorOpen": true,
+      "rotationBeforeAnimationY": 0
+    }
+  ],
+  "ownerConfirmation": "в этот раз открывались двери",
+  "confirmed": [
+    "local key and target detection",
+    "host RPC send and receive",
+    "server validation/application",
+    "door opens/closes with observed hinge rotation"
+  ],
+  "notConfirmed": [
+    "walking through the doorway",
+    "pickup/inventory acceptance",
+    "separate client replication",
+    "two/four process tests"
+  ]
+}
