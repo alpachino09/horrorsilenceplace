@@ -1,0 +1,19 @@
+{
+  "kind": "owner-provided Unity Editor validator output; not a cloud execution or runtime network test",
+  "utc": "2026-10-23T01:39:37.9580370Z",
+  "unity": "6000.6.7f1",
+  "packages": {
+    "com.silence.multiplayer": "0.2.1",
+    "com.unity.inputsystem": "1.20.1",
+    "com.unity.netcode.gameobjects": "2.13.3",
+    "com.unity.render-pipelines.universal": "17.6.0",
+    "com.unity.test-framework": "1.8.0",
+    "com.unity.transport": "6.6.0"
+  },
+  "passedChecks": 233,
+  "failedChecks": [
+    "Transport 2.6.0"
+  ],
+  "reportedFailures": 1,
+  "networkRuntimeVerified": false
+}

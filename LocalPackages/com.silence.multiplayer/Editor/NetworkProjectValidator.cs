@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -27,15 +28,23 @@ namespace Silence.Multiplayer.Editor
             if (EditorApplication.isPlayingOrWillChangePlaymode)
                 throw new InvalidOperationException("Stop Play Mode before scene validation.");
             var report = new StringBuilder();
+            var failedChecks = new List<string>();
             int failures = 0;
             void Check(bool success, string label)
-            { report.AppendLine((success ? "PASS " : "FAIL ") + label); if (!success) failures++; }
+            {
+                report.AppendLine((success ? "PASS " : "FAIL ") + label);
+                if (!success) { failures++; failedChecks.Add(label); }
+            }
             report.AppendLine("UTC: " + DateTime.UtcNow.ToString("O"));
             report.AppendLine("Unity: " + Application.unityVersion);
             var packages = UnityEditor.PackageManager.PackageInfo.GetAllRegisteredPackages();
             foreach (var package in packages.OrderBy(p => p.name)) report.AppendLine("PACKAGE " + package.name + " " + package.version);
             Check(packages.Any(p => p.name == "com.unity.netcode.gameobjects" && p.version == "2.13.3"), "NGO 2.13.3");
-            Check(packages.Any(p => p.name == "com.unity.transport" && p.version == "2.6.0"), "Transport 2.6.0");
+            // 2.6.0 is NGO's declared dependency floor, not an exact project pin.
+            // The owner's Unity 6000.6 report confirms Editor compilation and scene
+            // validation with 6.6.0. Actual network behaviour still needs process tests.
+            Check(packages.Any(p => p.name == "com.unity.transport" &&
+                (p.version == "2.6.0" || p.version == "6.6.0")), "Transport 2.6.0 or 6.6.0");
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(NetworkFarmGenerator.PlayerPath);
             Check(prefab != null, "Network player prefab exists");
             if (prefab != null)
@@ -115,7 +124,10 @@ namespace Silence.Multiplayer.Editor
             report.AppendLine("Scene validation is NOT a two-process networking test.");
             Directory.CreateDirectory("Library/Silence");
             File.WriteAllText("Library/Silence/NetworkValidation.txt", report.ToString());
-            if (failures == 0) Debug.Log(report.ToString()); else Debug.LogError(report.ToString());
+            string summary = "SILENCE Network validation — Failures: " + failures;
+            if (failedChecks.Count > 0) summary += "\nFAIL " + string.Join("; ", failedChecks);
+            if (failures == 0) Debug.Log(summary + "\n" + report);
+            else Debug.LogError(summary + "\n" + report);
             return failures == 0;
         }
         private static bool ResolvedOrEmpty(SerializedProperty property)
