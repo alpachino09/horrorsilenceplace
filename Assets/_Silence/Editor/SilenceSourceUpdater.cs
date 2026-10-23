@@ -25,9 +25,9 @@ namespace Silence.Editor
                 throw new InvalidOperationException("Wrong folder: choose the extracted repository root with Assets and LocalPackages inside.");
 
             string[] roots = { "Assets/_Silence/Scripts", "Assets/_Silence/Editor", "Assets/_Silence/Tests",
-                "Assets/_Silence/Settings", "LocalPackages/com.silence.multiplayer" };
-            var files = roots.SelectMany(root => Directory.GetFiles(Path.Combine(source, root), "*", SearchOption.AllDirectories))
-                .Where(path => new[] { ".cs", ".asmdef", ".inputactions", ".json", ".md" }.Contains(Path.GetExtension(path)))
+                "Assets/_Silence/Settings", "Assets/_Silence/Graphics", "Assets/_Silence/Art/VisualRebuild", "LocalPackages/com.silence.multiplayer" };
+            var files = roots.Where(root => Directory.Exists(Path.Combine(source, root))).SelectMany(root => Directory.GetFiles(Path.Combine(source, root), "*", SearchOption.AllDirectories))
+                .Where(path => new[] { ".cs", ".asmdef", ".inputactions", ".json", ".md", ".fbx", ".png", ".shader", ".hlsl", ".bytes" }.Contains(Path.GetExtension(path).ToLowerInvariant()))
                 .Select(path => path.Substring(source.TrimEnd(Path.DirectorySeparatorChar).Length + 1)).ToArray();
             string backup = Path.Combine(project, "Library/Silence/SourceBackups", DateTime.UtcNow.ToString("yyyyMMdd-HHmmss-ffff"));
             var changed = new List<string>();
@@ -66,7 +66,7 @@ namespace Silence.Editor
                 AssetDatabase.StopAssetEditing();
                 AssetDatabase.Refresh();
             }
-            Debug.Log("SILENCE: updated " + files.Length + " source/package files. Scenes, Generated and existing .meta preserved. " +
+            Debug.Log("SILENCE: updated " + files.Length + " source/art/package files. Scenes, Generated and existing .meta preserved. " +
                 "Backup: " + backup + ". Wait for compilation, then SILENCE / 03 Install Multiplayer Package.");
         }
     }

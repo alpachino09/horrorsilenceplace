@@ -1,3 +1,20 @@
+# SILENCE — Visual Rebuild 2.0
+
+Новая работа ведётся в [**codex/visual-rebuild**](https://github.com/alpachino09/horrorsilenceplace/tree/codex/visual-rebuild). Подготовлены авторские FBX-модели, PBR-карты,
+рельеф фермы и инструменты Unity. Визуальное качество в Unity/Metal и производительность ещё не проверены.
+**Обязательно сначала обнови `SilenceSourceUpdater.cs`**: прежний updater не копирует новые арт-файлы.
+
+- [Короткая установка и проверки визуального среза](Docs/VisualRebuild/README_RU.md)
+- [Технический аудит и решение сохранить URP](Docs/VisualRebuild/AUDIT_RU.md)
+- [Blender-превью моделей — не скриншоты Unity](Docs/VisualRebuild/Previews/README.md)
+- [Какие качественные ассеты ещё нужны](Docs/VisualRebuild/ASSET_REQUIREMENTS_RU.md)
+
+После обновления: **00 → 03 → 13 Visual Workshop → Create visual copy (14) → Validate (15)**.
+Новая сцена создаётся отдельно в `Generated/VisualRebuild/Farm_Visual.unity`; существующая кампания
+сохраняется. Начни с небольшого участка фермы, не расширяя художественную работу на все главы до оценки.
+
+---
+
 # SILENCE — Unity 6
 
 Написан игровой блок **0.3.0**: слуховой ИИ, шум поверхностей, переноска/броски и ручные двери,

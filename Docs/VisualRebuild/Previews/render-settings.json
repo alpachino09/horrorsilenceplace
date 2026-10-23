@@ -1,0 +1,29 @@
+{
+  "engine": "Blender 4.3.2 Cycles CPU",
+  "samples": 64,
+  "denoising": false,
+  "unity_screenshot": false,
+  "baseline": "Recreated from existing Unity generator dimensions; not a captured Unity scene",
+  "resolution": [
+    1152,
+    720
+  ],
+  "lens_mm": 28,
+  "exterior_camera_unity_coordinates": [
+    0,
+    1.7,
+    -11
+  ],
+  "exterior_look_target": [
+    -10,
+    2,
+    0
+  ],
+  "world_strength": 0.4,
+  "sun_energy": 1.3,
+  "sun_color": [
+    1,
+    0.81,
+    0.64
+  ]
+}

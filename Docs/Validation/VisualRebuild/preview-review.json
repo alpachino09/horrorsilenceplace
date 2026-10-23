@@ -1,0 +1,27 @@
+{
+  "kind": "Human-visible model inspection in Blender renders; not native Unity approval",
+  "engine": "Blender 4.3.2 Cycles CPU, 64 samples, no denoising",
+  "reviewed_images": [
+    {
+      "file": "Docs/VisualRebuild/Previews/after-exterior.png",
+      "sha256": "ebfa1cbc2127a2e154448db5b74e3cfb56986b6d567f2d8f987d4cad3a0e51f9"
+    },
+    {
+      "file": "Docs/VisualRebuild/Previews/after-interior.png",
+      "sha256": "acf1e7fd16edacc63b5765611fae5f1bc73ce441fe1de32525959247156e0824"
+    },
+    {
+      "file": "Docs/VisualRebuild/Previews/before-exterior.png",
+      "sha256": "80ec79f7fb35158b5d96862348de77d0e5b9d2d5aa4b8ffc295644cbd24f26bf"
+    }
+  ],
+  "observations": [
+    "Exterior: actual pitched roof, wood facade, window and door openings, gutters and terrain visible",
+    "Interior: floorboards, plaster, loft, beams and furniture visible with motivated practical lights",
+    "Wood normal amplitude reduced after inspection; final maps and exterior/interior re-rendered",
+    "Trial trees and procedural materials remain below accepted production photorealism; noisy offline previews are not Game-view captures"
+  ],
+  "unity_visual_approval": false,
+  "same_camera_comparison": "Exterior before is a reconstruction from old generator dimensions; before/after camera, world and lights match",
+  "next_required": "Import into owner Unity 6000.6.7f1/URP17.6/Metal, inspect actual Game view, run scene/shader and gameplay checks, measure hardware frame times"
+}

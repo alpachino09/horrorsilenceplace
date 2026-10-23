@@ -1,0 +1,175 @@
+{
+  "kind": "Blender FBX re-import, not Unity ModelImporter verification",
+  "checks": [
+    {
+      "asset": "Farmhouse_LOD0",
+      "metre_bounds_error": 4.76837158203125e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Farmhouse_LOD1",
+      "metre_bounds_error": 4.76837158203125e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Farmhouse_LOD2",
+      "metre_bounds_error": 4.76837158203125e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Barn_LOD0",
+      "metre_bounds_error": 4.76837158203125e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Barn_LOD1",
+      "metre_bounds_error": 4.76837158203125e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Barn_LOD2",
+      "metre_bounds_error": 4.76837158203125e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "DoorLeaf",
+      "metre_bounds_error": 1.1920928955078125e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Table",
+      "metre_bounds_error": 5.960464477539063e-08,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "WallCabinet",
+      "metre_bounds_error": 8.940696716308594e-08,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "FencePanel",
+      "metre_bounds_error": 1.341104507446289e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Crate",
+      "metre_bounds_error": 5.960464477539063e-08,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "MetalCan",
+      "metre_bounds_error": 5.960464477539063e-08,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Radio",
+      "metre_bounds_error": 2.9802322387695312e-08,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "CeilingLamp",
+      "metre_bounds_error": 1.4901161193847656e-08,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Pine_31_LOD0",
+      "metre_bounds_error": 2.384185791015625e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Pine_31_LOD1",
+      "metre_bounds_error": 2.384185791015625e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Pine_31_LOD2",
+      "metre_bounds_error": 2.384185791015625e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Pine_47_LOD0",
+      "metre_bounds_error": 2.384185791015625e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Pine_47_LOD1",
+      "metre_bounds_error": 2.384185791015625e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Pine_47_LOD2",
+      "metre_bounds_error": 4.76837158203125e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Pine_83_LOD0",
+      "metre_bounds_error": 2.384185791015625e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Pine_83_LOD1",
+      "metre_bounds_error": 2.384185791015625e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Pine_83_LOD2",
+      "metre_bounds_error": 2.384185791015625e-07,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Fern",
+      "metre_bounds_error": 5.960464477539063e-08,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "GrassCard",
+      "metre_bounds_error": 5.960464477539063e-08,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Rock_5",
+      "metre_bounds_error": 0.0,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Rock_12",
+      "metre_bounds_error": 5.960464477539063e-08,
+      "uv_present": true,
+      "passed": true
+    },
+    {
+      "asset": "Rock_29",
+      "metre_bounds_error": 0.0,
+      "uv_present": true,
+      "passed": true
+    }
+  ],
+  "passed": 28,
+  "failed": 0
+}

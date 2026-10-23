@@ -24,7 +24,7 @@ for path in (path for source in source_roots for path in source.rglob("*.asmdef"
     definitions[data["name"]] = data
 
 for name, data in definitions.items():
-    check(all(r in definitions or r in {"Unity.InputSystem", "Unity.Netcode.Runtime", "Unity.Collections"}
+    check(all(r in definitions or r in {"Unity.InputSystem", "Unity.Netcode.Runtime", "Unity.Collections", "Unity.RenderPipelines.Core.Runtime", "Unity.RenderPipelines.Universal.Runtime"}
               for r in data.get("references", [])),
           "assembly reference names " + name)
 
@@ -72,6 +72,10 @@ for source in source_roots:
         text = path.read_text()
         for name, base in re.findall(r"\bclass\s+(\w+)\s*:\s*(MonoBehaviour|ScriptableObject|NetworkBehaviour|Interactable)\b", text):
             check(path.stem == name, "Unity script filename " + str(path.relative_to(root)))
+
+for path in (assets / "Graphics/Runtime").glob("*.cs"):
+    check("UnityEditor" not in path.read_text(), "no editor API in graphics runtime " + path.name)
+check(definitions["Silence.Visual.Editor"].get("includePlatforms") == ["Editor"], "visual tools excluded from players")
 
 brief = root / "Docs/ProjectBrief"
 manifest = json.loads((brief / "SHA256SUMS.json").read_text())

@@ -1,0 +1,57 @@
+{
+  "kind": "Upstream source review only, not Unity/API/shader compilation",
+  "reviewed": [
+    {
+      "file": "Bloom.cs",
+      "sha256": "0c4e5f2e6d1f55c37e5d88a6b53538dc5ff21a56a1a3f783a4743d14f8f577a6",
+      "source": "Unity-Technologies/Graphics master; exact installed 17.6.0 binding still unverified"
+    },
+    {
+      "file": "Lighting.hlsl",
+      "sha256": "26ab9a1634466a75ea8926528e882e05f9960fbb60f5021c044decb03d156e38",
+      "source": "Unity-Technologies/Graphics master; exact installed 17.6.0 binding still unverified"
+    },
+    {
+      "file": "RealtimeLights.hlsl",
+      "sha256": "9f8fe8a5bb93729e2147e8dc70aea0cb09e3d49ae65d2803618d66a81d680146",
+      "source": "Unity-Technologies/Graphics master; exact installed 17.6.0 binding still unverified"
+    },
+    {
+      "file": "Shadows.hlsl",
+      "sha256": "b8b7051877a743a7f3ee3d39503f495d1abb589e607239e7f554eebdd8b7b7f8",
+      "source": "Unity-Technologies/Graphics master; exact installed 17.6.0 binding still unverified"
+    },
+    {
+      "file": "Tonemapping.cs",
+      "sha256": "479dffa3ac8e5a1800962d43d54013ef5540f66c1cdffb3dd88d767b8aa328dd",
+      "source": "Unity-Technologies/Graphics master; exact installed 17.6.0 binding still unverified"
+    },
+    {
+      "file": "UniversalAdditionalCameraData.cs",
+      "sha256": "41d646a2b1feb044e81c4ae0f8612f1c45de0635b004817f618912e36f0fc24b",
+      "source": "Unity-Technologies/Graphics master; exact installed 17.6.0 binding still unverified"
+    },
+    {
+      "file": "official-UniversalRenderPipelineAsset.cs",
+      "sha256": "fd17836675587223acda2770a56b1ee269c81f62c366faa59002227a0c629d66",
+      "source": "Unity-Technologies/Graphics master; exact installed 17.6.0 binding still unverified"
+    },
+    {
+      "file": "Lightmapping.bindings.cs",
+      "sha256": "030398b3573c646da565cab64ad9051fec2bd7e09f41ffe403e5b30e5aed0449",
+      "source": "https://raw.githubusercontent.com/Unity-Technologies/UnityCsReference/6000.6/Editor/Mono/GI/Lightmapping.bindings.cs"
+    }
+  ],
+  "reviewed_symbols": [
+    "UniversalRenderPipelineAsset.renderScale/msaaSampleCount/shadowDistance/mainLightShadowmapResolution/supportsCameraDepthTexture/supportsHDR",
+    "UniversalAdditionalCameraData.requiresDepthTexture/antialiasing/antialiasingQuality",
+    "Bloom intensity/threshold/scatter; Tonemapping ACES",
+    "RealtimeLights LIGHT_LOOP_BEGIN and clustered inputData conventions; GetAdditionalLight; ApplyShadowBias",
+    "Unity 6000.6 Lightmapping.TryGetLightingSettings, lightingSettings setter and lightingDataAsset setter; avoids throwing getter when source scene has no LightingSettings"
+  ],
+  "limitations": [
+    "Exact URP 17.6.0 source revision was unavailable through attempted URLs",
+    "Unity Editor, Metal shader compilation, generated scene and FPS checks were not run",
+    "No renderer-data migration and no HDRP installation performed"
+  ]
+}

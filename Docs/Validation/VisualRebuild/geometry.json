@@ -1,0 +1,67 @@
+{
+  "kind": "Blender 4.3.2 mesh ray and topology checks, not Unity physics",
+  "checks": [
+    {
+      "name": "House LOD0: actual door opening is clear",
+      "passed": true
+    },
+    {
+      "name": "House LOD0: window apertures exist behind glass",
+      "passed": true
+    },
+    {
+      "name": "House LOD0: wall exists outside apertures",
+      "passed": true
+    },
+    {
+      "name": "House LOD1: actual door opening is clear",
+      "passed": true
+    },
+    {
+      "name": "House LOD1: window apertures exist behind glass",
+      "passed": true
+    },
+    {
+      "name": "House LOD1: wall exists outside apertures",
+      "passed": true
+    },
+    {
+      "name": "House LOD2: actual door opening is clear",
+      "passed": true
+    },
+    {
+      "name": "House LOD2: window apertures exist behind glass",
+      "passed": true
+    },
+    {
+      "name": "House LOD2: wall exists outside apertures",
+      "passed": true
+    },
+    {
+      "name": "Farmhouse has strictly decreasing mesh LOD triangle counts",
+      "passed": true
+    },
+    {
+      "name": "Barn has strictly decreasing mesh LOD triangle counts",
+      "passed": true
+    },
+    {
+      "name": "Pine_31 has strictly decreasing mesh LOD triangle counts",
+      "passed": true
+    },
+    {
+      "name": "Pine_47 has strictly decreasing mesh LOD triangle counts",
+      "passed": true
+    },
+    {
+      "name": "Pine_83 has strictly decreasing mesh LOD triangle counts",
+      "passed": true
+    },
+    {
+      "name": "All 28 authored meshes exported",
+      "passed": true
+    }
+  ],
+  "passed": 15,
+  "failed": 0
+}

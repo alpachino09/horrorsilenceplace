@@ -1,0 +1,7 @@
+{
+  "name": "Silence.Visual.Editor",
+  "rootNamespace": "Silence.Multiplayer.Editor.Visual",
+  "references": ["Silence.Core", "Silence.Runtime", "Silence.Editor", "Silence.Graphics", "Silence.Multiplayer", "Silence.Multiplayer.Editor", "Unity.Netcode.Runtime", "Unity.InputSystem", "Unity.RenderPipelines.Core.Runtime", "Unity.RenderPipelines.Universal.Runtime"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

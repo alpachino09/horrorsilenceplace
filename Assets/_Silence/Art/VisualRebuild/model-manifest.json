@@ -1,0 +1,720 @@
+{
+  "generator": "Tools/VisualRebuild/build_models.py",
+  "units": "metres",
+  "seed": 27092026,
+  "models": [
+    {
+      "name": "Farmhouse_LOD0",
+      "vertices": 35560,
+      "triangles": 68532,
+      "materials": [
+        "Brick",
+        "Wood",
+        "Plaster",
+        "Glass",
+        "Rust",
+        "Roof",
+        "Stone",
+        "Bulb"
+      ],
+      "blender_bounds": [
+        [
+          -4.725614070892334,
+          4.725614070892334
+        ],
+        [
+          -4.523499965667725,
+          4.494999885559082
+        ],
+        [
+          -0.29499998688697815,
+          6.440000057220459
+        ]
+      ],
+      "file": "Farmhouse_LOD0.fbx",
+      "sha256": "fcf1ad786fd857117594a9c98030d7708ccfded65a9e67d62251cf5f944f8323"
+    },
+    {
+      "name": "Farmhouse_LOD1",
+      "vertices": 6472,
+      "triangles": 11724,
+      "materials": [
+        "Brick",
+        "Wood",
+        "Plaster",
+        "Glass",
+        "Rust",
+        "Roof",
+        "Stone",
+        "Bulb"
+      ],
+      "blender_bounds": [
+        [
+          -4.725614070892334,
+          4.725614070892334
+        ],
+        [
+          -4.49500036239624,
+          4.494999885559082
+        ],
+        [
+          -0.29499998688697815,
+          6.440000057220459
+        ]
+      ],
+      "file": "Farmhouse_LOD1.fbx",
+      "sha256": "5dd25f8853c0d29ef2bc08fcb97acd6f9efc8349d860f29548b264d7d9712474"
+    },
+    {
+      "name": "Farmhouse_LOD2",
+      "vertices": 2792,
+      "triangles": 5108,
+      "materials": [
+        "Brick",
+        "Wood",
+        "Roof",
+        "Rust",
+        "Stone"
+      ],
+      "blender_bounds": [
+        [
+          -4.494999885559082,
+          4.494999885559082
+        ],
+        [
+          -4.49500036239624,
+          4.494999885559082
+        ],
+        [
+          -0.29499998688697815,
+          6.440000057220459
+        ]
+      ],
+      "file": "Farmhouse_LOD2.fbx",
+      "sha256": "4a781fd79d7e6dec5d5ce37172b7b9327a97f83165def7edb5c79e0b7d6e8a44"
+    },
+    {
+      "name": "Barn_LOD0",
+      "vertices": 32560,
+      "triangles": 62752,
+      "materials": [
+        "Plaster",
+        "Wood",
+        "Roof",
+        "Rust"
+      ],
+      "blender_bounds": [
+        [
+          -4.725614070892334,
+          4.725614547729492
+        ],
+        [
+          -5.4735002517700195,
+          5.445000171661377
+        ],
+        [
+          -0.10000002384185791,
+          6.769999980926514
+        ]
+      ],
+      "file": "Barn_LOD0.fbx",
+      "sha256": "e69de110c6326487d72f17d95d977a8d9ab2f7abaa2e050507e29e74172337f5"
+    },
+    {
+      "name": "Barn_LOD1",
+      "vertices": 2080,
+      "triangles": 3448,
+      "materials": [
+        "Plaster",
+        "Wood",
+        "Roof",
+        "Rust"
+      ],
+      "blender_bounds": [
+        [
+          -4.725614070892334,
+          4.725614547729492
+        ],
+        [
+          -5.444999694824219,
+          5.445000171661377
+        ],
+        [
+          -0.10000002384185791,
+          6.769999980926514
+        ]
+      ],
+      "file": "Barn_LOD1.fbx",
+      "sha256": "9747d17f9b901618b74befcac84500222bb2f76e89576266667296f5f109d97a"
+    },
+    {
+      "name": "Barn_LOD2",
+      "vertices": 792,
+      "triangles": 1388,
+      "materials": [
+        "Wood",
+        "Roof",
+        "Rust"
+      ],
+      "blender_bounds": [
+        [
+          -4.494999885559082,
+          4.494999885559082
+        ],
+        [
+          -5.444999694824219,
+          5.445000171661377
+        ],
+        [
+          -0.10000002384185791,
+          6.769999980926514
+        ]
+      ],
+      "file": "Barn_LOD2.fbx",
+      "sha256": "e262d12b025a1db0be28751cf8a7fc34f90ed05a2fee235c1fd1d6a24f3a2bc3"
+    },
+    {
+      "name": "DoorLeaf",
+      "vertices": 856,
+      "triangles": 1644,
+      "materials": [
+        "Wood",
+        "Rust"
+      ],
+      "blender_bounds": [
+        [
+          -0.05000000447034836,
+          1.600000023841858
+        ],
+        [
+          -0.05000000074505806,
+          0.20967739820480347
+        ],
+        [
+          0.0,
+          2.2200000286102295
+        ]
+      ],
+      "file": "DoorLeaf.fbx",
+      "sha256": "c8d7215f26a7983f80e170447050e5d70e123c3aab48c99869be41d77ae47a6c"
+    },
+    {
+      "name": "Table",
+      "vertices": 728,
+      "triangles": 1404,
+      "materials": [
+        "Wood"
+      ],
+      "blender_bounds": [
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          -0.4960000216960907,
+          0.4959999918937683
+        ],
+        [
+          -0.4899999797344208,
+          0.5
+        ]
+      ],
+      "file": "Table.fbx",
+      "sha256": "9decbce988ee244f635f7f12988697b3010aa1cafd9242ef708daf76d60df3bd"
+    },
+    {
+      "name": "WallCabinet",
+      "vertices": 1064,
+      "triangles": 2052,
+      "materials": [
+        "Wood",
+        "Fabric"
+      ],
+      "blender_bounds": [
+        [
+          -0.8299999833106995,
+          0.8299999833106995
+        ],
+        [
+          -0.20000000298023224,
+          0.20000000298023224
+        ],
+        [
+          0.0,
+          1.4299999475479126
+        ]
+      ],
+      "file": "WallCabinet.fbx",
+      "sha256": "823e6ac031c1fd1651e22e7d42cd5b834dba7eab8a8df81f5bc11ddca4498ea6"
+    },
+    {
+      "name": "FencePanel",
+      "vertices": 560,
+      "triangles": 1080,
+      "materials": [
+        "Wood"
+      ],
+      "blender_bounds": [
+        [
+          -1.0700000524520874,
+          1.0699999332427979
+        ],
+        [
+          -0.07999999821186066,
+          0.07999999821186066
+        ],
+        [
+          0.0,
+          1.7999999523162842
+        ]
+      ],
+      "file": "FencePanel.fbx",
+      "sha256": "f539805ecc489907f38ad0b0b103e2a11f4259c81562593c1ec07e394a4b757a"
+    },
+    {
+      "name": "Crate",
+      "vertices": 1344,
+      "triangles": 2592,
+      "materials": [
+        "Wood"
+      ],
+      "blender_bounds": [
+        [
+          -0.5049999952316284,
+          0.5049999952316284
+        ],
+        [
+          -0.5,
+          0.5
+        ],
+        [
+          -0.5,
+          0.5
+        ]
+      ],
+      "file": "Crate.fbx",
+      "sha256": "efe2989a736eea329c7bbc983868ed5d0f1de331c64f842e6aa3418889ed4012"
+    },
+    {
+      "name": "MetalCan",
+      "vertices": 1600,
+      "triangles": 2684,
+      "materials": [
+        "Rust",
+        "Metal"
+      ],
+      "blender_bounds": [
+        [
+          -0.50791335105896,
+          0.50791335105896
+        ],
+        [
+          -0.50791335105896,
+          0.50791335105896
+        ],
+        [
+          -0.5,
+          0.5
+        ]
+      ],
+      "file": "MetalCan.fbx",
+      "sha256": "b2c9e8770dec38d764d036138cc6e7194515d6e1a8ab66c68f97ae667dc18002"
+    },
+    {
+      "name": "Radio",
+      "vertices": 872,
+      "triangles": 1672,
+      "materials": [
+        "Rust",
+        "Metal",
+        "Glass"
+      ],
+      "blender_bounds": [
+        [
+          -0.5,
+          0.5
+        ],
+        [
+          -0.30000001192092896,
+          0.38999998569488525
+        ],
+        [
+          -0.32499998807907104,
+          1.0006930828094482
+        ]
+      ],
+      "file": "Radio.fbx",
+      "sha256": "87477770dc41d505f3c775a0e6b340a1efa20026a55297c2b696d074a8e66870"
+    },
+    {
+      "name": "CeilingLamp",
+      "vertices": 608,
+      "triangles": 1036,
+      "materials": [
+        "Metal",
+        "Bulb"
+      ],
+      "blender_bounds": [
+        [
+          -0.16899999976158142,
+          0.16899999976158142
+        ],
+        [
+          -0.16656924784183502,
+          0.16656924784183502
+        ],
+        [
+          -0.16779422760009766,
+          0.6624999642372131
+        ]
+      ],
+      "file": "CeilingLamp.fbx",
+      "sha256": "f04522d5c9ab9a8270d612f7399129d4ce88a36dfd2f61a3b521f5301fbbd201"
+    },
+    {
+      "name": "Pine_31_LOD0",
+      "vertices": 3262,
+      "triangles": 2616,
+      "materials": [
+        "Bark",
+        "Leaf"
+      ],
+      "blender_bounds": [
+        [
+          -2.9011483192443848,
+          2.7690963745117188
+        ],
+        [
+          -2.8317785263061523,
+          3.158376932144165
+        ],
+        [
+          0.0,
+          8.036834716796875
+        ]
+      ],
+      "file": "Pine_31_LOD0.fbx",
+      "sha256": "f9529c40475a328cc471a3361de6b5d40373e8348bc70e3450d11776f1a4e7d6"
+    },
+    {
+      "name": "Pine_31_LOD1",
+      "vertices": 1138,
+      "triangles": 1104,
+      "materials": [
+        "Bark",
+        "Leaf"
+      ],
+      "blender_bounds": [
+        [
+          -3.008416175842285,
+          2.5779690742492676
+        ],
+        [
+          -2.8501925468444824,
+          2.7468137741088867
+        ],
+        [
+          0.0,
+          8.036834716796875
+        ]
+      ],
+      "file": "Pine_31_LOD1.fbx",
+      "sha256": "ce3ee57a0ff530727c740da6a40b27c87385368df217ca573a44460aded2abee"
+    },
+    {
+      "name": "Pine_31_LOD2",
+      "vertices": 334,
+      "triangles": 272,
+      "materials": [
+        "Bark",
+        "Leaf"
+      ],
+      "blender_bounds": [
+        [
+          -2.7789556980133057,
+          2.740952491760254
+        ],
+        [
+          -2.5754759311676025,
+          2.5877835750579834
+        ],
+        [
+          0.0,
+          8.036834716796875
+        ]
+      ],
+      "file": "Pine_31_LOD2.fbx",
+      "sha256": "259e7541c0acd375759c66dd39c96c421dfbfb6fa88f575cbf70f646eb627d02"
+    },
+    {
+      "name": "Pine_47_LOD0",
+      "vertices": 3262,
+      "triangles": 2616,
+      "materials": [
+        "Bark",
+        "Leaf"
+      ],
+      "blender_bounds": [
+        [
+          -3.27894926071167,
+          2.9134531021118164
+        ],
+        [
+          -2.9317946434020996,
+          2.8490171432495117
+        ],
+        [
+          0.0,
+          9.05553913116455
+        ]
+      ],
+      "file": "Pine_47_LOD0.fbx",
+      "sha256": "99179f1b681d6a8deac36cb6680fc44f0eb18ef06bfa63b65682aa2ef440187f"
+    },
+    {
+      "name": "Pine_47_LOD1",
+      "vertices": 1138,
+      "triangles": 1104,
+      "materials": [
+        "Bark",
+        "Leaf"
+      ],
+      "blender_bounds": [
+        [
+          -2.7697465419769287,
+          2.731397867202759
+        ],
+        [
+          -2.4672741889953613,
+          3.0109448432922363
+        ],
+        [
+          0.0,
+          9.05553913116455
+        ]
+      ],
+      "file": "Pine_47_LOD1.fbx",
+      "sha256": "3294d073743499c2cf8d8ec33db9494d72b01e67a34235e25e1a6de80eed673e"
+    },
+    {
+      "name": "Pine_47_LOD2",
+      "vertices": 334,
+      "triangles": 272,
+      "materials": [
+        "Bark",
+        "Leaf"
+      ],
+      "blender_bounds": [
+        [
+          -3.204213857650757,
+          2.852583885192871
+        ],
+        [
+          -2.4880237579345703,
+          3.2117037773132324
+        ],
+        [
+          0.0,
+          9.05553913116455
+        ]
+      ],
+      "file": "Pine_47_LOD2.fbx",
+      "sha256": "b1bb5a36d89dcc75c75ea7de93ff0cbf9c6ccb1294d3d3e52ac55b20670d5db8"
+    },
+    {
+      "name": "Pine_83_LOD0",
+      "vertices": 3262,
+      "triangles": 2616,
+      "materials": [
+        "Bark",
+        "Leaf"
+      ],
+      "blender_bounds": [
+        [
+          -2.7924013137817383,
+          2.868769645690918
+        ],
+        [
+          -2.775327444076538,
+          2.872960329055786
+        ],
+        [
+          0.0,
+          9.488468170166016
+        ]
+      ],
+      "file": "Pine_83_LOD0.fbx",
+      "sha256": "53dbcd5f0bb7c22bc2e4cc872a7f03f3b408d578f60de4c130330aacc19cb4da"
+    },
+    {
+      "name": "Pine_83_LOD1",
+      "vertices": 1138,
+      "triangles": 1104,
+      "materials": [
+        "Bark",
+        "Leaf"
+      ],
+      "blender_bounds": [
+        [
+          -2.4856598377227783,
+          2.341179132461548
+        ],
+        [
+          -2.363771915435791,
+          2.554739236831665
+        ],
+        [
+          0.0,
+          9.488468170166016
+        ]
+      ],
+      "file": "Pine_83_LOD1.fbx",
+      "sha256": "11e25985f7ceb30c4c31cfd6f1ffed584809e7cf03e7ea7b9286434b802ef84c"
+    },
+    {
+      "name": "Pine_83_LOD2",
+      "vertices": 334,
+      "triangles": 272,
+      "materials": [
+        "Bark",
+        "Leaf"
+      ],
+      "blender_bounds": [
+        [
+          -3.0004348754882812,
+          2.4546589851379395
+        ],
+        [
+          -3.101715087890625,
+          2.5181543827056885
+        ],
+        [
+          0.0,
+          9.488468170166016
+        ]
+      ],
+      "file": "Pine_83_LOD2.fbx",
+      "sha256": "a6967973cc4e6a2d35d657bf4ecefc62791f4aa12e5bd1207603e9cc350ebe7f"
+    },
+    {
+      "name": "Fern",
+      "vertices": 28,
+      "triangles": 14,
+      "materials": [
+        "Fern"
+      ],
+      "blender_bounds": [
+        [
+          -0.8106554746627808,
+          0.8106554746627808
+        ],
+        [
+          -0.8233373761177063,
+          0.7573238611221313
+        ],
+        [
+          0.0,
+          0.48627203702926636
+        ]
+      ],
+      "file": "Fern.fbx",
+      "sha256": "30f18a5742656427318054a383eaceb8eb448f2755dc6c2132cfdd8045d95ee2"
+    },
+    {
+      "name": "GrassCard",
+      "vertices": 12,
+      "triangles": 6,
+      "materials": [
+        "GrassCard"
+      ],
+      "blender_bounds": [
+        [
+          -0.32499998807907104,
+          0.32499998807907104
+        ],
+        [
+          -0.34337639808654785,
+          0.32841622829437256
+        ],
+        [
+          0.0,
+          0.5880399942398071
+        ]
+      ],
+      "file": "GrassCard.fbx",
+      "sha256": "cc51d185d5202d5d1b0a3c25abc9b595dd015f4f75c4728e41578d4e108beb44"
+    },
+    {
+      "name": "Rock_5",
+      "vertices": 162,
+      "triangles": 320,
+      "materials": [
+        "Stone"
+      ],
+      "blender_bounds": [
+        [
+          -1.088570237159729,
+          1.0058785676956177
+        ],
+        [
+          -0.9989341497421265,
+          1.0604472160339355
+        ],
+        [
+          -0.3040008544921875,
+          0.6044199466705322
+        ]
+      ],
+      "file": "Rock_5.fbx",
+      "sha256": "1afa8a5a5fb334288d5e5fdab435e1bc90dfa4f1d8b90f38061d5702682ca173"
+    },
+    {
+      "name": "Rock_12",
+      "vertices": 162,
+      "triangles": 320,
+      "materials": [
+        "Stone"
+      ],
+      "blender_bounds": [
+        [
+          -0.9761146903038025,
+          1.120202660560608
+        ],
+        [
+          -1.0942203998565674,
+          1.0699979066848755
+        ],
+        [
+          -0.3127652704715729,
+          0.6582905054092407
+        ]
+      ],
+      "file": "Rock_12.fbx",
+      "sha256": "211a601c82a937f0c107d76f1224654a7aa09516234e57fad9069608f046745f"
+    },
+    {
+      "name": "Rock_29",
+      "vertices": 162,
+      "triangles": 320,
+      "materials": [
+        "Stone"
+      ],
+      "blender_bounds": [
+        [
+          -1.0916694402694702,
+          0.9594858288764954
+        ],
+        [
+          -1.0541728734970093,
+          1.1041010618209839
+        ],
+        [
+          -0.31128397583961487,
+          0.6312319040298462
+        ]
+      ],
+      "file": "Rock_29.fbx",
+      "sha256": "7573a2966045d56b3993c1c2a39c7175361e4d9227c1f9a00882a0a050a705da"
+    }
+  ]
+}

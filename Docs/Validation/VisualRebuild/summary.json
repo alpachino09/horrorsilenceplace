@@ -1,0 +1,61 @@
+{
+  "kind": "First visual farm slice: delivered art and source tools; native Unity stage pending",
+  "base": "c8220b0",
+  "branch": "codex/visual-rebuild",
+  "recorded_utc": "2026-10-23T11:09:03.941498+00:00",
+  "delivered": {
+    "binary_fbx": 28,
+    "pbr_sets": 11,
+    "pbr_resolution": 1024,
+    "texture_and_terrain_data_files": 39,
+    "blender_review_images": 3,
+    "new_scene_path_when_generated_in_Unity": "Assets/_Silence/Generated/VisualRebuild/Farm_Visual.unity"
+  },
+  "executed_checks": {
+    "pure_core_dotnet_nunit": {
+      "passed": 92,
+      "failed": 0,
+      "skipped": 0,
+      "report": "core-regression.trx"
+    },
+    "csharp_syntax": {
+      "files": 101,
+      "define_sets": 5,
+      "errors": 0,
+      "api_binding_checked": false
+    },
+    "asset_data": {
+      "passed": 71,
+      "failed": 0,
+      "report": "assets.json"
+    },
+    "mesh_geometry": {
+      "passed": 15,
+      "failed": 0,
+      "report": "geometry.json"
+    },
+    "fbx_roundtrip": {
+      "passed": 28,
+      "failed": 0,
+      "report": "fbx-import.json"
+    },
+    "static_structure": {
+      "passed": 177,
+      "failed": 0,
+      "report": "structure.json"
+    }
+  },
+  "preserved_existing_gameplay_sources": 74,
+  "native_checks_not_run": [
+    "Unity 6000.6.7f1 API compilation and NGO IL postprocessing",
+    "URP 17.6.0/Metal custom shader compilation and variant checks",
+    "Unity asset import and menu 14/15 execution",
+    "Game-view visual quality review, day/twilight/night and flashlight leaking",
+    "Door collision, pickup, throw, navigation and chapter regression with new Terrain",
+    "2- and 4-process multiplayer runtime check",
+    "Actual owner hardware performance and GPU memory budgets",
+    "Baked lightmaps/light probes"
+  ],
+  "art_status": "Original procedural first pass. Production photorealism, forest and final rigged characters are not accepted or complete.",
+  "next": "Import separate visual copy into native Unity; inspect and correct this one farm slice before expanding other maps."
+}

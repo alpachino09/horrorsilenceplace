@@ -1,0 +1,291 @@
+{
+  "kind": "Texture, mask, terrain and FBX file checks only",
+  "checks": [
+    {
+      "name": "Delivered data hash AgedWood_BaseColor.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash AgedWood_Mask.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash AgedWood_Normal.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Bark_BaseColor.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Bark_Mask.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Bark_Normal.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Brick_BaseColor.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Brick_Mask.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Brick_Normal.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash FarmHeightPreview.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash FarmTerrain.bytes",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash FernAtlas.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash FlashlightCookie.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Forest_BaseColor.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Forest_Mask.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Forest_Normal.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash GrassAtlas.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Grass_BaseColor.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Grass_Mask.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Grass_Normal.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Gravel_BaseColor.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Gravel_Mask.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Gravel_Normal.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Mud_BaseColor.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Mud_Mask.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Mud_Normal.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash PineNeedles.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Plaster_BaseColor.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Plaster_Mask.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Plaster_Normal.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Roof_BaseColor.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Roof_Mask.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Roof_Normal.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Rust_BaseColor.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Rust_Mask.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Rust_Normal.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Stone_BaseColor.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Stone_Mask.png",
+      "passed": true
+    },
+    {
+      "name": "Delivered data hash Stone_Normal.png",
+      "passed": true
+    },
+    {
+      "name": "PBR resolution and packed channels AgedWood",
+      "passed": true
+    },
+    {
+      "name": "Unit tangent normals AgedWood",
+      "passed": true
+    },
+    {
+      "name": "PBR resolution and packed channels Bark",
+      "passed": true
+    },
+    {
+      "name": "Unit tangent normals Bark",
+      "passed": true
+    },
+    {
+      "name": "PBR resolution and packed channels Plaster",
+      "passed": true
+    },
+    {
+      "name": "Unit tangent normals Plaster",
+      "passed": true
+    },
+    {
+      "name": "PBR resolution and packed channels Brick",
+      "passed": true
+    },
+    {
+      "name": "Unit tangent normals Brick",
+      "passed": true
+    },
+    {
+      "name": "PBR resolution and packed channels Rust",
+      "passed": true
+    },
+    {
+      "name": "Unit tangent normals Rust",
+      "passed": true
+    },
+    {
+      "name": "PBR resolution and packed channels Roof",
+      "passed": true
+    },
+    {
+      "name": "Unit tangent normals Roof",
+      "passed": true
+    },
+    {
+      "name": "PBR resolution and packed channels Stone",
+      "passed": true
+    },
+    {
+      "name": "Unit tangent normals Stone",
+      "passed": true
+    },
+    {
+      "name": "PBR resolution and packed channels Forest",
+      "passed": true
+    },
+    {
+      "name": "Unit tangent normals Forest",
+      "passed": true
+    },
+    {
+      "name": "PBR resolution and packed channels Grass",
+      "passed": true
+    },
+    {
+      "name": "Unit tangent normals Grass",
+      "passed": true
+    },
+    {
+      "name": "PBR resolution and packed channels Mud",
+      "passed": true
+    },
+    {
+      "name": "Unit tangent normals Mud",
+      "passed": true
+    },
+    {
+      "name": "PBR resolution and packed channels Gravel",
+      "passed": true
+    },
+    {
+      "name": "Unit tangent normals Gravel",
+      "passed": true
+    },
+    {
+      "name": "Terrain format, size, seed",
+      "passed": true
+    },
+    {
+      "name": "Finite bounded terrain heights",
+      "passed": true
+    },
+    {
+      "name": "Terrain weights normalized and nonnegative",
+      "passed": true
+    },
+    {
+      "name": "Existing farmhouse footprint remains flat",
+      "passed": true
+    },
+    {
+      "name": "Existing barn footprint remains flat",
+      "passed": true
+    },
+    {
+      "name": "Existing player spawns remain at the expected ground height",
+      "passed": true
+    },
+    {
+      "name": "Real cutout coverage PineNeedles",
+      "passed": true
+    },
+    {
+      "name": "Real cutout coverage GrassAtlas",
+      "passed": true
+    },
+    {
+      "name": "Real cutout coverage FernAtlas",
+      "passed": true
+    },
+    {
+      "name": "28 real binary FBX files",
+      "passed": true
+    }
+  ],
+  "passed": 71,
+  "failed": 0
+}
