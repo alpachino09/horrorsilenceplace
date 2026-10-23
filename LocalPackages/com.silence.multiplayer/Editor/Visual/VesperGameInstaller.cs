@@ -29,9 +29,10 @@ namespace Silence.Multiplayer.Editor.Visual
             var original = SceneManager.GetActiveScene();
             var originalCreature = Creatures(original);
             if (originalCreature.Length != 1 || string.IsNullOrEmpty(original.path))
-                throw new InvalidOperationException("Open the saved Campaign game scene containing one HearingCreature, then run 18.");
+                throw new InvalidOperationException("Open your latest saved game scene with the improved environment and one HearingCreature, then run 18. Campaign may be the old prototype.");
             if (originalCreature[0].GetComponent<VesperGamePresentation>() != null)
-                throw new InvalidOperationException("This scene already has Vesper. Open the original Campaign scene for another installation.");
+                throw new InvalidOperationException("This scene already has Vesper. Use this scene to play, or open the improved source scene from before the Vesper installation to make another copy.");
+            string sourcePath = original.path;
             var shader = Shader.Find("Universal Render Pipeline/Lit");
             if (shader == null) throw new InvalidOperationException("URP Lit shader missing.");
             foreach (string name in new[] { "Skin", "Armor", "Tissue", "Bone" })
@@ -149,7 +150,8 @@ namespace Silence.Multiplayer.Editor.Visual
             {
                 EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(target, true) }.Concat(EditorBuildSettings.scenes.Where(s => s.path != target)).ToArray();
                 EditorSceneManager.OpenScene(target, OpenSceneMode.Single);
-                Debug.Log("SILENCE: Vesper installed in " + target + ". Original scene preserved. Test Play, grounding, hearing, host/client and rebuild BOTH network binaries from this same scene.");
+                Debug.Log("SILENCE: Vesper source scene: " + sourcePath + "\nOpened Vesper scene: " + target +
+                    "\nThe open scene now contains the copied environment and the new monster. Use this Vesper scene to play. Source scene preserved. Test Play, grounding, hearing, host/client and rebuild BOTH network binaries from this same scene.");
             }
         }
         [MenuItem("SILENCE/19 Validate Vesper Game Scene")]

@@ -9,7 +9,7 @@
     },
     {
       "path": "Assets/_Silence/Editor/SilenceSourceUpdater.cs",
-      "sha256": "e116f5ad54713068aad9baec7626e0a937f05e3efc1bd7c5300259993cbd1d1e"
+      "sha256": "a1174b9060a058802e6b7289c115e86e5ebd20025c83a53f1a8aaf465930eac1"
     },
     {
       "path": "Assets/_Silence/Graphics/Runtime/VesperGamePresentation.cs",
@@ -33,7 +33,7 @@
     },
     {
       "path": "LocalPackages/com.silence.multiplayer/Editor/Visual/VesperGameInstaller.cs",
-      "sha256": "1d63a947fd8520c524cd52f27c71a0774fb4a8ac41660ccf9121d502f702b504"
+      "sha256": "3b09fb68e9e2ea517395e9459c2c1ac4ba2dfe5153f8bee0da46b32569ed4eff"
     },
     {
       "path": "LocalPackages/com.silence.multiplayer/Runtime/GameplayCreatureNetwork.cs",
