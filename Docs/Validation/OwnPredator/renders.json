@@ -1,14 +1,17 @@
 {
-  "engine": "Blender 4.3.2 Cycles CPU",
+  "engine": "bpy 5.2.3 LTS / Cycles CPU",
   "samples": 32,
   "resolution": [
     1000,
     800
   ],
+  "texture_resolution": 4096,
   "unity_capture": false,
   "visually_reviewed": [
     "overall",
     "head_closed",
+    "maw_front",
+    "bite",
     "head_open",
     "side",
     "back",
@@ -18,37 +21,49 @@
   "art_approved_as_AAA": false,
   "images": [
     {
-      "file": "Docs/OwnPredator/Previews/back.png",
-      "sha256": "4b9c373b182d0511a1e7647c5ee004e109eff99fec6f659f7bf1ab01006b3ce0"
+      "file": "Docs/OwnPredator/Previews/overall.png",
+      "sha256": "ba1f4d6b90f81b4b39b385998668d12457eaf61705c9ec7141be1fe541fd3b39"
     },
     {
       "file": "Docs/OwnPredator/Previews/head_closed.png",
-      "sha256": "6d4c2ad589d81045142661993eb436dcae620bdef14e989f61b6537fbbd71765"
+      "sha256": "a5a391def92f07051575a1a0772e0ba3b85c93610b4e86e4a5a465056361ea20"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/maw_front.png",
+      "sha256": "ea9e4b99ef47096540abefa6672c92f2711e2fd3f6a034337e2ed49fec338f8e"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/bite.png",
+      "sha256": "86cf6746befc8112887050ef0129b8ccb1e752b99a59a621e7dc3da9b49e702f"
     },
     {
       "file": "Docs/OwnPredator/Previews/head_open.png",
-      "sha256": "3899f56160442aa945ae38e9ed1a2f47699f77a6c8f128ceebdd5370bfbc49eb"
-    },
-    {
-      "file": "Docs/OwnPredator/Previews/horror.png",
-      "sha256": "06e970ca7b12838cadc7d7f9184e34a91962c9c857a9b62a5e9a00c3d12ea414"
-    },
-    {
-      "file": "Docs/OwnPredator/Previews/overall.png",
-      "sha256": "085f377e4cbf94b227e4348ea9f7985e876b4aeee19de28ac7830d5a81ddb100"
-    },
-    {
-      "file": "Docs/OwnPredator/Previews/scale.png",
-      "sha256": "47658198881117dddc41dea4a6b3fdd9ada68e374bcff6eb2ce473c584cac1a3"
+      "sha256": "f383e9004a0bc4a58b280477648f73cbac90e16bb1cf894484e0a86e2d21de20"
     },
     {
       "file": "Docs/OwnPredator/Previews/side.png",
-      "sha256": "823b3e81b4ab679f4cb66ded793c2e87672530444b18dea2e7c32f8111cc2efa"
+      "sha256": "41f8559d759d2302730ffd5facef616d0e4c067544942565c11a2c758a2123c4"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/back.png",
+      "sha256": "5aba32525d575f4a74be816c67c7a5325a4fb1cd806906b891872f46f56667ea"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/horror.png",
+      "sha256": "b8944c75a8c3c36d41ae325d81088108076a45656386197561da20d2cb12d08a"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/scale.png",
+      "sha256": "45166fe089a82724145855f3808e8625c1d302a45a0497cd5a740ae81b1d769e"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/contact.png",
+      "sha256": "7805bc23828960fc8773d82b36fd5486577d133009a5422859ed1428de9acce6"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/before_after.png",
+      "sha256": "1574bb363755d96f53d98f0994f803a49d30808aab47ec7f3139941e08f882c3"
     }
   ],
-  "contact_sheet": {
-    "file": "Docs/OwnPredator/Previews/contact.png",
-    "sha256": "45eb8e1b5010c7450e5fb1e2e881a254f639ff0daead68e077cb1c0aad4b290b",
-    "visually_reviewed": true
-  }
+  "figures": "contact and before_after compose actual renders; before image is Vesper 0.1 from commit 16f12c9"
 }

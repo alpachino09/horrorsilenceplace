@@ -1,7 +1,7 @@
 # Файлы SILENCE — собственный хищник, процедурный первый проход
 
 [Инструкция и честный статус](OwnPredator/README_RU.md).
-Скрипт реально создаёт `.blend`, три skinned FBX, девять карт 4K и 19 клипов.
+Скрипт реально создаёт `.blend`, три skinned FBX, двенадцать карт 4K и 19 клипов.
 Сгенерированные бинарные файлы проверены в облаке и воспроизводятся локально;
 в git находятся генератор, исходники подготовки Unity, рендеры и отчёты.
 Unity Editor здесь не запускался: prefab/demo пока не созданы. Уровень AAA не достигнут.
@@ -185,15 +185,19 @@ Unity Editor здесь не запускался: prefab/demo пока не с�
 - [`Docs/NETWORKING_PLAN.md`](../Docs/NETWORKING_PLAN.md)
 - [`Docs/OwnPredator/Previews/README_RU.md`](../Docs/OwnPredator/Previews/README_RU.md)
 - [`Docs/OwnPredator/Previews/back.png`](../Docs/OwnPredator/Previews/back.png)
+- [`Docs/OwnPredator/Previews/before_after.png`](../Docs/OwnPredator/Previews/before_after.png)
+- [`Docs/OwnPredator/Previews/bite.png`](../Docs/OwnPredator/Previews/bite.png)
 - [`Docs/OwnPredator/Previews/contact.png`](../Docs/OwnPredator/Previews/contact.png)
 - [`Docs/OwnPredator/Previews/head_closed.png`](../Docs/OwnPredator/Previews/head_closed.png)
 - [`Docs/OwnPredator/Previews/head_open.png`](../Docs/OwnPredator/Previews/head_open.png)
 - [`Docs/OwnPredator/Previews/horror.png`](../Docs/OwnPredator/Previews/horror.png)
+- [`Docs/OwnPredator/Previews/maw_front.png`](../Docs/OwnPredator/Previews/maw_front.png)
 - [`Docs/OwnPredator/Previews/overall.png`](../Docs/OwnPredator/Previews/overall.png)
 - [`Docs/OwnPredator/Previews/scale.png`](../Docs/OwnPredator/Previews/scale.png)
 - [`Docs/OwnPredator/Previews/side.png`](../Docs/OwnPredator/Previews/side.png)
 - [`Docs/OwnPredator/README_RU.md`](../Docs/OwnPredator/README_RU.md)
 - [`Docs/OwnPredator/REQUEST_RU.md`](../Docs/OwnPredator/REQUEST_RU.md)
+- [`Docs/OwnPredator/REVISION_02_RU.md`](../Docs/OwnPredator/REVISION_02_RU.md)
 - [`Docs/ProjectBrief/00_START_HERE_RU.md`](../Docs/ProjectBrief/00_START_HERE_RU.md)
 - [`Docs/ProjectBrief/01_GDD_RU.md`](../Docs/ProjectBrief/01_GDD_RU.md)
 - [`Docs/ProjectBrief/02_ARCHITECTURE_RU.md`](../Docs/ProjectBrief/02_ARCHITECTURE_RU.md)
@@ -219,6 +223,14 @@ Unity Editor здесь не запускался: prefab/demo пока не с�
 - [`Docs/Validation/OwnPredator/material-fix-roundtrip.json`](../Docs/Validation/OwnPredator/material-fix-roundtrip.json)
 - [`Docs/Validation/OwnPredator/materials-4.3.json`](../Docs/Validation/OwnPredator/materials-4.3.json)
 - [`Docs/Validation/OwnPredator/materials-5.2.json`](../Docs/Validation/OwnPredator/materials-5.2.json)
+- [`Docs/Validation/OwnPredator/maw-blender.json`](../Docs/Validation/OwnPredator/maw-blender.json)
+- [`Docs/Validation/OwnPredator/maw-gameplay-preservation.json`](../Docs/Validation/OwnPredator/maw-gameplay-preservation.json)
+- [`Docs/Validation/OwnPredator/maw-generation.json`](../Docs/Validation/OwnPredator/maw-generation.json)
+- [`Docs/Validation/OwnPredator/maw-materials-5.2.json`](../Docs/Validation/OwnPredator/maw-materials-5.2.json)
+- [`Docs/Validation/OwnPredator/maw-references.json`](../Docs/Validation/OwnPredator/maw-references.json)
+- [`Docs/Validation/OwnPredator/maw-renders.json`](../Docs/Validation/OwnPredator/maw-renders.json)
+- [`Docs/Validation/OwnPredator/maw-source.txt`](../Docs/Validation/OwnPredator/maw-source.txt)
+- [`Docs/Validation/OwnPredator/maw-structure.json`](../Docs/Validation/OwnPredator/maw-structure.json)
 - [`Docs/Validation/OwnPredator/reference-access.json`](../Docs/Validation/OwnPredator/reference-access.json)
 - [`Docs/Validation/OwnPredator/renders.json`](../Docs/Validation/OwnPredator/renders.json)
 - [`Docs/Validation/OwnPredator/repeat.json`](../Docs/Validation/OwnPredator/repeat.json)

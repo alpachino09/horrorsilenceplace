@@ -100,13 +100,9 @@ namespace Silence.Predator.Editor
         {
             string path=Root+"/Materials/"+name+".mat";var old=AssetDatabase.LoadAssetAtPath<Material>(path);if(old!=null)return old;
             var mat=new Material(Shader.Find("Universal Render Pipeline/Lit")){name=name};
-            if(name=="Bone"){mat.SetColor("_BaseColor",new Color(.24f,.205f,.155f));mat.SetFloat("_Smoothness",.57f);}
-            else
-            {
-                Texture2D Map(string suffix)=>AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/"+name+suffix+".png")??throw new InvalidOperationException("Missing map "+name+suffix);
-                mat.SetTexture("_BaseMap",Map("_BaseColor"));mat.SetTexture("_BumpMap",Map("_Normal"));mat.SetTexture("_MetallicGlossMap",Map("_Mask"));mat.SetTexture("_OcclusionMap",Map("_Mask"));
-                mat.SetFloat("_BumpScale",.55f);mat.SetFloat("_Smoothness",1);mat.EnableKeyword("_NORMALMAP");mat.EnableKeyword("_METALLICSPECGLOSSMAP");mat.EnableKeyword("_OCCLUSIONMAP");
-            }
+            Texture2D Map(string suffix)=>AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/"+name+suffix+".png")??throw new InvalidOperationException("Missing map "+name+suffix);
+            mat.SetTexture("_BaseMap",Map("_BaseColor"));mat.SetTexture("_BumpMap",Map("_Normal"));mat.SetTexture("_MetallicGlossMap",Map("_Mask"));mat.SetTexture("_OcclusionMap",Map("_Mask"));
+            mat.SetFloat("_BumpScale",.55f);mat.SetFloat("_Smoothness",1);mat.EnableKeyword("_NORMALMAP");mat.EnableKeyword("_METALLICSPECGLOSSMAP");mat.EnableKeyword("_OCCLUSIONMAP");
             AssetDatabase.CreateAsset(mat,path);return mat;
         }
         private static AnimatorController Controller()

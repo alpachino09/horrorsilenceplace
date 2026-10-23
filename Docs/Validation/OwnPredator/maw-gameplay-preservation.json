@@ -1,0 +1,7 @@
+{
+  "kind": "Existing gameplay/network C# source preservation during art revision",
+  "baseline": "16f12c9",
+  "files_checked": 71,
+  "changed": [],
+  "whole_gameplay_and_network_package_diff": []
+}

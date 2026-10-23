@@ -1,0 +1,17 @@
+{
+  "kind": "Actual reference access results for the owner requested mouth/body revision",
+  "requests": [
+    {
+      "url": "https://fab.com/s/257b214cc0eb",
+      "result": "Tunnel connection failed: 403 Forbidden",
+      "visually_reviewed": false
+    },
+    {
+      "url": "https://fab.com/s/924edc7dfeb7",
+      "result": "Tunnel connection failed: 403 Forbidden",
+      "visually_reviewed": false
+    }
+  ],
+  "reference_assets_used": false,
+  "basis": "Owner description: large open mouth, fangs around the mouth, body surface should not be smooth."
+}

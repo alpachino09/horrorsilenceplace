@@ -3,7 +3,7 @@ out=pathlib.Path(os.environ.get('SILENCE_PREDATOR_REVIEW','/tmp/silence-own-revi
 scene=bpy.context.scene;bpy.context.window.scene=scene
 scene.render.resolution_x=1000;scene.render.resolution_y=800;scene.cycles.samples=32;scene.render.threads=6
 rig=scene.objects[scene.get('silence_rig','Vesper_Rig')];cameras=json.loads(scene.get('silence_cameras','{}'))
-shots=[('overall','Front','Idle',1),('head_closed','HeadClose','Idle',1),('head_open','HeadClose','ListenLoop',31),('side','Side','Idle',1),('back','Back','Idle',1),('horror','Front','Idle',1),('scale','Front','Idle',1)]
+shots=[('overall','Front','Idle',1),('head_closed','HeadClose','Idle',1),('maw_front','MawFront','Idle',1),('bite','MawFront','AttackBite',14),('head_open','HeadClose','ListenLoop',31),('side','Side','Idle',1),('back','Back','Idle',1),('horror','Front','Idle',1),('scale','Front','Idle',1)]
 chosen=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'all'
 for name,camera,action,frame in shots:
  if chosen!='all' and name!=chosen:continue

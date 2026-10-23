@@ -24,7 +24,7 @@ SCENE.render.fps=30
 COL=bpy.data.collections.new('VESPER | original anatomy');SCENE.collection.children.link(COL)
 SOURCE=bpy.data.collections.new('SCULPT_SOURCE | editable connected skin');SCENE.collection.children.link(SOURCE)
 SOURCE.hide_render=True;SOURCE.hide_viewport=True
-PARTS=[];BONES={};SEGMENTS=[];CLIPS=[];MATS={};ACTIONS={};REPORT={'generator':'SILENCE Vesper 0.1','seed':SEED,'blender':bpy.app.version_string,'native_unity_tested':False,'art_approved':False}
+PARTS=[];BONES={};SEGMENTS=[];CLIPS=[];MATS={};ACTIONS={};REPORT={'generator':'SILENCE Vesper 0.2 — radial maw and scarred carapace','seed':SEED,'blender':bpy.app.version_string,'native_unity_tested':False,'art_approved':False}
 def say(s):print('SILENCE: '+s,flush=True)
 def V(v):return Vector(v)
 def blend(a,b,t):return V(a).lerp(V(b),t)
@@ -49,22 +49,31 @@ def maps(kind):
  u=np.arange(SIZE,dtype=np.float32)[None,:]/SIZE;v=np.arange(SIZE,dtype=np.float32)[:,None]/SIZE
  if kind=='Skin':
   crease=np.exp(-((np.sin((u*23+.25*b)*math.tau))/.16)**2)*(.25+.75*a)
-  h=.45+.10*b+.045*c+.018*f-.07*crease
-  color=np.array([.13,.105,.092],dtype=np.float32)*( .60+.32*a+.13*b)[...,None]
-  color*= (1-.18*crease)[...,None];rough=.66+.20*c-.10*a
+  fissure=np.exp(-(np.sin((v*21+.20*a+.13*b)*math.tau)/.11)**2)
+  h=.45+.14*b+.065*c+.025*f-.14*crease-.055*fissure
+  color=np.array([.085,.061,.043],dtype=np.float32)*(.50+.42*a+.18*b)[...,None]
+  color*=(1-.35*crease-.15*fissure)[...,None];rough=.72+.18*c-.08*a
  elif kind=='Armor':
   lamella=(.5+.5*np.sin((u*28+.08*np.sin(v*math.tau*4)+.12*b)*math.tau))**7
   crack=np.exp(-(np.sin((v*13+.12*a)*math.tau)/.065)**2)*(.3+.7*b)
-  h=.43+.035*lamella+.025*c-.065*crack+.012*f
+  h=.43+.070*lamella+.048*c-.12*crack+.025*f
   edge=np.abs(v-.5)*2
-  color=np.array([.125,.115,.105],dtype=np.float32)*(.53+.30*a+.16*edge)[...,None]
-  color*= (1-.24*crack)[...,None];rough=.46+.24*b+.13*crack
- else:
+  color=np.array([.080,.069,.047],dtype=np.float32)*(.50+.35*a+.18*edge)[...,None]
+  color*=(1-.40*crack)[...,None];rough=.60+.22*b+.12*crack
+ elif kind=='Tissue':
   folds=(.5+.5*np.sin((u*17+.22*b)*math.tau))**3
   h=.4+.12*folds+.035*c+.012*f
-  color=np.array([.115,.018,.024],dtype=np.float32)*(.55+.38*a+.12*c)[...,None];rough=.22+.15*b
+  color=np.array([.090,.009,.017],dtype=np.float32)*(.45+.43*a+.12*c)[...,None];rough=.24+.15*b
+ else:
+  # Tube U follows each fang from root to tip, retaining stains after joining.
+  enamel=np.clip((u-.045)/.48,0,1);enamel=enamel*enamel*(3-2*enamel)
+  root=np.array([.19,.082,.028],dtype=np.float32);tip=np.array([.78,.68,.48],dtype=np.float32)
+  color=(root[None,None,:]*(1-enamel[...,None])+tip[None,None,:]*enamel[...,None])*(.78+.17*a+.07*c)[...,None]
+  h=.45+.015*c+.008*f;rough=.46+.15*b-.10*enamel
  base=image_file(kind+'_BaseColor',np.clip(color,0,1))
- gx=(np.roll(h,-1,1)-np.roll(h,1,1))*8;gy=(np.roll(h,-1,0)-np.roll(h,1,0))*8
+ # Keep the same physical normal strength when changing map resolution.
+ strength=SIZE*(.018 if kind=='Bone' else .045)
+ gx=(np.roll(h,-1,1)-np.roll(h,1,1))*strength;gy=(np.roll(h,-1,0)-np.roll(h,1,0))*strength
  normal=np.stack((-gx,-gy,np.ones_like(h)),axis=-1);normal/=np.linalg.norm(normal,axis=-1,keepdims=True)
  norm=image_file(kind+'_Normal',normal*.5+.5,True)
  rough=np.clip(rough,.14,.92);ao=np.clip(.85+.15*h-.10*(.5-b),.6,1)
@@ -89,19 +98,16 @@ def ensure_shader(owner,shader_type,output_type):
 
 def material(name):
  m=bpy.data.materials.new('Vesper_'+name);p=ensure_shader(m,'ShaderNodeBsdfPrincipled','ShaderNodeOutputMaterial');n=m.node_tree.nodes;l=m.node_tree.links
- if name=='Bone':
-  p.inputs['Base Color'].default_value=(.24,.205,.155,1);p.inputs['Roughness'].default_value=.43
- else:
-  base,norm,mask=maps(name)
-  for im,label in [(base,'Base'),(norm,'Normal'),(mask,'Mask')]:
-   t=n.new('ShaderNodeTexImage');t.image=im;t.label=label
-   if label=='Base':l.new(t.outputs['Color'],p.inputs['Base Color'])
-   elif label=='Normal':
-    bump=n.new('ShaderNodeNormalMap');bump.inputs['Strength'].default_value=.55;l.new(t.outputs['Color'],bump.inputs['Color']);l.new(bump.outputs[0],p.inputs['Normal'])
-   else:
-    inv=n.new('ShaderNodeMath');inv.operation='SUBTRACT';inv.inputs[0].default_value=1;l.new(t.outputs['Alpha'],inv.inputs[1]);l.new(inv.outputs[0],p.inputs['Roughness'])
-  if 'Subsurface Weight' in p.inputs:p.inputs['Subsurface Weight'].default_value=.08 if name=='Skin' else .22 if name=='Tissue' else 0
-  if name=='Tissue' and 'Coat Weight' in p.inputs:p.inputs['Coat Weight'].default_value=.25
+ base,norm,mask=maps(name)
+ for im,label in [(base,'Base'),(norm,'Normal'),(mask,'Mask')]:
+  t=n.new('ShaderNodeTexImage');t.image=im;t.label=label
+  if label=='Base':l.new(t.outputs['Color'],p.inputs['Base Color'])
+  elif label=='Normal':
+   bump=n.new('ShaderNodeNormalMap');bump.inputs['Strength'].default_value=.55;l.new(t.outputs['Color'],bump.inputs['Color']);l.new(bump.outputs[0],p.inputs['Normal'])
+  else:
+   inv=n.new('ShaderNodeMath');inv.operation='SUBTRACT';inv.inputs[0].default_value=1;l.new(t.outputs['Alpha'],inv.inputs[1]);l.new(inv.outputs[0],p.inputs['Roughness'])
+ if 'Subsurface Weight' in p.inputs:p.inputs['Subsurface Weight'].default_value=.08 if name=='Skin' else .22 if name=='Tissue' else 0
+ if name=='Tissue' and 'Coat Weight' in p.inputs:p.inputs['Coat Weight'].default_value=.25
  MATS[name]=m;return m
 for name in ['Skin','Armor','Tissue','Bone']:material(name)
 
@@ -166,9 +172,11 @@ def plate(name,points,widths,height=.13,bone='Chest',mat='Armor',n=16,m=10):
    if right.length<.1:right=V((1,0,0))
    for j in range(m+1):
     v=j/m*2-1
-    ridge=(1-v*v)*height*(.75+.25*math.sin(u*math.pi))
-    flutes=.014*math.cos(v*math.pi*6)*(1-v*v)*math.sin(u*math.pi)
-    co=c+right*(v*w*(1+.035*math.sin(u*19+v*3)))+V((0,0,-.035 if underside else ridge+flutes))
+    ridge=(1-v*v)*height*(.72+.28*math.sin(u*math.pi))
+    flutes=.028*math.cos(v*math.pi*6+u*7)*(1-v*v)*math.sin(u*math.pi)
+    chips=1+.085*math.sin(u*29+v*4)+.04*math.sin(u*63+v*7)
+    damage=.014*mnoise.noise_vector(c*11+V((u*3,v*3,0)))[0]
+    co=c+right*(v*w*chips)+V((0,0,-.035 if underside else ridge+flutes+damage))
     verts.append(tuple(co));uv.append((u,j/m))
  layer=(n+1)*(m+1);faces=[]
  for offset in [0,layer]:
@@ -191,7 +199,7 @@ add_bone('Spine',(0,.55,1.95),(0,-.08,2.22),'Pelvis',radius=.42)
 add_bone('Chest',(0,-.08,2.22),(0,-.64,2.48),'Spine',radius=.6)
 add_bone('Neck',(0,-.64,2.48),(0,-1.12,2.56),'Chest',radius=.37)
 add_bone('Head',(0,-1.12,2.56),(0,-1.9,2.46),'Neck',radius=.43)
-add_bone('Jaw',(0,-1.35,2.2),(0,-2.0,2.12),'Head',radius=.2)
+add_bone('Jaw',(0,-1.30,2.42),(0,-2.16,1.88),'Head',radius=.32)
 SKIN=[]
 SKIN.append(tube('Anatomical trunk',[(0,1.55,1.63),(0,1.16,1.86),(0,.64,1.82),(0,.12,2.12),(0,-.35,2.34),(0,-.72,2.45),(0,-1.10,2.5)],[.16,(.48,.48),(.31,.38),(.48,.48),(.70,.59),(.53,.42),(.25,.28)],sides=40,steps=7,record=False))
 LIMBS={}
@@ -220,79 +228,114 @@ for side,sign in [('L',1),('R',-1)]:
 bpy.ops.object.select_all(action='DESELECT')
 for o in SKIN:o.select_set(True)
 bpy.context.view_layer.objects.active=SKIN[0];bpy.ops.object.join();skin=SKIN[0];skin.name='Dermis_LOD0'
-rem=skin.modifiers.new('Anatomical surface union','REMESH');rem.mode='VOXEL';rem.voxel_size=.043;rem.use_smooth_shade=True
+rem=skin.modifiers.new('Anatomical surface union','REMESH');rem.mode='VOXEL';rem.voxel_size=.034;rem.use_smooth_shade=True
 bpy.ops.object.modifier_apply(modifier=rem.name)
 sm=skin.modifiers.new('Organic transitions','SMOOTH');sm.factor=.55;sm.iterations=3;bpy.ops.object.modifier_apply(modifier=sm.name)
-# Macroscopic scar/fold displacement is masked to joints, not a uniform bumpy surface.
+# Actual silhouette displacement: torn folds at joints, scar grooves and leathery nodules.
 for vertex in skin.data.vertices:
  p=vertex.co;crease=0
  for side,sign in [('L',1),('R',-1)]:
   for joint in [LIMBS[side]['fore'][1],LIMBS[side]['hind'][1]]:
-   d=(p-V(joint)).length;crease+=math.exp(-d*d/.07)*math.sin((p.z+p.y*.5)*72)*.012
- vertex.co+=vertex.normal*(crease+.004*mnoise.noise_vector(p*7)[0])
+   d=(p-V(joint)).length;crease+=math.exp(-d*d/.09)*math.sin((p.z+p.y*.5)*65)*.025
+ coarse=mnoise.noise_vector(p*6)[0];fine=mnoise.noise_vector(p*19)[0]
+ scars=-.024*math.exp(-(math.sin(p.z*23+p.y*8+coarse*5)/.22)**2)
+ vertex.co+=vertex.normal*(crease+.025*coarse+.008*fine+scars)
 source=skin.copy();source.data=skin.data.copy();source.name='EDITABLE_connected_high_surface';SOURCE.objects.link(source)
 PARTS.append(skin)
-# Source head is an open upper cranium, with an independently articulated lower jaw.
-def cranium(name,lower=False):
- verts=[];uv=[];faces=[];rings=18;sides=28
+# A deep, vertical predatory maw. Teeth cover the complete circumference, not a smile.
+MAW_CENTER=V((0,-2.24,2.28));FANGS=[]
+def mouth_weights(angle,depth=0):
+ amount=smooth(max(0,min(1,(-math.sin(angle)+.08)/.52)))*(1-depth)**.65
+ return [('Head',1-amount),('Jaw',amount)]
+def mouth_point(angle,rx,rz,y,z=2.28):
+ warp=1+.028*math.sin(angle*7+.5)+.018*math.sin(angle*13)
+ return V((math.cos(angle)*rx*warp,y,z+math.sin(angle)*rz*warp))
+def maw_surface(name,inside=False):
+ rings=23;sides=88;verts=[];uv=[];weights=[];faces=[]
  for i in range(rings+1):
-  u=i/rings;y=-1.02-u*1.10;w=(.28+.23*math.sin(math.pi*u))*(1-.25*u);cz=2.48-.20*u
-  if lower:cz=2.245-.025*math.sin(u*math.pi)
+  u=i/rings
+  if inside:
+   rx=.49*(1-u)**.70+.045;rz=.57*(1-u)**.75+.045;y=-2.29+u*1.12;cz=2.28+.14*u
+  else:
+   rx=.58*(1-u)+.24*u+.11*math.sin(u*math.pi);rz=.68*(1-u)+.26*u;y=-2.22+u*1.20;cz=2.28+.23*u
   for j in range(sides+1):
-   a=j/sides*math.pi+(math.pi if lower else 0);z=cz+(.17 if lower else .29)*math.sin(a)
-   verts.append((math.cos(a)*w,y,z));uv.append((u,j/sides))
+   angle=j/sides*math.tau
+   point=mouth_point(angle,rx,rz,y,cz)
+   # Broad folds are mesh detail, with finer texture normal layered above them.
+   corrugation=(.016 if inside else .022)*math.sin(u*69+angle*3)+.012*math.sin(angle*19+u*6)
+   point+=V((math.cos(angle),0,math.sin(angle)))*corrugation
+   verts.append(tuple(point));uv.append((j/sides,u));weights.append(mouth_weights(angle,u))
  for i in range(rings):
-  for j in range(sides):a=i*(sides+1)+j;faces.append((a,a+1,a+sides+2,a+sides+1))
- o=mesh(name,verts,faces,'Tissue' if lower else 'Skin',uv,'Jaw' if lower else 'Head')
- mod=o.modifiers.new('Skull tissue thickness','SOLIDIFY');mod.thickness=.045;bpy.context.view_layer.objects.active=o;bpy.ops.object.modifier_apply(modifier=mod.name)
- return o
-cranium('Eyeless upper cranium');cranium('Articulated mandible',True)
-# Close the upper snout; an open tube here resembles a nose rather than an eyeless skull.
-cap=[(0,-2.12,2.28)]+[(math.cos(j/28*math.pi)*.21,-2.12,2.28+.29*math.sin(j/28*math.pi)) for j in range(29)]
-mesh('Sealed rostral bone',cap,[(0,j+1,j+2) for j in range(28)],'Armor',bone='Head')
-plate('Long faceless rostral shield',[(0,-.98,2.91),(0,-1.70,2.88),(0,-2.30,2.31)],[.12,.39,.018],.065,'Head',n=24,m=14)
-# Jaw lining and palate overlap into the throat, avoiding an empty hollow shell.
-for lower in [False,True]:
- bone='Jaw' if lower else 'Head';z=2.245 if lower else 2.30
- verts=[];uv=[];faces=[]
- for i in range(17):
-  u=i/16;y=-1.22-u*.87;w=.30*math.sin(math.pi*(u*.84+.08))
-  for j in range(13):
-   t=j/12*2-1;verts.append((t*w,y,z+.018*math.cos(u*40)*(1-t*t)+(.045 if lower else -.045)*(1-t*t)));uv.append((u,j/12))
- for i in range(16):
-  for j in range(12):a=i*13+j;faces.append((a,a+1,a+14,a+13))
- mesh('Corrugated oral floor' if lower else 'Ridged palate',verts,faces,'Tissue',uv,bone)
- ring=[(.30*math.sin(i*math.tau/36),-1.65-.44*math.cos(i*math.tau/36),z) for i in range(37)]
- tube('Gingival ridge',ring,[.025]*37,'Tissue',10,2,bone,detail=.04)
- for row,count in [(0,24),(1,14)]:
-  for i in range(count):
-   angle=(i+.25*RNG.random())*math.tau/count
-   x=(.30-row*.075)*math.sin(angle);y=-1.65-(.44-row*.07)*math.cos(angle)
-   length=RNG.uniform(.055,.14)*(1 if row==0 else .6)*(1.7 if i in (3,8,15) else 1);direction=1 if lower else -1
-   a=(x,y,z);b=(x*.94,y+.018,z+direction*length*.6);c=(x*.87,y+.04,z+direction*length)
-   tube('Individual tooth',[a,b,c],[.017 if row==0 else .011,.015,.0018],'Bone',8,3,bone,detail=.06)
+  for j in range(sides):
+   q=i*(sides+1)+j;f=(q,q+1,q+sides+2,q+sides+1);faces.append(tuple(reversed(f)) if inside else f)
+ if inside:
+  center=len(verts);verts.append((0,-1.10,2.42));uv.append((.5,1));weights.append([('Head',1)])
+  for j in range(sides):faces.append((center,rings*(sides+1)+j+1,rings*(sides+1)+j))
+ return mesh(name,verts,faces,'Tissue' if inside else 'Skin',uv,weights=weights)
+maw_surface('Rugose eyeless cranial shell');maw_surface('Deep corrugated throat',True)
+for name,rx,rz,y,radius,mat in [('Torn outer oral rim',.575,.665,-2.25,.055,'Skin'),('Fleshy inner gum ring',.515,.60,-2.30,.039,'Tissue')]:
+ points=[mouth_point(j/88*math.tau,rx,rz,y) for j in range(89)]
+ tube(name,points,[radius*(1+.15*math.sin(j*.9)) for j in range(89)],mat,10,2,weights=lambda t:mouth_weights(t*math.tau),detail=.10)
+for row,count in [(0,36),(1,38),(2,30)]:
+ for i in range(count):
+  angle=(i+.70*RNG.random()+row*.34)*math.tau/count
+  rx=.495-row*.095;rz=.58-row*.105;y=-2.31+row*.19
+  root=mouth_point(angle,rx,rz,y)
+  inward=V((-math.cos(angle),0,-math.sin(angle))).normalized()
+  length=RNG.uniform(.17,.38) if row==0 else RNG.uniform(.12,.25) if row==1 else RNG.uniform(.08,.18)
+  if row==0 and i%6==3:length+=.055
+  radius=(.032 if row==0 else .024 if row==1 else .018)*RNG.uniform(.85,1.15)
+  tangent=V((-math.sin(angle),0,math.cos(angle)))*RNG.uniform(-.045,.045)
+  points=[root,root+inward*(length*.26)+V((0,-.035,0)),root+inward*(length*.72)+V((0,-.065,0))+tangent*.45,root+inward*length+V((0,.025,0))+tangent]
+  ob=tube('Circumferential hooked fang',points,[radius,radius*.65,radius*.20,.0007],'Bone',9,3,weights=lambda t,a=angle:mouth_weights(a),detail=.07)
+  FANGS.append(ob)
+# Palatal tendons and a split tongue make the throat solid and layered in close-up.
+for k in range(9):
+ angle=(k+.5)/9*math.pi
+ points=[mouth_point(angle,.40,.47,-2.10),mouth_point(angle,.30,.34,-1.86,2.34),mouth_point(angle,.12,.16,-1.36,2.40)]
+ tube('Palatal radial tendon',points,[.026,.021,.009],'Tissue',8,4,'Head',detail=.15)
 for sign in [-1,1]:
- verts=[];weights=[];uv=[]
- for j in range(9):
-  t=j/8
-  for i in range(7):
-   u=i/6;verts.append((sign*(.28+.02*math.sin(t*math.pi)),-1.25-u*.43,2.3-t*.055));uv.append((u,t));weights.append([('Head',1-t),('Jaw',t)])
- faces=[(j*7+i,j*7+i+1,(j+1)*7+i+1,(j+1)*7+i) for j in range(8) for i in range(6)]
- mesh('Flexible oral commissure',verts,faces,'Tissue',uv,weights=weights)
+ tube('Bifid scarred tongue',[(sign*.11,-1.31,2.23),(sign*.14,-1.70,1.99),(sign*.10,-2.10,1.92)],[.07,.085,.026],'Tissue',12,5,'Jaw',detail=.12)
+ plate('Jagged supraoral brow',[(sign*.04,-1.36,2.94),(sign*.30,-1.89,2.99),(sign*.46,-2.32,2.71)],[.035,.20,.016],.10,'Head',n=17,m=10)
+ plate('External mandible barb',[(sign*.19,-1.48,1.99),(sign*.43,-1.95,1.70),(sign*.24,-2.36,1.58)],[.035,.14,.010],.10,'Jaw',n=15,m=9)
+ # Cheek ligaments run backward into the neck rather than enclosing the mouth opening.
+ for k in range(5):
+  angle=(.13+k*.10)*math.pi if sign==1 else (.87-k*.10)*math.pi
+  root=mouth_point(angle,.59,.68,-2.18)
+  end=V((sign*(.27+k*.018),-1.04,2.49-k*.085))
+  tube('Cranial tension cord',[root,root.lerp(end,.45)+V((sign*.055,0,.04)),end],[.025,.036,.018],'Skin',9,5,'Head',detail=.12)
+REPORT['morphology']={'mouth_opening_metres':[1.07,1.23],'fangs':len(FANGS),'fang_rows':3,'fang_layout':'full 360 degree circumference, including upper/lower/lateral sectors','jaw':'independent articulated lower half and weighted commissures','body_surface':'displaced dermis, scar grooves, raised folds, chipped scutes and dorsal hooks'}
 # Layered dorsal and shoulder armor, matched to skeletal body regions.
 for i in range(10):
  y=1.42-i*.245;z=1.99+(1.42-y)*.31
  plate('Vertebral shield '+str(i),[(0,y+.16,z),(0,y,z+.12),(0,y-.16,z+.05)],[.06,.29 if i<5 else .40,.025],.075,'Pelvis' if i<3 else 'Spine' if i<6 else 'Chest',n=9,m=10)
+# Crooked dorsal hooks break up the silhouette; no smooth dome over the shoulders.
+for i in range(9):
+ y=1.30-i*.205;z=2.18+max(0,1-y)*.47;lean=RNG.uniform(-.055,.055)
+ bone='Pelvis' if i<2 else 'Spine' if i<5 else 'Chest'
+ tube('Broken dorsal keratin hook',[(lean,y,z-.07),(lean,y+.015,z+.09),(lean*.7,y+.11,z+.23),(lean*.4,y+.19,z+.17)],[.105,.073,.032,.0015],'Armor',10,4,bone,detail=.13)
 for side,sign in [('L',1),('R',-1)]:
  for i in range(5):
   y=-.25+i*.28;z=2.31-i*.09
   plate('Rib shield',[(sign*.12,y+.18,z+.10),(sign*.46,y,z),(sign*.58,y-.14,z-.19)],[.03,.17,.015],.075,'Chest' if i<2 else 'Spine',n=9,m=8)
+ for k in range(3):
+  root=V((sign*(.40+k*.10),-.48+k*.16,2.68-k*.03))
+  tube('Scapular hooked outgrowth',[root,root+V((sign*.12,.025,.19)),root+V((sign*.23,.16,.25)),root+V((sign*.25,.25,.17))],[.12,.08,.035,.002],'Armor',10,4,'Chest',detail=.13)
  for prefix,points in [('Fore',LIMBS[side]['fore']),('Hind',LIMBS[side]['hind'])]:
   a,b,c,d=map(V,points)
   plate('Limb upper shield',[a+V((0,-.14,.09)),a.lerp(b,.45)+V((0,-.15,.07)),b+V((0,-.12,.05))],[.05,.22 if prefix=='Fore' else .19,.035],.08,('ForeUpper.' if prefix=='Fore' else 'HindUpper.')+side,n=14,m=9)
   for k in range(3):
    t=.16+k*.24;p=b.lerp(c,t)
    plate('Overlapping forearm scute',[p+V((0,-.12,.10)),p+V((0,-.13,0)),p+V((0,-.09,-.17))],[.02,.13,.02],.07,('ForeLower.' if prefix=='Fore' else 'HindLower.')+side,n=8,m=8)
+  # Raised leathery folds follow the upper limb. They are geometry, not painted lines.
+  axis=(b-a).normalized();right=axis.cross(V((0,0,1))).normalized();front=axis.cross(right).normalized()
+  for k in range(5):
+   t=.28+k*.12;center=a.lerp(b,t);radius=.31*(1-t)+.17*t
+   points=[]
+   for j in range(15):
+    angle=(-.15+j/14*1.60)*math.pi
+    points.append(center+(right*math.cos(angle)+front*math.sin(angle))*radius+axis*(.025*math.sin(angle*3+k)))
+   tube('Raised contractile skin fold',points,[.022*(1+.20*math.sin(j*.8+k)) for j in range(15)],'Skin',7,2,('ForeUpper.' if prefix=='Fore' else 'HindUpper.')+side,detail=.15)
  # Real longitudinal tendon ridges and folds over the flexor side.
  a,b,c,d=map(V,LIMBS[side]['fore'])
  def tendon_weights(t,s=side):
@@ -374,8 +417,21 @@ for mat in ['Skin','Armor','Tissue','Bone']:
    for g in vertex.groups:o.vertex_groups[g.group].add([vertex.index],g.weight/total,'REPLACE')
  mod=o.modifiers.new('Deform | export rig','ARMATURE');mod.object=RIG;mod.use_deform_preserve_volume=False
  GAME.append(o)
+# Cap the combined game surface, including the new teeth and scar geometry.
+total=sum(sum(len(p.vertices)-2 for p in o.data.polygons) for o in GAME)
+if total>145000:
+ for o in GAME:
+  bpy.ops.object.select_all(action='DESELECT');o.select_set(True);bpy.context.view_layer.objects.active=o
+  dec=o.modifiers.new('Combined creature surface budget','DECIMATE');dec.ratio=145000/total;bpy.ops.object.modifier_move_up(modifier=dec.name);bpy.ops.object.modifier_apply(modifier=dec.name)
+  for vertex in o.data.vertices:
+   pairs=sorted([(g.group,g.weight) for g in vertex.groups],key=lambda x:x[1],reverse=True)
+   for group,weight in pairs[4:]:o.vertex_groups[group].remove([vertex.index])
+   weight_sum=sum(weight for group,weight in pairs[:4])
+   for group,weight in pairs[:4]:
+    if weight_sum:o.vertex_groups[group].add([vertex.index],weight/weight_sum,'REPLACE')
+total=sum(sum(len(p.vertices)-2 for p in o.data.polygons) for o in GAME)
 LODS={0:GAME}
-for level,ratio in [(1,.43),(2,.12)]:
+for level,ratio in [(1,min(.75,54000/total)),(2,min(.30,16000/total))]:
  collection=bpy.data.collections.new('LOD'+str(level)+' | reduced skinned meshes');SCENE.collection.children.link(collection);items=[]
  for original in GAME:
   o=original.copy();o.data=original.data.copy();o.name=original.name.replace('LOD0','LOD'+str(level));collection.objects.link(o)
@@ -483,12 +539,14 @@ floormaterial=bpy.data.materials.new('Studio floor');floormaterial.diffuse_color
 CAMERAS={}
 for name,position,target,lens in [('Front',(4.4,-7,3.7),(0,-.15,1.5),46),('Side',(6.5,0,2.8),(0,-.2,1.5),46),('Back',(4.3,5.5,3.5),(0,.0,1.5),46),('HeadClose',(2.1,-4.4,3.4),(0,-1.55,2.52),62)]:
  data=bpy.data.cameras.new(name);data.lens=lens;cam=link(bpy.data.objects.new('Camera_'+name,data));cam.location=position;cam.rotation_euler=(V(target)-cam.location).to_track_quat('-Z','Y').to_euler();CAMERAS[name]=cam
+data=bpy.data.cameras.new('MawFront');data.lens=58;cam=link(bpy.data.objects.new('Camera_MawFront',data));cam.location=(0,-5.9,2.6);cam.rotation_euler=(V((0,-2.05,2.27))-cam.location).to_track_quat('-Z','Y').to_euler();CAMERAS['MawFront']=cam
 SCENE.camera=CAMERAS['Front'];SCENE.render.engine='CYCLES';SCENE.cycles.samples=48;SCENE.cycles.use_denoising=False;SCENE.cycles.max_bounces=5
 SCENE.render.resolution_x=1200;SCENE.render.resolution_y=900;SCENE.render.resolution_percentage=100
 SCENE.view_settings.view_transform='AgX';SCENE.view_settings.look='AgX - Medium High Contrast'
 SCENE.render.threads_mode='FIXED';SCENE.render.threads=min(8,os.cpu_count() or 4)
 # Isolate our 19 takes in NLA: other user actions/scenes are never exported or deleted.
 RIG['silence_actions']=json.dumps({n:a.name for n,a in ACTIONS.items()})
+RIG['silence_morphology']=json.dumps(REPORT['morphology'])
 track=RIG.animation_data.nla_tracks.new();track.name='VESPER export takes';start=1
 for name,action in ACTIONS.items():
  strip=track.strips.new(name,start,action);strip.name=name;strip.extrapolation='NOTHING';start=int(strip.frame_end)+2
@@ -526,5 +584,5 @@ say('Saved '+str(OUT/'SilencePredator.blend')+' | '+str(REPORT['lods']))
 UNITY_RUNTIME = 'using UnityEngine;\nnamespace Silence.Predator\n{\n    [DisallowMultipleComponent]\n    public sealed class MonsterAnimationController : MonoBehaviour\n    {\n        public Animator animator;\n        public bool demoControls;\n        private static readonly string[] DemoClips = {"Idle","IdleBreathing","Walk","Stalk","Run","Sprint","ListenStart","ListenEnd","AttackBite","AttackClaw","Lunge","Alert","Search","Investigate","Stunned","Recover"};\n        private string active = "Idle";\n        private void Awake() { if (animator != null) animator.applyRootMotion = false; }\n        public bool Play(string clip, float playback = 1)\n        {\n            if (animator == null || animator.runtimeAnimatorController == null ||\n                !animator.HasState(0, Animator.StringToHash("Base Layer." + clip))) return false;\n            animator.speed = Mathf.Clamp(playback, .1f, 3);\n            animator.CrossFadeInFixedTime("Base Layer." + clip, .12f, 0); active = clip; return true;\n        }\n        // Pass only an already perceived sound from the authoritative hearing system.\n        // This class never finds players, applies damage or moves the network root.\n        public void SetHearing(float perceived) { if (perceived > .05f) Play("ListenStart"); else Play("ListenEnd"); }\n        public void SetMotion(float metresPerSecond, bool chasing)\n        {\n            string clip = metresPerSecond < .1f ? "Idle" : chasing ? "Run" : "Walk";\n            if (clip != active) Play(clip);\n            if (animator != null) animator.speed = metresPerSecond < .1f ? 1 : Mathf.Clamp(metresPerSecond / (chasing ? 2.23f : .67f), .5f, 3);\n        }\n        private void OnGUI()\n        {\n            if (!demoControls) return;\n            GUILayout.BeginArea(new Rect(16,16,225,Screen.height-32), GUI.skin.box);\n            GUILayout.Label("SILENCE / Vesper — preview");\n            foreach (string clip in DemoClips) if (GUILayout.Button(clip)) Play(clip);\n            GUILayout.EndArea();\n        }\n    }\n}\n'
 (ART/'Scripts/MonsterAnimationController.cs').write_text(UNITY_RUNTIME,encoding='utf-8')
 
-UNITY_EDITOR = '#if UNITY_EDITOR\nusing System;\nusing System.IO;\nusing System.Linq;\nusing System.Collections.Generic;\nusing UnityEditor;\nusing UnityEditor.Animations;\nusing UnityEditor.SceneManagement;\nusing UnityEngine;\nusing UnityEngine.Rendering;\nusing Silence.Predator;\nusing Object = UnityEngine.Object;\nnamespace Silence.Predator.Editor\n{\n    internal sealed class PredatorImporter : AssetPostprocessor\n    {\n        private const string Root="Assets/Creatures/SilencePredator/";\n        private void OnPreprocessModel()\n        {\n            if(!assetPath.StartsWith(Root+"Models/",StringComparison.Ordinal))return;\n            var m=(ModelImporter)assetImporter;m.animationType=ModelImporterAnimationType.Generic;\n            m.avatarSetup=ModelImporterAvatarSetup.CreateFromThisModel;m.optimizeGameObjects=false;\n            m.importAnimation=assetPath.EndsWith("LOD0.fbx",StringComparison.Ordinal);m.addCollider=false;\n            m.importNormals=ModelImporterNormals.Import;m.importTangents=ModelImporterTangents.CalculateMikk;\n        }\n        private void OnPreprocessTexture()\n        {\n            if(!assetPath.StartsWith(Root+"Textures/",StringComparison.Ordinal))return;\n            var t=(TextureImporter)assetImporter;t.maxTextureSize=4096;t.mipmapEnabled=true;t.anisoLevel=8;\n            t.sRGBTexture=assetPath.Contains("_BaseColor");\n            if(assetPath.Contains("_Normal"))t.textureType=TextureImporterType.NormalMap;\n            t.textureCompression=TextureImporterCompression.CompressedHQ;\n        }\n    }\n    public static class SilencePredatorSetup\n    {\n        private const string Root="Assets/Creatures/SilencePredator";\n        [MenuItem("SILENCE/17 Create Original Predator Demo")]\n        public static void Generate()\n        {\n            if(EditorApplication.isPlayingOrWillChangePlaymode)throw new InvalidOperationException("Stop Play first.");\n            string scenePath=Root+"/Demo/Monster_Demo.unity";\n            if(File.Exists(scenePath)){if(EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())EditorSceneManager.OpenScene(scenePath);return;}\n            if(!File.Exists(Root+"/Models/Vesper_LOD0.fbx"))throw new InvalidOperationException("Run the Blender generator, then copy its Assets/Creatures/SilencePredator folder here.");\n            if(Shader.Find("Universal Render Pipeline/Lit")==null)throw new InvalidOperationException("This demo requires URP Lit.");\n            if(!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())return;\n            foreach(string folder in new[]{"Materials","Animations","Prefabs","Demo"})Folder(Root+"/"+folder);\n            for(int i=0;i<3;i++)AssetDatabase.ImportAsset(Root+"/Models/Vesper_LOD"+i+".fbx",ImportAssetOptions.ForceUpdate|ImportAssetOptions.ForceSynchronousImport);\n            var importer=(ModelImporter)AssetImporter.GetAtPath(Root+"/Models/Vesper_LOD0.fbx");\n            var takes=importer.defaultClipAnimations;\n            string[] loops={"Idle","IdleBreathing","Walk","Stalk","Run","Sprint","ListenLoop","Search","Investigate"};\n            foreach(var take in takes){take.name=take.name.Split(\'|\').Last();take.loopTime=loops.Contains(take.name);take.lockRootRotation=true;take.lockRootHeightY=true;take.lockRootPositionXZ=true;}\n            if(takes.Length!=19)throw new InvalidOperationException("Expected 19 imported takes; inspect the FBX Animation tab.");\n            importer.clipAnimations=takes;importer.SaveAndReimport();\n            var mats=new Dictionary<string,Material>();foreach(string name in new[]{"Skin","Armor","Tissue","Bone"})mats[name]=Material(name);\n            var controller=Controller();var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);\n            var root=new GameObject("Monster_Creature");\n            var main=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Root+"/Models/Vesper_LOD0.fbx"));main.transform.SetParent(root.transform,false);\n            var animator=main.GetComponentInChildren<Animator>(true);if(animator==null)throw new InvalidOperationException("Generic Animator missing; inspect FBX rig import.");\n            animator.runtimeAnimatorController=controller;animator.applyRootMotion=false;\n            var driver=root.AddComponent<MonsterAnimationController>();driver.animator=animator;\n            var bones=main.GetComponentsInChildren<Transform>(true).GroupBy(t=>t.name).ToDictionary(g=>g.Key,g=>g.First());\n            var lods=new LOD[3];var first=main.GetComponentsInChildren<SkinnedMeshRenderer>(true);Assign(first,mats);lods[0]=new LOD(.45f,first);\n            for(int level=1;level<=2;level++)\n            {\n                var bucket=new GameObject("LOD"+level);bucket.transform.SetParent(root.transform,false);\n                var temp=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Root+"/Models/Vesper_LOD"+level+".fbx"));\n                var renderers=new List<SkinnedMeshRenderer>();\n                foreach(var source in temp.GetComponentsInChildren<SkinnedMeshRenderer>(true))\n                {\n                    var go=new GameObject(source.name);go.transform.SetParent(bucket.transform,false);\n                    var matrix=temp.transform.worldToLocalMatrix*source.transform.localToWorldMatrix;\n                    go.transform.localPosition=matrix.GetColumn(3);go.transform.localRotation=matrix.rotation;go.transform.localScale=matrix.lossyScale;\n                    var skin=go.AddComponent<SkinnedMeshRenderer>();skin.sharedMesh=source.sharedMesh;\n                    skin.bones=source.bones.Select(b=>bones.TryGetValue(b.name,out var mapped)?mapped:throw new InvalidOperationException("Bone missing: "+b.name)).ToArray();\n                    skin.rootBone=source.rootBone!=null&&bones.TryGetValue(source.rootBone.name,out var rb)?rb:animator.transform;\n                    skin.localBounds=source.localBounds;renderers.Add(skin);\n                }\n                Object.DestroyImmediate(temp);Assign(renderers.ToArray(),mats);lods[level]=new LOD(level==1?.16f:.03f,renderers.ToArray());\n            }\n            var group=root.AddComponent<LODGroup>();group.SetLODs(lods);group.RecalculateBounds();\n            var body=root.AddComponent<CapsuleCollider>();body.height=2.9f;body.center=Vector3.up*1.45f;body.radius=.5f;\n            foreach(string name in new[]{"Head","Chest","Pelvis"})if(bones.TryGetValue(name,out var bone))\n            {var trigger=bone.gameObject.AddComponent<SphereCollider>();trigger.radius=.3f;trigger.isTrigger=true;}\n            foreach(var pair in new[]{("Audio_Mouth","Jaw"),("Audio_Hearing","Head"),("VFX_Breath","Head")})if(bones.TryGetValue(pair.Item2,out var parent))new GameObject(pair.Item1).transform.SetParent(parent,false);\n            PrefabUtility.SaveAsPrefabAsset(root,Root+"/Prefabs/Monster_Creature.prefab");driver.demoControls=true;\n            var floor=GameObject.CreatePrimitive(PrimitiveType.Cube);floor.name="Demo floor";floor.transform.position=Vector3.down*.05f;floor.transform.localScale=new Vector3(16,.1f,16);\n            var scale=GameObject.CreatePrimitive(PrimitiveType.Capsule);scale.name="Human height reference 1.75m";scale.transform.position=new Vector3(2.4f,.875f,0);scale.transform.localScale=new Vector3(.5f,.875f,.5f);\n            var camera=new GameObject("Main Camera").AddComponent<Camera>();camera.tag="MainCamera";camera.transform.position=new Vector3(4.4f,3.7f,7);camera.transform.LookAt(new Vector3(0,1.5f,0));camera.fieldOfView=45;camera.gameObject.AddComponent<AudioListener>();\n            Light("Key",new Vector3(4,6,5),new Color(1,.85f,.7f),120,root.transform);Light("Fill",new Vector3(-4,4,2),new Color(.65f,.75f,1),70,root.transform);Light("Rim",new Vector3(0,5,-5),Color.white,130,root.transform);\n            RenderSettings.ambientMode=AmbientMode.Flat;RenderSettings.ambientLight=new Color(.17f,.19f,.23f);\n            AssetDatabase.SaveAssets();if(!EditorSceneManager.SaveScene(scene,scenePath))throw new IOException("Cannot save monster demo.");\n            Debug.Log("SILENCE: prefab and demo created. Check deformation, clips, hearing plates, LOD and materials in Play. This is not native visual/performance approval or a replacement of the authoritative game creature.");\n        }\n        private static void Assign(SkinnedMeshRenderer[] renderers,Dictionary<string,Material> materials)\n        {\n            foreach(var r in renderers){string key=materials.Keys.First(k=>r.name.StartsWith(k,StringComparison.Ordinal));r.sharedMaterials=new[]{materials[key]};r.localBounds=new Bounds(new Vector3(0,1.45f,0),new Vector3(6,5,7));}\n        }\n        private static Material Material(string name)\n        {\n            string path=Root+"/Materials/"+name+".mat";var old=AssetDatabase.LoadAssetAtPath<Material>(path);if(old!=null)return old;\n            var mat=new Material(Shader.Find("Universal Render Pipeline/Lit")){name=name};\n            if(name=="Bone"){mat.SetColor("_BaseColor",new Color(.24f,.205f,.155f));mat.SetFloat("_Smoothness",.57f);}\n            else\n            {\n                Texture2D Map(string suffix)=>AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/"+name+suffix+".png")??throw new InvalidOperationException("Missing map "+name+suffix);\n                mat.SetTexture("_BaseMap",Map("_BaseColor"));mat.SetTexture("_BumpMap",Map("_Normal"));mat.SetTexture("_MetallicGlossMap",Map("_Mask"));mat.SetTexture("_OcclusionMap",Map("_Mask"));\n                mat.SetFloat("_BumpScale",.55f);mat.SetFloat("_Smoothness",1);mat.EnableKeyword("_NORMALMAP");mat.EnableKeyword("_METALLICSPECGLOSSMAP");mat.EnableKeyword("_OCCLUSIONMAP");\n            }\n            AssetDatabase.CreateAsset(mat,path);return mat;\n        }\n        private static AnimatorController Controller()\n        {\n            string path=Root+"/Animations/Monster.controller";var old=AssetDatabase.LoadAssetAtPath<AnimatorController>(path);if(old!=null)return old;\n            var clips=AssetDatabase.LoadAllAssetsAtPath(Root+"/Models/Vesper_LOD0.fbx").OfType<AnimationClip>().Where(c=>!c.name.StartsWith("__",StringComparison.Ordinal)).ToArray();\n            string[] names={"Idle","IdleBreathing","Walk","Stalk","Run","Sprint","ListenStart","ListenLoop","ListenEnd","Alert","TurnLeft","TurnRight","AttackBite","AttackClaw","Lunge","Search","Investigate","Stunned","Recover"};\n            var controller=AnimatorController.CreateAnimatorControllerAtPath(path);var machine=controller.layers[0].stateMachine;var states=new Dictionary<string,AnimatorState>();\n            foreach(string name in names){var clip=clips.FirstOrDefault(c=>c.name==name||c.name.EndsWith("|"+name,StringComparison.Ordinal));if(clip==null)throw new InvalidOperationException("Imported clip missing: "+name);var state=machine.AddState(name);state.motion=clip;states[name]=state;}\n            machine.defaultState=states["Idle"];\n            foreach(string name in new[]{"ListenStart","ListenEnd","Alert","AttackBite","AttackClaw","Lunge","Stunned","Recover"}){var t=states[name].AddTransition(states[name=="ListenStart"?"ListenLoop":"Idle"]);t.hasExitTime=true;t.exitTime=1;t.duration=.08f;}\n            return controller;\n        }\n        private static void Light(string name,Vector3 position,Color color,float intensity,Transform subject){var l=new GameObject(name).AddComponent<Light>();l.type=LightType.Spot;l.transform.position=position;l.transform.LookAt(subject.position+Vector3.up*1.5f);l.range=20;l.spotAngle=80;l.color=color;l.intensity=intensity;l.shadows=LightShadows.Soft;}\n        private static void Folder(string path){if(AssetDatabase.IsValidFolder(path))return;int slash=path.LastIndexOf(\'/\');Folder(path.Substring(0,slash));AssetDatabase.CreateFolder(path.Substring(0,slash),path.Substring(slash+1));}\n    }\n}\n#endif\n'
+UNITY_EDITOR = '#if UNITY_EDITOR\nusing System;\nusing System.IO;\nusing System.Linq;\nusing System.Collections.Generic;\nusing UnityEditor;\nusing UnityEditor.Animations;\nusing UnityEditor.SceneManagement;\nusing UnityEngine;\nusing UnityEngine.Rendering;\nusing Silence.Predator;\nusing Object = UnityEngine.Object;\nnamespace Silence.Predator.Editor\n{\n    internal sealed class PredatorImporter : AssetPostprocessor\n    {\n        private const string Root="Assets/Creatures/SilencePredator/";\n        private void OnPreprocessModel()\n        {\n            if(!assetPath.StartsWith(Root+"Models/",StringComparison.Ordinal))return;\n            var m=(ModelImporter)assetImporter;m.animationType=ModelImporterAnimationType.Generic;\n            m.avatarSetup=ModelImporterAvatarSetup.CreateFromThisModel;m.optimizeGameObjects=false;\n            m.importAnimation=assetPath.EndsWith("LOD0.fbx",StringComparison.Ordinal);m.addCollider=false;\n            m.importNormals=ModelImporterNormals.Import;m.importTangents=ModelImporterTangents.CalculateMikk;\n        }\n        private void OnPreprocessTexture()\n        {\n            if(!assetPath.StartsWith(Root+"Textures/",StringComparison.Ordinal))return;\n            var t=(TextureImporter)assetImporter;t.maxTextureSize=4096;t.mipmapEnabled=true;t.anisoLevel=8;\n            t.sRGBTexture=assetPath.Contains("_BaseColor");\n            if(assetPath.Contains("_Normal"))t.textureType=TextureImporterType.NormalMap;\n            t.textureCompression=TextureImporterCompression.CompressedHQ;\n        }\n    }\n    public static class SilencePredatorSetup\n    {\n        private const string Root="Assets/Creatures/SilencePredator";\n        [MenuItem("SILENCE/17 Create Original Predator Demo")]\n        public static void Generate()\n        {\n            if(EditorApplication.isPlayingOrWillChangePlaymode)throw new InvalidOperationException("Stop Play first.");\n            string scenePath=Root+"/Demo/Monster_Demo.unity";\n            if(File.Exists(scenePath)){if(EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())EditorSceneManager.OpenScene(scenePath);return;}\n            if(!File.Exists(Root+"/Models/Vesper_LOD0.fbx"))throw new InvalidOperationException("Run the Blender generator, then copy its Assets/Creatures/SilencePredator folder here.");\n            if(Shader.Find("Universal Render Pipeline/Lit")==null)throw new InvalidOperationException("This demo requires URP Lit.");\n            if(!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())return;\n            foreach(string folder in new[]{"Materials","Animations","Prefabs","Demo"})Folder(Root+"/"+folder);\n            for(int i=0;i<3;i++)AssetDatabase.ImportAsset(Root+"/Models/Vesper_LOD"+i+".fbx",ImportAssetOptions.ForceUpdate|ImportAssetOptions.ForceSynchronousImport);\n            var importer=(ModelImporter)AssetImporter.GetAtPath(Root+"/Models/Vesper_LOD0.fbx");\n            var takes=importer.defaultClipAnimations;\n            string[] loops={"Idle","IdleBreathing","Walk","Stalk","Run","Sprint","ListenLoop","Search","Investigate"};\n            foreach(var take in takes){take.name=take.name.Split(\'|\').Last();take.loopTime=loops.Contains(take.name);take.lockRootRotation=true;take.lockRootHeightY=true;take.lockRootPositionXZ=true;}\n            if(takes.Length!=19)throw new InvalidOperationException("Expected 19 imported takes; inspect the FBX Animation tab.");\n            importer.clipAnimations=takes;importer.SaveAndReimport();\n            var mats=new Dictionary<string,Material>();foreach(string name in new[]{"Skin","Armor","Tissue","Bone"})mats[name]=Material(name);\n            var controller=Controller();var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);\n            var root=new GameObject("Monster_Creature");\n            var main=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Root+"/Models/Vesper_LOD0.fbx"));main.transform.SetParent(root.transform,false);\n            var animator=main.GetComponentInChildren<Animator>(true);if(animator==null)throw new InvalidOperationException("Generic Animator missing; inspect FBX rig import.");\n            animator.runtimeAnimatorController=controller;animator.applyRootMotion=false;\n            var driver=root.AddComponent<MonsterAnimationController>();driver.animator=animator;\n            var bones=main.GetComponentsInChildren<Transform>(true).GroupBy(t=>t.name).ToDictionary(g=>g.Key,g=>g.First());\n            var lods=new LOD[3];var first=main.GetComponentsInChildren<SkinnedMeshRenderer>(true);Assign(first,mats);lods[0]=new LOD(.45f,first);\n            for(int level=1;level<=2;level++)\n            {\n                var bucket=new GameObject("LOD"+level);bucket.transform.SetParent(root.transform,false);\n                var temp=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Root+"/Models/Vesper_LOD"+level+".fbx"));\n                var renderers=new List<SkinnedMeshRenderer>();\n                foreach(var source in temp.GetComponentsInChildren<SkinnedMeshRenderer>(true))\n                {\n                    var go=new GameObject(source.name);go.transform.SetParent(bucket.transform,false);\n                    var matrix=temp.transform.worldToLocalMatrix*source.transform.localToWorldMatrix;\n                    go.transform.localPosition=matrix.GetColumn(3);go.transform.localRotation=matrix.rotation;go.transform.localScale=matrix.lossyScale;\n                    var skin=go.AddComponent<SkinnedMeshRenderer>();skin.sharedMesh=source.sharedMesh;\n                    skin.bones=source.bones.Select(b=>bones.TryGetValue(b.name,out var mapped)?mapped:throw new InvalidOperationException("Bone missing: "+b.name)).ToArray();\n                    skin.rootBone=source.rootBone!=null&&bones.TryGetValue(source.rootBone.name,out var rb)?rb:animator.transform;\n                    skin.localBounds=source.localBounds;renderers.Add(skin);\n                }\n                Object.DestroyImmediate(temp);Assign(renderers.ToArray(),mats);lods[level]=new LOD(level==1?.16f:.03f,renderers.ToArray());\n            }\n            var group=root.AddComponent<LODGroup>();group.SetLODs(lods);group.RecalculateBounds();\n            var body=root.AddComponent<CapsuleCollider>();body.height=2.9f;body.center=Vector3.up*1.45f;body.radius=.5f;\n            foreach(string name in new[]{"Head","Chest","Pelvis"})if(bones.TryGetValue(name,out var bone))\n            {var trigger=bone.gameObject.AddComponent<SphereCollider>();trigger.radius=.3f;trigger.isTrigger=true;}\n            foreach(var pair in new[]{("Audio_Mouth","Jaw"),("Audio_Hearing","Head"),("VFX_Breath","Head")})if(bones.TryGetValue(pair.Item2,out var parent))new GameObject(pair.Item1).transform.SetParent(parent,false);\n            PrefabUtility.SaveAsPrefabAsset(root,Root+"/Prefabs/Monster_Creature.prefab");driver.demoControls=true;\n            var floor=GameObject.CreatePrimitive(PrimitiveType.Cube);floor.name="Demo floor";floor.transform.position=Vector3.down*.05f;floor.transform.localScale=new Vector3(16,.1f,16);\n            var scale=GameObject.CreatePrimitive(PrimitiveType.Capsule);scale.name="Human height reference 1.75m";scale.transform.position=new Vector3(2.4f,.875f,0);scale.transform.localScale=new Vector3(.5f,.875f,.5f);\n            var camera=new GameObject("Main Camera").AddComponent<Camera>();camera.tag="MainCamera";camera.transform.position=new Vector3(4.4f,3.7f,7);camera.transform.LookAt(new Vector3(0,1.5f,0));camera.fieldOfView=45;camera.gameObject.AddComponent<AudioListener>();\n            Light("Key",new Vector3(4,6,5),new Color(1,.85f,.7f),120,root.transform);Light("Fill",new Vector3(-4,4,2),new Color(.65f,.75f,1),70,root.transform);Light("Rim",new Vector3(0,5,-5),Color.white,130,root.transform);\n            RenderSettings.ambientMode=AmbientMode.Flat;RenderSettings.ambientLight=new Color(.17f,.19f,.23f);\n            AssetDatabase.SaveAssets();if(!EditorSceneManager.SaveScene(scene,scenePath))throw new IOException("Cannot save monster demo.");\n            Debug.Log("SILENCE: prefab and demo created. Check deformation, clips, hearing plates, LOD and materials in Play. This is not native visual/performance approval or a replacement of the authoritative game creature.");\n        }\n        private static void Assign(SkinnedMeshRenderer[] renderers,Dictionary<string,Material> materials)\n        {\n            foreach(var r in renderers){string key=materials.Keys.First(k=>r.name.StartsWith(k,StringComparison.Ordinal));r.sharedMaterials=new[]{materials[key]};r.localBounds=new Bounds(new Vector3(0,1.45f,0),new Vector3(6,5,7));}\n        }\n        private static Material Material(string name)\n        {\n            string path=Root+"/Materials/"+name+".mat";var old=AssetDatabase.LoadAssetAtPath<Material>(path);if(old!=null)return old;\n            var mat=new Material(Shader.Find("Universal Render Pipeline/Lit")){name=name};\n            Texture2D Map(string suffix)=>AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/"+name+suffix+".png")??throw new InvalidOperationException("Missing map "+name+suffix);\n            mat.SetTexture("_BaseMap",Map("_BaseColor"));mat.SetTexture("_BumpMap",Map("_Normal"));mat.SetTexture("_MetallicGlossMap",Map("_Mask"));mat.SetTexture("_OcclusionMap",Map("_Mask"));\n            mat.SetFloat("_BumpScale",.55f);mat.SetFloat("_Smoothness",1);mat.EnableKeyword("_NORMALMAP");mat.EnableKeyword("_METALLICSPECGLOSSMAP");mat.EnableKeyword("_OCCLUSIONMAP");\n            AssetDatabase.CreateAsset(mat,path);return mat;\n        }\n        private static AnimatorController Controller()\n        {\n            string path=Root+"/Animations/Monster.controller";var old=AssetDatabase.LoadAssetAtPath<AnimatorController>(path);if(old!=null)return old;\n            var clips=AssetDatabase.LoadAllAssetsAtPath(Root+"/Models/Vesper_LOD0.fbx").OfType<AnimationClip>().Where(c=>!c.name.StartsWith("__",StringComparison.Ordinal)).ToArray();\n            string[] names={"Idle","IdleBreathing","Walk","Stalk","Run","Sprint","ListenStart","ListenLoop","ListenEnd","Alert","TurnLeft","TurnRight","AttackBite","AttackClaw","Lunge","Search","Investigate","Stunned","Recover"};\n            var controller=AnimatorController.CreateAnimatorControllerAtPath(path);var machine=controller.layers[0].stateMachine;var states=new Dictionary<string,AnimatorState>();\n            foreach(string name in names){var clip=clips.FirstOrDefault(c=>c.name==name||c.name.EndsWith("|"+name,StringComparison.Ordinal));if(clip==null)throw new InvalidOperationException("Imported clip missing: "+name);var state=machine.AddState(name);state.motion=clip;states[name]=state;}\n            machine.defaultState=states["Idle"];\n            foreach(string name in new[]{"ListenStart","ListenEnd","Alert","AttackBite","AttackClaw","Lunge","Stunned","Recover"}){var t=states[name].AddTransition(states[name=="ListenStart"?"ListenLoop":"Idle"]);t.hasExitTime=true;t.exitTime=1;t.duration=.08f;}\n            return controller;\n        }\n        private static void Light(string name,Vector3 position,Color color,float intensity,Transform subject){var l=new GameObject(name).AddComponent<Light>();l.type=LightType.Spot;l.transform.position=position;l.transform.LookAt(subject.position+Vector3.up*1.5f);l.range=20;l.spotAngle=80;l.color=color;l.intensity=intensity;l.shadows=LightShadows.Soft;}\n        private static void Folder(string path){if(AssetDatabase.IsValidFolder(path))return;int slash=path.LastIndexOf(\'/\');Folder(path.Substring(0,slash));AssetDatabase.CreateFolder(path.Substring(0,slash),path.Substring(slash+1));}\n    }\n}\n#endif\n'
 (ART/'Editor/SilencePredatorSetup.cs').write_text(UNITY_EDITOR,encoding='utf-8')

@@ -1,9 +1,9 @@
 {
   "kind": "Actual procedural original creature first pass; not completed AAA art",
-  "generator_sha256": "17dfb39adbab2331e71810eb37b1b13773fa9a5a39c9c61438f297ffe45f4617",
+  "generator_sha256": "b807e24ff78b3f25362c657e27ab6b4c8ca9ccd1ea35da5858dec148046d3bc8",
   "blender_version": "5.2.3 LTS",
   "blender_checks": {
-    "passed": 97,
+    "passed": 104,
     "failed": 0
   },
   "repeat_preservation_checks": {
@@ -15,16 +15,16 @@
     "failed": 0
   },
   "csharp_syntax": "105 files x 5 define configurations, 0 syntax errors; Unity binding not tested",
-  "actual_outputs_verified_against_hashes": 15,
+  "actual_outputs_verified_against_hashes": 18,
   "texture_resolution": 4096,
   "lod_triangles": {
-    "0": 85008,
-    "1": 36552,
-    "2": 10199
+    "0": 141488,
+    "1": 53996,
+    "2": 15996
   },
   "deform_bones": 55,
   "actions": 19,
-  "reviewed_render_views": 7,
+  "reviewed_render_views": 9,
   "fbx_sampled_surface_tolerance_m": 0.025,
   "unity_editor_run": false,
   "native_prefab_and_demo_created": false,
@@ -43,12 +43,12 @@
   "additional_runtime_verified": {
     "version": "bpy 5.2.3 / Python 3.13, Linux",
     "texture_size": 4096,
-    "passed": 97,
+    "passed": 104,
     "failed": 0,
     "native_mac_gui_tested": false,
-    "report": "material-fix-roundtrip.json"
+    "report": "maw-blender.json"
   },
-  "latest_full_generation_report": "material-fix-roundtrip.json",
+  "latest_full_generation_report": "maw-blender.json",
   "material_regression": {
     "blender_4_3_2": {
       "passed": 21,
@@ -59,6 +59,21 @@
       "failed": 0
     },
     "native_translated_mac_gui_tested": false,
-    "scope": "Actual bpy nodes renamed including Russian names; missing shaders and empty trees; old English-name lookup failure reproduced."
-  }
+    "scope": "Actual bpy nodes renamed including Russian names; missing shaders and empty trees; old English-name lookup failure reproduced.",
+    "current_generator_bpy_5_2_3_report": "maw-materials-5.2.json"
+  },
+  "morphology": {
+    "mouth_opening_metres": [
+      1.07,
+      1.23
+    ],
+    "fangs": 104,
+    "fang_rows": 3,
+    "fang_layout": "full 360 degree circumference, including upper/lower/lateral sectors",
+    "jaw": "independent articulated lower half and weighted commissures",
+    "body_surface": "displaced dermis, scar grooves, raised folds, chipped scutes and dorsal hooks"
+  },
+  "texture_sets": 4,
+  "texture_images": 12,
+  "render_report": "maw-renders.json"
 }

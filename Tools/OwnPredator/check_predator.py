@@ -17,7 +17,7 @@ def evaluated(objects):
  return result
 check(len(mapping)==19 and all(n in bpy.data.actions for n in mapping.values()),'19 distinct actions survive saving/reopening .blend')
 images={node.image for ob in scene.objects if ob.type=='MESH' and ob.name.endswith('_LOD0') for mat in ob.data.materials if mat and mat.use_nodes for node in mat.node_tree.nodes if node.type=='TEX_IMAGE' and node.image}
-check(len(images)==9 and all(pathlib.Path(bpy.path.abspath(im.filepath)).is_file() for im in images),'All nine saved material texture links resolve after reopening')
+check(len(images)==12 and all(pathlib.Path(bpy.path.abspath(im.filepath)).is_file() for im in images),'All twelve saved material texture links resolve after reopening')
 check(sum(b.use_deform for b in rig.data.bones)==55,'55 deform bones')
 check(sum(b.name.startswith('Hearing_') for b in rig.data.bones)==6,'Six independent hearing valves')
 check(sum(c.type=='IK' for p in rig.pose.bones for c in p.constraints)==4,'Four leg IK chains exist')
@@ -33,6 +33,26 @@ for level in range(3):
  check(good and len(meshes)==4,'LOD'+str(level)+' four UV-mapped material meshes')
  check(norm and limit and finite,'LOD'+str(level)+' finite geometry, normalized <=4 bone influences')
 check(triangles[0]>triangles[1]>triangles[2],'Strictly decreasing LOD counts',triangles=triangles)
+if 'silence_morphology' in rig:
+ morphology=json.loads(rig['silence_morphology'])
+ check(all(low<=value<=high for value,(low,high) in zip(triangles,[(80000,150000),(35000,60000),(10000,20000)])),
+       'All three LODs fit the requested triangle ranges',triangles=triangles)
+ # Count actual disconnected fang surfaces after joining/decimation, not source object names.
+ teeth=next(o for o in scene.objects if o.name=='Bone_LOD0');parents=list(range(len(teeth.data.vertices)))
+ def find_root(index):
+  while parents[index]!=index:parents[index]=parents[parents[index]];index=parents[index]
+  return index
+ for edge in teeth.data.edges:
+  a,b=map(find_root,edge.vertices);parents[b]=a
+ components={}
+ for vertex in teeth.data.vertices:components.setdefault(find_root(vertex.index),[]).append(vertex.co.copy())
+ fangs=[]
+ for points in components.values():
+  center=sum(points,points[0]*0)/len(points)
+  if center.y<-1.60 and center.z>1.30:fangs.append(center)
+ check(len(fangs)==morphology['fangs']==104,'Actual joined mesh retains 104 individual fangs',actual_fangs=len(fangs))
+ sectors=[sum((p.x>=0)==right and (p.z>=2.28)==upper for p in fangs) for right in [False,True] for upper in [False,True]]
+ check(min(sectors)>=20,'Fangs occupy upper, lower and both lateral mouth sectors',sector_counts=sectors)
 for name in mapping:
  for fraction in [0,.5,1]:
   pose(name,fraction)
@@ -40,9 +60,13 @@ for name in mapping:
 pose('Idle',0);closed={b:rig.pose.bones[b].matrix.copy() for b in rig.pose.bones.keys() if b.startswith('Hearing_')}
 pose('ListenLoop',.5)
 check(all(sum(abs(a-b) for row1,row2 in zip(m,rig.pose.bones[n].matrix) for a,b in zip(row1,row2))>.2 for n,m in closed.items()),'All six hearing valves actually change pose')
+if 'silence_morphology' in rig:
+ pose('Idle',0);closed_jaw=(rig.pose.bones['Head'].matrix.inverted()@rig.pose.bones['Jaw'].matrix).to_quaternion()
+ pose('AttackBite',.5);open_jaw=(rig.pose.bones['Head'].matrix.inverted()@rig.pose.bones['Jaw'].matrix).to_quaternion()
+ check(closed_jaw.rotation_difference(open_jaw).angle>.15,'Rebuilt mandible still articulates independently of the skull')
 body=next(o for o in scene.objects if o.name=='Skin_LOD0');pose('Idle',0);coords=evaluated([body]);mn=[min(p[i] for p in coords) for i in range(3)];mx=[max(p[i] for p in coords) for i in range(3)]
 check(2.4<mx[2]<3.3,'Creature height in metres',skin_bounds=[mn,mx])
-for name in ['Skin','Armor','Tissue']:
+for name in ['Skin','Armor','Tissue','Bone']:
  for suffix in ['BaseColor','Normal','Mask']:
   p=OUT/'Assets/Creatures/SilencePredator/Textures'/(name+'_'+suffix+'.png')
   im=bpy.data.images.load(str(p),check_existing=False);check(tuple(im.size)==(4096,4096),'4K map '+name+' '+suffix);bpy.data.images.remove(im)
