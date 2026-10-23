@@ -42,12 +42,13 @@
     "local key and target detection",
     "host RPC send and receive",
     "server validation/application",
-    "door opens/closes with observed hinge rotation"
+    "door opens/closes with observed hinge rotation",
+    "walking through the opened doorway (explicit owner confirmation)"
   ],
   "notConfirmed": [
-    "walking through the doorway",
     "pickup/inventory acceptance",
     "separate client replication",
     "two/four process tests"
-  ]
+  ],
+  "ownerTraversalConfirmation": "Теперь открывается и можно пройти"
 }
