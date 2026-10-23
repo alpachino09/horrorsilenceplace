@@ -9,6 +9,7 @@ namespace Silence.Interactions
     {
         [SerializeField] private ItemDefinition definition;
         private bool consumed;
+        public bool Consumed => consumed;
         public ItemDefinition Definition => definition;
         public void Configure(ItemDefinition item) => definition = item;
         public override bool CanInteract(PlayerContext player) =>
@@ -24,11 +25,18 @@ namespace Silence.Interactions
                     ? "Inventory full (3 slots)." : "Инвентарь заполнен (3 слота).");
                 return false;
             }
-            consumed = true;
-            gameObject.SetActive(false);
+            SetConsumed(true);
             player.ShowMessage(PrototypePreferences.English
                 ? "Taken: " + definition.labelEn : "Взято: " + definition.labelRu);
             return true;
+        }
+
+        internal void SetConsumed(bool value)
+        {
+            consumed = value;
+            // Keep the entity alive so late snapshots cannot resurrect a pickup.
+            foreach (var visual in GetComponentsInChildren<Renderer>(true)) visual.enabled = !value;
+            foreach (var shape in GetComponentsInChildren<Collider>(true)) shape.enabled = !value;
         }
     }
 }

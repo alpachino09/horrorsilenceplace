@@ -20,6 +20,7 @@ namespace Silence.Networking
             player.Bind(this);
         }
         public bool IsLocalOwner(PlayerContext actor) => actor != null && actor == localPlayer;
+        public bool CanSimulate(PlayerContext actor) => IsLocalOwner(actor);
         public bool RequestInteraction(PlayerContext actor, Interactable target)
         {
             if (!IsLocalOwner(actor) || target == null || Time.time < nextInteractionTime)

@@ -1,0 +1,145 @@
+{
+  "kind": "official source signature review only; NOT Unity compilation/ILPP/runtime validation",
+  "url": "https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/ngo/2.7.0",
+  "commit": "b1ca57132eb8fde7f25eb287df93021e68a57087",
+  "ngo": "2.7.0",
+  "transportDependency": "2.6.0",
+  "checks": [
+    {
+      "source": "Runtime/Messaging/RpcAttributes.cs",
+      "sha256": "23259555d17f0a04e17140b3c850d988eb4fea09a505d0b33985708b82ace7ae",
+      "signatures": [
+        {
+          "text": "public enum RpcInvokePermission",
+          "found": true
+        },
+        {
+          "text": "public RpcInvokePermission InvokePermission",
+          "found": true
+        },
+        {
+          "text": "public RpcAttribute(SendTo target)",
+          "found": true
+        }
+      ]
+    },
+    {
+      "source": "Runtime/Messaging/RpcParams.cs",
+      "sha256": "9eb14662568bb160a67e71161136cb741818476dbbf9afaaa39c23a546d73025",
+      "signatures": [
+        {
+          "text": "public struct RpcParams",
+          "found": true
+        },
+        {
+          "text": "public RpcReceiveParams Receive",
+          "found": true
+        },
+        {
+          "text": "public ulong SenderClientId",
+          "found": true
+        }
+      ]
+    },
+    {
+      "source": "Runtime/Transports/UTP/UnityTransport.cs",
+      "sha256": "902cb286d979e463b579fc12e69b2ae8f5a11e512c5cdd73d752ca90db72f1b2",
+      "signatures": [
+        {
+          "text": "public void SetConnectionData(string ipv4Address, ushort port, string listenAddress = null)",
+          "found": true
+        }
+      ]
+    },
+    {
+      "source": "Runtime/Core/NetworkManager.cs",
+      "sha256": "459e616a14a7fac0ba29abcc116a8b68bb0faeded3a250b337fec75c3f79483c",
+      "signatures": [
+        {
+          "text": "public Action<ConnectionApprovalRequest, ConnectionApprovalResponse> ConnectionApprovalCallback",
+          "found": true
+        },
+        {
+          "text": "public event Action<ulong> OnClientDisconnectCallback",
+          "found": true
+        },
+        {
+          "text": "public event Action<bool> OnClientStopped",
+          "found": true
+        },
+        {
+          "text": "public event Action OnTransportFailure",
+          "found": true
+        },
+        {
+          "text": "public bool ShutdownInProgress",
+          "found": true
+        },
+        {
+          "text": "public void Shutdown(bool discardMessageQueue = false)",
+          "found": true
+        }
+      ]
+    },
+    {
+      "source": "Runtime/Timing/NetworkTickSystem.cs",
+      "sha256": "fcf8c2c7833b5f4c7fece8fca13bb108ec2d3d9becdd6fe5da7ac7f56a0ee8bc",
+      "signatures": [
+        {
+          "text": "public event Action Tick",
+          "found": true
+        }
+      ]
+    },
+    {
+      "source": "Runtime/Configuration/NetworkConfig.cs",
+      "sha256": "112a63a2992cf73ac3c71a44dab707ddf4c663c3dedd6820d7c3dad223f19a94",
+      "signatures": [
+        {
+          "text": "public ushort ProtocolVersion",
+          "found": true
+        },
+        {
+          "text": "public uint TickRate",
+          "found": true
+        },
+        {
+          "text": "public bool ConnectionApproval",
+          "found": true
+        },
+        {
+          "text": "public bool EnableSceneManagement",
+          "found": true
+        }
+      ]
+    },
+    {
+      "source": "Runtime/Serialization/BufferSerializer.cs",
+      "sha256": "8087a3a32fdf194f9483e5a1ac69aacbca8cb8aa2c946cba55a77adc5dbd94e5",
+      "signatures": [
+        {
+          "text": "ref T value, FastBufferWriter.ForFixedStrings",
+          "found": true
+        },
+        {
+          "text": "public void SerializeValue(ref Vector3 value)",
+          "found": true
+        }
+      ]
+    },
+    {
+      "source": "Runtime/SceneManagement/DefaultSceneManagerHandler.cs",
+      "sha256": "4348f8eb80f627ca852fcf9cb9a5583f07b7b6833ee2d315391e496bf71ce99b",
+      "signatures": [
+        {
+          "text": "public bool ClientShouldPassThrough",
+          "found": true
+        },
+        {
+          "text": "sceneName == activeScene.name",
+          "found": true
+        }
+      ]
+    }
+  ]
+}

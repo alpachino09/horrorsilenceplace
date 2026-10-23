@@ -8,6 +8,8 @@ namespace Silence.Interactions
     {
         [SerializeField] private float openingAngle = 100f;
         private bool open;
+        public bool IsOpen => open;
+        internal void SetOpen(bool value) => open = value;
         private Quaternion closedRotation;
         private void Awake() => closedRotation = transform.localRotation;
         public override string GetPrompt(bool english) => english

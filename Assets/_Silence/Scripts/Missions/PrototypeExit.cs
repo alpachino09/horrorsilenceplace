@@ -7,6 +7,7 @@ namespace Silence.Missions
     public sealed class PrototypeExit : Interactable
     {
         public bool Completed { get; private set; }
+        internal void SetCompleted(bool value) => Completed = value;
         public override string GetPrompt(bool english) => english
             ? "Finish the prototype walkthrough" : "Завершить маршрут прототипа";
         internal override bool Apply(PlayerContext player)

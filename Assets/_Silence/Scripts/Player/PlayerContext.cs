@@ -38,7 +38,11 @@ namespace Silence.Player
             SpawnPosition = transform.position;
             SpawnRotation = transform.rotation;
             bool local = IsLocalOwner;
-            view.gameObject.SetActive(local);
+            // Remote eyes remain transforms for server raycasts and replicated lamps.
+            view.gameObject.SetActive(true);
+            view.enabled = local;
+            var listener = view.GetComponent<AudioListener>();
+            if (listener != null) listener.enabled = local;
             input.enabled = local;
         }
     }

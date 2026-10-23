@@ -1,0 +1,292 @@
+{
+  "kind": "static structure checks only",
+  "checks": [
+    {
+      "check": "unique assembly Silence.Editor",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.Runtime",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.Core",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.PlayModeTests",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.EditModeTests",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.Multiplayer",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.Multiplayer.Editor",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Editor",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Runtime",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Core",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.PlayModeTests",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.EditModeTests",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Multiplayer",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Multiplayer.Editor",
+      "passed": true
+    },
+    {
+      "check": "acyclic internal assembly graph",
+      "passed": true
+    },
+    {
+      "check": "pure core has no engine references",
+      "passed": true
+    },
+    {
+      "check": "editor code excluded from players",
+      "passed": true
+    },
+    {
+      "check": "multiplayer editor excluded from players",
+      "passed": true
+    },
+    {
+      "check": "official networking dependencies pinned to inspected source versions",
+      "passed": true
+    },
+    {
+      "check": "source pack does not replace owner project manifest",
+      "passed": true
+    },
+    {
+      "check": "all input actions present",
+      "passed": true
+    },
+    {
+      "check": "bindings reference existing actions",
+      "passed": true
+    },
+    {
+      "check": "settings mouse does not capture the cursor",
+      "passed": true
+    },
+    {
+      "check": "unique input UUIDs",
+      "passed": true
+    },
+    {
+      "check": "valid input UUIDs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime AssemblyInfo.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime SceneQuery.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime FarmBootstrap.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime OfflineWorldAuthority.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime IWorldAuthority.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime InteractionRules.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime CommandInbox.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime InventoryModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime SessionAdmission.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime NoiseMath.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime InteractionGate.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerCommand.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime ItemDefinition.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime NoiseEvent.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime NoiseSystem.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerFlashlight.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerLook.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime FirstPersonMotor.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerContext.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime BootstrapLoader.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PrototypeExit.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PrototypePreferences.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PrototypeHud.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime ItemPickup.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PrototypeRadio.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime IInteractable.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime Interactable.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PrototypeDoor.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime InteractionScanner.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerInputReader.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerSettings.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkPackets.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkSession.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkSmokeProbe.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkInteractable.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkPlayer.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkWorldAuthority.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core InteractionRules.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core CommandInbox.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core InventoryModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core SessionAdmission.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core NoiseMath.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core InteractionGate.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core PlayerCommand.cs",
+      "passed": true
+    },
+    {
+      "check": "six original documents preserved",
+      "passed": true
+    },
+    {
+      "check": "all 126 questionnaire entries",
+      "passed": true
+    }
+  ],
+  "passed": 71,
+  "failed": 0,
+  "csharp_assets": 46
+}

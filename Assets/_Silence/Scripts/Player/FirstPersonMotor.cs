@@ -26,11 +26,12 @@ namespace Silence.Player
                 active && input.Crouch, active && input.JumpPressed, Time.deltaTime);
         }
 
-        // Explicit tick seam for PlayMode tests and a later prediction adapter.
-        // Transport/server reconciliation is not implemented by this method.
+        // Shared simulation step: offline Update or the authoritative network tick.
+        // Client prediction/reconciliation is not implemented by this method.
         public void Simulate(Vector2 axis, bool sprint, bool crouch, bool jump, float deltaTime)
         {
-            if (!player.IsLocalOwner || deltaTime <= 0f || float.IsNaN(deltaTime) ||
+            if (player.Authority == null || !player.Authority.CanSimulate(player) ||
+                deltaTime <= 0f || float.IsNaN(deltaTime) ||
                 float.IsInfinity(deltaTime)) return;
             var config = player.Settings;
             if (IsCrouched && !crouch && !CanStand()) crouch = true;
@@ -72,7 +73,7 @@ namespace Silence.Player
 
         public void Respawn()
         {
-            if (!player.IsLocalOwner) return;
+            if (player.Authority == null || !player.Authority.CanSimulate(player)) return;
             controller.enabled = false;
             transform.SetPositionAndRotation(player.SpawnPosition, player.SpawnRotation);
             controller.enabled = true;

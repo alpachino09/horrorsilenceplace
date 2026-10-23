@@ -32,3 +32,4 @@ Tools/*/bin/
 !.env.example
 TestResults/
 artifacts/
+__pycache__/

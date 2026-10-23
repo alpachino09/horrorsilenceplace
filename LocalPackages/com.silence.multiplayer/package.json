@@ -1,0 +1,11 @@
+{
+  "name": "com.silence.multiplayer",
+  "version": "0.2.0",
+  "displayName": "SILENCE Multiplayer",
+  "description": "Server-authoritative LAN co-op for the SILENCE project. Requires project Silence.Runtime and Silence.Core assemblies.",
+  "unity": "6000.0",
+  "dependencies": {
+    "com.unity.netcode.gameobjects": "2.7.0",
+    "com.unity.transport": "2.6.0"
+  }
+}

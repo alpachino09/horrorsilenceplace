@@ -26,8 +26,8 @@ namespace Silence.Tests
             while (!load.isDone && Time.realtimeSinceStartup < deadline) yield return null;
             Assert.That(load.isDone, Is.True, "Farm load timed out.");
             yield return null;
-            player = Object.FindFirstObjectByType<PlayerContext>();
-            authority = Object.FindFirstObjectByType<OfflineWorldAuthority>();
+            player = Object.FindAnyObjectByType<PlayerContext>();
+            authority = Object.FindAnyObjectByType<OfflineWorldAuthority>();
             Assert.That(player, Is.Not.Null);
             Assert.That(authority, Is.Not.Null);
             PlayerLook.Capture(false);
@@ -37,9 +37,9 @@ namespace Silence.Tests
         public void SceneHasOneOwnedCameraAndAudioListener()
         {
             Assert.That(player.IsLocalOwner, Is.True);
-            Assert.That(Object.FindObjectsByType<Camera>(FindObjectsSortMode.None)
+            Assert.That(SceneQuery.All<Camera>()
                 .Count(c => c.isActiveAndEnabled), Is.EqualTo(1));
-            Assert.That(Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None)
+            Assert.That(SceneQuery.All<AudioListener>()
                 .Count(l => l.isActiveAndEnabled), Is.EqualTo(1));
         }
 
@@ -87,7 +87,7 @@ namespace Silence.Tests
         [Test]
         public void ForeignActorAndOutOfRangeRequestsAreRejected()
         {
-            var target = Object.FindFirstObjectByType<ItemPickup>();
+            var target = Object.FindAnyObjectByType<ItemPickup>();
             Assert.That(authority.RequestInteraction(player, target), Is.False);
             var foreign = new GameObject("UnregisteredActor");
             try
@@ -101,7 +101,7 @@ namespace Silence.Tests
         [UnityTest]
         public IEnumerator PickupCannotDuplicateOrExceedThreeSlots()
         {
-            var items = Object.FindObjectsByType<ItemPickup>(FindObjectsSortMode.None)
+            var items = SceneQuery.All<ItemPickup>()
                 .OrderBy(p => p.name).ToArray();
             Assert.That(items.Length, Is.EqualTo(4));
             for (int i = 0; i < items.Length; i++)
@@ -109,7 +109,10 @@ namespace Silence.Tests
                 AimAt(items[i]);
                 yield return new WaitForSeconds(0.2f);
                 Assert.That(authority.RequestInteraction(player, items[i]), Is.EqualTo(i < 3));
-                Assert.That(items[i].gameObject.activeSelf, Is.EqualTo(i >= 3));
+                Assert.That(items[i].Consumed, Is.EqualTo(i < 3));
+                Assert.That(items[i].GetComponent<Collider>().enabled, Is.EqualTo(i >= 3));
+                Assert.That(items[i].GetComponent<Renderer>().enabled, Is.EqualTo(i >= 3));
+                Assert.That(items[i].gameObject.activeSelf, Is.True, "Entity must survive for replication.");
                 if (i == 0)
                 {
                     yield return new WaitForSeconds(0.2f);
@@ -123,7 +126,7 @@ namespace Silence.Tests
         [Test]
         public void WallBlocksInteractionAndRemovingItRestoresAccess()
         {
-            var item = Object.FindFirstObjectByType<ItemPickup>();
+            var item = Object.FindAnyObjectByType<ItemPickup>();
             AimAt(item);
             GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
             try
@@ -133,6 +136,7 @@ namespace Silence.Tests
                 Physics.SyncTransforms();
                 Assert.That(authority.RequestInteraction(player, item), Is.False);
                 Assert.That(item.gameObject.activeSelf, Is.True);
+                Assert.That(item.Consumed, Is.False);
             }
             finally { Object.DestroyImmediate(wall); }
             Physics.SyncTransforms();

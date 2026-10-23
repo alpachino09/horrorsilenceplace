@@ -36,5 +36,21 @@ namespace Silence.Core
             items.RemoveAt(index);
             return true;
         }
+
+        public void ReplaceSnapshot(IReadOnlyList<string> snapshot)
+        {
+            if (snapshot == null) throw new ArgumentNullException(nameof(snapshot));
+            if (snapshot.Count > Capacity) throw new ArgumentException("Snapshot exceeds capacity.", nameof(snapshot));
+            // Validate first: a corrupt snapshot must not partially erase inventory.
+            var replacement = new List<string>(snapshot.Count);
+            for (int i = 0; i < snapshot.Count; i++)
+            {
+                if (string.IsNullOrWhiteSpace(snapshot[i]))
+                    throw new ArgumentException("Snapshot contains an empty item ID.", nameof(snapshot));
+                replacement.Add(snapshot[i]);
+            }
+            items.Clear();
+            items.AddRange(replacement);
+        }
     }
 }

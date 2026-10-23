@@ -1,0 +1,11 @@
+test_complete_current_evidence_is_accepted (test_network_smoke_runner.EvidenceValidationTests.test_complete_current_evidence_is_accepted) ... ok
+test_malformed_or_nonfinite_evidence_fails (test_network_smoke_runner.EvidenceValidationTests.test_malformed_or_nonfinite_evidence_fails) ... ok
+test_missing_cleanup_or_duplicate_item_fails (test_network_smoke_runner.EvidenceValidationTests.test_missing_cleanup_or_duplicate_item_fails) ... ok
+test_owner_snapshots_confirm_exactly_one_replicated_item (test_network_smoke_runner.EvidenceValidationTests.test_owner_snapshots_confirm_exactly_one_replicated_item) ... ok
+test_pass_flag_alone_is_insufficient (test_network_smoke_runner.EvidenceValidationTests.test_pass_flag_alone_is_insufficient) ... ok
+test_stale_run_is_rejected (test_network_smoke_runner.EvidenceValidationTests.test_stale_run_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK

@@ -1,0 +1,6 @@
+{
+  "name": "Silence.Multiplayer",
+  "rootNamespace": "Silence.Multiplayer",
+  "references": ["Silence.Core", "Silence.Runtime", "Unity.Netcode.Runtime", "Unity.Collections"],
+  "autoReferenced": true
+}

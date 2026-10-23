@@ -8,13 +8,18 @@ namespace Silence.Interactions
     {
         [SerializeField] private Light indicator;
         private bool on;
+        public bool IsOn => on;
+        internal void SetOn(bool value)
+        {
+            on = value;
+            if (indicator != null) indicator.enabled = value;
+        }
         public void Configure(Light light) => indicator = light;
         public override string GetPrompt(bool english) => english
             ? "Switch radio indicator" : "Переключить индикатор радио";
         internal override bool Apply(PlayerContext player)
         {
-            on = !on;
-            if (indicator != null) indicator.enabled = on;
+            SetOn(!on);
             player.ShowMessage(PrototypePreferences.English
                 ? (on ? "Indicator on." : "Indicator off.")
                 : (on ? "Индикатор включён." : "Индикатор выключен."));
