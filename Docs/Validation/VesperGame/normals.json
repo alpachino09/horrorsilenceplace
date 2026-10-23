@@ -1,0 +1,43 @@
+{
+  "kind": "Actual mesh normal orientation; not Unity render approval",
+  "checks": [
+    {
+      "mesh": "Skin_LOD0",
+      "check": "Outer cranium faces outward",
+      "radial_normal_score": 0.7935780867708208,
+      "passed": true
+    },
+    {
+      "mesh": "Tissue_LOD0",
+      "check": "Mouth cavity faces inward",
+      "radial_normal_score": -0.797302200120711,
+      "passed": true
+    },
+    {
+      "mesh": "Skin_LOD1",
+      "check": "Outer cranium faces outward",
+      "radial_normal_score": 0.7937889504460572,
+      "passed": true
+    },
+    {
+      "mesh": "Tissue_LOD1",
+      "check": "Mouth cavity faces inward",
+      "radial_normal_score": -0.7970840108862404,
+      "passed": true
+    },
+    {
+      "mesh": "Skin_LOD2",
+      "check": "Outer cranium faces outward",
+      "radial_normal_score": 0.8061354748752363,
+      "passed": true
+    },
+    {
+      "mesh": "Tissue_LOD2",
+      "check": "Mouth cavity faces inward",
+      "radial_normal_score": -0.8340124003428432,
+      "passed": true
+    }
+  ],
+  "passed": 6,
+  "failed": 0
+}

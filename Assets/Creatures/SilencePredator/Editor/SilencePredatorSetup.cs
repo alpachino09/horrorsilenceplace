@@ -48,9 +48,9 @@ namespace Silence.Predator.Editor
             for(int i=0;i<3;i++)AssetDatabase.ImportAsset(Root+"/Models/Vesper_LOD"+i+".fbx",ImportAssetOptions.ForceUpdate|ImportAssetOptions.ForceSynchronousImport);
             var importer=(ModelImporter)AssetImporter.GetAtPath(Root+"/Models/Vesper_LOD0.fbx");
             var takes=importer.defaultClipAnimations;
-            string[] loops={"Idle","IdleBreathing","Walk","Stalk","Run","Sprint","ListenLoop","Search","Investigate"};
-            foreach(var take in takes){take.name=take.name.Split('|').Last();take.loopTime=loops.Contains(take.name);take.lockRootRotation=true;take.lockRootHeightY=true;take.lockRootPositionXZ=true;}
-            if(takes.Length!=19)throw new InvalidOperationException("Expected 19 imported takes; inspect the FBX Animation tab.");
+            string[] loops={"Idle","IdleBreathing","Walk","Stalk","Run","Sprint","ListenLoop","Search","Investigate","GameWalk","GameRun","BreathGame"};
+            foreach(var take in takes){take.name=take.name.Split('|').Last();take.loopTime=loops.Contains(take.name);take.lockRootRotation=true;take.lockRootHeightY=true;take.lockRootPositionXZ=true;take.hasAdditiveReferencePose=take.name=="BreathGame";take.additiveReferencePoseFrame=take.firstFrame;}
+            if(takes.Length<19)throw new InvalidOperationException("Expected at least the 19 core takes; inspect the FBX Animation tab.");
             importer.clipAnimations=takes;importer.SaveAndReimport();
             var mats=new Dictionary<string,Material>();foreach(string name in new[]{"Skin","Armor","Tissue","Bone"})mats[name]=Material(name);
             var controller=Controller();var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);

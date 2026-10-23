@@ -1,0 +1,117 @@
+{
+  "file": "/workspace/attachments/bc140ae6-307e-4e63-b027-3a6f6d6a213c/SilenceMonstr.blend",
+  "bytes": 106920,
+  "sha256": "50cce41da6ba65d9600da732b6e642b587e9cdf6da1959dd5d05169b5a8e9823",
+  "blender_runtime": "5.2.3 LTS",
+  "scenes": [
+    {
+      "name": "Scene",
+      "objects": [
+        {
+          "name": "Cube",
+          "type": "MESH",
+          "hidden_render": false,
+          "location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "dimensions": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "vertices": 8,
+          "triangles": 12,
+          "uv_layers": 1,
+          "materials": [
+            "Material"
+          ],
+          "groups": 0,
+          "modifiers": []
+        },
+        {
+          "name": "Light",
+          "type": "LIGHT",
+          "hidden_render": false,
+          "location": [
+            4.076245307922363,
+            1.0054539442062378,
+            5.903861999511719
+          ],
+          "dimensions": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "Camera",
+          "type": "CAMERA",
+          "hidden_render": false,
+          "location": [
+            7.358891487121582,
+            -6.925790786743164,
+            4.958309173583984
+          ],
+          "dimensions": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SILENCE_Vesper_Original",
+      "objects": []
+    },
+    {
+      "name": "SILENCE_Vesper_Original.001",
+      "objects": []
+    }
+  ],
+  "images": [
+    {
+      "name": "Render Result",
+      "filepath": "",
+      "size": [
+        0,
+        0
+      ],
+      "packed": false,
+      "resolved_exists": false
+    },
+    {
+      "name": "Vesper_Skin_BaseColor",
+      "filepath": "//Desktop/SilencePredator/Assets/Creatures/SilencePredator/Textures/Skin_BaseColor.png",
+      "size": [
+        0,
+        0
+      ],
+      "packed": false,
+      "resolved_exists": false
+    },
+    {
+      "name": "Vesper_Skin_BaseColor.001",
+      "filepath": "//Desktop/SilencePredator/Assets/Creatures/SilencePredator/Textures/Skin_BaseColor.png",
+      "size": [
+        0,
+        0
+      ],
+      "packed": false,
+      "resolved_exists": false
+    },
+    {
+      "name": "Viewer Node",
+      "filepath": "",
+      "size": [
+        256,
+        256
+      ],
+      "packed": false,
+      "resolved_exists": false
+    }
+  ],
+  "actions": []
+}

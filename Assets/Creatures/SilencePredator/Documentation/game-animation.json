@@ -1,0 +1,152 @@
+{
+  "kind": "Actual Blender game exports from the owner-approved restored Vesper 0.2",
+  "blender": "5.2.3 LTS",
+  "clips": [
+    "Idle",
+    "IdleBreathing",
+    "Walk",
+    "Stalk",
+    "Run",
+    "Sprint",
+    "ListenStart",
+    "ListenLoop",
+    "ListenEnd",
+    "Alert",
+    "TurnLeft",
+    "TurnRight",
+    "AttackBite",
+    "AttackClaw",
+    "Lunge",
+    "Search",
+    "Investigate",
+    "Stunned",
+    "Recover",
+    "GameWalk",
+    "GameRun",
+    "BreathGame"
+  ],
+  "new_clips": [
+    {
+      "name": "GameWalk",
+      "seconds": 0.7666666666666667,
+      "frames": [
+        1,
+        24
+      ]
+    },
+    {
+      "name": "GameRun",
+      "seconds": 0.43333333333333335,
+      "frames": [
+        1,
+        14
+      ]
+    },
+    {
+      "name": "BreathGame",
+      "seconds": 4.6,
+      "frames": [
+        1,
+        139
+      ]
+    }
+  ],
+  "clip_count": 22,
+  "walk_source_metres_per_second": 2.751358695652174,
+  "run_source_metres_per_second": 9.230769230769232,
+  "normal_orientation_fixes": [
+    {
+      "mesh": "Skin_LOD0",
+      "faces": 2024,
+      "component": "outer head",
+      "before_score": -0.7935780886246164
+    },
+    {
+      "mesh": "Tissue_LOD0",
+      "faces": 2112,
+      "component": "mouth cavity",
+      "before_score": 0.7973022015504483
+    },
+    {
+      "mesh": "Tissue_LOD0",
+      "faces": 320,
+      "component": "mirrored acoustic membrane",
+      "before_score": -0.5121681880022679
+    },
+    {
+      "mesh": "Tissue_LOD0",
+      "faces": 320,
+      "component": "mirrored acoustic membrane",
+      "before_score": -0.5121682515305586
+    },
+    {
+      "mesh": "Tissue_LOD0",
+      "faces": 320,
+      "component": "mirrored acoustic membrane",
+      "before_score": -0.5121684569671106
+    },
+    {
+      "mesh": "Skin_LOD1",
+      "faces": 1571,
+      "component": "outer head",
+      "before_score": -0.7937889534975849
+    },
+    {
+      "mesh": "Tissue_LOD1",
+      "faces": 1544,
+      "component": "mouth cavity",
+      "before_score": 0.7970840070765641
+    },
+    {
+      "mesh": "Tissue_LOD1",
+      "faces": 223,
+      "component": "mirrored acoustic membrane",
+      "before_score": -0.5119447407966201
+    },
+    {
+      "mesh": "Tissue_LOD1",
+      "faces": 228,
+      "component": "mirrored acoustic membrane",
+      "before_score": -0.5118615850332173
+    },
+    {
+      "mesh": "Tissue_LOD1",
+      "faces": 231,
+      "component": "mirrored acoustic membrane",
+      "before_score": -0.5119713385730253
+    },
+    {
+      "mesh": "Skin_LOD2",
+      "faces": 822,
+      "component": "outer head",
+      "before_score": -0.8061354725661569
+    },
+    {
+      "mesh": "Tissue_LOD2",
+      "faces": 645,
+      "component": "mouth cavity",
+      "before_score": 0.8340124014803986
+    },
+    {
+      "mesh": "Tissue_LOD2",
+      "faces": 84,
+      "component": "mirrored acoustic membrane",
+      "before_score": -0.7865552002789528
+    },
+    {
+      "mesh": "Tissue_LOD2",
+      "faces": 88,
+      "component": "mirrored acoustic membrane",
+      "before_score": -0.7242653516958318
+    },
+    {
+      "mesh": "Tissue_LOD2",
+      "faces": 93,
+      "component": "mirrored acoustic membrane",
+      "before_score": -0.7433047220972357
+    }
+  ],
+  "native_unity_tested": false,
+  "ultrarealistic_art_approved": false,
+  "audio": "Procedural placeholder breathing and steps; not production recordings"
+}

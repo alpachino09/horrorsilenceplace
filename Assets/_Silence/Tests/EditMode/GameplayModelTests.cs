@@ -7,6 +7,31 @@ namespace Silence.Tests
 {
     public sealed class GameplayModelTests
     {
+        [TestCase(double.NaN)] [TestCase(double.PositiveInfinity)] [TestCase(-.01)] [TestCase(4)]
+        public void ExpiredOrInvalidCuesCannotReplayOnLateJoin(double age)
+        { Assert.That(CreatureMotionMath.IsRecent(age, .9), Is.False); }
+        [Test] public void ActiveCueAgesAreAcceptedWithoutChangingTheCreatureMind()
+        {
+            var mind = new CreatureMind(DifficultyRules.For(Difficulty.Normal));
+            Assert.That(CreatureMotionMath.IsRecent(.45, .9), Is.True);
+            Assert.That(mind.State, Is.EqualTo(CreatureState.Patrol));
+            Assert.That(mind.HasMemory, Is.False);
+        }
+        [Test] public void FootPlantIsPeriodicAcrossNetworkPhaseWraps()
+        {
+            Assert.That(CreatureMotionMath.PlantWeight(.2f, 0, .64f), Is.EqualTo(1));
+            Assert.That(CreatureMotionMath.PlantWeight(120.2f, 0, .64f), Is.EqualTo(1));
+            Assert.That(CreatureMotionMath.PlantWeight(-.8f, 0, .64f), Is.EqualTo(1));
+            Assert.That(CreatureMotionMath.PlantWeight(.8f, 0, .64f), Is.Zero);
+        }
+        [Test] public void OppositeForefeetDoNotPlantAtTheSameWalkPhase()
+        {
+            Assert.That(CreatureMotionMath.PlantWeight(.2f, 0, .64f), Is.EqualTo(1));
+            Assert.That(CreatureMotionMath.PlantWeight(.2f, .5f, .64f), Is.Zero);
+        }
+        [TestCase(float.NaN)] [TestCase(float.PositiveInfinity)]
+        public void InvalidFootPhasesDoNotPropagateNaNToTheSkeleton(float phase)
+        { Assert.That(CreatureMotionMath.PlantWeight(phase, 0, .64f), Is.Zero); }
         [Test] public void InjuryHasGraceThenDeathAndRequiresARealRevive()
         {
             var health = new ActorVitals();

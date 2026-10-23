@@ -66,8 +66,9 @@ namespace Silence.Editor
                 AssetDatabase.StopAssetEditing();
                 AssetDatabase.Refresh();
             }
+            bool vesper = File.Exists(Path.Combine(source, "Assets/Creatures/SilencePredator/Documentation/game-animation.json"));
             Debug.Log("SILENCE: updated " + files.Length + " source/art/package files. Scenes, Generated and existing .meta preserved. " +
-                "Backup: " + backup + ". Wait for compilation, then SILENCE / 03 Install Multiplayer Package.");
+                "Backup: " + backup + (vesper ? ". Wait for compilation, open Campaign and run SILENCE / 18 Install Vesper in Game Scene." : ". Wait for compilation, then SILENCE / 03 Install Multiplayer Package."));
         }
     }
 }

@@ -1,0 +1,54 @@
+{
+  "kind": "Game integration package prepared; native execution required",
+  "owner_selected_restored_vesper_0_2": true,
+  "blender": {
+    "passed": 122,
+    "failed": 0,
+    "version": "bpy 5.2.3 LTS"
+  },
+  "normal_checks": {
+    "passed": 6,
+    "failed": 0
+  },
+  "core_tests": {
+    "passed": 101,
+    "failed": 0
+  },
+  "csharp_syntax": "108 files x 5 define configurations, 0 syntax errors; API binding and NGO ILPP not run",
+  "foot_metrics": [
+    {
+      "check": "GameWalk actual grounded stance and foot sliding on flat ground",
+      "passed": true,
+      "max_ankle_height_error": 1.0347366333207653e-06,
+      "max_stance_drift_metres": 1.2024589208792236e-06
+    },
+    {
+      "check": "GameRun actual grounded stance and foot sliding on flat ground",
+      "passed": true,
+      "max_ankle_height_error": 1.0347366333207653e-06,
+      "max_stance_drift_metres": 1.4671912564878653e-06
+    }
+  ],
+  "scene_installer_menu": 18,
+  "scene_validation_menu": 19,
+  "host_client_build_menu": 20,
+  "network_protocol_for_new_scene": 4,
+  "clip_count": 22,
+  "texture_count": 12,
+  "texture_resolution": 4096,
+  "game_scene_and_prefab_created_in_cloud": false,
+  "native_unity_editor_run": false,
+  "native_host_client_tested": false,
+  "fps_on_m1_tested": false,
+  "ultrarealistic_art_approved": false,
+  "audio": "Procedural temporary breathing and steps; production recordings/mix pending",
+  "pending": [
+    "Unity 6000.6.7f1 import and API/ILPP compilation",
+    "Run 18, 19, Play in the real project",
+    "Check Generic layers, normals, ground IK, doors/stairs, materials and foot contact",
+    "Rebuild and test 2/4 player builds with protocol 4",
+    "Native performance and visual/art/audio approval"
+  ],
+  "normal_components_corrected": 15,
+  "preview_renders": "24 motion frames and 1 culling check; Blender Cycles, not Unity footage"
+}

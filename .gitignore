@@ -33,3 +33,5 @@ Tools/*/bin/
 TestResults/
 artifacts/
 __pycache__/
+*.blend1
+*.blend2

@@ -1,15 +1,39 @@
-# Файлы SILENCE — собственный хищник, процедурный первый проход
+# Файлы SILENCE — Vesper в игровой сцене
 
-[Инструкция и честный статус](OwnPredator/README_RU.md).
-Скрипт реально создаёт `.blend`, три skinned FBX, двенадцать карт 4K и 19 клипов.
-Сгенерированные бинарные файлы проверены в облаке и воспроизводятся локально;
-в git находятся генератор, исходники подготовки Unity, рендеры и отчёты.
-Unity Editor здесь не запускался: prefab/demo пока не созданы. Уровень AAA не достигнут.
+[Инструкция подключения](VesperGame/README_RU.md). В репозитории находятся реальный
+`ArtSource/VesperGame/Vesper_Game.blend`, три skinned FBX с 22 клипами и 12 PNG 4K.
+Восстановлена наша Vesper 0.2 с 104 клыками по явному выбору владельца.
+Добавлены игровой драйвер анимации, сетевые события слуха/атаки и меню 18/19/20.
+
+Проверено: 122 проверки Blender/FBX, 6 проверок нормалей и 101 тест ядра без ошибок;
+C# синтаксис проверен отдельно. Отчёты: [Validation/VesperGame](Validation/VesperGame).
+Unity Editor в облаке отсутствует: игровая сцена, prefab и AnimatorController
+создаются командой 18 в проекте владельца. Play, импорт/API/ILPP, кооператив
+и производительность ещё не проверены. Ультрареализм не заявляется достигнутым.
+
+Ниже — файлы текущего репозитория, включая предыдущие системы игры:
 
 - [`.gitignore`](../.gitignore)
+- [`ArtSource/VesperGame/Vesper_Game.blend`](../ArtSource/VesperGame/Vesper_Game.blend)
 - [`Assets/Creatures/SilencePredator/Documentation/README_RU.md`](../Assets/Creatures/SilencePredator/Documentation/README_RU.md)
+- [`Assets/Creatures/SilencePredator/Documentation/game-animation.json`](../Assets/Creatures/SilencePredator/Documentation/game-animation.json)
 - [`Assets/Creatures/SilencePredator/Editor/SilencePredatorSetup.cs`](../Assets/Creatures/SilencePredator/Editor/SilencePredatorSetup.cs)
+- [`Assets/Creatures/SilencePredator/Models/Vesper_LOD0.fbx`](../Assets/Creatures/SilencePredator/Models/Vesper_LOD0.fbx)
+- [`Assets/Creatures/SilencePredator/Models/Vesper_LOD1.fbx`](../Assets/Creatures/SilencePredator/Models/Vesper_LOD1.fbx)
+- [`Assets/Creatures/SilencePredator/Models/Vesper_LOD2.fbx`](../Assets/Creatures/SilencePredator/Models/Vesper_LOD2.fbx)
 - [`Assets/Creatures/SilencePredator/Scripts/MonsterAnimationController.cs`](../Assets/Creatures/SilencePredator/Scripts/MonsterAnimationController.cs)
+- [`Assets/Creatures/SilencePredator/Textures/Armor_BaseColor.png`](../Assets/Creatures/SilencePredator/Textures/Armor_BaseColor.png)
+- [`Assets/Creatures/SilencePredator/Textures/Armor_Mask.png`](../Assets/Creatures/SilencePredator/Textures/Armor_Mask.png)
+- [`Assets/Creatures/SilencePredator/Textures/Armor_Normal.png`](../Assets/Creatures/SilencePredator/Textures/Armor_Normal.png)
+- [`Assets/Creatures/SilencePredator/Textures/Bone_BaseColor.png`](../Assets/Creatures/SilencePredator/Textures/Bone_BaseColor.png)
+- [`Assets/Creatures/SilencePredator/Textures/Bone_Mask.png`](../Assets/Creatures/SilencePredator/Textures/Bone_Mask.png)
+- [`Assets/Creatures/SilencePredator/Textures/Bone_Normal.png`](../Assets/Creatures/SilencePredator/Textures/Bone_Normal.png)
+- [`Assets/Creatures/SilencePredator/Textures/Skin_BaseColor.png`](../Assets/Creatures/SilencePredator/Textures/Skin_BaseColor.png)
+- [`Assets/Creatures/SilencePredator/Textures/Skin_Mask.png`](../Assets/Creatures/SilencePredator/Textures/Skin_Mask.png)
+- [`Assets/Creatures/SilencePredator/Textures/Skin_Normal.png`](../Assets/Creatures/SilencePredator/Textures/Skin_Normal.png)
+- [`Assets/Creatures/SilencePredator/Textures/Tissue_BaseColor.png`](../Assets/Creatures/SilencePredator/Textures/Tissue_BaseColor.png)
+- [`Assets/Creatures/SilencePredator/Textures/Tissue_Mask.png`](../Assets/Creatures/SilencePredator/Textures/Tissue_Mask.png)
+- [`Assets/Creatures/SilencePredator/Textures/Tissue_Normal.png`](../Assets/Creatures/SilencePredator/Textures/Tissue_Normal.png)
 - [`Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD0.fbx`](../Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD0.fbx)
 - [`Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD1.fbx`](../Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD1.fbx)
 - [`Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD2.fbx`](../Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD2.fbx)
@@ -92,6 +116,7 @@ Unity Editor здесь не запускался: prefab/demo пока не с�
 - [`Assets/_Silence/Graphics/Runtime/GraphicsQualityProfile.cs`](../Assets/_Silence/Graphics/Runtime/GraphicsQualityProfile.cs)
 - [`Assets/_Silence/Graphics/Runtime/LegacyRendererMask.cs`](../Assets/_Silence/Graphics/Runtime/LegacyRendererMask.cs)
 - [`Assets/_Silence/Graphics/Runtime/Silence.Graphics.asmdef`](../Assets/_Silence/Graphics/Runtime/Silence.Graphics.asmdef)
+- [`Assets/_Silence/Graphics/Runtime/VesperGamePresentation.cs`](../Assets/_Silence/Graphics/Runtime/VesperGamePresentation.cs)
 - [`Assets/_Silence/Graphics/Runtime/VisualAtmosphere.cs`](../Assets/_Silence/Graphics/Runtime/VisualAtmosphere.cs)
 - [`Assets/_Silence/Graphics/Runtime/VisualSettingsUI.cs`](../Assets/_Silence/Graphics/Runtime/VisualSettingsUI.cs)
 - [`Assets/_Silence/Graphics/Shaders/FoliageWind.shader`](../Assets/_Silence/Graphics/Shaders/FoliageWind.shader)
@@ -108,6 +133,7 @@ Unity Editor здесь не запускался: prefab/demo пока не с�
 - [`Assets/_Silence/Scripts/Core/CampaignModel.cs`](../Assets/_Silence/Scripts/Core/CampaignModel.cs)
 - [`Assets/_Silence/Scripts/Core/CommandInbox.cs`](../Assets/_Silence/Scripts/Core/CommandInbox.cs)
 - [`Assets/_Silence/Scripts/Core/CreatureMind.cs`](../Assets/_Silence/Scripts/Core/CreatureMind.cs)
+- [`Assets/_Silence/Scripts/Core/CreatureMotionMath.cs`](../Assets/_Silence/Scripts/Core/CreatureMotionMath.cs)
 - [`Assets/_Silence/Scripts/Core/InteractionGate.cs`](../Assets/_Silence/Scripts/Core/InteractionGate.cs)
 - [`Assets/_Silence/Scripts/Core/InteractionRules.cs`](../Assets/_Silence/Scripts/Core/InteractionRules.cs)
 - [`Assets/_Silence/Scripts/Core/InventoryModel.cs`](../Assets/_Silence/Scripts/Core/InventoryModel.cs)
@@ -237,6 +263,17 @@ Unity Editor здесь не запускался: prefab/demo пока не с�
 - [`Docs/Validation/OwnPredator/source.txt`](../Docs/Validation/OwnPredator/source.txt)
 - [`Docs/Validation/OwnPredator/structure.json`](../Docs/Validation/OwnPredator/structure.json)
 - [`Docs/Validation/OwnPredator/summary.json`](../Docs/Validation/OwnPredator/summary.json)
+- [`Docs/Validation/VesperGame/asset-files.json`](../Docs/Validation/VesperGame/asset-files.json)
+- [`Docs/Validation/VesperGame/blender.json`](../Docs/Validation/VesperGame/blender.json)
+- [`Docs/Validation/VesperGame/core-tests.json`](../Docs/Validation/VesperGame/core-tests.json)
+- [`Docs/Validation/VesperGame/normals.json`](../Docs/Validation/VesperGame/normals.json)
+- [`Docs/Validation/VesperGame/renders.json`](../Docs/Validation/VesperGame/renders.json)
+- [`Docs/Validation/VesperGame/scope.json`](../Docs/Validation/VesperGame/scope.json)
+- [`Docs/Validation/VesperGame/source-versions.json`](../Docs/Validation/VesperGame/source-versions.json)
+- [`Docs/Validation/VesperGame/source.txt`](../Docs/Validation/VesperGame/source.txt)
+- [`Docs/Validation/VesperGame/structure.json`](../Docs/Validation/VesperGame/structure.json)
+- [`Docs/Validation/VesperGame/summary.json`](../Docs/Validation/VesperGame/summary.json)
+- [`Docs/Validation/VesperGame/uploaded-file-inspection.json`](../Docs/Validation/VesperGame/uploaded-file-inspection.json)
 - [`Docs/Validation/VisualRebuild/api-review.json`](../Docs/Validation/VisualRebuild/api-review.json)
 - [`Docs/Validation/VisualRebuild/assets.json`](../Docs/Validation/VisualRebuild/assets.json)
 - [`Docs/Validation/VisualRebuild/core-regression.trx`](../Docs/Validation/VisualRebuild/core-regression.trx)
@@ -262,6 +299,13 @@ Unity Editor здесь не запускался: prefab/demo пока не с�
 - [`Docs/Validation/sprint02-source.txt`](../Docs/Validation/sprint02-source.txt)
 - [`Docs/Validation/sprint02-structure.json`](../Docs/Validation/sprint02-structure.json)
 - [`Docs/Validation/structure-check.json`](../Docs/Validation/structure-check.json)
+- [`Docs/VesperGame/Previews/BreathGame.gif`](../Docs/VesperGame/Previews/BreathGame.gif)
+- [`Docs/VesperGame/Previews/GameWalk.gif`](../Docs/VesperGame/Previews/GameWalk.gif)
+- [`Docs/VesperGame/Previews/ListenStart.gif`](../Docs/VesperGame/Previews/ListenStart.gif)
+- [`Docs/VesperGame/Previews/README_RU.md`](../Docs/VesperGame/Previews/README_RU.md)
+- [`Docs/VesperGame/Previews/front_culling_check.png`](../Docs/VesperGame/Previews/front_culling_check.png)
+- [`Docs/VesperGame/Previews/motion_contact.png`](../Docs/VesperGame/Previews/motion_contact.png)
+- [`Docs/VesperGame/README_RU.md`](../Docs/VesperGame/README_RU.md)
 - [`Docs/VisualRebuild/ASSET_REQUIREMENTS_RU.md`](../Docs/VisualRebuild/ASSET_REQUIREMENTS_RU.md)
 - [`Docs/VisualRebuild/AUDIT_RU.md`](../Docs/VisualRebuild/AUDIT_RU.md)
 - [`Docs/VisualRebuild/Previews/README.md`](../Docs/VisualRebuild/Previews/README.md)
@@ -282,6 +326,7 @@ Unity Editor здесь не запускался: prefab/demo пока не с�
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/Silence.Visual.Editor.asmdef`](../LocalPackages/com.silence.multiplayer/Editor/Visual/Silence.Visual.Editor.asmdef)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/TerrainBuilder.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/TerrainBuilder.cs)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/VegetationPainter.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/VegetationPainter.cs)
+- [`LocalPackages/com.silence.multiplayer/Editor/Visual/VesperGameInstaller.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/VesperGameInstaller.cs)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/VisualAssetImporter.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/VisualAssetImporter.cs)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/VisualAssetLibrary.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/VisualAssetLibrary.cs)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/VisualFarmRebuilder.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/VisualFarmRebuilder.cs)
@@ -306,9 +351,12 @@ Unity Editor здесь не запускался: prefab/demo пока не с�
 - [`Tools/CoreTests/Silence.CoreTests.csproj`](../Tools/CoreTests/Silence.CoreTests.csproj)
 - [`Tools/CoreTests/packages.lock.json`](../Tools/CoreTests/packages.lock.json)
 - [`Tools/CreatureArt/render_free_candidates.py`](../Tools/CreatureArt/render_free_candidates.py)
+- [`Tools/OwnPredator/check_game_normals.py`](../Tools/OwnPredator/check_game_normals.py)
 - [`Tools/OwnPredator/check_materials.py`](../Tools/OwnPredator/check_materials.py)
 - [`Tools/OwnPredator/check_predator.py`](../Tools/OwnPredator/check_predator.py)
 - [`Tools/OwnPredator/create_predator.py`](../Tools/OwnPredator/create_predator.py)
+- [`Tools/OwnPredator/prepare_game_creature.py`](../Tools/OwnPredator/prepare_game_creature.py)
+- [`Tools/OwnPredator/render_game_motion.py`](../Tools/OwnPredator/render_game_motion.py)
 - [`Tools/OwnPredator/review_predator.py`](../Tools/OwnPredator/review_predator.py)
 - [`Tools/OwnPredator/run_macos.sh`](../Tools/OwnPredator/run_macos.sh)
 - [`Tools/SourceChecks/Program.cs`](../Tools/SourceChecks/Program.cs)

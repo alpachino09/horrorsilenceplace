@@ -23,6 +23,14 @@ namespace Silence.Creatures
         private readonly Collider[] contacts = new Collider[16];
         public CreatureState State => mind != null ? mind.State : replicaState;
         private CreatureState replicaState;
+        public uint HeardSequence { get; private set; }
+        public uint AttackSequence { get; private set; }
+        public Vector3 LastAcceptedSound { get; private set; }
+        public float LastAcceptedStrength { get; private set; }
+        public double HeardAt { get; private set; } = double.NegativeInfinity;
+        public double AttackedAt { get; private set; } = double.NegativeInfinity;
+        public bool HasHeardCue => !double.IsNegativeInfinity(HeardAt);
+        public bool HasAttackCue => !double.IsNegativeInfinity(AttackedAt);
         public void SetAuthority(bool authority, GameplayDirector director)
         {
             if (game != null && game.Noise != null) game.Noise.Emitted -= Hear;
@@ -34,6 +42,7 @@ namespace Silence.Creatures
         {
             if (game == null || !game.IsAuthority) return;
             chapter = definition; mind = new CreatureMind(rules); patrol = 0; nextPath = 0; nextAttack = Time.unscaledTimeAsDouble + 5;
+            HeardAt = AttackedAt = double.NegativeInfinity;
             if (NavMesh.SamplePosition(chapter.creatureSpawn, out NavMeshHit hit, 8, NavMesh.AllAreas))
             {
                 if (!agent.enabled) { transform.position = hit.position; agent.enabled = true; }
@@ -52,7 +61,11 @@ namespace Silence.Creatures
                 if (zone != null && (zone.Contains(ear) || zone.Contains(sound.Position))) maskingAmount = Mathf.Max(maskingAmount, zone.strength);
             float perceived = NoiseMath.PerceivedIntensity(sound.Intensity, distance, sound.Range,
                 AcousticOcclusion.Between(sound.Position, ear), maskingAmount);
-            mind.Hear(new Point3(sound.Position.x, sound.Position.y, sound.Position.z), perceived, Time.unscaledTimeAsDouble);
+            if (mind.Hear(new Point3(sound.Position.x, sound.Position.y, sound.Position.z), perceived, Time.unscaledTimeAsDouble))
+            {
+                LastAcceptedSound = sound.Position; LastAcceptedStrength = perceived;
+                HeardAt = Time.unscaledTimeAsDouble; unchecked { HeardSequence++; }
+            }
         }
         private void Update()
         {
@@ -100,6 +113,7 @@ namespace Silence.Creatures
                 if (Physics.Linecast(start, actor.View.transform.position, out RaycastHit blocked, ~0, QueryTriggerInteraction.Ignore) &&
                     blocked.collider.GetComponentInParent<PlayerContext>() != actor) continue;
                 if (!game.Damage(actor)) continue;
+                AttackedAt = Time.unscaledTimeAsDouble; unchecked { AttackSequence++; }
                 nextAttack = Time.unscaledTimeAsDouble + game.Rules.AttackGrace;
                 mind.Recover(Time.unscaledTimeAsDouble, game.Rules.AttackGrace);
                 break;
@@ -111,6 +125,15 @@ namespace Silence.Creatures
             nextPath = Time.unscaledTime + .25f; lastDestination = point; agent.SetDestination(point);
         }
         public void SetReplicaState(CreatureState state) => replicaState = state;
+        public void SetReplicaCues(uint heard, Vector3 point, float strength, double heardAge, bool hasHeard,
+            uint attacked, double attackAge, bool hasAttack)
+        {
+            if (game != null && game.IsAuthority) return;
+            HeardSequence = heard; LastAcceptedSound = point; LastAcceptedStrength = strength;
+            AttackSequence = attacked;
+            HeardAt = hasHeard ? Time.unscaledTimeAsDouble - System.Math.Max(0, heardAge) : double.NegativeInfinity;
+            AttackedAt = hasAttack ? Time.unscaledTimeAsDouble - System.Math.Max(0, attackAge) : double.NegativeInfinity;
+        }
         private void OnDestroy() { if (game != null && game.Noise != null) game.Noise.Emitted -= Hear; }
     }
 }

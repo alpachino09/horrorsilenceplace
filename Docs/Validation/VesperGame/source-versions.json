@@ -1,0 +1,63 @@
+{
+  "kind": "Reviewed source versions; hashes do not imply native Unity compilation",
+  "embedded_unity_editor_matches_exported_cs": true,
+  "art_manifest_hashes_match": true,
+  "files": [
+    {
+      "path": "Assets/Creatures/SilencePredator/Editor/SilencePredatorSetup.cs",
+      "sha256": "77a0e8ba92efd51432dfafaba0c606d47911c68476a1ae3896fa9bba5044c91a"
+    },
+    {
+      "path": "Assets/_Silence/Editor/SilenceSourceUpdater.cs",
+      "sha256": "e116f5ad54713068aad9baec7626e0a937f05e3efc1bd7c5300259993cbd1d1e"
+    },
+    {
+      "path": "Assets/_Silence/Graphics/Runtime/VesperGamePresentation.cs",
+      "sha256": "d8a80b16f1734db6c4a120b481eec48aca8253fcb8c8c5a1b2616106c53a2981"
+    },
+    {
+      "path": "Assets/_Silence/Scripts/Audio/CreatureAudio.cs",
+      "sha256": "aced3b0ee642980f00673173668ac2dc80658370d2d963b1b333454e71877a5c"
+    },
+    {
+      "path": "Assets/_Silence/Scripts/Core/CreatureMotionMath.cs",
+      "sha256": "de7c4554c81be2c7640fc437225dfbdb499d59bbfd69033e63e8a36e918213dc"
+    },
+    {
+      "path": "Assets/_Silence/Scripts/Creatures/HearingCreature.cs",
+      "sha256": "702ff9f398735c6f54daafb570ed1e6c18c138602999095717dbd1834601b039"
+    },
+    {
+      "path": "Assets/_Silence/Tests/EditMode/GameplayModelTests.cs",
+      "sha256": "f701ac8a5977ae21f8ed6f5aac5cbad52fa1e35595411bf3b91d05f43bd44969"
+    },
+    {
+      "path": "LocalPackages/com.silence.multiplayer/Editor/Visual/VesperGameInstaller.cs",
+      "sha256": "1d63a947fd8520c524cd52f27c71a0774fb4a8ac41660ccf9121d502f702b504"
+    },
+    {
+      "path": "LocalPackages/com.silence.multiplayer/Runtime/GameplayCreatureNetwork.cs",
+      "sha256": "480b59b0fdda89390bb2b28b5eaffd3ecea72a8fa429436dc7928e7a6f29fe09"
+    },
+    {
+      "path": "Tools/OwnPredator/check_game_normals.py",
+      "sha256": "768848b213fad481aa0508746691ee0b3b058ec739a79f6714c896cad0a875bb"
+    },
+    {
+      "path": "Tools/OwnPredator/check_predator.py",
+      "sha256": "543303d53859d2fd68c243c03e58865a9eddbd3be009cc7a29aa4f22e96f92ac"
+    },
+    {
+      "path": "Tools/OwnPredator/create_predator.py",
+      "sha256": "a7ecc6ac4d3f4f88b8c0e0b69f031e6c40f579944e875a164144fad0ca3f96e1"
+    },
+    {
+      "path": "Tools/OwnPredator/prepare_game_creature.py",
+      "sha256": "0a4181c4fdc41569c032d07de0d7defc10bbbec1c3445037099c387f83d34c9d"
+    },
+    {
+      "path": "Tools/OwnPredator/render_game_motion.py",
+      "sha256": "d350cf7e9acaaafbe4e222469d42225f8311fc3612cf8781efb822223df99a81"
+    }
+  ]
+}

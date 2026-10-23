@@ -8,14 +8,15 @@ def check(ok,name,**info):checks.append({'check':name,'passed':bool(ok),**info})
 def action(name):return bpy.data.actions[mapping[name]]
 def pose(name,fraction):
  rig.animation_data.use_nla=False;rig.animation_data.action=action(name)
- a,b=action(name).frame_range;scene.frame_set(int(a+(b-a)*fraction));bpy.context.view_layer.update()
+ a,b=action(name).frame_range;scene.frame_set(round(a+(b-a)*fraction));bpy.context.view_layer.update()
 def evaluated(objects):
  dg=bpy.context.evaluated_depsgraph_get();result=[]
  for ob in objects:
   evalob=ob.evaluated_get(dg);me=evalob.to_mesh();mat=evalob.matrix_world
   result.extend(mat@v.co for v in me.vertices);evalob.to_mesh_clear()
  return result
-check(len(mapping)==19 and all(n in bpy.data.actions for n in mapping.values()),'19 distinct actions survive saving/reopening .blend')
+expected=json.loads(rig['silence_game_clips'])['count'] if 'silence_game_clips' in rig else 19
+check(len(mapping)==expected and all(n in bpy.data.actions for n in mapping.values()),str(expected)+' distinct actions survive saving/reopening .blend')
 images={node.image for ob in scene.objects if ob.type=='MESH' and ob.name.endswith('_LOD0') for mat in ob.data.materials if mat and mat.use_nodes for node in mat.node_tree.nodes if node.type=='TEX_IMAGE' and node.image}
 check(len(images)==12 and all(pathlib.Path(bpy.path.abspath(im.filepath)).is_file() for im in images),'All twelve saved material texture links resolve after reopening')
 check(sum(b.use_deform for b in rig.data.bones)==55,'55 deform bones')
@@ -80,17 +81,35 @@ check(len(import_rig.data.bones)==55,'Exported/reimported FBX contains 55 deform
 check(all(any(a.name==name or a.name.endswith('|'+name) for a in imported_actions) for name in mapping),'Exported/reimported FBX contains all 19 named takes',takes=[a.name for a in imported_actions])
 check(len([o for o in importscene.objects if o.type=='MESH'])==4,'FBX re-import has four skinned material meshes')
 # Geometric drift checks compare actual deformed vertices at sampled times.
-for name in ['Idle','Walk','Run','ListenLoop','AttackBite']:
+for name in ['Idle','Walk','Run','ListenLoop','AttackBite']+([n for n in ['GameWalk','GameRun','BreathGame'] if n in mapping]):
  target=next((a for a in imported_actions if a.name==name or a.name.endswith('|'+name)),None)
  if target is None:continue
  for fraction in [0,.5]:
   bpy.context.window.scene=source_scene;scene=source_scene;pose(name,fraction);reference=evaluated(source_meshes)
   bpy.context.window.scene=importscene;scene=importscene;import_rig.animation_data.action=target
-  start,end=target.frame_range;scene.frame_set(int(start+(end-start)*fraction));bpy.context.view_layer.update()
+  start,end=target.frame_range;scene.frame_set(round(start+(end-start)*fraction));bpy.context.view_layer.update()
   result=evaluated([o for o in importscene.objects if o.type=='MESH'])
   tree=KDTree(len(result))
   for i,p in enumerate(result):tree.insert(p,i)
   tree.balance();error=max(tree.find(p)[2] for p in reference[::9]);check(error<.025,'FBX deformed surface '+name+' '+str(fraction),max_sampled_distance_metres=error)
+# Measure the actual solved FK skeleton against a moving ground plane during stance.
+if 'GameWalk' in mapping:
+ bpy.context.window.scene=source_scene;scene=source_scene
+ for name,frames,stride,stance,phases in [('GameWalk',23,1.35,.64,[0,.5,.75,.25]),('GameRun',13,1.60,.40,[0,.04,.50,.54])]:
+  velocity=stride/((frames/30)*stance);samples={};height_error=0
+  for frame in range(frames+1):
+   pose(name,frame/frames);u=frame/frames
+   for index,(bone,base_z) in enumerate([('Hand.L',.29),('Hand.R',.29),('Foot.L',.42),('Foot.R',.42)]):
+    phase=(u+phases[index])%1
+    if .06<phase<stance-.06:
+     p=rig.pose.bones[bone].head
+     height_error=max(height_error,abs(p.z-base_z))
+     group=(bone,math.floor(u+phases[index]));samples.setdefault(group,[]).append(p.y-velocity*(frame/30))
+  slip=max((max(values)-min(values) for values in samples.values() if len(values)>1),default=0)
+  check(height_error<.025 and slip<.035,name+' actual grounded stance and foot sliding on flat ground',max_ankle_height_error=height_error,max_stance_drift_metres=slip)
+ pose('BreathGame',.25);expanded=rig.pose.bones['Chest'].scale.x
+ pose('BreathGame',.75);contracted=rig.pose.bones['Chest'].scale.x
+ check(expanded>1.01 and contracted<.99,'Breathing actually expands and contracts the chest',expanded=expanded,contracted=contracted)
 # Every lower LOD must use the same deform skeleton for Unity bone remapping.
 base_bones={b.name:b.matrix_local.copy() for b in import_rig.data.bones}
 for level in [1,2]:

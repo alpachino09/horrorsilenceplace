@@ -1,0 +1,37 @@
+{
+  "engine": "Blender 5.2.3 / Cycles CPU",
+  "unity_footage": false,
+  "frames": 24,
+  "front_culling_check": true,
+  "visually_reviewed": [
+    "front_culling_check.png",
+    "motion_contact.png"
+  ],
+  "files": [
+    {
+      "path": "Docs/VesperGame/Previews/BreathGame.gif",
+      "bytes": 953865,
+      "sha256": "9bf8c70f51aa5e205293f36c6daf82fdabbf237b32edf7d50595ad345754922f"
+    },
+    {
+      "path": "Docs/VesperGame/Previews/GameWalk.gif",
+      "bytes": 2826441,
+      "sha256": "d3d4a14548e7a08bf3354b2e36d9ba345d12c5e0e30832a9115f195ee04986b7"
+    },
+    {
+      "path": "Docs/VesperGame/Previews/ListenStart.gif",
+      "bytes": 2191221,
+      "sha256": "9e30e3625e5290d6e5646bbad512d89e752075e97b2beaea884da9b26a74a9d0"
+    },
+    {
+      "path": "Docs/VesperGame/Previews/front_culling_check.png",
+      "bytes": 555177,
+      "sha256": "080599f7fb02246962afc3361fb7ca4fa1b2f75af817e1cfc10f3230abf81696"
+    },
+    {
+      "path": "Docs/VesperGame/Previews/motion_contact.png",
+      "bytes": 1786915,
+      "sha256": "d1385f23623cd48f0d442a1ad59997826afac8c823c231300deb3cbc81e3afdf"
+    }
+  ]
+}
