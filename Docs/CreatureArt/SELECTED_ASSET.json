@@ -1,0 +1,16 @@
+{
+  "selected_by": "owner",
+  "selected_utc": "2026-10-23T17:44:46.578796+00:00",
+  "listing_url": "https://www.fab.com/listings/932b69b8-cc42-4586-be9b-d327d8195736",
+  "listing_id": "932b69b8-cc42-4586-be9b-d327d8195736",
+  "supersedes": "Proposed Tyrant candidate; owner chose this Fab listing instead",
+  "title": null,
+  "price": null,
+  "license": null,
+  "formats": null,
+  "rig_verified": false,
+  "animation_verified": false,
+  "files_received": false,
+  "access_result": "Listing and listing API requests failed: tunnel 403 Forbidden",
+  "next_required": "Owner-uploaded original full asset archive, preferably FBX with textures and animations. Inspect files before binding."
+}

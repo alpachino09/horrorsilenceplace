@@ -173,6 +173,7 @@
 - [`Docs/CreatureArt/FreeCandidates/inventory.json`](../Docs/CreatureArt/FreeCandidates/inventory.json)
 - [`Docs/CreatureArt/README_RU.md`](../Docs/CreatureArt/README_RU.md)
 - [`Docs/CreatureArt/RESEARCH_STATUS.json`](../Docs/CreatureArt/RESEARCH_STATUS.json)
+- [`Docs/CreatureArt/SELECTED_ASSET.json`](../Docs/CreatureArt/SELECTED_ASSET.json)
 - [`Docs/DECISIONS.md`](../Docs/DECISIONS.md)
 - [`Docs/GAMEPLAY_RU.md`](../Docs/GAMEPLAY_RU.md)
 - [`Docs/IMPLEMENTATION_STATUS.md`](../Docs/IMPLEMENTATION_STATUS.md)

@@ -2,14 +2,16 @@
   "scope": "Five actual free creature candidates inspected and previewed; import/presentation tools prepared",
   "recorded_utc": "2026-10-23T11:59:19.480338+00:00",
   "research": "Marketplace/search pages blocked, but free Unvanquished source package accessed through GitHub",
-  "asset_selected": false,
+  "asset_selected": true,
   "asset_imported": false,
   "model_quality_approved": false,
   "native_unity_compilation_or_gameplay_checked": false,
   "attack_animation_connected": false,
   "unchanged_existing_gameplay_runtime_files": 74,
   "checks": "C# syntax in source.txt; assembly/structure in structure.json; these are not native tests",
-  "required_next": "Choose a candidate design, convert the licensed IQE rig/animations to FBX and validate in native Unity",
+  "required_next": "Receive owner-uploaded original Fab asset archive; inspect actual license, geometry, rig, textures and animation before conversion/integration",
   "free_candidates_verified": 5,
-  "candidate_preview_inventory": "../../CreatureArt/FreeCandidates/inventory.json"
+  "candidate_preview_inventory": "../../CreatureArt/FreeCandidates/inventory.json",
+  "selected_candidate": "https://www.fab.com/listings/932b69b8-cc42-4586-be9b-d327d8195736",
+  "selected_asset_files_received": false
 }
