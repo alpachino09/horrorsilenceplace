@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="d06d62b5-9895-4801-a871-065ed13be4d6" name="@741e4757407e 2026-10-23 03:19:40" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-23T03:19:40.2504370+00:00" queuing="2026-10-23T03:19:40.2504372+00:00" start="2026-10-23T03:19:39.6819941+00:00" finish="2026-10-23T03:19:40.3065257+00:00" />
+  <TestSettings name="default" id="804f8410-4af4-45c6-aa33-bd394a0c981d">
+    <Deployment runDeploymentRoot="_741e4757407e_2026-10-23_03_19_40" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="89e5dffd-fb12-48c3-bbd4-174fb690b08b" testId="ef7672bd-6fa9-715c-276b-c63eeee9f525" testName="InvalidSnapshotPreservesPreviousInventory" computerName="741e4757407e" duration="00:00:00.0003810" startTime="2026-10-23T03:19:40.1870928+00:00" endTime="2026-10-23T03:19:40.1874734+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="89e5dffd-fb12-48c3-bbd4-174fb690b08b" />
+    <UnitTestResult executionId="b411baf0-5c91-485e-94dc-fb9ef922ef8e" testId="59e47093-43e3-8026-4412-9ee0b90e7f29" testName="InteractionCooldownConsumesRejectedSequence" computerName="741e4757407e" duration="00:00:00.0002730" startTime="2026-10-23T03:19:40.1868092+00:00" endTime="2026-10-23T03:19:40.1870824+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b411baf0-5c91-485e-94dc-fb9ef922ef8e" />
+    <UnitTestResult executionId="8ed5c0f5-db16-4800-b9e9-1a409a15de42" testId="ee135316-b973-9643-486b-51a2d0659278" testName="PacketBurstIsLimitedWithoutAdvancingWorldTime" computerName="741e4757407e" duration="00:00:00.0001910" startTime="2026-10-23T03:19:40.1883391+00:00" endTime="2026-10-23T03:19:40.1885300+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8ed5c0f5-db16-4800-b9e9-1a409a15de42" />
+    <UnitTestResult executionId="cfbaf98b-5ab4-44a7-a2e0-ff7d944b8d76" testId="dd7ecaee-cbe7-d4a2-858d-34d50d15e01e" testName="InvalidAttackTimeCannotMutateHealth(double.PositiveInfinity)" computerName="741e4757407e" duration="00:00:00.0002110" startTime="2026-10-23T03:19:40.1694154+00:00" endTime="2026-10-23T03:19:40.1696259+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cfbaf98b-5ab4-44a7-a2e0-ff7d944b8d76" />
+    <UnitTestResult executionId="fbbe359f-8756-408a-a348-7320b0872f18" testId="af9238c6-2c02-e6b8-5ddb-51ac134055c6" testName="InaudibleOrWeakerRecentNoiseDoesNotReplaceMemory" computerName="741e4757407e" duration="00:00:00.0002500" startTime="2026-10-23T03:19:40.1678000+00:00" endTime="2026-10-23T03:19:40.1680498+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fbbe359f-8756-408a-a348-7320b0872f18" />
+    <UnitTestResult executionId="3900c78c-0b46-4919-94a0-13800d64f1d0" testId="83ee601f-76d5-bc96-1760-0999375a1380" testName="InvalidCapacityIsRejected(0)" computerName="741e4757407e" duration="00:00:00.0001979" startTime="2026-10-23T03:19:40.1805383+00:00" endTime="2026-10-23T03:19:40.1807364+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3900c78c-0b46-4919-94a0-13800d64f1d0" />
+    <UnitTestResult executionId="d757e091-88bd-488d-9e8c-4e895db22f0e" testId="d5c5a1f5-e3a7-3fc2-9b54-d4292037a19f" testName="InvalidRangeCannotAuthorizeInteraction(-1.0f)" computerName="741e4757407e" duration="00:00:00.0001290" startTime="2026-10-23T03:19:40.1790749+00:00" endTime="2026-10-23T03:19:40.1792033+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d757e091-88bd-488d-9e8c-4e895db22f0e" />
+    <UnitTestResult executionId="aa0ac8c5-30f2-49b5-8b81-4ef0df3b6b6e" testId="710c42a3-4116-5735-88cf-0bcd1dfc1938" testName="AuthorityIdentityRangeAndVisibilityAreAllRequired(False,True,True,1.0f,True,False)" computerName="741e4757407e" duration="00:00:00.0000240" startTime="2026-10-23T03:19:40.1787952+00:00" endTime="2026-10-23T03:19:40.1788196+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aa0ac8c5-30f2-49b5-8b81-4ef0df3b6b6e" />
+    <UnitTestResult executionId="2c7c1c83-9374-4040-bb01-ec181f529f22" testId="68f7c268-5318-611d-8b57-186b8f65babc" testName="InvalidAttackTimeCannotMutateHealth(double.NaN)" computerName="741e4757407e" duration="00:00:00.0000960" startTime="2026-10-23T03:19:40.1693118+00:00" endTime="2026-10-23T03:19:40.1694079+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2c7c1c83-9374-4040-bb01-ec181f529f22" />
+    <UnitTestResult executionId="c8e002d1-9af2-4893-9705-e785a936d43d" testId="0888cc32-ea43-abf3-01c1-85a9bc7d7a4e" testName="MovementIsBoundedAndDiagonalNormalized" computerName="741e4757407e" duration="00:00:00.0001870" startTime="2026-10-23T03:19:40.1878254+00:00" endTime="2026-10-23T03:19:40.1880118+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c8e002d1-9af2-4893-9705-e785a936d43d" />
+    <UnitTestResult executionId="d48ee521-ebc0-4c8f-971d-1e07b73268f5" testId="049909a6-fd2e-c48b-be11-359f23a6e789" testName="RestartResetsMissionButKeepsStoryChoice" computerName="741e4757407e" duration="00:00:00.0006700" startTime="2026-10-23T03:19:40.1727150+00:00" endTime="2026-10-23T03:19:40.1733853+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d48ee521-ebc0-4c8f-971d-1e07b73268f5" />
+    <UnitTestResult executionId="1a5df090-e3c9-4999-9798-52e115ab00ea" testId="469cc728-ff43-c148-249c-4cdb1f779c15" testName="CrouchingIsQuieterThanWalkingAndRunning(Wood)" computerName="741e4757407e" duration="00:00:00.0000090" startTime="2026-10-23T03:19:40.1608273+00:00" endTime="2026-10-23T03:19:40.1608360+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1a5df090-e3c9-4999-9798-52e115ab00ea" />
+    <UnitTestResult executionId="8d5d524a-0041-49f8-9681-3ad9cfcec723" testId="893ca21d-a795-c077-e174-3eb7556ead30" testName="InvalidDistanceIsRejected(-1.0f)" computerName="741e4757407e" duration="00:00:00.0001940" startTime="2026-10-23T03:19:40.1892287+00:00" endTime="2026-10-23T03:19:40.1894223+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8d5d524a-0041-49f8-9681-3ad9cfcec723" />
+    <UnitTestResult executionId="df4b2540-f2b4-42a3-8e9e-b1e1380dff69" testId="dcc5c5aa-3f3f-21ed-787c-5642a27386e1" testName="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,float.PositiveInfinity,True,False)" computerName="741e4757407e" duration="00:00:00.0000050" startTime="2026-10-23T03:19:40.1789063+00:00" endTime="2026-10-23T03:19:40.1789111+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df4b2540-f2b4-42a3-8e9e-b1e1380dff69" />
+    <UnitTestResult executionId="3dacee96-68a4-4e96-ac2a-e486e5c463d0" testId="bd5c6cca-ea5f-3252-3f5c-9ccb6c7b6101" testName="InvalidRangeIsRejected(float.PositiveInfinity)" computerName="741e4757407e" duration="00:00:00.0000260" startTime="2026-10-23T03:19:40.1905979+00:00" endTime="2026-10-23T03:19:40.1906243+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3dacee96-68a4-4e96-ac2a-e486e5c463d0" />
+    <UnitTestResult executionId="8bd4e85a-57ce-4297-9cf4-f960f4a940d6" testId="a052d982-982c-3250-caf3-b5a9fb3a3886" testName="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Nightmare)" computerName="741e4757407e" duration="00:00:00.0000020" startTime="2026-10-23T03:19:40.1580834+00:00" endTime="2026-10-23T03:19:40.1580857+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8bd4e85a-57ce-4297-9cf4-f960f4a940d6" />
+    <UnitTestResult executionId="1b58512c-e06e-4164-bd95-26cdd4ddcaed" testId="bdf522d9-64ce-42a7-9a77-016eafd378ef" testName="CreatureRecoveryPreventsInstantAttackLoop" computerName="741e4757407e" duration="00:00:00.0015270" startTime="2026-10-23T03:19:40.1543033+00:00" endTime="2026-10-23T03:19:40.1558304+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1b58512c-e06e-4164-bd95-26cdd4ddcaed" />
+    <UnitTestResult executionId="1e0d2899-a88a-44ed-a7d1-4f0a42995179" testId="1285d15d-8032-bfd5-8a45-0c49b7440d78" testName="InvalidItemCannotConsumeASlot(null)" computerName="741e4757407e" duration="00:00:00.0004630" startTime="2026-10-23T03:19:40.1807762+00:00" endTime="2026-10-23T03:19:40.1812389+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e0d2899-a88a-44ed-a7d1-4f0a42995179" />
+    <UnitTestResult executionId="4f04ee82-49d6-46a8-a562-2ccfb4f35541" testId="bc5af6d8-3c9c-3a2e-c9d2-998699fbfeab" testName="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,1.0f,False,False)" computerName="741e4757407e" duration="00:00:00.0000290" startTime="2026-10-23T03:19:40.1788498+00:00" endTime="2026-10-23T03:19:40.1788783+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f04ee82-49d6-46a8-a562-2ccfb4f35541" />
+    <UnitTestResult executionId="49dba569-d462-40f9-a395-8e9092d57643" testId="b5a47d39-f6f2-1cf6-4832-ee6431ce70bc" testName="NonFiniteInputIsRejected(float.NegativeInfinity)" computerName="741e4757407e" duration="00:00:00.0000090" startTime="2026-10-23T03:19:40.1883191+00:00" endTime="2026-10-23T03:19:40.1883278+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49dba569-d462-40f9-a395-8e9092d57643" />
+    <UnitTestResult executionId="cd14732b-aa4a-403f-8874-bd612eb20a84" testId="1589f41e-b704-33bf-fa5a-ff4f38323912" testName="DuplicateAndDifferentProtocolDoNotReserveSlots" computerName="741e4757407e" duration="00:00:00.0003050" startTime="2026-10-23T03:19:40.1854813+00:00" endTime="2026-10-23T03:19:40.1857863+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd14732b-aa4a-403f-8874-bd612eb20a84" />
+    <UnitTestResult executionId="e49da11e-1748-45df-ae9d-7bde4943fa13" testId="a0f29764-cc9e-e95c-5ddc-df82bd400ed1" testName="CrouchingIsQuieterThanWalkingAndRunning(Concrete)" computerName="741e4757407e" duration="00:00:00.0000030" startTime="2026-10-23T03:19:40.1608388+00:00" endTime="2026-10-23T03:19:40.1608416+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e49da11e-1748-45df-ae9d-7bde4943fa13" />
+    <UnitTestResult executionId="f862ca10-b44c-4981-95f0-877c5b645067" testId="cf13eb5b-9d68-1564-bff7-1a9176cccc4d" testName="InvalidRangeIsRejected(0.0f)" computerName="741e4757407e" duration="00:00:00.0001930" startTime="2026-10-23T03:19:40.1901574+00:00" endTime="2026-10-23T03:19:40.1903499+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f862ca10-b44c-4981-95f0-877c5b645067" />
+    <UnitTestResult executionId="f78ffd33-088a-469a-9c30-89d38d27ab05" testId="7bdad546-5f96-e45e-6207-90fd35f12aed" testName="CrouchingIsQuieterThanWalkingAndRunning(Water)" computerName="741e4757407e" duration="00:00:00.0000050" startTime="2026-10-23T03:19:40.1608575+00:00" endTime="2026-10-23T03:19:40.1608622+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f78ffd33-088a-469a-9c30-89d38d27ab05" />
+    <UnitTestResult executionId="df467d42-704b-4176-9e25-f8ea7fd493cf" testId="bdf84a1f-34d1-da42-734e-e62ce4cefdb5" testName="AllSevenChaptersRequireFreshObjectivesAndCarryStoryDecisions" computerName="741e4757407e" duration="00:00:00.0147730" startTime="2026-10-23T03:19:40.1333398+00:00" endTime="2026-10-23T03:19:40.1480641+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df467d42-704b-4176-9e25-f8ea7fd493cf" />
+    <UnitTestResult executionId="82f3ed62-94cd-47eb-a3ac-8c0d56bf5f52" testId="c5fed748-f833-1ee6-470f-4393c07e8989" testName="NonFiniteInputIsRejected(float.PositiveInfinity)" computerName="741e4757407e" duration="00:00:00.0001610" startTime="2026-10-23T03:19:40.1881485+00:00" endTime="2026-10-23T03:19:40.1883090+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82f3ed62-94cd-47eb-a3ac-8c0d56bf5f52" />
+    <UnitTestResult executionId="ae08c642-87f3-4f0d-a147-b2880f4fac7c" testId="9ec4489c-bfdb-47fd-7e21-4d834611b1cb" testName="TwoBatteriesUseTwoSlots" computerName="741e4757407e" duration="00:00:00.0000970" startTime="2026-10-23T03:19:40.1833704+00:00" endTime="2026-10-23T03:19:40.1834678+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ae08c642-87f3-4f0d-a147-b2880f4fac7c" />
+    <UnitTestResult executionId="a2bf4de7-fac0-43ee-a411-964fbff1a92c" testId="3061f967-eb6c-c7ce-d425-0fe0dec56027" testName="VoteDeadlineAndTiesUseConservativeChoice" computerName="741e4757407e" duration="00:00:00.0004560" startTime="2026-10-23T03:19:40.1742280+00:00" endTime="2026-10-23T03:19:40.1746837+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a2bf4de7-fac0-43ee-a411-964fbff1a92c" />
+    <UnitTestResult executionId="f5b5b834-3037-4b0c-8d54-693486efefef" testId="b02314ad-6f73-c26b-411e-fc6c242af008" testName="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Normal)" computerName="741e4757407e" duration="00:00:00.0003060" startTime="2026-10-23T03:19:40.1577552+00:00" endTime="2026-10-23T03:19:40.1580606+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f5b5b834-3037-4b0c-8d54-693486efefef" />
+    <UnitTestResult executionId="120a4826-b7cf-49fc-a040-7208af4e9fb2" testId="331c7888-0565-c0aa-2703-dd9c70c58015" testName="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,2.5f,True,True)" computerName="741e4757407e" duration="00:00:00.0005780" startTime="2026-10-23T03:19:40.1781970+00:00" endTime="2026-10-23T03:19:40.1787753+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="120a4826-b7cf-49fc-a040-7208af4e9fb2" />
+    <UnitTestResult executionId="3c01c841-4167-47c7-82be-77b5bc0b7a03" testId="acef6ae7-272a-2aa9-da4b-f74fb3f3e2f7" testName="InvalidDistanceIsRejected(float.PositiveInfinity)" computerName="741e4757407e" duration="00:00:00.0000270" startTime="2026-10-23T03:19:40.1899035+00:00" endTime="2026-10-23T03:19:40.1899301+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3c01c841-4167-47c7-82be-77b5bc0b7a03" />
+    <UnitTestResult executionId="36466578-cb50-453d-a7a1-1c183bfafb10" testId="454a934f-e23e-fe7a-5657-7df71f0b33e5" testName="DisconnectReleasesSlotAndRoundBlocksRejoin" computerName="741e4757407e" duration="00:00:00.0018910" startTime="2026-10-23T03:19:40.1835773+00:00" endTime="2026-10-23T03:19:40.1854678+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="36466578-cb50-453d-a7a1-1c183bfafb10" />
+    <UnitTestResult executionId="0e6d8e24-d84b-4faa-9bfe-51670bfe931a" testId="a7afbb81-7053-ae98-1f8e-96278952919b" testName="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,2.0f,True,True)" computerName="741e4757407e" duration="00:00:00.0023300" startTime="2026-10-23T03:19:40.1758530+00:00" endTime="2026-10-23T03:19:40.1781826+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0e6d8e24-d84b-4faa-9bfe-51670bfe931a" />
+    <UnitTestResult executionId="c29b4ba7-5996-4483-9eb2-cef767c6e346" testId="01e1985f-dddf-01f5-a535-97f5deadbe04" testName="CrouchingIsQuieterThanWalkingAndRunning(Glass)" computerName="741e4757407e" duration="00:00:00.0000030" startTime="2026-10-23T03:19:40.1608481+00:00" endTime="2026-10-23T03:19:40.1608506+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c29b4ba7-5996-4483-9eb2-cef767c6e346" />
+    <UnitTestResult executionId="768398d4-b3c4-43ea-a839-fa16952ee372" testId="eeee19ed-16e2-936f-a65d-47318a47cc2a" testName="CrouchingIsQuieterThanWalkingAndRunning(Dirt)" computerName="741e4757407e" duration="00:00:00.0003530" startTime="2026-10-23T03:19:40.1602899+00:00" endTime="2026-10-23T03:19:40.1606427+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="768398d4-b3c4-43ea-a839-fa16952ee372" />
+    <UnitTestResult executionId="6bd4e48e-e512-4952-8655-1711d3441e83" testId="f8d059c7-0fa4-b03d-d162-87aae9a98920" testName="FourthItemIsRejectedWithoutLosingExistingItems" computerName="741e4757407e" duration="00:00:00.0008490" startTime="2026-10-23T03:19:40.1793155+00:00" endTime="2026-10-23T03:19:40.1801643+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6bd4e48e-e512-4952-8655-1711d3441e83" />
+    <UnitTestResult executionId="65b4358a-d041-4fed-bea2-f1cb73d094e1" testId="02dc7270-de6e-b442-1d19-e509f0d96460" testName="RangeEnvelopeHasExpectedEndpoints(10.0f,0.0f)" computerName="741e4757407e" duration="00:00:00.0000090" startTime="2026-10-23T03:19:40.1914777+00:00" endTime="2026-10-23T03:19:40.1914869+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="65b4358a-d041-4fed-bea2-f1cb73d094e1" />
+    <UnitTestResult executionId="86758090-b8ac-447a-8ebb-e96cccd36b3b" testId="8238a093-0212-68cb-22bb-a63005be651a" testName="InvalidRemovalDoesNotModifyInventory(1)" computerName="741e4757407e" duration="00:00:00.0002720" startTime="2026-10-23T03:19:40.1823583+00:00" endTime="2026-10-23T03:19:40.1826298+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="86758090-b8ac-447a-8ebb-e96cccd36b3b" />
+    <UnitTestResult executionId="e0e3fc62-7085-4597-bcf7-c2b77ede1ae5" testId="ac90c108-ccb4-eec5-a5ea-13d3ea825244" testName="StaminaSupportsLongSprintAndRecoversWhileWalking" computerName="741e4757407e" duration="00:00:00.0005330" startTime="2026-10-23T03:19:40.1733964+00:00" endTime="2026-10-23T03:19:40.1739295+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e0e3fc62-7085-4597-bcf7-c2b77ede1ae5" />
+    <UnitTestResult executionId="d1c48be9-16fb-4741-903e-eddcff4cd676" testId="b63db7af-5749-b698-1589-459d8329668b" testName="CrouchingIsQuieterThanWalkingAndRunning(Grass)" computerName="741e4757407e" duration="00:00:00.0001580" startTime="2026-10-23T03:19:40.1606596+00:00" endTime="2026-10-23T03:19:40.1608170+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d1c48be9-16fb-4741-903e-eddcff4cd676" />
+    <UnitTestResult executionId="e948ee1c-0ae8-4a1d-b279-31408b161601" testId="a7039951-1681-0f89-703b-231e7dfeed50" testName="InfiniteRecoveryCannotFreezeTheCreature" computerName="741e4757407e" duration="00:00:00.0001100" startTime="2026-10-23T03:19:40.1680604+00:00" endTime="2026-10-23T03:19:40.1681698+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e948ee1c-0ae8-4a1d-b279-31408b161601" />
+    <UnitTestResult executionId="5ff3f287-3245-4cf0-9218-c3b6f8d64eaf" testId="f4c8c326-4c91-803a-c4ef-7fd6f9ce726d" testName="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,False,True,1.0f,True,False)" computerName="741e4757407e" duration="00:00:00.0000110" startTime="2026-10-23T03:19:40.1788227+00:00" endTime="2026-10-23T03:19:40.1788337+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5ff3f287-3245-4cf0-9218-c3b6f8d64eaf" />
+    <UnitTestResult executionId="1889c9ba-0280-4d63-94ec-6f099a9fef84" testId="51d6c425-f7ee-8adc-5041-b40a649c50c6" testName="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,float.NaN,True,False)" computerName="741e4757407e" duration="00:00:00.0000080" startTime="2026-10-23T03:19:40.1788961+00:00" endTime="2026-10-23T03:19:40.1789039+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1889c9ba-0280-4d63-94ec-6f099a9fef84" />
+    <UnitTestResult executionId="9fc9b5bc-82f4-467b-8b89-473155d27942" testId="92cd5198-d0f5-755d-0df2-8bb66653e846" testName="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Hard)" computerName="741e4757407e" duration="00:00:00.0000090" startTime="2026-10-23T03:19:40.1580713+00:00" endTime="2026-10-23T03:19:40.1580804+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9fc9b5bc-82f4-467b-8b89-473155d27942" />
+    <UnitTestResult executionId="22d2a99c-3471-45cc-8630-02ff15de1c69" testId="310ac721-4c32-9344-bdc4-06182cea37b0" testName="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,-1.0f,True,False)" computerName="741e4757407e" duration="00:00:00.0000050" startTime="2026-10-23T03:19:40.1788891+00:00" endTime="2026-10-23T03:19:40.1788939+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="22d2a99c-3471-45cc-8630-02ff15de1c69" />
+    <UnitTestResult executionId="83e14530-c156-4b0d-b194-a49a309794b6" testId="cc48de23-9b34-3a69-4891-188f785a46f9" testName="FinalChoiceProducesTheConfiguredEnding(True,True,Hope)" computerName="741e4757407e" duration="00:00:00.0002480" startTime="2026-10-23T03:19:40.1670938+00:00" endTime="2026-10-23T03:19:40.1673417+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="83e14530-c156-4b0d-b194-a49a309794b6" />
+    <UnitTestResult executionId="1e98c650-52bc-4aee-aaf3-e3c524370683" testId="d5500441-32b0-6d34-975f-f0b370d0fbb6" testName="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,False,1.0f,True,False)" computerName="741e4757407e" duration="00:00:00.0000060" startTime="2026-10-23T03:19:40.1788418+00:00" endTime="2026-10-23T03:19:40.1788474+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e98c650-52bc-4aee-aaf3-e3c524370683" />
+    <UnitTestResult executionId="69b58efa-e85e-4224-baa8-cb823c06ab1f" testId="231c08b4-9714-48b2-d008-c402b8634da2" testName="VoteRejectsOutsidersAndDuplicatesAndResolvesMajority" computerName="741e4757407e" duration="00:00:00.0003110" startTime="2026-10-23T03:19:40.1746947+00:00" endTime="2026-10-23T03:19:40.1750060+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="69b58efa-e85e-4224-baa8-cb823c06ab1f" />
+    <UnitTestResult executionId="834c167d-8273-4169-aad5-a56b07a4b29b" testId="fa940045-a3b4-b0cb-a24e-1eae2d96663e" testName="TeleportAndAirborneMovementDoNotGenerateFootsteps" computerName="741e4757407e" duration="00:00:00.0002220" startTime="2026-10-23T03:19:40.1739960+00:00" endTime="2026-10-23T03:19:40.1742184+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="834c167d-8273-4169-aad5-a56b07a4b29b" />
+    <UnitTestResult executionId="a99be698-e377-4254-9bc7-bf0ce65eafb5" testId="642c9358-5f2b-8cf8-8758-14ec494dffca" testName="RemovingAnItemFreesExactlyOneSlot" computerName="741e4757407e" duration="00:00:00.0001590" startTime="2026-10-23T03:19:40.1832020+00:00" endTime="2026-10-23T03:19:40.1833612+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a99be698-e377-4254-9bc7-bf0ce65eafb5" />
+    <UnitTestResult executionId="08675b22-b9fe-42ae-8e3f-acaf07e39609" testId="537bc47b-7c1c-cebb-a854-e493af59a6f0" testName="InvalidItemCannotConsumeASlot(&quot;&quot;)" computerName="741e4757407e" duration="00:00:00.0003100" startTime="2026-10-23T03:19:40.1812563+00:00" endTime="2026-10-23T03:19:40.1815662+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="08675b22-b9fe-42ae-8e3f-acaf07e39609" />
+    <UnitTestResult executionId="db5e7811-fb35-4d66-8415-8c0d5ccd2489" testId="36a71a7b-eecc-e559-6a3f-6ad9d50f917c" testName="DisconnectedVoterDoesNotBlockTheParty" computerName="741e4757407e" duration="00:00:00.0055860" startTime="2026-10-23T03:19:40.1609714+00:00" endTime="2026-10-23T03:19:40.1665570+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db5e7811-fb35-4d66-8415-8c0d5ccd2489" />
+    <UnitTestResult executionId="1e65f663-51be-4bac-a505-efe377d10bce" testId="a90e00dd-fce1-926f-6f7b-ece2fab5ddb4" testName="ObstructionAndMaskingReduceIntensityIndependently" computerName="741e4757407e" duration="00:00:00.0001440" startTime="2026-10-23T03:19:40.1910741+00:00" endTime="2026-10-23T03:19:40.1912184+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e65f663-51be-4bac-a505-efe377d10bce" />
+    <UnitTestResult executionId="cefa9b04-4b32-47f8-9d29-a93a41ec90ec" testId="0299f103-3964-b486-0fe1-5f86e7b0c82b" testName="NonFiniteInputIsRejected(float.NaN)" computerName="741e4757407e" duration="00:00:00.0001070" startTime="2026-10-23T03:19:40.1880345+00:00" endTime="2026-10-23T03:19:40.1881414+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cefa9b04-4b32-47f8-9d29-a93a41ec90ec" />
+    <UnitTestResult executionId="623de74c-6532-4169-92c0-9bc0056a29ab" testId="289ee56c-b49d-9556-2572-92e1c5c98724" testName="InvalidVoteClockCannotCloseAnUnfinishedVote(double.PositiveInfinity)" computerName="741e4757407e" duration="00:00:00.0001890" startTime="2026-10-23T03:19:40.1699208+00:00" endTime="2026-10-23T03:19:40.1701100+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="623de74c-6532-4169-92c0-9bc0056a29ab" />
+    <UnitTestResult executionId="07781039-6040-498c-97fb-7389ac5c5aff" testId="cee7bebd-ae4f-84ce-4c38-34b9f1802e29" testName="InvalidEnvelopeFactorsCannotAmplifyOrInvertNoise" computerName="741e4757407e" duration="00:00:00.0001680" startTime="2026-10-23T03:19:40.1899682+00:00" endTime="2026-10-23T03:19:40.1901364+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="07781039-6040-498c-97fb-7389ac5c5aff" />
+    <UnitTestResult executionId="c7c38583-ff68-4d36-ad2f-113cb0284630" testId="85cf275e-4b26-b7cc-a7f4-04d391ab71d8" testName="CreatureTracksHeardPositionAndCannotFollowSilentMovement" computerName="741e4757407e" duration="00:00:00.0011470" startTime="2026-10-23T03:19:40.1591156+00:00" endTime="2026-10-23T03:19:40.1602621+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c7c38583-ff68-4d36-ad2f-113cb0284630" />
+    <UnitTestResult executionId="cebcbc56-b0fb-468c-be3b-c8f46783f547" testId="6889175a-c3bd-ad65-6e49-71a0b79fd51d" testName="InvalidRangeCannotAuthorizeInteraction(float.PositiveInfinity)" computerName="741e4757407e" duration="00:00:00.0000020" startTime="2026-10-23T03:19:40.1792239+00:00" endTime="2026-10-23T03:19:40.1792264+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cebcbc56-b0fb-468c-be3b-c8f46783f547" />
+    <UnitTestResult executionId="6fd42055-0ad1-4e4d-a114-9d855f8c582f" testId="cd934166-0e69-7572-a4af-cfbde5025910" testName="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,2.51f,True,False)" computerName="741e4757407e" duration="00:00:00.0000050" startTime="2026-10-23T03:19:40.1788813+00:00" endTime="2026-10-23T03:19:40.1788868+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6fd42055-0ad1-4e4d-a114-9d855f8c582f" />
+    <UnitTestResult executionId="49dd756a-1972-4e06-a269-70cbae5313f1" testId="e4bdbfff-484f-e516-f604-2154cb47e380" testName="InjuryHasGraceThenDeathAndRequiresARealRevive" computerName="741e4757407e" duration="00:00:00.0011100" startTime="2026-10-23T03:19:40.1681770+00:00" endTime="2026-10-23T03:19:40.1692873+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49dd756a-1972-4e06-a269-70cbae5313f1" />
+    <UnitTestResult executionId="fa8b8c11-3b56-4456-a4c0-469656f31081" testId="0b42e966-5c5b-fbe1-3c4b-d50fb4664df7" testName="InvalidRangeIsRejected(float.NaN)" computerName="741e4757407e" duration="00:00:00.0000340" startTime="2026-10-23T03:19:40.1905609+00:00" endTime="2026-10-23T03:19:40.1905946+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fa8b8c11-3b56-4456-a4c0-469656f31081" />
+    <UnitTestResult executionId="319e91b9-2c94-4319-87a4-4de6e3cd5b5e" testId="e9de64ca-94ff-2da8-ed66-857b0f597e7f" testName="MedicineHealsWoundButNotAHealthyOrDeadActor" computerName="741e4757407e" duration="00:00:00.0001610" startTime="2026-10-23T03:19:40.1701457+00:00" endTime="2026-10-23T03:19:40.1703067+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="319e91b9-2c94-4319-87a4-4de6e3cd5b5e" />
+    <UnitTestResult executionId="8a99c0cc-2381-4adb-9d5d-0662b9d78e9b" testId="225c0b07-69df-772b-9ed4-0f15131f2506" testName="InvalidVoteClockCannotCloseAnUnfinishedVote(-1)" computerName="741e4757407e" duration="00:00:00.0000150" startTime="2026-10-23T03:19:40.1701201+00:00" endTime="2026-10-23T03:19:40.1701350+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a99c0cc-2381-4adb-9d5d-0662b9d78e9b" />
+    <UnitTestResult executionId="6aa276e7-4982-4f5c-b5bf-12f11fe212f6" testId="27ee2a63-fd5c-a1ee-6a6d-50ec640acbfc" testName="MetalAndGlassAreLouderThanGrass" computerName="741e4757407e" duration="00:00:00.0001280" startTime="2026-10-23T03:19:40.1703162+00:00" endTime="2026-10-23T03:19:40.1704443+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6aa276e7-4982-4f5c-b5bf-12f11fe212f6" />
+    <UnitTestResult executionId="3003e808-4686-4723-a0a0-a2531eb5b7d6" testId="b4737380-8642-3af2-095a-65cbe778a22a" testName="RangeEnvelopeHasExpectedEndpoints(15.0f,0.0f)" computerName="741e4757407e" duration="00:00:00.0000040" startTime="2026-10-23T03:19:40.1914897+00:00" endTime="2026-10-23T03:19:40.1914935+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3003e808-4686-4723-a0a0-a2531eb5b7d6" />
+    <UnitTestResult executionId="dafb07d4-5ad8-49cf-9cd3-afdd1abd2bb3" testId="9591fe02-7024-55b4-a59e-0d890ef98d4f" testName="FinalChoiceProducesTheConfiguredEnding(True,False,Outbreak)" computerName="741e4757407e" duration="00:00:00.0000150" startTime="2026-10-23T03:19:40.1675296+00:00" endTime="2026-10-23T03:19:40.1675447+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dafb07d4-5ad8-49cf-9cd3-afdd1abd2bb3" />
+    <UnitTestResult executionId="e8dd2c0e-c377-4ff6-af6b-9dacc86198c0" testId="6d1307f4-e905-087a-3813-adef77519bf1" testName="InvalidCapacityIsRejected(-1)" computerName="741e4757407e" duration="00:00:00.0003310" startTime="2026-10-23T03:19:40.1801951+00:00" endTime="2026-10-23T03:19:40.1805258+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8dd2c0e-c377-4ff6-af6b-9dacc86198c0" />
+    <UnitTestResult executionId="d4ad9340-1d1e-4148-b59e-348a9634ca39" testId="082cb67c-9213-46eb-fab2-e8bca7575e7b" testName="InvalidAttackTimeCannotMutateHealth(-1)" computerName="741e4757407e" duration="00:00:00.0000170" startTime="2026-10-23T03:19:40.1696426+00:00" endTime="2026-10-23T03:19:40.1696596+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d4ad9340-1d1e-4148-b59e-348a9634ca39" />
+    <UnitTestResult executionId="cf53c041-e01c-4aae-ba75-b52aaa5b31ef" testId="bfba529b-056f-b95f-d42f-1291fb6e7f95" testName="RangeEnvelopeHasExpectedEndpoints(5.0f,0.25f)" computerName="741e4757407e" duration="00:00:00.0001470" startTime="2026-10-23T03:19:40.1913208+00:00" endTime="2026-10-23T03:19:40.1914681+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf53c041-e01c-4aae-ba75-b52aaa5b31ef" />
+    <UnitTestResult executionId="ad06ef3f-acd4-4de8-a59c-3d201b36cc1d" testId="af016865-5c51-165e-6e95-835ad628e46d" testName="CampaignCannotSkipObjectivesOrGoBackwards" computerName="741e4757407e" duration="00:00:00.0005270" startTime="2026-10-23T03:19:40.1537658+00:00" endTime="2026-10-23T03:19:40.1542925+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ad06ef3f-acd4-4de8-a59c-3d201b36cc1d" />
+    <UnitTestResult executionId="2dfa39fd-aaa5-4ee8-ba7b-5008bf5254bb" testId="580b42d9-7380-c403-2021-ed812bea602e" testName="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Easy)" computerName="741e4757407e" duration="00:00:00.0018750" startTime="2026-10-23T03:19:40.1558662+00:00" endTime="2026-10-23T03:19:40.1577415+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2dfa39fd-aaa5-4ee8-ba7b-5008bf5254bb" />
+    <UnitTestResult executionId="f31f57a9-82cd-4955-8fa1-304dcae1903c" testId="cc307697-6602-754d-f0cb-16a8b80f925e" testName="InvalidRangeCannotAuthorizeInteraction(float.NaN)" computerName="741e4757407e" duration="00:00:00.0000080" startTime="2026-10-23T03:19:40.1792135+00:00" endTime="2026-10-23T03:19:40.1792213+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f31f57a9-82cd-4955-8fa1-304dcae1903c" />
+    <UnitTestResult executionId="f5307195-b4b5-4867-8cbb-be5919c00e0d" testId="f6801b2e-00bb-13b9-ce4b-0b43af47597c" testName="GameplayActionBurstCannotBypassServerBudget" computerName="741e4757407e" duration="00:00:00.0002340" startTime="2026-10-23T03:19:40.1675567+00:00" endTime="2026-10-23T03:19:40.1677906+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f5307195-b4b5-4867-8cbb-be5919c00e0d" />
+    <UnitTestResult executionId="578ebacc-c900-4a08-9a98-a5a8661cae84" testId="a4241240-5794-335f-c2f4-537f34e2d475" testName="LobbyReservesFourDistinctSlotsAndRejectsFifth" computerName="741e4757407e" duration="00:00:00.0003170" startTime="2026-10-23T03:19:40.1874839+00:00" endTime="2026-10-23T03:19:40.1878007+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="578ebacc-c900-4a08-9a98-a5a8661cae84" />
+    <UnitTestResult executionId="ab800097-9cd2-4b7a-8cb9-0b9aace09bda" testId="3998b8ee-bd54-b27a-d931-0e8eb6f2a837" testName="InputTimeoutStopsMovementAndJumpIsConsumedOnce" computerName="741e4757407e" duration="00:00:00.0002910" startTime="2026-10-23T03:19:40.1865071+00:00" endTime="2026-10-23T03:19:40.1867980+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ab800097-9cd2-4b7a-8cb9-0b9aace09bda" />
+    <UnitTestResult executionId="712a317f-5e2d-4031-839e-d195b68eead0" testId="c4762895-33db-4487-fb5b-1b4ce84ebf11" testName="NonfiniteFactorsAreRejected" computerName="741e4757407e" duration="00:00:00.0004300" startTime="2026-10-23T03:19:40.1906341+00:00" endTime="2026-10-23T03:19:40.1910637+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="712a317f-5e2d-4031-839e-d195b68eead0" />
+    <UnitTestResult executionId="57dc3fd9-9858-4e2e-a5ce-cce9ed71bdea" testId="278c5528-96f3-1dde-2a8b-036deb794bb8" testName="CrouchingIsQuieterThanWalkingAndRunning(Metal)" computerName="741e4757407e" duration="00:00:00.0000020" startTime="2026-10-23T03:19:40.1608529+00:00" endTime="2026-10-23T03:19:40.1608553+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="57dc3fd9-9858-4e2e-a5ce-cce9ed71bdea" />
+    <UnitTestResult executionId="5dd9f3bd-8ece-4ac4-9810-f7ef4ed24b5d" testId="40bf73e6-ef4b-7a64-3180-5a722c608565" testName="FinalChoiceProducesTheConfiguredEnding(False,True,Uncertain)" computerName="741e4757407e" duration="00:00:00.0001680" startTime="2026-10-23T03:19:40.1673522+00:00" endTime="2026-10-23T03:19:40.1675199+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5dd9f3bd-8ece-4ac4-9810-f7ef4ed24b5d" />
+    <UnitTestResult executionId="b1928714-2e32-43a9-bb41-a1e32a5396e1" testId="0136c5bf-6a84-e087-69b4-915f660ceacf" testName="InvalidRemovalDoesNotModifyInventory(-1)" computerName="741e4757407e" duration="00:00:00.0006980" startTime="2026-10-23T03:19:40.1816496+00:00" endTime="2026-10-23T03:19:40.1823470+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b1928714-2e32-43a9-bb41-a1e32a5396e1" />
+    <UnitTestResult executionId="52c40520-5e15-4d49-b2df-6cb1dd669627" testId="a8054e43-b20a-0aba-d31d-2e93f145f134" testName="BackpackUsesFiveSlotsAndSnapshotCapacityIsAtomic" computerName="741e4757407e" duration="00:00:00.0043970" startTime="2026-10-23T03:19:40.1493478+00:00" endTime="2026-10-23T03:19:40.1537448+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="52c40520-5e15-4d49-b2df-6cb1dd669627" />
+    <UnitTestResult executionId="03d24981-b832-4c3a-9691-43a3b24b61f0" testId="3f253544-10a5-073a-e721-a12ef33ee8f5" testName="InvalidRangeIsRejected(-10.0f)" computerName="741e4757407e" duration="00:00:00.0001920" startTime="2026-10-23T03:19:40.1903598+00:00" endTime="2026-10-23T03:19:40.1905517+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="03d24981-b832-4c3a-9691-43a3b24b61f0" />
+    <UnitTestResult executionId="9a8c00d6-a59b-4548-9d8f-2f10d7248b98" testId="d29dbc8c-c201-e7c2-1ee2-7680e8d826b1" testName="InvalidRangeCannotAuthorizeInteraction(0.0f)" computerName="741e4757407e" duration="00:00:00.0000940" startTime="2026-10-23T03:19:40.1789678+00:00" endTime="2026-10-23T03:19:40.1790611+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9a8c00d6-a59b-4548-9d8f-2f10d7248b98" />
+    <UnitTestResult executionId="4661ea96-7d67-48ab-87dc-822a4d50c526" testId="ace847eb-7d16-9bc7-382d-d6f56614f612" testName="RangeEnvelopeHasExpectedEndpoints(0.0f,1.0f)" computerName="741e4757407e" duration="00:00:00.0000760" startTime="2026-10-23T03:19:40.1912384+00:00" endTime="2026-10-23T03:19:40.1913144+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4661ea96-7d67-48ab-87dc-822a4d50c526" />
+    <UnitTestResult executionId="f084ca60-8cf9-445a-b1a7-d58399d3e13f" testId="768c433c-984b-5d34-470b-eaa3c2f649af" testName="AmbientMaskingCannotCompletelySilenceANearbySource" computerName="741e4757407e" duration="00:00:00.0002880" startTime="2026-10-23T03:19:40.1886831+00:00" endTime="2026-10-23T03:19:40.1889714+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f084ca60-8cf9-445a-b1a7-d58399d3e13f" />
+    <UnitTestResult executionId="7e57a8fb-ed44-440e-8421-59c7ec5e5f6f" testId="f6d299bf-e9de-1830-e40a-81e956f6ca7f" testName="InvalidVoteClockCannotCloseAnUnfinishedVote(double.NaN)" computerName="741e4757407e" duration="00:00:00.0001710" startTime="2026-10-23T03:19:40.1696912+00:00" endTime="2026-10-23T03:19:40.1698616+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7e57a8fb-ed44-440e-8421-59c7ec5e5f6f" />
+    <UnitTestResult executionId="4406af18-a797-4685-95ae-fae2b64f10fc" testId="a5c9f589-c212-69df-caeb-6f0075cd8bf6" testName="InboxRejectsReplayAndAllowsSequenceWrap" computerName="741e4757407e" duration="00:00:00.0007000" startTime="2026-10-23T03:19:40.1857966+00:00" endTime="2026-10-23T03:19:40.1864960+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4406af18-a797-4685-95ae-fae2b64f10fc" />
+    <UnitTestResult executionId="e234ae66-a065-48f3-8f31-c72498cff334" testId="ce85a162-2e57-da9a-ee98-348577087293" testName="InvalidItemCannotConsumeASlot(&quot; &quot;)" computerName="741e4757407e" duration="00:00:00.0000530" startTime="2026-10-23T03:19:40.1815768+00:00" endTime="2026-10-23T03:19:40.1816300+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e234ae66-a065-48f3-8f31-c72498cff334" />
+    <UnitTestResult executionId="76af1ad5-6377-485f-a47e-a73ac7333124" testId="dc8beb32-8c53-5cff-f985-f8770e4ec065" testName="InvalidDistanceIsRejected(float.NaN)" computerName="741e4757407e" duration="00:00:00.0004610" startTime="2026-10-23T03:19:40.1894326+00:00" endTime="2026-10-23T03:19:40.1898934+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="76af1ad5-6377-485f-a47e-a73ac7333124" />
+    <UnitTestResult executionId="1f6e7d67-84ae-43a5-8e43-d4f172da7358" testId="272d9310-6884-7155-c89b-79f2263c8a46" testName="PublicCollectionCannotBypassCapacity" computerName="741e4757407e" duration="00:00:00.0005410" startTime="2026-10-23T03:19:40.1826494+00:00" endTime="2026-10-23T03:19:40.1831906+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1f6e7d67-84ae-43a5-8e43-d4f172da7358" />
+    <UnitTestResult executionId="88d4ebc3-092c-4d23-a01c-da05736a658f" testId="3001fd0d-5e3f-ca18-2539-bf9662ba096f" testName="MicrophoneMetricsAreBoundedAndRateLimited" computerName="741e4757407e" duration="00:00:00.0022330" startTime="2026-10-23T03:19:40.1704532+00:00" endTime="2026-10-23T03:19:40.1726860+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="88d4ebc3-092c-4d23-a01c-da05736a658f" />
+    <UnitTestResult executionId="542155ed-caeb-4dc0-8f08-b6fbc451b337" testId="a75a456d-887f-ac8a-3005-2c61c5de4d2f" testName="IncreasingDistanceNeverIncreasesIntensity" computerName="741e4757407e" duration="00:00:00.0002240" startTime="2026-10-23T03:19:40.1889820+00:00" endTime="2026-10-23T03:19:40.1892061+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="542155ed-caeb-4dc0-8f08-b6fbc451b337" />
+    <UnitTestResult executionId="a699d929-7732-4c95-a7f4-f738e1754245" testId="9b73e618-5cfc-146c-3373-1f782c068415" testName="ExhaustedSprintMustRecoverBeforeRestarting" computerName="741e4757407e" duration="00:00:00.0004950" startTime="2026-10-23T03:19:40.1665723+00:00" endTime="2026-10-23T03:19:40.1670669+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a699d929-7732-4c95-a7f4-f738e1754245" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="InaudibleOrWeakerRecentNoiseDoesNotReplaceMemory" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="af9238c6-2c02-e6b8-5ddb-51ac134055c6">
+      <Execution id="fbbe359f-8756-408a-a348-7320b0872f18" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="InaudibleOrWeakerRecentNoiseDoesNotReplaceMemory" />
+    </UnitTest>
+    <UnitTest name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,False,True,1.0f,True,False)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="f4c8c326-4c91-803a-c4ef-7fd6f9ce726d">
+      <Execution id="5ff3f287-3245-4cf0-9218-c3b6f8d64eaf" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,False,True,1.0f,True,False)" />
+    </UnitTest>
+    <UnitTest name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,2.51f,True,False)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="cd934166-0e69-7572-a4af-cfbde5025910">
+      <Execution id="6fd42055-0ad1-4e4d-a114-9d855f8c582f" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,2.51f,True,False)" />
+    </UnitTest>
+    <UnitTest name="NonFiniteInputIsRejected(float.PositiveInfinity)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="c5fed748-f833-1ee6-470f-4393c07e8989">
+      <Execution id="82f3ed62-94cd-47eb-a3ac-8c0d56bf5f52" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="NonFiniteInputIsRejected(float.PositiveInfinity)" />
+    </UnitTest>
+    <UnitTest name="InvalidDistanceIsRejected(float.NaN)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="dc8beb32-8c53-5cff-f985-f8770e4ec065">
+      <Execution id="76af1ad5-6377-485f-a47e-a73ac7333124" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="InvalidDistanceIsRejected(float.NaN)" />
+    </UnitTest>
+    <UnitTest name="GameplayActionBurstCannotBypassServerBudget" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="f6801b2e-00bb-13b9-ce4b-0b43af47597c">
+      <Execution id="f5307195-b4b5-4867-8cbb-be5919c00e0d" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="GameplayActionBurstCannotBypassServerBudget" />
+    </UnitTest>
+    <UnitTest name="MicrophoneMetricsAreBoundedAndRateLimited" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="3001fd0d-5e3f-ca18-2539-bf9662ba096f">
+      <Execution id="88d4ebc3-092c-4d23-a01c-da05736a658f" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="MicrophoneMetricsAreBoundedAndRateLimited" />
+    </UnitTest>
+    <UnitTest name="FinalChoiceProducesTheConfiguredEnding(True,True,Hope)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="cc48de23-9b34-3a69-4891-188f785a46f9">
+      <Execution id="83e14530-c156-4b0d-b194-a49a309794b6" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="FinalChoiceProducesTheConfiguredEnding(True,True,Hope)" />
+    </UnitTest>
+    <UnitTest name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,float.PositiveInfinity,True,False)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="dcc5c5aa-3f3f-21ed-787c-5642a27386e1">
+      <Execution id="df4b2540-f2b4-42a3-8e9e-b1e1380dff69" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,float.PositiveInfinity,True,False)" />
+    </UnitTest>
+    <UnitTest name="NonFiniteInputIsRejected(float.NaN)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="0299f103-3964-b486-0fe1-5f86e7b0c82b">
+      <Execution id="cefa9b04-4b32-47f8-9d29-a93a41ec90ec" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="NonFiniteInputIsRejected(float.NaN)" />
+    </UnitTest>
+    <UnitTest name="InvalidEnvelopeFactorsCannotAmplifyOrInvertNoise" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="cee7bebd-ae4f-84ce-4c38-34b9f1802e29">
+      <Execution id="07781039-6040-498c-97fb-7389ac5c5aff" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="InvalidEnvelopeFactorsCannotAmplifyOrInvertNoise" />
+    </UnitTest>
+    <UnitTest name="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Nightmare)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="a052d982-982c-3250-caf3-b5a9fb3a3886">
+      <Execution id="8bd4e85a-57ce-4297-9cf4-f960f4a940d6" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Nightmare)" />
+    </UnitTest>
+    <UnitTest name="InvalidDistanceIsRejected(-1.0f)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="893ca21d-a795-c077-e174-3eb7556ead30">
+      <Execution id="8d5d524a-0041-49f8-9681-3ad9cfcec723" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="InvalidDistanceIsRejected(-1.0f)" />
+    </UnitTest>
+    <UnitTest name="InvalidRangeCannotAuthorizeInteraction(float.PositiveInfinity)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="6889175a-c3bd-ad65-6e49-71a0b79fd51d">
+      <Execution id="cebcbc56-b0fb-468c-be3b-c8f46783f547" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="InvalidRangeCannotAuthorizeInteraction(float.PositiveInfinity)" />
+    </UnitTest>
+    <UnitTest name="CreatureTracksHeardPositionAndCannotFollowSilentMovement" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="85cf275e-4b26-b7cc-a7f4-04d391ab71d8">
+      <Execution id="c7c38583-ff68-4d36-ad2f-113cb0284630" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CreatureTracksHeardPositionAndCannotFollowSilentMovement" />
+    </UnitTest>
+    <UnitTest name="IncreasingDistanceNeverIncreasesIntensity" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="a75a456d-887f-ac8a-3005-2c61c5de4d2f">
+      <Execution id="542155ed-caeb-4dc0-8f08-b6fbc451b337" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="IncreasingDistanceNeverIncreasesIntensity" />
+    </UnitTest>
+    <UnitTest name="ExhaustedSprintMustRecoverBeforeRestarting" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="9b73e618-5cfc-146c-3373-1f782c068415">
+      <Execution id="a699d929-7732-4c95-a7f4-f738e1754245" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="ExhaustedSprintMustRecoverBeforeRestarting" />
+    </UnitTest>
+    <UnitTest name="InvalidRangeCannotAuthorizeInteraction(0.0f)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="d29dbc8c-c201-e7c2-1ee2-7680e8d826b1">
+      <Execution id="9a8c00d6-a59b-4548-9d8f-2f10d7248b98" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="InvalidRangeCannotAuthorizeInteraction(0.0f)" />
+    </UnitTest>
+    <UnitTest name="InvalidItemCannotConsumeASlot(&quot;&quot;)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="537bc47b-7c1c-cebb-a854-e493af59a6f0">
+      <Execution id="08675b22-b9fe-42ae-8e3f-acaf07e39609" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InventoryTests" name="InvalidItemCannotConsumeASlot(&quot;&quot;)" />
+    </UnitTest>
+    <UnitTest name="CrouchingIsQuieterThanWalkingAndRunning(Wood)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="469cc728-ff43-c148-249c-4cdb1f779c15">
+      <Execution id="1a5df090-e3c9-4999-9798-52e115ab00ea" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CrouchingIsQuieterThanWalkingAndRunning(Wood)" />
+    </UnitTest>
+    <UnitTest name="InvalidVoteClockCannotCloseAnUnfinishedVote(double.NaN)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="f6d299bf-e9de-1830-e40a-81e956f6ca7f">
+      <Execution id="7e57a8fb-ed44-440e-8421-59c7ec5e5f6f" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="InvalidVoteClockCannotCloseAnUnfinishedVote(double.NaN)" />
+    </UnitTest>
+    <UnitTest name="RangeEnvelopeHasExpectedEndpoints(10.0f,0.0f)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="02dc7270-de6e-b442-1d19-e509f0d96460">
+      <Execution id="65b4358a-d041-4fed-bea2-f1cb73d094e1" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="RangeEnvelopeHasExpectedEndpoints(10.0f,0.0f)" />
+    </UnitTest>
+    <UnitTest name="InvalidVoteClockCannotCloseAnUnfinishedVote(double.PositiveInfinity)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="289ee56c-b49d-9556-2572-92e1c5c98724">
+      <Execution id="623de74c-6532-4169-92c0-9bc0056a29ab" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="InvalidVoteClockCannotCloseAnUnfinishedVote(double.PositiveInfinity)" />
+    </UnitTest>
+    <UnitTest name="InvalidRangeIsRejected(-10.0f)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="3f253544-10a5-073a-e721-a12ef33ee8f5">
+      <Execution id="03d24981-b832-4c3a-9691-43a3b24b61f0" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="InvalidRangeIsRejected(-10.0f)" />
+    </UnitTest>
+    <UnitTest name="InvalidRangeIsRejected(float.NaN)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="0b42e966-5c5b-fbe1-3c4b-d50fb4664df7">
+      <Execution id="fa8b8c11-3b56-4456-a4c0-469656f31081" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="InvalidRangeIsRejected(float.NaN)" />
+    </UnitTest>
+    <UnitTest name="InvalidAttackTimeCannotMutateHealth(double.PositiveInfinity)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="dd7ecaee-cbe7-d4a2-858d-34d50d15e01e">
+      <Execution id="cfbaf98b-5ab4-44a7-a2e0-ff7d944b8d76" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="InvalidAttackTimeCannotMutateHealth(double.PositiveInfinity)" />
+    </UnitTest>
+    <UnitTest name="CrouchingIsQuieterThanWalkingAndRunning(Grass)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="b63db7af-5749-b698-1589-459d8329668b">
+      <Execution id="d1c48be9-16fb-4741-903e-eddcff4cd676" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CrouchingIsQuieterThanWalkingAndRunning(Grass)" />
+    </UnitTest>
+    <UnitTest name="FinalChoiceProducesTheConfiguredEnding(True,False,Outbreak)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="9591fe02-7024-55b4-a59e-0d890ef98d4f">
+      <Execution id="dafb07d4-5ad8-49cf-9cd3-afdd1abd2bb3" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="FinalChoiceProducesTheConfiguredEnding(True,False,Outbreak)" />
+    </UnitTest>
+    <UnitTest name="DisconnectReleasesSlotAndRoundBlocksRejoin" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="454a934f-e23e-fe7a-5657-7df71f0b33e5">
+      <Execution id="36466578-cb50-453d-a7a1-1c183bfafb10" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="DisconnectReleasesSlotAndRoundBlocksRejoin" />
+    </UnitTest>
+    <UnitTest name="InvalidCapacityIsRejected(0)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="83ee601f-76d5-bc96-1760-0999375a1380">
+      <Execution id="3900c78c-0b46-4919-94a0-13800d64f1d0" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InventoryTests" name="InvalidCapacityIsRejected(0)" />
+    </UnitTest>
+    <UnitTest name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,float.NaN,True,False)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="51d6c425-f7ee-8adc-5041-b40a649c50c6">
+      <Execution id="1889c9ba-0280-4d63-94ec-6f099a9fef84" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,float.NaN,True,False)" />
+    </UnitTest>
+    <UnitTest name="InboxRejectsReplayAndAllowsSequenceWrap" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="a5c9f589-c212-69df-caeb-6f0075cd8bf6">
+      <Execution id="4406af18-a797-4685-95ae-fae2b64f10fc" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="InboxRejectsReplayAndAllowsSequenceWrap" />
+    </UnitTest>
+    <UnitTest name="DuplicateAndDifferentProtocolDoNotReserveSlots" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="1589f41e-b704-33bf-fa5a-ff4f38323912">
+      <Execution id="cd14732b-aa4a-403f-8874-bd612eb20a84" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="DuplicateAndDifferentProtocolDoNotReserveSlots" />
+    </UnitTest>
+    <UnitTest name="InvalidRemovalDoesNotModifyInventory(1)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="8238a093-0212-68cb-22bb-a63005be651a">
+      <Execution id="86758090-b8ac-447a-8ebb-e96cccd36b3b" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InventoryTests" name="InvalidRemovalDoesNotModifyInventory(1)" />
+    </UnitTest>
+    <UnitTest name="InvalidSnapshotPreservesPreviousInventory" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="ef7672bd-6fa9-715c-276b-c63eeee9f525">
+      <Execution id="89e5dffd-fb12-48c3-bbd4-174fb690b08b" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="InvalidSnapshotPreservesPreviousInventory" />
+    </UnitTest>
+    <UnitTest name="InvalidRangeIsRejected(0.0f)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="cf13eb5b-9d68-1564-bff7-1a9176cccc4d">
+      <Execution id="f862ca10-b44c-4981-95f0-877c5b645067" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="InvalidRangeIsRejected(0.0f)" />
+    </UnitTest>
+    <UnitTest name="NonfiniteFactorsAreRejected" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="c4762895-33db-4487-fb5b-1b4ce84ebf11">
+      <Execution id="712a317f-5e2d-4031-839e-d195b68eead0" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="NonfiniteFactorsAreRejected" />
+    </UnitTest>
+    <UnitTest name="PacketBurstIsLimitedWithoutAdvancingWorldTime" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="ee135316-b973-9643-486b-51a2d0659278">
+      <Execution id="8ed5c0f5-db16-4800-b9e9-1a409a15de42" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="PacketBurstIsLimitedWithoutAdvancingWorldTime" />
+    </UnitTest>
+    <UnitTest name="StaminaSupportsLongSprintAndRecoversWhileWalking" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="ac90c108-ccb4-eec5-a5ea-13d3ea825244">
+      <Execution id="e0e3fc62-7085-4597-bcf7-c2b77ede1ae5" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="StaminaSupportsLongSprintAndRecoversWhileWalking" />
+    </UnitTest>
+    <UnitTest name="VoteRejectsOutsidersAndDuplicatesAndResolvesMajority" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="231c08b4-9714-48b2-d008-c402b8634da2">
+      <Execution id="69b58efa-e85e-4224-baa8-cb823c06ab1f" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="VoteRejectsOutsidersAndDuplicatesAndResolvesMajority" />
+    </UnitTest>
+    <UnitTest name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,2.5f,True,True)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="331c7888-0565-c0aa-2703-dd9c70c58015">
+      <Execution id="120a4826-b7cf-49fc-a040-7208af4e9fb2" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,2.5f,True,True)" />
+    </UnitTest>
+    <UnitTest name="InfiniteRecoveryCannotFreezeTheCreature" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="a7039951-1681-0f89-703b-231e7dfeed50">
+      <Execution id="e948ee1c-0ae8-4a1d-b279-31408b161601" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="InfiniteRecoveryCannotFreezeTheCreature" />
+    </UnitTest>
+    <UnitTest name="NonFiniteInputIsRejected(float.NegativeInfinity)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="b5a47d39-f6f2-1cf6-4832-ee6431ce70bc">
+      <Execution id="49dba569-d462-40f9-a395-8e9092d57643" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="NonFiniteInputIsRejected(float.NegativeInfinity)" />
+    </UnitTest>
+    <UnitTest name="InvalidRangeCannotAuthorizeInteraction(-1.0f)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="d5c5a1f5-e3a7-3fc2-9b54-d4292037a19f">
+      <Execution id="d757e091-88bd-488d-9e8c-4e895db22f0e" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="InvalidRangeCannotAuthorizeInteraction(-1.0f)" />
+    </UnitTest>
+    <UnitTest name="AmbientMaskingCannotCompletelySilenceANearbySource" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="768c433c-984b-5d34-470b-eaa3c2f649af">
+      <Execution id="f084ca60-8cf9-445a-b1a7-d58399d3e13f" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="AmbientMaskingCannotCompletelySilenceANearbySource" />
+    </UnitTest>
+    <UnitTest name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,-1.0f,True,False)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="310ac721-4c32-9344-bdc4-06182cea37b0">
+      <Execution id="22d2a99c-3471-45cc-8630-02ff15de1c69" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,-1.0f,True,False)" />
+    </UnitTest>
+    <UnitTest name="InjuryHasGraceThenDeathAndRequiresARealRevive" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="e4bdbfff-484f-e516-f604-2154cb47e380">
+      <Execution id="49dd756a-1972-4e06-a269-70cbae5313f1" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="InjuryHasGraceThenDeathAndRequiresARealRevive" />
+    </UnitTest>
+    <UnitTest name="TwoBatteriesUseTwoSlots" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="9ec4489c-bfdb-47fd-7e21-4d834611b1cb">
+      <Execution id="ae08c642-87f3-4f0d-a147-b2880f4fac7c" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InventoryTests" name="TwoBatteriesUseTwoSlots" />
+    </UnitTest>
+    <UnitTest name="ObstructionAndMaskingReduceIntensityIndependently" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="a90e00dd-fce1-926f-6f7b-ece2fab5ddb4">
+      <Execution id="1e65f663-51be-4bac-a505-efe377d10bce" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="ObstructionAndMaskingReduceIntensityIndependently" />
+    </UnitTest>
+    <UnitTest name="CrouchingIsQuieterThanWalkingAndRunning(Dirt)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="eeee19ed-16e2-936f-a65d-47318a47cc2a">
+      <Execution id="768398d4-b3c4-43ea-a839-fa16952ee372" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CrouchingIsQuieterThanWalkingAndRunning(Dirt)" />
+    </UnitTest>
+    <UnitTest name="LobbyReservesFourDistinctSlotsAndRejectsFifth" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="a4241240-5794-335f-c2f4-537f34e2d475">
+      <Execution id="578ebacc-c900-4a08-9a98-a5a8661cae84" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="LobbyReservesFourDistinctSlotsAndRejectsFifth" />
+    </UnitTest>
+    <UnitTest name="InvalidRangeCannotAuthorizeInteraction(float.NaN)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="cc307697-6602-754d-f0cb-16a8b80f925e">
+      <Execution id="f31f57a9-82cd-4955-8fa1-304dcae1903c" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="InvalidRangeCannotAuthorizeInteraction(float.NaN)" />
+    </UnitTest>
+    <UnitTest name="CrouchingIsQuieterThanWalkingAndRunning(Water)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="7bdad546-5f96-e45e-6207-90fd35f12aed">
+      <Execution id="f78ffd33-088a-469a-9c30-89d38d27ab05" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CrouchingIsQuieterThanWalkingAndRunning(Water)" />
+    </UnitTest>
+    <UnitTest name="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Easy)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="580b42d9-7380-c403-2021-ed812bea602e">
+      <Execution id="2dfa39fd-aaa5-4ee8-ba7b-5008bf5254bb" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Easy)" />
+    </UnitTest>
+    <UnitTest name="InputTimeoutStopsMovementAndJumpIsConsumedOnce" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="3998b8ee-bd54-b27a-d931-0e8eb6f2a837">
+      <Execution id="ab800097-9cd2-4b7a-8cb9-0b9aace09bda" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="InputTimeoutStopsMovementAndJumpIsConsumedOnce" />
+    </UnitTest>
+    <UnitTest name="CrouchingIsQuieterThanWalkingAndRunning(Metal)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="278c5528-96f3-1dde-2a8b-036deb794bb8">
+      <Execution id="57dc3fd9-9858-4e2e-a5ce-cce9ed71bdea" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CrouchingIsQuieterThanWalkingAndRunning(Metal)" />
+    </UnitTest>
+    <UnitTest name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,False,1.0f,True,False)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="d5500441-32b0-6d34-975f-f0b370d0fbb6">
+      <Execution id="1e98c650-52bc-4aee-aaf3-e3c524370683" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,False,1.0f,True,False)" />
+    </UnitTest>
+    <UnitTest name="RangeEnvelopeHasExpectedEndpoints(0.0f,1.0f)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="ace847eb-7d16-9bc7-382d-d6f56614f612">
+      <Execution id="4661ea96-7d67-48ab-87dc-822a4d50c526" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="RangeEnvelopeHasExpectedEndpoints(0.0f,1.0f)" />
+    </UnitTest>
+    <UnitTest name="BackpackUsesFiveSlotsAndSnapshotCapacityIsAtomic" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="a8054e43-b20a-0aba-d31d-2e93f145f134">
+      <Execution id="52c40520-5e15-4d49-b2df-6cb1dd669627" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="BackpackUsesFiveSlotsAndSnapshotCapacityIsAtomic" />
+    </UnitTest>
+    <UnitTest name="InvalidVoteClockCannotCloseAnUnfinishedVote(-1)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="225c0b07-69df-772b-9ed4-0f15131f2506">
+      <Execution id="8a99c0cc-2381-4adb-9d5d-0662b9d78e9b" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="InvalidVoteClockCannotCloseAnUnfinishedVote(-1)" />
+    </UnitTest>
+    <UnitTest name="RangeEnvelopeHasExpectedEndpoints(15.0f,0.0f)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="b4737380-8642-3af2-095a-65cbe778a22a">
+      <Execution id="3003e808-4686-4723-a0a0-a2531eb5b7d6" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="RangeEnvelopeHasExpectedEndpoints(15.0f,0.0f)" />
+    </UnitTest>
+    <UnitTest name="CrouchingIsQuieterThanWalkingAndRunning(Concrete)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="a0f29764-cc9e-e95c-5ddc-df82bd400ed1">
+      <Execution id="e49da11e-1748-45df-ae9d-7bde4943fa13" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CrouchingIsQuieterThanWalkingAndRunning(Concrete)" />
+    </UnitTest>
+    <UnitTest name="InvalidCapacityIsRejected(-1)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="6d1307f4-e905-087a-3813-adef77519bf1">
+      <Execution id="e8dd2c0e-c377-4ff6-af6b-9dacc86198c0" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InventoryTests" name="InvalidCapacityIsRejected(-1)" />
+    </UnitTest>
+    <UnitTest name="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Hard)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="92cd5198-d0f5-755d-0df2-8bb66653e846">
+      <Execution id="9fc9b5bc-82f4-467b-8b89-473155d27942" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Hard)" />
+    </UnitTest>
+    <UnitTest name="FinalChoiceProducesTheConfiguredEnding(False,True,Uncertain)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="40bf73e6-ef4b-7a64-3180-5a722c608565">
+      <Execution id="5dd9f3bd-8ece-4ac4-9810-f7ef4ed24b5d" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="FinalChoiceProducesTheConfiguredEnding(False,True,Uncertain)" />
+    </UnitTest>
+    <UnitTest name="VoteDeadlineAndTiesUseConservativeChoice" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="3061f967-eb6c-c7ce-d425-0fe0dec56027">
+      <Execution id="a2bf4de7-fac0-43ee-a411-964fbff1a92c" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="VoteDeadlineAndTiesUseConservativeChoice" />
+    </UnitTest>
+    <UnitTest name="InvalidRemovalDoesNotModifyInventory(-1)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="0136c5bf-6a84-e087-69b4-915f660ceacf">
+      <Execution id="b1928714-2e32-43a9-bb41-a1e32a5396e1" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InventoryTests" name="InvalidRemovalDoesNotModifyInventory(-1)" />
+    </UnitTest>
+    <UnitTest name="MetalAndGlassAreLouderThanGrass" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="27ee2a63-fd5c-a1ee-6a6d-50ec640acbfc">
+      <Execution id="6aa276e7-4982-4f5c-b5bf-12f11fe212f6" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="MetalAndGlassAreLouderThanGrass" />
+    </UnitTest>
+    <UnitTest name="PublicCollectionCannotBypassCapacity" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="272d9310-6884-7155-c89b-79f2263c8a46">
+      <Execution id="1f6e7d67-84ae-43a5-8e43-d4f172da7358" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InventoryTests" name="PublicCollectionCannotBypassCapacity" />
+    </UnitTest>
+    <UnitTest name="InteractionCooldownConsumesRejectedSequence" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="59e47093-43e3-8026-4412-9ee0b90e7f29">
+      <Execution id="b411baf0-5c91-485e-94dc-fb9ef922ef8e" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="InteractionCooldownConsumesRejectedSequence" />
+    </UnitTest>
+    <UnitTest name="AllSevenChaptersRequireFreshObjectivesAndCarryStoryDecisions" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="bdf84a1f-34d1-da42-734e-e62ce4cefdb5">
+      <Execution id="df467d42-704b-4176-9e25-f8ea7fd493cf" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="AllSevenChaptersRequireFreshObjectivesAndCarryStoryDecisions" />
+    </UnitTest>
+    <UnitTest name="CrouchingIsQuieterThanWalkingAndRunning(Glass)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="01e1985f-dddf-01f5-a535-97f5deadbe04">
+      <Execution id="c29b4ba7-5996-4483-9eb2-cef767c6e346" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CrouchingIsQuieterThanWalkingAndRunning(Glass)" />
+    </UnitTest>
+    <UnitTest name="InvalidAttackTimeCannotMutateHealth(-1)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="082cb67c-9213-46eb-fab2-e8bca7575e7b">
+      <Execution id="d4ad9340-1d1e-4148-b59e-348a9634ca39" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="InvalidAttackTimeCannotMutateHealth(-1)" />
+    </UnitTest>
+    <UnitTest name="InvalidItemCannotConsumeASlot(null)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="1285d15d-8032-bfd5-8a45-0c49b7440d78">
+      <Execution id="1e0d2899-a88a-44ed-a7d1-4f0a42995179" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InventoryTests" name="InvalidItemCannotConsumeASlot(null)" />
+    </UnitTest>
+    <UnitTest name="TeleportAndAirborneMovementDoNotGenerateFootsteps" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="fa940045-a3b4-b0cb-a24e-1eae2d96663e">
+      <Execution id="834c167d-8273-4169-aad5-a56b07a4b29b" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="TeleportAndAirborneMovementDoNotGenerateFootsteps" />
+    </UnitTest>
+    <UnitTest name="AuthorityIdentityRangeAndVisibilityAreAllRequired(False,True,True,1.0f,True,False)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="710c42a3-4116-5735-88cf-0bcd1dfc1938">
+      <Execution id="aa0ac8c5-30f2-49b5-8b81-4ef0df3b6b6e" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="AuthorityIdentityRangeAndVisibilityAreAllRequired(False,True,True,1.0f,True,False)" />
+    </UnitTest>
+    <UnitTest name="InvalidRangeIsRejected(float.PositiveInfinity)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="bd5c6cca-ea5f-3252-3f5c-9ccb6c7b6101">
+      <Execution id="3dacee96-68a4-4e96-ac2a-e486e5c463d0" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="InvalidRangeIsRejected(float.PositiveInfinity)" />
+    </UnitTest>
+    <UnitTest name="CreatureRecoveryPreventsInstantAttackLoop" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="bdf522d9-64ce-42a7-9a77-016eafd378ef">
+      <Execution id="1b58512c-e06e-4164-bd95-26cdd4ddcaed" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CreatureRecoveryPreventsInstantAttackLoop" />
+    </UnitTest>
+    <UnitTest name="MovementIsBoundedAndDiagonalNormalized" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="0888cc32-ea43-abf3-01c1-85a9bc7d7a4e">
+      <Execution id="c8e002d1-9af2-4893-9705-e785a936d43d" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NetworkRulesTests" name="MovementIsBoundedAndDiagonalNormalized" />
+    </UnitTest>
+    <UnitTest name="InvalidItemCannotConsumeASlot(&quot; &quot;)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="ce85a162-2e57-da9a-ee98-348577087293">
+      <Execution id="e234ae66-a065-48f3-8f31-c72498cff334" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InventoryTests" name="InvalidItemCannotConsumeASlot(&quot; &quot;)" />
+    </UnitTest>
+    <UnitTest name="InvalidDistanceIsRejected(float.PositiveInfinity)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="acef6ae7-272a-2aa9-da4b-f74fb3f3e2f7">
+      <Execution id="3c01c841-4167-47c7-82be-77b5bc0b7a03" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="InvalidDistanceIsRejected(float.PositiveInfinity)" />
+    </UnitTest>
+    <UnitTest name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,2.0f,True,True)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="a7afbb81-7053-ae98-1f8e-96278952919b">
+      <Execution id="0e6d8e24-d84b-4faa-9bfe-51670bfe931a" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,2.0f,True,True)" />
+    </UnitTest>
+    <UnitTest name="RestartResetsMissionButKeepsStoryChoice" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="049909a6-fd2e-c48b-be11-359f23a6e789">
+      <Execution id="d48ee521-ebc0-4c8f-971d-1e07b73268f5" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="RestartResetsMissionButKeepsStoryChoice" />
+    </UnitTest>
+    <UnitTest name="RangeEnvelopeHasExpectedEndpoints(5.0f,0.25f)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="bfba529b-056f-b95f-d42f-1291fb6e7f95">
+      <Execution id="cf53c041-e01c-4aae-ba75-b52aaa5b31ef" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.NoiseMathTests" name="RangeEnvelopeHasExpectedEndpoints(5.0f,0.25f)" />
+    </UnitTest>
+    <UnitTest name="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Normal)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="b02314ad-6f73-c26b-411e-fc6c242af008">
+      <Execution id="f5b5b834-3037-4b0c-8d54-693486efefef" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CreatureRemainsFasterThanAnUnencumberedRunningPlayer(Normal)" />
+    </UnitTest>
+    <UnitTest name="MedicineHealsWoundButNotAHealthyOrDeadActor" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="e9de64ca-94ff-2da8-ed66-857b0f597e7f">
+      <Execution id="319e91b9-2c94-4319-87a4-4de6e3cd5b5e" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="MedicineHealsWoundButNotAHealthyOrDeadActor" />
+    </UnitTest>
+    <UnitTest name="CampaignCannotSkipObjectivesOrGoBackwards" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="af016865-5c51-165e-6e95-835ad628e46d">
+      <Execution id="ad06ef3f-acd4-4de8-a59c-3d201b36cc1d" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="CampaignCannotSkipObjectivesOrGoBackwards" />
+    </UnitTest>
+    <UnitTest name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,1.0f,False,False)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="bc5af6d8-3c9c-3a2e-c9d2-998699fbfeab">
+      <Execution id="4f04ee82-49d6-46a8-a562-2ccfb4f35541" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InteractionRulesTests" name="AuthorityIdentityRangeAndVisibilityAreAllRequired(True,True,True,1.0f,False,False)" />
+    </UnitTest>
+    <UnitTest name="RemovingAnItemFreesExactlyOneSlot" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="642c9358-5f2b-8cf8-8758-14ec494dffca">
+      <Execution id="a99be698-e377-4254-9bc7-bf0ce65eafb5" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InventoryTests" name="RemovingAnItemFreesExactlyOneSlot" />
+    </UnitTest>
+    <UnitTest name="InvalidAttackTimeCannotMutateHealth(double.NaN)" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="68f7c268-5318-611d-8b57-186b8f65babc">
+      <Execution id="2c7c1c83-9374-4040-bb01-ec181f529f22" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="InvalidAttackTimeCannotMutateHealth(double.NaN)" />
+    </UnitTest>
+    <UnitTest name="DisconnectedVoterDoesNotBlockTheParty" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="36a71a7b-eecc-e559-6a3f-6ad9d50f917c">
+      <Execution id="db5e7811-fb35-4d66-8415-8c0d5ccd2489" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.GameplayModelTests" name="DisconnectedVoterDoesNotBlockTheParty" />
+    </UnitTest>
+    <UnitTest name="FourthItemIsRejectedWithoutLosingExistingItems" storage="/workspace/horrorsilenceplace/tools/coretests/bin/debug/net8.0/silence.coretests.dll" id="f8d059c7-0fa4-b03d-d162-87aae9a98920">
+      <Execution id="6bd4e48e-e512-4952-8655-1711d3441e83" />
+      <TestMethod codeBase="/workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Silence.Tests.InventoryTests" name="FourthItemIsRejectedWithoutLosingExistingItems" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ef7672bd-6fa9-715c-276b-c63eeee9f525" executionId="89e5dffd-fb12-48c3-bbd4-174fb690b08b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="59e47093-43e3-8026-4412-9ee0b90e7f29" executionId="b411baf0-5c91-485e-94dc-fb9ef922ef8e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ee135316-b973-9643-486b-51a2d0659278" executionId="8ed5c0f5-db16-4800-b9e9-1a409a15de42" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dd7ecaee-cbe7-d4a2-858d-34d50d15e01e" executionId="cfbaf98b-5ab4-44a7-a2e0-ff7d944b8d76" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="af9238c6-2c02-e6b8-5ddb-51ac134055c6" executionId="fbbe359f-8756-408a-a348-7320b0872f18" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="83ee601f-76d5-bc96-1760-0999375a1380" executionId="3900c78c-0b46-4919-94a0-13800d64f1d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d5c5a1f5-e3a7-3fc2-9b54-d4292037a19f" executionId="d757e091-88bd-488d-9e8c-4e895db22f0e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="710c42a3-4116-5735-88cf-0bcd1dfc1938" executionId="aa0ac8c5-30f2-49b5-8b81-4ef0df3b6b6e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="68f7c268-5318-611d-8b57-186b8f65babc" executionId="2c7c1c83-9374-4040-bb01-ec181f529f22" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0888cc32-ea43-abf3-01c1-85a9bc7d7a4e" executionId="c8e002d1-9af2-4893-9705-e785a936d43d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="049909a6-fd2e-c48b-be11-359f23a6e789" executionId="d48ee521-ebc0-4c8f-971d-1e07b73268f5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="469cc728-ff43-c148-249c-4cdb1f779c15" executionId="1a5df090-e3c9-4999-9798-52e115ab00ea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="893ca21d-a795-c077-e174-3eb7556ead30" executionId="8d5d524a-0041-49f8-9681-3ad9cfcec723" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dcc5c5aa-3f3f-21ed-787c-5642a27386e1" executionId="df4b2540-f2b4-42a3-8e9e-b1e1380dff69" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bd5c6cca-ea5f-3252-3f5c-9ccb6c7b6101" executionId="3dacee96-68a4-4e96-ac2a-e486e5c463d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a052d982-982c-3250-caf3-b5a9fb3a3886" executionId="8bd4e85a-57ce-4297-9cf4-f960f4a940d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bdf522d9-64ce-42a7-9a77-016eafd378ef" executionId="1b58512c-e06e-4164-bd95-26cdd4ddcaed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1285d15d-8032-bfd5-8a45-0c49b7440d78" executionId="1e0d2899-a88a-44ed-a7d1-4f0a42995179" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bc5af6d8-3c9c-3a2e-c9d2-998699fbfeab" executionId="4f04ee82-49d6-46a8-a562-2ccfb4f35541" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b5a47d39-f6f2-1cf6-4832-ee6431ce70bc" executionId="49dba569-d462-40f9-a395-8e9092d57643" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1589f41e-b704-33bf-fa5a-ff4f38323912" executionId="cd14732b-aa4a-403f-8874-bd612eb20a84" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a0f29764-cc9e-e95c-5ddc-df82bd400ed1" executionId="e49da11e-1748-45df-ae9d-7bde4943fa13" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf13eb5b-9d68-1564-bff7-1a9176cccc4d" executionId="f862ca10-b44c-4981-95f0-877c5b645067" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7bdad546-5f96-e45e-6207-90fd35f12aed" executionId="f78ffd33-088a-469a-9c30-89d38d27ab05" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bdf84a1f-34d1-da42-734e-e62ce4cefdb5" executionId="df467d42-704b-4176-9e25-f8ea7fd493cf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c5fed748-f833-1ee6-470f-4393c07e8989" executionId="82f3ed62-94cd-47eb-a3ac-8c0d56bf5f52" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9ec4489c-bfdb-47fd-7e21-4d834611b1cb" executionId="ae08c642-87f3-4f0d-a147-b2880f4fac7c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3061f967-eb6c-c7ce-d425-0fe0dec56027" executionId="a2bf4de7-fac0-43ee-a411-964fbff1a92c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b02314ad-6f73-c26b-411e-fc6c242af008" executionId="f5b5b834-3037-4b0c-8d54-693486efefef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="331c7888-0565-c0aa-2703-dd9c70c58015" executionId="120a4826-b7cf-49fc-a040-7208af4e9fb2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="acef6ae7-272a-2aa9-da4b-f74fb3f3e2f7" executionId="3c01c841-4167-47c7-82be-77b5bc0b7a03" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="454a934f-e23e-fe7a-5657-7df71f0b33e5" executionId="36466578-cb50-453d-a7a1-1c183bfafb10" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a7afbb81-7053-ae98-1f8e-96278952919b" executionId="0e6d8e24-d84b-4faa-9bfe-51670bfe931a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="01e1985f-dddf-01f5-a535-97f5deadbe04" executionId="c29b4ba7-5996-4483-9eb2-cef767c6e346" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eeee19ed-16e2-936f-a65d-47318a47cc2a" executionId="768398d4-b3c4-43ea-a839-fa16952ee372" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f8d059c7-0fa4-b03d-d162-87aae9a98920" executionId="6bd4e48e-e512-4952-8655-1711d3441e83" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="02dc7270-de6e-b442-1d19-e509f0d96460" executionId="65b4358a-d041-4fed-bea2-f1cb73d094e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8238a093-0212-68cb-22bb-a63005be651a" executionId="86758090-b8ac-447a-8ebb-e96cccd36b3b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac90c108-ccb4-eec5-a5ea-13d3ea825244" executionId="e0e3fc62-7085-4597-bcf7-c2b77ede1ae5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b63db7af-5749-b698-1589-459d8329668b" executionId="d1c48be9-16fb-4741-903e-eddcff4cd676" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a7039951-1681-0f89-703b-231e7dfeed50" executionId="e948ee1c-0ae8-4a1d-b279-31408b161601" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f4c8c326-4c91-803a-c4ef-7fd6f9ce726d" executionId="5ff3f287-3245-4cf0-9218-c3b6f8d64eaf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="51d6c425-f7ee-8adc-5041-b40a649c50c6" executionId="1889c9ba-0280-4d63-94ec-6f099a9fef84" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="92cd5198-d0f5-755d-0df2-8bb66653e846" executionId="9fc9b5bc-82f4-467b-8b89-473155d27942" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="310ac721-4c32-9344-bdc4-06182cea37b0" executionId="22d2a99c-3471-45cc-8630-02ff15de1c69" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cc48de23-9b34-3a69-4891-188f785a46f9" executionId="83e14530-c156-4b0d-b194-a49a309794b6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d5500441-32b0-6d34-975f-f0b370d0fbb6" executionId="1e98c650-52bc-4aee-aaf3-e3c524370683" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="231c08b4-9714-48b2-d008-c402b8634da2" executionId="69b58efa-e85e-4224-baa8-cb823c06ab1f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fa940045-a3b4-b0cb-a24e-1eae2d96663e" executionId="834c167d-8273-4169-aad5-a56b07a4b29b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="642c9358-5f2b-8cf8-8758-14ec494dffca" executionId="a99be698-e377-4254-9bc7-bf0ce65eafb5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="537bc47b-7c1c-cebb-a854-e493af59a6f0" executionId="08675b22-b9fe-42ae-8e3f-acaf07e39609" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="36a71a7b-eecc-e559-6a3f-6ad9d50f917c" executionId="db5e7811-fb35-4d66-8415-8c0d5ccd2489" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a90e00dd-fce1-926f-6f7b-ece2fab5ddb4" executionId="1e65f663-51be-4bac-a505-efe377d10bce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0299f103-3964-b486-0fe1-5f86e7b0c82b" executionId="cefa9b04-4b32-47f8-9d29-a93a41ec90ec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="289ee56c-b49d-9556-2572-92e1c5c98724" executionId="623de74c-6532-4169-92c0-9bc0056a29ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cee7bebd-ae4f-84ce-4c38-34b9f1802e29" executionId="07781039-6040-498c-97fb-7389ac5c5aff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="85cf275e-4b26-b7cc-a7f4-04d391ab71d8" executionId="c7c38583-ff68-4d36-ad2f-113cb0284630" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6889175a-c3bd-ad65-6e49-71a0b79fd51d" executionId="cebcbc56-b0fb-468c-be3b-c8f46783f547" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cd934166-0e69-7572-a4af-cfbde5025910" executionId="6fd42055-0ad1-4e4d-a114-9d855f8c582f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e4bdbfff-484f-e516-f604-2154cb47e380" executionId="49dd756a-1972-4e06-a269-70cbae5313f1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0b42e966-5c5b-fbe1-3c4b-d50fb4664df7" executionId="fa8b8c11-3b56-4456-a4c0-469656f31081" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e9de64ca-94ff-2da8-ed66-857b0f597e7f" executionId="319e91b9-2c94-4319-87a4-4de6e3cd5b5e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="225c0b07-69df-772b-9ed4-0f15131f2506" executionId="8a99c0cc-2381-4adb-9d5d-0662b9d78e9b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="27ee2a63-fd5c-a1ee-6a6d-50ec640acbfc" executionId="6aa276e7-4982-4f5c-b5bf-12f11fe212f6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b4737380-8642-3af2-095a-65cbe778a22a" executionId="3003e808-4686-4723-a0a0-a2531eb5b7d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9591fe02-7024-55b4-a59e-0d890ef98d4f" executionId="dafb07d4-5ad8-49cf-9cd3-afdd1abd2bb3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6d1307f4-e905-087a-3813-adef77519bf1" executionId="e8dd2c0e-c377-4ff6-af6b-9dacc86198c0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="082cb67c-9213-46eb-fab2-e8bca7575e7b" executionId="d4ad9340-1d1e-4148-b59e-348a9634ca39" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bfba529b-056f-b95f-d42f-1291fb6e7f95" executionId="cf53c041-e01c-4aae-ba75-b52aaa5b31ef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="af016865-5c51-165e-6e95-835ad628e46d" executionId="ad06ef3f-acd4-4de8-a59c-3d201b36cc1d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="580b42d9-7380-c403-2021-ed812bea602e" executionId="2dfa39fd-aaa5-4ee8-ba7b-5008bf5254bb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cc307697-6602-754d-f0cb-16a8b80f925e" executionId="f31f57a9-82cd-4955-8fa1-304dcae1903c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f6801b2e-00bb-13b9-ce4b-0b43af47597c" executionId="f5307195-b4b5-4867-8cbb-be5919c00e0d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a4241240-5794-335f-c2f4-537f34e2d475" executionId="578ebacc-c900-4a08-9a98-a5a8661cae84" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3998b8ee-bd54-b27a-d931-0e8eb6f2a837" executionId="ab800097-9cd2-4b7a-8cb9-0b9aace09bda" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c4762895-33db-4487-fb5b-1b4ce84ebf11" executionId="712a317f-5e2d-4031-839e-d195b68eead0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="278c5528-96f3-1dde-2a8b-036deb794bb8" executionId="57dc3fd9-9858-4e2e-a5ce-cce9ed71bdea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="40bf73e6-ef4b-7a64-3180-5a722c608565" executionId="5dd9f3bd-8ece-4ac4-9810-f7ef4ed24b5d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0136c5bf-6a84-e087-69b4-915f660ceacf" executionId="b1928714-2e32-43a9-bb41-a1e32a5396e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a8054e43-b20a-0aba-d31d-2e93f145f134" executionId="52c40520-5e15-4d49-b2df-6cb1dd669627" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3f253544-10a5-073a-e721-a12ef33ee8f5" executionId="03d24981-b832-4c3a-9691-43a3b24b61f0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d29dbc8c-c201-e7c2-1ee2-7680e8d826b1" executionId="9a8c00d6-a59b-4548-9d8f-2f10d7248b98" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ace847eb-7d16-9bc7-382d-d6f56614f612" executionId="4661ea96-7d67-48ab-87dc-822a4d50c526" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="768c433c-984b-5d34-470b-eaa3c2f649af" executionId="f084ca60-8cf9-445a-b1a7-d58399d3e13f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f6d299bf-e9de-1830-e40a-81e956f6ca7f" executionId="7e57a8fb-ed44-440e-8421-59c7ec5e5f6f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a5c9f589-c212-69df-caeb-6f0075cd8bf6" executionId="4406af18-a797-4685-95ae-fae2b64f10fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ce85a162-2e57-da9a-ee98-348577087293" executionId="e234ae66-a065-48f3-8f31-c72498cff334" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dc8beb32-8c53-5cff-f985-f8770e4ec065" executionId="76af1ad5-6377-485f-a47e-a73ac7333124" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="272d9310-6884-7155-c89b-79f2263c8a46" executionId="1f6e7d67-84ae-43a5-8e43-d4f172da7358" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3001fd0d-5e3f-ca18-2539-bf9662ba096f" executionId="88d4ebc3-092c-4d23-a01c-da05736a658f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a75a456d-887f-ac8a-3005-2c61c5de4d2f" executionId="542155ed-caeb-4dc0-8f08-b6fbc451b337" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9b73e618-5cfc-146c-3373-1f782c068415" executionId="a699d929-7732-4c95-a7f4-f738e1754245" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="92" executed="92" passed="92" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.6.0.0: Test execution started
+Running all tests in /workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll
+   NUnit3TestExecutor discovered 92 of 92 NUnit test cases using Current Discovery mode, Non-Explicit run
+NUnit Adapter 4.6.0.0: Test execution complete
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

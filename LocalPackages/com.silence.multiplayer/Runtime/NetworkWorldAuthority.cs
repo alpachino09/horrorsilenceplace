@@ -6,13 +6,17 @@ using Silence.Interactions;
 using Silence.Networking;
 using Silence.Player;
 using Silence.SoundSimulation;
+using Silence.Gameplay;
 
 namespace Silence.Multiplayer
 {
-    public sealed class NetworkWorldAuthority : NetworkBehaviour, IWorldAuthority
+    public sealed class NetworkWorldAuthority : NetworkBehaviour, IWorldAuthority, IGameplayCommands
     {
         private readonly Dictionary<PlayerContext, NetworkPlayer> players = new Dictionary<PlayerContext, NetworkPlayer>();
         private readonly Dictionary<ulong, InteractionGate> gates = new Dictionary<ulong, InteractionGate>();
+        private readonly Dictionary<ulong, ActionBudget> actionBudgets = new Dictionary<ulong, ActionBudget>();
+        private readonly Dictionary<ulong, uint> actionSequences = new Dictionary<ulong, uint>();
+        private readonly Dictionary<ulong, double> microphoneTimes = new Dictionary<ulong, double>();
         private readonly NetworkVariable<bool> running = new NetworkVariable<bool>();
         private readonly NetworkVariable<int> playerCount = new NetworkVariable<int>();
         public bool Running => IsSpawned && running.Value;
@@ -25,6 +29,9 @@ namespace Silence.Multiplayer
             // The player's role is initialized here; this world's IsServer may
             // still be false until its own OnNetworkSpawn. Use the spawned actor.
             if (player.IsServer) gates[player.OwnerClientId] = new InteractionGate();
+            if (player.IsServer) actionBudgets[player.OwnerClientId] = new ActionBudget();
+            var game = GetComponent<GameplayDirector>();
+            if (game != null) { game.SetAuthority(player.IsServer); game.Register(player.Context, unchecked((int)player.NetworkObjectId)); }
             InteractionDiagnostics.Trace(this, "REGISTER", "actor=" + player.OwnerClientId +
                 " playerServer=" + player.IsServer + " worldServer=" + IsServer +
                 " gate=" + gates.ContainsKey(player.OwnerClientId));
@@ -32,8 +39,10 @@ namespace Silence.Multiplayer
         }
         internal void Unregister(NetworkPlayer player)
         {
+            GetComponent<GameplayDirector>()?.Unregister(player.Context);
             players.Remove(player.Context);
             gates.Remove(player.OwnerClientId);
+            actionBudgets.Remove(player.OwnerClientId); actionSequences.Remove(player.OwnerClientId); microphoneTimes.Remove(player.OwnerClientId);
         }
         private void Update()
         {
@@ -44,6 +53,7 @@ namespace Silence.Multiplayer
             if (!IsServer || !IsSpawned || Running) return;
             NetworkSession.Instance.Admission.StartRound();
             running.Value = true;
+            GetComponent<GameplayDirector>()?.BeginRound();
         }
         public bool IsLocalOwner(PlayerContext actor) => actor != null &&
             players.TryGetValue(actor, out var player) && player.IsOwner;
@@ -89,6 +99,7 @@ namespace Silence.Multiplayer
             { InteractionDiagnostics.Trace(this, "SERVER_REJECT", "missing NetworkInteractable"); return; }
             var target = state.Target;
             var actor = player.Context;
+            if (actor.Game != null && !actor.Game.CanAct(actor)) return;
             Transform eye = actor.View.transform;
             Physics.SyncTransforms();
             bool hitSomething = Physics.Raycast(eye.position, eye.forward, out RaycastHit hit,
@@ -103,12 +114,14 @@ namespace Silence.Multiplayer
                     " range=" + actor.Settings.interactionRange + " clear=" + clear);
                 return;
             }
+            float previousMessageTime = actor.MessageUntil;
             bool applied = target.Apply(actor);
             InteractionDiagnostics.Trace(this, "APPLY", "target=" + target.name + " success=" + applied +
                 (target is PrototypeDoor door ? " doorOpen=" + door.IsOpen + " rotation=" + door.transform.localEulerAngles : "") +
                 " timeScale=" + Time.timeScale);
             // Inventory-full feedback must also reach a remote owner.
-            player.SendFeedback(applied);
+            if (actor.Game == null) player.SendFeedback(applied);
+            else player.SendGameplayFeedback(applied, actor.MessageUntil != previousMessageTime ? actor.Message : "");
             if (!applied) return;
             state.Capture();
             player.PublishInventory();
@@ -122,6 +135,49 @@ namespace Silence.Multiplayer
             if (noise == null) return;
             noise.Publish(new NoiseEvent(actor.transform.position, Mathf.Clamp01(intensity), 12f, kind,
                 unchecked((int)players[actor].NetworkObjectId), NetworkManager.ServerTime.Time));
+        }
+
+        public bool RequestAction(PlayerContext actor, ActorAction action, int slot, float amount, Interactable target = null)
+        {
+            if (!Running || !IsLocalOwner(actor) || actor.Game == null) return false;
+            ulong targetId = 0;
+            if (target != null)
+            {
+                var entity = target.GetComponent<NetworkObject>();
+                if (entity == null || !entity.IsSpawned) return false;
+                targetId = entity.NetworkObjectId;
+            }
+            players[actor].RequestGameplayAction(action, slot, amount, targetId); return true;
+        }
+        internal void ApplyAction(NetworkPlayer player, ulong sender, uint sequence, ActorAction action, int slot, float amount, ulong targetId)
+        {
+            if (!IsServer || !Running || player.OwnerClientId != sender || !players.ContainsKey(player.Context) ||
+                !actionBudgets.TryGetValue(sender, out var budget) || float.IsNaN(amount) || float.IsInfinity(amount)) return;
+            if (actionSequences.TryGetValue(sender, out uint previous) && !PlayerCommand.IsNewer(sequence, previous)) return;
+            actionSequences[sender] = sequence;
+            double now = Time.unscaledTimeAsDouble;
+            if (!budget.TrySpend(now)) return;
+            if (action == ActorAction.Microphone)
+            {
+                if (microphoneTimes.TryGetValue(sender, out double allowed) && now < allowed) return;
+                microphoneTimes[sender] = now + .1;
+            }
+            Interactable target = null;
+            if (action == ActorAction.DragDoor)
+            {
+                if (!NetworkManager.SpawnManager.SpawnedObjects.TryGetValue(targetId, out var entity)) return;
+                target = entity.GetComponent<Interactable>();
+                var actor = player.Context;
+                Physics.SyncTransforms();
+                Transform eye = actor.View.transform;
+                if (target == null || !Physics.Raycast(eye.position, eye.forward, out RaycastHit hit,
+                    actor.Settings.interactionRange, ~0, QueryTriggerInteraction.Ignore) ||
+                    hit.collider.GetComponentInParent<Interactable>() != target) return;
+            }
+            float previousMessageTime = player.Context.MessageUntil;
+            player.Context.Game?.Action(player.Context, action, slot, amount, target);
+            if (player.Context.MessageUntil != previousMessageTime) player.SendGameplayFeedback(false, player.Context.Message);
+            player.PublishInventory();
         }
     }
 }

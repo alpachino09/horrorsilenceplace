@@ -11,7 +11,7 @@ namespace Silence.Interactions
     // Development diagnostics only; calls and their arguments are omitted in release.
     public static class InteractionDiagnostics
     {
-        public const string Revision = "0.2.4";
+        public const string Revision = "0.3.0";
         public static string ReportPath => Application.isEditor
             ? Path.GetFullPath("Library/Silence/InteractionTrace.txt")
             : Path.Combine(Application.persistentDataPath, "InteractionTrace.txt");

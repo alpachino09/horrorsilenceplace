@@ -25,6 +25,7 @@ namespace Silence.Multiplayer
         private PlayerCommand command;
         private float yaw, pitch;
         private uint interactionSequence, serverTick;
+        private uint gameplaySequence;
         private bool lampOn = true;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         private bool automated;
@@ -71,7 +72,7 @@ namespace Silence.Multiplayer
             }
             inventory.OnValueChanged += InventoryChanged;
             if (IsServer) { PublishPose(); PublishInventory(); }
-            else if (IsOwner) Context.Inventory.ReplaceSnapshot(inventory.Value.ToArray());
+            else if (IsOwner) Context.Inventory.ApplySnapshot(inventory.Value.Capacity == 0 ? 3 : inventory.Value.Capacity, inventory.Value.ToArray());
             if (!IsServer && pose.Value.Height > 0) ApplyPose(pose.Value, true);
             NetworkManager.NetworkTickSystem.Tick += NetworkTick;
             if (IsOwner) NetworkSession.Instance.SetLocalPlayer(this);
@@ -96,9 +97,10 @@ namespace Silence.Multiplayer
         private void Update()
         {
             if (!IsSpawned) return;
-            bool controls = IsOwner && world.Running;
+            bool controls = IsOwner && world.Running && (Context.Game == null || Context.Game.CanAct(Context));
             Context.Input.enabled = controls;
-            scanner.enabled = hud.enabled = controls;
+            scanner.enabled = controls;
+            hud.enabled = controls && Context.Game == null;
             if (!controls) return;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (automated)
@@ -117,6 +119,7 @@ namespace Silence.Multiplayer
             if (active)
             {
                 Vector2 look = input.MouseLook * PrototypePreferences.MouseSensitivity + input.StickLook * (120f * Time.deltaTime);
+                if (Context.Game != null && input.DoorHeld && scanner.Current is ManualDoor) look = Vector2.zero;
                 yaw = Mathf.Repeat(yaw + look.x, 360f);
                 pitch = Mathf.Clamp(pitch - look.y, -85f, 85f);
                 if (input.JumpPressed) command.JumpSequence++;
@@ -138,7 +141,7 @@ namespace Silence.Multiplayer
             {
                 if (!IsServer) transform.rotation = Quaternion.Euler(0, yaw, 0);
                 Context.View.transform.localRotation = Quaternion.Euler(pitch, 0, 0);
-                if (lamp != null) lamp.enabled = lampOn;
+                if (lamp != null) lamp.enabled = lampOn && Context.FlashlightCharge > 0 && Context.Vitals.Alive;
             }
         }
 
@@ -157,7 +160,8 @@ namespace Silence.Multiplayer
                 transform.rotation = Quaternion.Euler(0, accepted.Yaw, 0);
                 Context.View.transform.localRotation = Quaternion.Euler(accepted.Pitch, 0, 0);
                 lampOn = accepted.Flashlight;
-                if (lamp != null) lamp.enabled = lampOn;
+                Context.FlashlightOn = lampOn && Context.FlashlightCharge > 0 && Context.Vitals.Alive;
+                if (lamp != null) lamp.enabled = Context.FlashlightOn;
                 motor.Simulate(new Vector2(accepted.X, accepted.Z), accepted.Sprint, accepted.Crouch,
                     jump, 1f / NetworkManager.NetworkConfig.TickRate);
             }
@@ -199,9 +203,18 @@ namespace Silence.Multiplayer
         {
             if (IsServer) inventory.Value = InventorySnapshot.Capture(Context.Inventory);
         }
+        internal void RequestGameplayAction(ActorAction action, int slot, float amount, ulong target)
+        {
+            command.Sequence++;
+            SubmitInputRpc(new InputPacket { Command = command });
+            GameplayActionRpc(++gameplaySequence, (byte)action, slot, amount, target);
+        }
+        [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Owner)]
+        private void GameplayActionRpc(uint sequence, byte action, int slot, float amount, ulong target, RpcParams rpc = default) =>
+            world.ApplyAction(this, rpc.Receive.SenderClientId, sequence, (ActorAction)action, slot, amount, target);
         private void InventoryChanged(InventorySnapshot previous, InventorySnapshot current)
         {
-            if (!IsServer && IsOwner) Context.Inventory.ReplaceSnapshot(current.ToArray());
+            if (!IsServer && IsOwner) Context.Inventory.ApplySnapshot(current.Capacity == 0 ? 3 : current.Capacity, current.ToArray());
         }
         internal void SendFeedback(bool applied) => FeedbackRpc(applied);
         [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Server)]
@@ -212,12 +225,20 @@ namespace Silence.Multiplayer
                 ? (applied ? "Interaction confirmed." : "Inventory full.")
                 : (applied ? "Взаимодействие подтверждено." : "Инвентарь заполнен."));
         }
+        internal void SendGameplayFeedback(bool applied, string message) => GameplayFeedbackRpc(applied, message ?? "");
+        [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Server)]
+        private void GameplayFeedbackRpc(bool applied, string message)
+        {
+            if (applied) SuccessfulInteractions++;
+            if (!string.IsNullOrEmpty(message)) Context.ShowMessage(message);
+            else if (!applied) Context.ShowMessage(PrototypePreferences.English ? "Cannot do that now. Check your pockets." : "Сейчас это не получится. Проверьте карманы.");
+        }
         private void PublishPose()
         {
             SetBodyHeight(controller.height);
             pose.Value = new PlayerPose { Position = transform.position, Yaw = transform.eulerAngles.y,
                 Pitch = Context.View.transform.localEulerAngles.x, Height = controller.height,
-                Flashlight = lampOn, Tick = ++serverTick };
+                Flashlight = lampOn && Context.FlashlightCharge > 0 && Context.Vitals.Alive, Tick = ++serverTick };
         }
         private void ApplyPose(PlayerPose state, bool snap)
         {

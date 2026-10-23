@@ -1,0 +1,100 @@
+{
+  "utc": "2026-10-23T03:31:38.712051+00:00",
+  "kind": "Source signature review only, NOT Unity compilation or runtime evidence",
+  "unity_source_branch": "6000.6",
+  "unity_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/Unity-Technologies/UnityCsReference/6000.6/Modules/AI/Builder/NavMeshBuilder.bindings.cs",
+      "sha256": "bf69a478b5faaef50fe960f403241e4f1193431abe1783e048c484e1ae2d0f7f",
+      "bytes": 15870
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Unity-Technologies/UnityCsReference/6000.6/Modules/AI/NavMesh/NavMesh.bindings.cs",
+      "sha256": "12d0c9576fb9ef0effcde0b68d05f33ab03e57c7bf433c29c94b34a6c34c29fd",
+      "bytes": 64471
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Unity-Technologies/UnityCsReference/6000.6/Modules/AI/Components/NavMeshObstacle.bindings.cs",
+      "sha256": "32c6fa4759e54179fa932e03d8c71bb8bbaac8dd13d39a78d417083662ced889",
+      "bytes": 10256
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Unity-Technologies/UnityCsReference/6000.6/Modules/AI/Components/NavMeshAgent.bindings.cs",
+      "sha256": "bc112c5f2f75c84299eedb43c2c5e92b943e5dc68ebd605ce2529d2e9773efda",
+      "bytes": 43222
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Unity-Technologies/UnityCsReference/6000.6/Modules/Audio/Public/ScriptBindings/Audio.bindings.cs",
+      "sha256": "13ee20aaf33876d2b8cde64d7437e9fe9d823b9d564041e718322098927aa2fd",
+      "bytes": 61817
+    }
+  ],
+  "ngo_revision": "ddd715da4695a278a143d9af3530fd60a3814b73",
+  "checks": [
+    {
+      "symbol": "CollectSources hierarchy/colliders overload",
+      "file": "NavMeshBuilder.bindings.cs",
+      "found": true
+    },
+    {
+      "symbol": "BuildNavMeshData synchronous overload",
+      "file": "NavMeshBuilder.bindings.cs",
+      "found": true
+    },
+    {
+      "symbol": "GetSettingsCount",
+      "file": "NavMesh.bindings.cs",
+      "found": true
+    },
+    {
+      "symbol": "GetSettingsByIndex",
+      "file": "NavMesh.bindings.cs",
+      "found": true
+    },
+    {
+      "symbol": "AddNavMeshData",
+      "file": "NavMesh.bindings.cs",
+      "found": true
+    },
+    {
+      "symbol": "NavMeshObstacle carving mode",
+      "file": "NavMeshObstacle.bindings.cs",
+      "found": true
+    },
+    {
+      "symbol": "NavMeshAgent agentTypeID",
+      "file": "NavMeshAgent.bindings.cs",
+      "found": true
+    },
+    {
+      "symbol": "AudioClip.GetData float array",
+      "file": "Audio.bindings.cs",
+      "found": true
+    },
+    {
+      "symbol": "Microphone.Start",
+      "file": "Audio.bindings.cs",
+      "found": true
+    },
+    {
+      "symbol": "RPC NotServer target",
+      "file": "Messaging/RpcAttributes.cs",
+      "found": true
+    },
+    {
+      "symbol": "RPC unreliable delivery",
+      "file": "Messaging/RpcAttributes.cs",
+      "found": true
+    },
+    {
+      "symbol": "RPC string serialization",
+      "file": "Serialization/BufferSerializer.cs",
+      "found": true
+    }
+  ],
+  "unverified": [
+    "Native compilation of all new scripts and NGO IL post-processing",
+    "Serialized references and prefab IDs after generation",
+    "Runtime NavMesh, microphone permissions, physical behaviour and true multi-process replication"
+  ]
+}

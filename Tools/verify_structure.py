@@ -46,7 +46,7 @@ check(not (root / "Packages/manifest.json").exists(), "source pack does not repl
 
 asset = json.loads((assets / "Settings/SilenceControls.inputactions").read_text())
 ids = []
-expected = {"Move", "Look", "LookStick", "Sprint", "Crouch", "Jump", "Interact", "Flashlight", "Inventory", "Pause", "Capture"}
+expected = {"Move", "Look", "LookStick", "Sprint", "Crouch", "Jump", "Interact", "Flashlight", "Inventory", "Pause", "Capture", "Use1", "Use2", "Use3", "Use4", "Use5", "Drop", "Throw", "DoorControl"}
 for action_map in asset["maps"]:
     ids.append(action_map["id"])
     names = {action["name"] for action in action_map["actions"]}
@@ -65,6 +65,13 @@ for path in (network_package / "Runtime").glob("*.cs"):
     check("UnityEditor" not in path.read_text(), "no editor API in network runtime " + path.name)
 for path in (assets / "Scripts/Core").glob("*.cs"):
     check("UnityEngine" not in path.read_text(), "no Unity API in pure core " + path.name)
+
+# Unity serializes these through MonoScript assets; a matching filename is essential.
+for source in source_roots:
+    for path in source.rglob("*.cs"):
+        text = path.read_text()
+        for name, base in re.findall(r"\bclass\s+(\w+)\s*:\s*(MonoBehaviour|ScriptableObject|NetworkBehaviour|Interactable)\b", text):
+            check(path.stem == name, "Unity script filename " + str(path.relative_to(root)))
 
 brief = root / "Docs/ProjectBrief"
 manifest = json.loads((brief / "SHA256SUMS.json").read_text())

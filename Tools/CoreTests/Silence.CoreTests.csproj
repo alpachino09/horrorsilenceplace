@@ -13,5 +13,6 @@
     <Compile Include="../../Assets/_Silence/Scripts/Core/*.cs" />
     <Compile Include="../../Assets/_Silence/Tests/EditMode/CoreTests.cs" />
     <Compile Include="../../Assets/_Silence/Tests/EditMode/NetworkRulesTests.cs" />
+    <Compile Include="../../Assets/_Silence/Tests/EditMode/GameplayModelTests.cs" />
   </ItemGroup>
 </Project>

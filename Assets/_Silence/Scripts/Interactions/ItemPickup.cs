@@ -9,6 +9,8 @@ namespace Silence.Interactions
     {
         [SerializeField] private ItemDefinition definition;
         private bool consumed;
+        private Vector3 spawnPosition;
+        private bool remembered;
         public bool Consumed => consumed;
         public ItemDefinition Definition => definition;
         public void Configure(ItemDefinition item) => definition = item;
@@ -19,17 +21,22 @@ namespace Silence.Interactions
         internal override bool Apply(PlayerContext player)
         {
             if (!CanInteract(player)) return false;
-            if (!player.Inventory.TryAdd(definition.id))
+            bool added = definition.id == "backpack" ? player.Inventory.Expand() : player.Inventory.TryAdd(definition.id);
+            if (!added)
             {
                 player.ShowMessage(PrototypePreferences.English
-                    ? "Inventory full (3 slots)." : "Инвентарь заполнен (3 слота).");
+                    ? "No free space (" + player.Inventory.Capacity + " slots)." : "Нет свободного места (" + player.Inventory.Capacity + " слотов).");
                 return false;
             }
             SetConsumed(true);
             player.ShowMessage(PrototypePreferences.English
                 ? "Taken: " + definition.labelEn : "Взято: " + definition.labelRu);
+            player.Game?.Collected(player, definition);
             return true;
         }
+        public void RememberSpawn() { if (remembered) return; spawnPosition = transform.position; remembered = true; }
+        public void ResetPickup() { RememberSpawn(); transform.position = spawnPosition; SetConsumed(false); }
+        public void PlaceAt(Vector3 position) { transform.position = position; SetConsumed(false); }
 
         internal void SetConsumed(bool value)
         {

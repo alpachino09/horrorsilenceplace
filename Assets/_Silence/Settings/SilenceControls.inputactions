@@ -103,6 +103,78 @@
           "processors": "",
           "interactions": "",
           "initialStateCheck": false
+        },
+        {
+          "name": "Use1",
+          "type": "Button",
+          "id": "24e3a5d9-295a-436b-8bbd-c4217b4660bb",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Use2",
+          "type": "Button",
+          "id": "90b73b69-869b-4ca5-98b3-f6633f91c210",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Use3",
+          "type": "Button",
+          "id": "8d496940-817e-4a8a-80e9-4f1c1aa769ac",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Use4",
+          "type": "Button",
+          "id": "d6ab84a7-6a1e-4482-8793-3043e33a5c1a",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Use5",
+          "type": "Button",
+          "id": "5053abfc-1be8-4cdb-b9ce-149e2f58f8e8",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Drop",
+          "type": "Button",
+          "id": "9dd0b5a8-d9e8-45b8-8e3a-6a303a09136a",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "Throw",
+          "type": "Button",
+          "id": "b41739ee-e016-43f4-abdf-be9d3e069591",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "DoorControl",
+          "type": "Button",
+          "id": "730655be-502d-4122-b587-dc3fd9051665",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
         }
       ],
       "bindings": [
@@ -356,6 +428,182 @@
           "processors": "",
           "groups": "",
           "action": "Capture",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "46df6032-97a0-4863-863b-b99c3bf52ea8",
+          "path": "<Keyboard>/1",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Use1",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "9dddde1a-6576-4592-af9b-ef843269570a",
+          "path": "<Gamepad>/rightShoulder",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Use1",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "b93e5e35-8dc6-431a-a68f-ab6e5ffa1250",
+          "path": "<Keyboard>/2",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Use2",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "c8f1237e-4243-4a95-b16c-56703d9f7bd3",
+          "path": "<Gamepad>/leftShoulder",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Use2",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "e498799a-e7fb-4b43-9adb-6faadf89c34b",
+          "path": "<Keyboard>/3",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Use3",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "5ef4590d-2c77-41e2-bbef-f21c53438b9e",
+          "path": "<Gamepad>/dpad/down",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Use3",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "4ceb4805-d28b-4cfb-a1b8-b7d18449e88e",
+          "path": "<Keyboard>/4",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Use4",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "46c41348-a5b5-40ef-b01f-493a40f13d54",
+          "path": "<Gamepad>/dpad/left",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Use4",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "1aeff8ad-c756-4113-b0c3-3db24ecb1efb",
+          "path": "<Keyboard>/5",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Use5",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "29c9c33e-6f77-4109-8c6a-f4b572fcf79e",
+          "path": "<Gamepad>/dpad/right",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Use5",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "c19fa61a-9536-479b-9434-9ee96d075906",
+          "path": "<Keyboard>/g",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Drop",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "04e618ef-4b64-4eca-bb99-59b330dc61f6",
+          "path": "<Gamepad>/buttonEast",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Drop",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "f2b85322-d469-48c6-910b-d08bd086143c",
+          "path": "<Mouse>/leftButton",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Throw",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "f7d5f8f5-354a-4e19-a2ff-095afc574b1d",
+          "path": "<Gamepad>/rightTrigger",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "Throw",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "874387a4-b7e1-4e92-a10a-398fa21b9308",
+          "path": "<Mouse>/rightButton",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "DoorControl",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "db55fd32-4114-4d79-a4f7-4b041eea7ad3",
+          "path": "<Gamepad>/leftTrigger",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "DoorControl",
           "isComposite": false,
           "isPartOfComposite": false
         }

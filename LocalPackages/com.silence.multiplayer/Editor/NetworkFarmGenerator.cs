@@ -163,6 +163,12 @@ namespace Silence.Multiplayer.Editor
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Stop Play Mode first.");
             if (!File.Exists(ScenePath)) throw new InvalidOperationException("Generate network farm first.");
             if (!NetworkProjectValidator.Validate()) throw new InvalidOperationException("Network validation failed. See Library/Silence/NetworkValidation.txt");
+            BuildScene(ScenePath);
+        }
+        public static void BuildScene(string scenePath)
+        {
+            if (EditorApplication.isPlayingOrWillChangePlaymode || !File.Exists(scenePath))
+                throw new InvalidOperationException("Stop Play Mode and generate the selected scene first.");
             BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
             if (target != BuildTarget.StandaloneOSX && target != BuildTarget.StandaloneWindows64 && target != BuildTarget.StandaloneLinux64)
                 throw new InvalidOperationException("Select Windows, Mac or Linux standalone in Build Profiles first.");
@@ -175,7 +181,7 @@ namespace Silence.Multiplayer.Editor
                 Directory.CreateDirectory(Path.GetDirectoryName(location));
                 BuildReport report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
                 {
-                    scenes = new[] { ScenePath }, locationPathName = location,
+                    scenes = new[] { scenePath }, locationPathName = location,
                     target = target, options = BuildOptions.Development
                 });
                 if (report.summary.result != BuildResult.Succeeded)

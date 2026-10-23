@@ -9,7 +9,7 @@ namespace Silence.Core
         private readonly Dictionary<ulong, int> slots = new Dictionary<ulong, int>();
         public int Count => slots.Count;
         public bool Running { get; private set; }
-        public const string Protocol = "SILENCE-S02-1";
+        public const string Protocol = "SILENCE-GAME-3";
 
         public bool TryJoin(ulong clientId, string protocol, out int slot, out string reason)
         {

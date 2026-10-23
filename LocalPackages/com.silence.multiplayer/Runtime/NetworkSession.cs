@@ -7,6 +7,8 @@ using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Silence.Core;
+using Silence.Gameplay;
+using Silence.Save;
 using Silence.Player;
 using Silence.UI;
 
@@ -130,6 +132,17 @@ namespace Silence.Multiplayer
         }
         private string Text(string ru, string en) => PrototypePreferences.English ? en : ru;
 
+        private void CampaignOptions()
+        {
+            var game = world != null ? world.GetComponent<GameplayDirector>() : null;
+            if (game == null) return;
+            GUILayout.Label(Text("Сложность (одинакова для любого размера группы)", "Difficulty (same for any group size)"));
+            int selected = GUILayout.SelectionGrid((int)game.Settings.difficulty,
+                new[] { Text("Легко", "Easy"), Text("Обычно", "Normal"), Text("Тяжело", "Hard"), Text("Кошмар", "Nightmare") }, 4);
+            if (selected >= 0 && selected < 4) game.Settings.difficulty = (Difficulty)selected;
+            if (CampaignSaveStore.Exists) game.ContinueSave = GUILayout.Toggle(game.ContinueSave,
+                Text("Продолжить с начала сохранённой главы", "Continue from the saved chapter start"));
+        }
         private void OnGUI()
         {
             if (Returning) { GUI.Box(new Rect(20, 20, 430, 55), Text("Возвращение в лобби…", "Returning to lobby…")); return; }
@@ -140,10 +153,11 @@ namespace Silence.Multiplayer
                     ReturnToLobby(Text("Вы вышли из сессии.", "You left the session."));
                 return;
             }
-            GUILayout.BeginArea(new Rect(Screen.width / 2f - 260, Screen.height / 2f - 190, 520, 380), GUI.skin.box);
+            GUILayout.BeginArea(new Rect(Screen.width / 2f - 260, Screen.height / 2f - 245, 520, 490), GUI.skin.box);
             GUILayout.Label("SILENCE — " + Text("кооператив · до 4 игроков", "co-op · up to 4 players"));
             if (!attempted)
             {
+                CampaignOptions();
                 GUILayout.Label(Text("IP хоста (для одного компьютера: 127.0.0.1)", "Host IP (same computer: 127.0.0.1)"));
                 address = GUILayout.TextField(address, 64);
                 GUILayout.Label(Text("Порт", "Port"));
@@ -158,6 +172,7 @@ namespace Silence.Multiplayer
                 GUILayout.Label(Text("Игроков: ", "Players: ") + world.PlayerCount + "/4");
                 GUILayout.Label(Text("Соберите группу до начала. Во время раунда вход закрыт.",
                     "Gather your group first. Joining is closed during a round."));
+                if (manager.IsHost) CampaignOptions();
                 if (manager.IsHost && GUILayout.Button(Text("Начать раунд", "Start round"))) world.BeginRound();
                 else if (!manager.IsHost) GUILayout.Label(Text("Ожидаем старта от хоста.", "Waiting for host to start."));
             }

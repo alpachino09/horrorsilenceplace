@@ -8,7 +8,7 @@ namespace Silence.Core
     {
         public const int BaseCapacity = 3;
         private readonly List<string> items = new List<string>();
-        public int Capacity { get; }
+        public int Capacity { get; private set; }
         public ReadOnlyCollection<string> Items { get; }
 
         public InventoryModel(int capacity = BaseCapacity)
@@ -35,6 +35,31 @@ namespace Silence.Core
             itemId = items[index];
             items.RemoveAt(index);
             return true;
+        }
+
+        public bool TryConsume(string itemId)
+        {
+            int index = items.IndexOf(itemId);
+            return TryRemoveAt(index, out _);
+        }
+        public bool Expand(int additionalSlots = 2)
+        {
+            if (additionalSlots <= 0 || Capacity + additionalSlots > 5) return false;
+            Capacity += additionalSlots;
+            return true;
+        }
+        public void ApplyCapacity(int capacity)
+        {
+            if (capacity < BaseCapacity || capacity > 5 || capacity < items.Count)
+                throw new ArgumentOutOfRangeException(nameof(capacity));
+            Capacity = capacity;
+        }
+        public void ApplySnapshot(int capacity, IReadOnlyList<string> snapshot)
+        {
+            if (capacity < BaseCapacity || capacity > 5) throw new ArgumentOutOfRangeException(nameof(capacity));
+            var validated = new InventoryModel(capacity);
+            validated.ReplaceSnapshot(snapshot);
+            Capacity = capacity; items.Clear(); items.AddRange(validated.Items);
         }
 
         public void ReplaceSnapshot(IReadOnlyList<string> snapshot)

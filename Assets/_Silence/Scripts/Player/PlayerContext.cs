@@ -3,6 +3,8 @@ using Silence.Config;
 using Silence.Core;
 using Silence.Input;
 using Silence.Networking;
+using Silence.Gameplay;
+using Silence.Interactions;
 
 namespace Silence.Player
 {
@@ -15,6 +17,17 @@ namespace Silence.Player
         public PlayerInputReader Input => input;
         public Camera View => view;
         public InventoryModel Inventory { get; } = new InventoryModel();
+        public ActorVitals Vitals { get; } = new ActorVitals();
+        public StaminaModel Stamina { get; } = new StaminaModel();
+        public GameplayDirector Game { get; internal set; }
+        public int SourceId { get; internal set; }
+        public float FlashlightCharge { get; internal set; } = 1;
+        public bool FlashlightOn { get; internal set; } = true;
+        public float NoiseLevel { get; internal set; }
+        public CarryableProp HeldProp { get; internal set; }
+        public PlayerContext CarriedBy { get; internal set; }
+        public PlayerContext HeldTeammate { get; internal set; }
+        public void SetSpawn(Vector3 position, Quaternion rotation) { SpawnPosition = position; SpawnRotation = rotation; }
         public IWorldAuthority Authority { get; private set; }
         public bool IsLocalOwner => Authority != null && Authority.IsLocalOwner(this);
         public Vector3 SpawnPosition { get; private set; }

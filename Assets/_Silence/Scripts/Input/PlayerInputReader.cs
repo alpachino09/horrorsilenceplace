@@ -9,6 +9,8 @@ namespace Silence.Input
         private InputActionAsset instance;
         private InputAction move, look, lookStick, sprint, crouch, jump;
         private InputAction interact, flashlight, inventory, pause, capture;
+        private InputAction drop, throwItem, doorControl;
+        private readonly InputAction[] useSlots = new InputAction[5];
         public InputActionAsset Template => template;
         public Vector2 Move => move?.ReadValue<Vector2>() ?? Vector2.zero;
         public Vector2 MouseLook => look?.ReadValue<Vector2>() ?? Vector2.zero;
@@ -21,6 +23,11 @@ namespace Silence.Input
         public bool InventoryPressed => inventory != null && inventory.WasPressedThisFrame();
         public bool PausePressed => pause != null && pause.WasPressedThisFrame();
         public bool CapturePressed => capture != null && capture.WasPressedThisFrame();
+        public bool DropPressed => drop != null && drop.WasPressedThisFrame();
+        public bool ThrowPressed => throwItem != null && throwItem.WasPressedThisFrame();
+        public bool ThrowReleased => throwItem != null && throwItem.WasReleasedThisFrame();
+        public bool DoorHeld => doorControl != null && doorControl.IsPressed();
+        public bool UseSlotPressed(int slot) => slot >= 0 && slot < 5 && useSlots[slot] != null && useSlots[slot].WasPressedThisFrame();
         public string InteractionBindingLabel => interact != null ? interact.GetBindingDisplayString() : "E";
         public bool GameplayActive => Application.isFocused &&
             Cursor.lockState == CursorLockMode.Locked;
@@ -41,10 +48,13 @@ namespace Silence.Input
             sprint = Find("Sprint"); crouch = Find("Crouch"); jump = Find("Jump");
             interact = Find("Interact"); flashlight = Find("Flashlight");
             inventory = Find("Inventory"); pause = Find("Pause"); capture = Find("Capture");
+            drop = Optional("Drop"); throwItem = Optional("Throw"); doorControl = Optional("DoorControl");
+            for (int i = 0; i < 5; i++) useSlots[i] = Optional("Use" + (i + 1));
             instance.Enable();
         }
 
         private InputAction Find(string name) => instance.FindAction("Gameplay/" + name, true);
+        private InputAction Optional(string name) => instance.FindAction("Gameplay/" + name, false);
 
         private void OnDisable()
         {
