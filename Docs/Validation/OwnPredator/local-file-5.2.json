@@ -1,0 +1,290 @@
+{
+  "kind": "Local-file execution verification for a user blocked by raw GitHub HTTP 404",
+  "runtime": "Linux bpy 5.2.3 / Python 3.13",
+  "generator_sha256": "24abe0363651337c33b187e41c700dec1aaada196f83a0f06c0c72f67b98461b",
+  "generation": {
+    "generator": "SILENCE Vesper 0.1",
+    "seed": 73819,
+    "blender": "5.2.3 LTS",
+    "native_unity_tested": false,
+    "art_approved": false,
+    "clips": [
+      {
+        "name": "Idle",
+        "seconds": 2.3,
+        "frames": [
+          1,
+          70
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "IdleBreathing",
+        "seconds": 2.3,
+        "frames": [
+          1,
+          70
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "Walk",
+        "seconds": 2.8,
+        "frames": [
+          1,
+          85
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "Stalk",
+        "seconds": 3.6,
+        "frames": [
+          1,
+          109
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "Run",
+        "seconds": 1.4,
+        "frames": [
+          1,
+          43
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "Sprint",
+        "seconds": 1.0,
+        "frames": [
+          1,
+          31
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "ListenStart",
+        "seconds": 1.1,
+        "frames": [
+          1,
+          34
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "ListenLoop",
+        "seconds": 2.4,
+        "frames": [
+          1,
+          73
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "ListenEnd",
+        "seconds": 0.9,
+        "frames": [
+          1,
+          28
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "Alert",
+        "seconds": 0.8,
+        "frames": [
+          1,
+          25
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "TurnLeft",
+        "seconds": 1.3,
+        "frames": [
+          1,
+          40
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "TurnRight",
+        "seconds": 1.3,
+        "frames": [
+          1,
+          40
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "AttackBite",
+        "seconds": 0.9,
+        "frames": [
+          1,
+          28
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "AttackClaw",
+        "seconds": 1.1,
+        "frames": [
+          1,
+          34
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "Lunge",
+        "seconds": 0.8,
+        "frames": [
+          1,
+          25
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "Search",
+        "seconds": 3.4,
+        "frames": [
+          1,
+          103
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "Investigate",
+        "seconds": 3.2,
+        "frames": [
+          1,
+          97
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "Stunned",
+        "seconds": 1.6,
+        "frames": [
+          1,
+          49
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      },
+      {
+        "name": "Recover",
+        "seconds": 1.8,
+        "frames": [
+          1,
+          55
+        ],
+        "status": "Procedural authored first pass; contacts/animation quality require visual and native review"
+      }
+    ],
+    "bones": 63,
+    "deform_bones": 55,
+    "texture_resolution": 4096,
+    "lods": {
+      "0": 85008,
+      "1": 36552,
+      "2": 10199
+    },
+    "limitations": [
+      "Not accepted as AAA or photorealistic final art",
+      "Voxel/decimate surface is not artist-retopologized production edge flow",
+      "Procedural animation contacts, foot sliding and clipping need further review",
+      "Unity Editor API compilation, FBX rig/clip import, native performance and live multiplayer not run",
+      "Death excluded: existing game does not allow killing this predator"
+    ],
+    "seconds": 40.18882703781128
+  },
+  "checks": {
+    "passed": 97,
+    "failed": 0
+  },
+  "files": [
+    {
+      "path": "Assets/Creatures/SilencePredator/Editor/SilencePredatorSetup.cs",
+      "bytes": 11789,
+      "sha256": "f5388a05a6377ae419f2b32d07406369093083b296f8232799690a687c422cda"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Models/Vesper_LOD0.fbx",
+      "bytes": 7965308,
+      "sha256": "7e740808b5da5ac5c74d2dfefb7ba377c7e801eb4f012e0ada74363dafefb8b0"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Models/Vesper_LOD1.fbx",
+      "bytes": 1403868,
+      "sha256": "26173c91d98de3c1968f70286a12cd9865a811b781178a0bbad70e45716e191d"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Models/Vesper_LOD2.fbx",
+      "bytes": 666364,
+      "sha256": "1aa2e41843676f74699de6a1177461de0563f502d163b8efea40deb4a222fd65"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Scripts/MonsterAnimationController.cs",
+      "bytes": 2003,
+      "sha256": "4961bca3a1290579712e3f6feaff90bef310d41c2c756c48874ee50490bce7ea"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Armor_BaseColor.png",
+      "bytes": 1035806,
+      "sha256": "2ea12979f0c610afd25ef10b766759c76166fcec4265e42be4c475271335807e"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Armor_Mask.png",
+      "bytes": 9944253,
+      "sha256": "d09dfc6a151b9a2fa69cf571b371d201fe763ced952b9d72b0276939d1b702df"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Armor_Normal.png",
+      "bytes": 12802099,
+      "sha256": "e6e3d899d502290dee86c5ccbace3245591abe8e068ec7b8a8e20f125561679e"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Skin_BaseColor.png",
+      "bytes": 2293466,
+      "sha256": "fe17262997b3d4ad927acf3d6623333b10053402046bfd38df5ae7fc8989a477"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Skin_Mask.png",
+      "bytes": 14047481,
+      "sha256": "01d2ca81d70a1c44844f7bfc1b97e185497777c144b2e44b2144958e8df81a4a"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Skin_Normal.png",
+      "bytes": 15586036,
+      "sha256": "516e7007a3658f6b24c6bc0926e5964533155ffb2cc2164b88564edb46046fd1"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Tissue_BaseColor.png",
+      "bytes": 2587146,
+      "sha256": "1855762856ab74344fc61afe302ad492e2309df0baa969c37ae779632abae991"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Tissue_Mask.png",
+      "bytes": 9567416,
+      "sha256": "bd4f3986c768cd1f78f312b0ea9168d4c88aeb32fc1d40792d832cc568bea673"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Tissue_Normal.png",
+      "bytes": 12886033,
+      "sha256": "1ba4beb900aa3f52ab58457a2dfd041f704cc5f9bac6f1f4fee3db0253d4a0b7"
+    },
+    {
+      "path": "SilencePredator.blend",
+      "bytes": 4198669,
+      "sha256": "22b78e055dee3e56e298c6c0410ad0acddbae3b10e1ad1cff30b1c523b432997"
+    }
+  ],
+  "user_mac_gui_tested": false,
+  "unity_tested": false,
+  "download_issue": {
+    "user_error": "HTTP Error 404: Not Found before generator execution",
+    "cloud_raw_http_status": 200,
+    "cause_confirmed": false,
+    "workaround": "Download the source through the owner GitHub account in a browser, then execute the local file without urllib or any download requests."
+  }
+}

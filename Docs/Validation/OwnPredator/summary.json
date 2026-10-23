@@ -39,5 +39,13 @@
     "hearing/jaw Animator layer mixing",
     "server hearing AI presentation integration",
     "native performance and multiplayer tests"
-  ]
+  ],
+  "additional_runtime_verified": {
+    "version": "bpy 5.2.3 / Python 3.13, Linux",
+    "texture_size": 4096,
+    "passed": 97,
+    "failed": 0,
+    "native_mac_gui_tested": false,
+    "report": "local-file-5.2.json"
+  }
 }
