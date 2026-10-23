@@ -179,6 +179,8 @@ namespace Silence.Multiplayer
 
         internal void RequestInteraction(ulong target)
         {
+            InteractionDiagnostics.Trace(this, "RPC_SEND", "owner=" + OwnerClientId + " isOwner=" + IsOwner +
+                " server=" + IsServer + " target=" + target + " sequence=" + (interactionSequence + 1));
             // Reliable ordered input arrives before the associated interaction request.
             command.Sequence++;
             SubmitInputRpc(new InputPacket { Command = command });
@@ -186,8 +188,12 @@ namespace Silence.Multiplayer
         }
 
         [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Owner)]
-        private void InteractRpc(ulong target, uint sequence, RpcParams rpc = default) =>
+        private void InteractRpc(ulong target, uint sequence, RpcParams rpc = default)
+        {
+            InteractionDiagnostics.Trace(this, "RPC_RECEIVE", "sender=" + rpc.Receive.SenderClientId +
+                " target=" + target + " sequence=" + sequence);
             world.ApplyInteraction(this, rpc.Receive.SenderClientId, target, sequence);
+        }
 
         internal void PublishInventory()
         {

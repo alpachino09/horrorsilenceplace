@@ -25,6 +25,9 @@ namespace Silence.Multiplayer
             // The player's role is initialized here; this world's IsServer may
             // still be false until its own OnNetworkSpawn. Use the spawned actor.
             if (player.IsServer) gates[player.OwnerClientId] = new InteractionGate();
+            InteractionDiagnostics.Trace(this, "REGISTER", "actor=" + player.OwnerClientId +
+                " playerServer=" + player.IsServer + " worldServer=" + IsServer +
+                " gate=" + gates.ContainsKey(player.OwnerClientId));
             player.Context.Bind(this);
         }
         internal void Unregister(NetworkPlayer player)
@@ -49,21 +52,41 @@ namespace Silence.Multiplayer
 
         public bool RequestInteraction(PlayerContext actor, Interactable target)
         {
-            if (!Running || !IsLocalOwner(actor) || target == null) return false;
+            if (!Running || !IsLocalOwner(actor) || target == null)
+            {
+                InteractionDiagnostics.Trace(this, "REQUEST_REJECT", "running=" + Running +
+                    " owner=" + IsLocalOwner(actor) + " target=" + (target != null ? target.name : "none"));
+                return false;
+            }
             var networked = target.GetComponent<NetworkInteractable>();
-            if (networked == null || !networked.IsSpawned) return false;
+            if (networked == null || !networked.IsSpawned)
+            {
+                InteractionDiagnostics.Trace(this, "REQUEST_REJECT", "target=" + target.name +
+                    " networkComponent=" + (networked != null) + " spawned=" + (networked != null && networked.IsSpawned));
+                return false;
+            }
+            InteractionDiagnostics.Trace(this, "REQUEST", "target=" + target.name + " entity=" + networked.NetworkObjectId);
             players[actor].RequestInteraction(networked.NetworkObjectId);
             return true; // Queued; only a server response confirms success.
         }
 
         internal void ApplyInteraction(NetworkPlayer player, ulong sender, ulong targetId, uint sequence)
         {
-            if (!IsServer || !Running || player.OwnerClientId != sender ||
-                !players.TryGetValue(player.Context, out var registered) || registered != player ||
-                !gates.TryGetValue(sender, out var gate) || !gate.TryBegin(sequence, Time.unscaledTimeAsDouble)) return;
-            if (!NetworkManager.SpawnManager.SpawnedObjects.TryGetValue(targetId, out var entity)) return;
+            InteractionDiagnostics.Trace(this, "SERVER_RECEIVE", "sender=" + sender + " owner=" + player.OwnerClientId +
+                " target=" + targetId + " sequence=" + sequence + " server=" + IsServer + " running=" + Running);
+            if (!IsServer || !Running || player.OwnerClientId != sender)
+            { InteractionDiagnostics.Trace(this, "SERVER_REJECT", "role/round/sender"); return; }
+            if (!players.TryGetValue(player.Context, out var registered) || registered != player)
+            { InteractionDiagnostics.Trace(this, "SERVER_REJECT", "unregistered actor"); return; }
+            if (!gates.TryGetValue(sender, out var gate))
+            { InteractionDiagnostics.Trace(this, "SERVER_REJECT", "missing interaction gate"); return; }
+            if (!gate.TryBegin(sequence, Time.unscaledTimeAsDouble))
+            { InteractionDiagnostics.Trace(this, "SERVER_REJECT", "cooldown or replay"); return; }
+            if (!NetworkManager.SpawnManager.SpawnedObjects.TryGetValue(targetId, out var entity))
+            { InteractionDiagnostics.Trace(this, "SERVER_REJECT", "target not spawned"); return; }
             var state = entity.GetComponent<NetworkInteractable>();
-            if (state == null) return;
+            if (state == null)
+            { InteractionDiagnostics.Trace(this, "SERVER_REJECT", "missing NetworkInteractable"); return; }
             var target = state.Target;
             var actor = player.Context;
             Transform eye = actor.View.transform;
@@ -72,8 +95,18 @@ namespace Silence.Multiplayer
                 actor.Settings.interactionRange, ~0, QueryTriggerInteraction.Ignore);
             bool clear = hitSomething && hit.collider.GetComponentInParent<Interactable>() == target;
             if (target == null || !InteractionRules.CanApply(true, true, target.CanInteract(actor),
-                hitSomething ? hit.distance : float.PositiveInfinity, actor.Settings.interactionRange, clear)) return;
+                hitSomething ? hit.distance : float.PositiveInfinity, actor.Settings.interactionRange, clear))
+            {
+                InteractionDiagnostics.Trace(this, "SERVER_REJECT", "ray/availability/range target=" +
+                    (target != null ? target.name : "none") + " hit=" + (hitSomething ? hit.collider.name : "none") +
+                    " distance=" + (hitSomething ? hit.distance.ToString("F3") : "none") +
+                    " range=" + actor.Settings.interactionRange + " clear=" + clear);
+                return;
+            }
             bool applied = target.Apply(actor);
+            InteractionDiagnostics.Trace(this, "APPLY", "target=" + target.name + " success=" + applied +
+                (target is PrototypeDoor door ? " doorOpen=" + door.IsOpen + " rotation=" + door.transform.localEulerAngles : "") +
+                " timeScale=" + Time.timeScale);
             // Inventory-full feedback must also reach a remote owner.
             player.SendFeedback(applied);
             if (!applied) return;

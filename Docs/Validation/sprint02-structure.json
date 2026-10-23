@@ -210,6 +210,10 @@
       "passed": true
     },
     {
+      "check": "no editor API in runtime InteractionDiagnostics.cs",
+      "passed": true
+    },
+    {
       "check": "no editor API in runtime PrototypeDoor.cs",
       "passed": true
     },
@@ -286,7 +290,7 @@
       "passed": true
     }
   ],
-  "passed": 71,
+  "passed": 72,
   "failed": 0,
-  "csharp_assets": 46
+  "csharp_assets": 48
 }

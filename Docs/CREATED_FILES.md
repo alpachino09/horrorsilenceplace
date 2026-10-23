@@ -6,6 +6,7 @@ Generated-сцены/префабы создаются в настоящем Uni
 
 - [`.gitignore`](../.gitignore)
 - [`Assets/_Silence/Editor/Silence.Editor.asmdef`](../Assets/_Silence/Editor/Silence.Editor.asmdef)
+- [`Assets/_Silence/Editor/SilenceInteractionDiagnostics.cs`](../Assets/_Silence/Editor/SilenceInteractionDiagnostics.cs)
 - [`Assets/_Silence/Editor/SilenceMultiplayerInstaller.cs`](../Assets/_Silence/Editor/SilenceMultiplayerInstaller.cs)
 - [`Assets/_Silence/Editor/SilenceProjectValidator.cs`](../Assets/_Silence/Editor/SilenceProjectValidator.cs)
 - [`Assets/_Silence/Editor/SilenceSceneGenerator.cs`](../Assets/_Silence/Editor/SilenceSceneGenerator.cs)
@@ -23,6 +24,7 @@ Generated-сцены/префабы создаются в настоящем Uni
 - [`Assets/_Silence/Scripts/Input/PlayerInputReader.cs`](../Assets/_Silence/Scripts/Input/PlayerInputReader.cs)
 - [`Assets/_Silence/Scripts/Interactions/IInteractable.cs`](../Assets/_Silence/Scripts/Interactions/IInteractable.cs)
 - [`Assets/_Silence/Scripts/Interactions/Interactable.cs`](../Assets/_Silence/Scripts/Interactions/Interactable.cs)
+- [`Assets/_Silence/Scripts/Interactions/InteractionDiagnostics.cs`](../Assets/_Silence/Scripts/Interactions/InteractionDiagnostics.cs)
 - [`Assets/_Silence/Scripts/Interactions/InteractionScanner.cs`](../Assets/_Silence/Scripts/Interactions/InteractionScanner.cs)
 - [`Assets/_Silence/Scripts/Interactions/ItemPickup.cs`](../Assets/_Silence/Scripts/Interactions/ItemPickup.cs)
 - [`Assets/_Silence/Scripts/Interactions/PrototypeDoor.cs`](../Assets/_Silence/Scripts/Interactions/PrototypeDoor.cs)
