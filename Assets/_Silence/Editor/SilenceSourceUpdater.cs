@@ -25,7 +25,7 @@ namespace Silence.Editor
                 throw new InvalidOperationException("Wrong folder: choose the extracted repository root with Assets and LocalPackages inside.");
 
             string[] roots = { "Assets/_Silence/Scripts", "Assets/_Silence/Editor", "Assets/_Silence/Tests",
-                "Assets/_Silence/Settings", "Assets/_Silence/Graphics", "Assets/_Silence/Art/VisualRebuild", "LocalPackages/com.silence.multiplayer" };
+                "Assets/_Silence/Settings", "Assets/_Silence/Graphics", "Assets/_Silence/Art/VisualRebuild", "Assets/Creatures/SilencePredator", "LocalPackages/com.silence.multiplayer" };
             var files = roots.Where(root => Directory.Exists(Path.Combine(source, root))).SelectMany(root => Directory.GetFiles(Path.Combine(source, root), "*", SearchOption.AllDirectories))
                 .Where(path => new[] { ".cs", ".asmdef", ".inputactions", ".json", ".md", ".fbx", ".png", ".shader", ".hlsl", ".bytes" }.Contains(Path.GetExtension(path).ToLowerInvariant()))
                 .Select(path => path.Substring(source.TrimEnd(Path.DirectorySeparatorChar).Length + 1)).ToArray();

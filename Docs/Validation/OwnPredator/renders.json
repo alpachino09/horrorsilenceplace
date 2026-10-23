@@ -1,0 +1,54 @@
+{
+  "engine": "Blender 4.3.2 Cycles CPU",
+  "samples": 32,
+  "resolution": [
+    1000,
+    800
+  ],
+  "unity_capture": false,
+  "visually_reviewed": [
+    "overall",
+    "head_closed",
+    "head_open",
+    "side",
+    "back",
+    "horror",
+    "scale"
+  ],
+  "art_approved_as_AAA": false,
+  "images": [
+    {
+      "file": "Docs/OwnPredator/Previews/back.png",
+      "sha256": "4b9c373b182d0511a1e7647c5ee004e109eff99fec6f659f7bf1ab01006b3ce0"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/head_closed.png",
+      "sha256": "6d4c2ad589d81045142661993eb436dcae620bdef14e989f61b6537fbbd71765"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/head_open.png",
+      "sha256": "3899f56160442aa945ae38e9ed1a2f47699f77a6c8f128ceebdd5370bfbc49eb"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/horror.png",
+      "sha256": "06e970ca7b12838cadc7d7f9184e34a91962c9c857a9b62a5e9a00c3d12ea414"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/overall.png",
+      "sha256": "085f377e4cbf94b227e4348ea9f7985e876b4aeee19de28ac7830d5a81ddb100"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/scale.png",
+      "sha256": "47658198881117dddc41dea4a6b3fdd9ada68e374bcff6eb2ce473c584cac1a3"
+    },
+    {
+      "file": "Docs/OwnPredator/Previews/side.png",
+      "sha256": "823b3e81b4ab679f4cb66ded793c2e87672530444b18dea2e7c32f8111cc2efa"
+    }
+  ],
+  "contact_sheet": {
+    "file": "Docs/OwnPredator/Previews/contact.png",
+    "sha256": "45eb8e1b5010c7450e5fb1e2e881a254f639ff0daead68e077cb1c0aad4b290b",
+    "visually_reviewed": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "runtime_template_matches_reviewable_cs": true,
+  "editor_template_matches_reviewable_cs": true,
+  "python_syntax_checked": true,
+  "bash_syntax_checked": true,
+  "native_unity_api_binding_checked": false
+}

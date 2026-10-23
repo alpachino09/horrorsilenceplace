@@ -1,0 +1,13 @@
+{
+  "kind": "Actual second run in an already populated saved .blend; 512px for repeat check only",
+  "checks": {
+    "existing_scenes_preserved": true,
+    "existing_objects_preserved": true,
+    "new_scene_created": true,
+    "started_from_edit_mode": true,
+    "new_19_actions": true,
+    "old_image_locations_preserved": true
+  },
+  "passed": 6,
+  "failed": 0
+}

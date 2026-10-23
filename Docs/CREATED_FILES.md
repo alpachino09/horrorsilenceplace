@@ -1,11 +1,15 @@
-# Файлы SILENCE — подготовка интеграции внешности монстра 0.4.1
+# Файлы SILENCE — собственный хищник, процедурный первый проход
 
-[Текущий отдельный этап и ограничения](CreatureArt/README_RU.md).
-Пять бесплатных кандидатов осмотрены: в репозитории только рендеры и их лицензия,
-исходные 3D-ассеты ещё не добавлены в Assets SILENCE. Купленные модели не публикуются.
-Сцены/AnimatorController/копии AnimationClip создаются в настоящем Unity после получения ассета.
+[Инструкция и честный статус](OwnPredator/README_RU.md).
+Скрипт реально создаёт `.blend`, три skinned FBX, девять карт 4K и 19 клипов.
+Сгенерированные бинарные файлы проверены в облаке и воспроизводятся локально;
+в git находятся генератор, исходники подготовки Unity, рендеры и отчёты.
+Unity Editor здесь не запускался: prefab/demo пока не созданы. Уровень AAA не достигнут.
 
 - [`.gitignore`](../.gitignore)
+- [`Assets/Creatures/SilencePredator/Documentation/README_RU.md`](../Assets/Creatures/SilencePredator/Documentation/README_RU.md)
+- [`Assets/Creatures/SilencePredator/Editor/SilencePredatorSetup.cs`](../Assets/Creatures/SilencePredator/Editor/SilencePredatorSetup.cs)
+- [`Assets/Creatures/SilencePredator/Scripts/MonsterAnimationController.cs`](../Assets/Creatures/SilencePredator/Scripts/MonsterAnimationController.cs)
 - [`Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD0.fbx`](../Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD0.fbx)
 - [`Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD1.fbx`](../Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD1.fbx)
 - [`Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD2.fbx`](../Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD2.fbx)
@@ -179,6 +183,17 @@
 - [`Docs/IMPLEMENTATION_STATUS.md`](../Docs/IMPLEMENTATION_STATUS.md)
 - [`Docs/MANUAL_TESTS_RU.md`](../Docs/MANUAL_TESTS_RU.md)
 - [`Docs/NETWORKING_PLAN.md`](../Docs/NETWORKING_PLAN.md)
+- [`Docs/OwnPredator/Previews/README_RU.md`](../Docs/OwnPredator/Previews/README_RU.md)
+- [`Docs/OwnPredator/Previews/back.png`](../Docs/OwnPredator/Previews/back.png)
+- [`Docs/OwnPredator/Previews/contact.png`](../Docs/OwnPredator/Previews/contact.png)
+- [`Docs/OwnPredator/Previews/head_closed.png`](../Docs/OwnPredator/Previews/head_closed.png)
+- [`Docs/OwnPredator/Previews/head_open.png`](../Docs/OwnPredator/Previews/head_open.png)
+- [`Docs/OwnPredator/Previews/horror.png`](../Docs/OwnPredator/Previews/horror.png)
+- [`Docs/OwnPredator/Previews/overall.png`](../Docs/OwnPredator/Previews/overall.png)
+- [`Docs/OwnPredator/Previews/scale.png`](../Docs/OwnPredator/Previews/scale.png)
+- [`Docs/OwnPredator/Previews/side.png`](../Docs/OwnPredator/Previews/side.png)
+- [`Docs/OwnPredator/README_RU.md`](../Docs/OwnPredator/README_RU.md)
+- [`Docs/OwnPredator/REQUEST_RU.md`](../Docs/OwnPredator/REQUEST_RU.md)
 - [`Docs/ProjectBrief/00_START_HERE_RU.md`](../Docs/ProjectBrief/00_START_HERE_RU.md)
 - [`Docs/ProjectBrief/01_GDD_RU.md`](../Docs/ProjectBrief/01_GDD_RU.md)
 - [`Docs/ProjectBrief/02_ARCHITECTURE_RU.md`](../Docs/ProjectBrief/02_ARCHITECTURE_RU.md)
@@ -195,6 +210,16 @@
 - [`Docs/Validation/CreatureArt/source.txt`](../Docs/Validation/CreatureArt/source.txt)
 - [`Docs/Validation/CreatureArt/status.json`](../Docs/Validation/CreatureArt/status.json)
 - [`Docs/Validation/CreatureArt/structure.json`](../Docs/Validation/CreatureArt/structure.json)
+- [`Docs/Validation/OwnPredator/blender.json`](../Docs/Validation/OwnPredator/blender.json)
+- [`Docs/Validation/OwnPredator/embedded-scripts.json`](../Docs/Validation/OwnPredator/embedded-scripts.json)
+- [`Docs/Validation/OwnPredator/gameplay-preservation.json`](../Docs/Validation/OwnPredator/gameplay-preservation.json)
+- [`Docs/Validation/OwnPredator/generated-files.json`](../Docs/Validation/OwnPredator/generated-files.json)
+- [`Docs/Validation/OwnPredator/reference-access.json`](../Docs/Validation/OwnPredator/reference-access.json)
+- [`Docs/Validation/OwnPredator/renders.json`](../Docs/Validation/OwnPredator/renders.json)
+- [`Docs/Validation/OwnPredator/repeat.json`](../Docs/Validation/OwnPredator/repeat.json)
+- [`Docs/Validation/OwnPredator/source.txt`](../Docs/Validation/OwnPredator/source.txt)
+- [`Docs/Validation/OwnPredator/structure.json`](../Docs/Validation/OwnPredator/structure.json)
+- [`Docs/Validation/OwnPredator/summary.json`](../Docs/Validation/OwnPredator/summary.json)
 - [`Docs/Validation/VisualRebuild/api-review.json`](../Docs/Validation/VisualRebuild/api-review.json)
 - [`Docs/Validation/VisualRebuild/assets.json`](../Docs/Validation/VisualRebuild/assets.json)
 - [`Docs/Validation/VisualRebuild/core-regression.trx`](../Docs/Validation/VisualRebuild/core-regression.trx)
@@ -264,6 +289,10 @@
 - [`Tools/CoreTests/Silence.CoreTests.csproj`](../Tools/CoreTests/Silence.CoreTests.csproj)
 - [`Tools/CoreTests/packages.lock.json`](../Tools/CoreTests/packages.lock.json)
 - [`Tools/CreatureArt/render_free_candidates.py`](../Tools/CreatureArt/render_free_candidates.py)
+- [`Tools/OwnPredator/check_predator.py`](../Tools/OwnPredator/check_predator.py)
+- [`Tools/OwnPredator/create_predator.py`](../Tools/OwnPredator/create_predator.py)
+- [`Tools/OwnPredator/review_predator.py`](../Tools/OwnPredator/review_predator.py)
+- [`Tools/OwnPredator/run_macos.sh`](../Tools/OwnPredator/run_macos.sh)
 - [`Tools/SourceChecks/Program.cs`](../Tools/SourceChecks/Program.cs)
 - [`Tools/SourceChecks/SourceChecks.csproj`](../Tools/SourceChecks/SourceChecks.csproj)
 - [`Tools/Tests/test_network_smoke_runner.py`](../Tools/Tests/test_network_smoke_runner.py)

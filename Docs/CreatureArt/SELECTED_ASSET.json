@@ -12,5 +12,6 @@
   "animation_verified": false,
   "files_received": false,
   "access_result": "Listing and listing API requests failed: tunnel 403 Forbidden",
-  "next_required": "Owner-uploaded original full asset archive, preferably FBX with textures and animations. Inspect files before binding."
+  "next_required": "Owner-uploaded original full asset archive, preferably FBX with textures and animations. Inspect files before binding.",
+  "superseded_by": "Owner now requests an original procedural Blender creature; see Docs/OwnPredator/README_RU.md"
 }

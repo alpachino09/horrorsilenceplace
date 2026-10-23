@@ -1,0 +1,445 @@
+{
+  "kind": "Actual Blender source, skin/pose and FBX roundtrip checks; not Unity validation",
+  "checks": [
+    {
+      "check": "19 distinct actions survive saving/reopening .blend",
+      "passed": true
+    },
+    {
+      "check": "All nine saved material texture links resolve after reopening",
+      "passed": true
+    },
+    {
+      "check": "55 deform bones",
+      "passed": true
+    },
+    {
+      "check": "Six independent hearing valves",
+      "passed": true
+    },
+    {
+      "check": "Four leg IK chains exist",
+      "passed": true
+    },
+    {
+      "check": "LOD0 four UV-mapped material meshes",
+      "passed": true
+    },
+    {
+      "check": "LOD0 finite geometry, normalized <=4 bone influences",
+      "passed": true
+    },
+    {
+      "check": "LOD1 four UV-mapped material meshes",
+      "passed": true
+    },
+    {
+      "check": "LOD1 finite geometry, normalized <=4 bone influences",
+      "passed": true
+    },
+    {
+      "check": "LOD2 four UV-mapped material meshes",
+      "passed": true
+    },
+    {
+      "check": "LOD2 finite geometry, normalized <=4 bone influences",
+      "passed": true
+    },
+    {
+      "check": "Strictly decreasing LOD counts",
+      "passed": true,
+      "triangles": [
+        85008,
+        36552,
+        10199
+      ]
+    },
+    {
+      "check": "Finite pose Idle 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Idle 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Idle 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose IdleBreathing 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose IdleBreathing 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose IdleBreathing 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Walk 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Walk 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Walk 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Stalk 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Stalk 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Stalk 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Run 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Run 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Run 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Sprint 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Sprint 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Sprint 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose ListenStart 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose ListenStart 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose ListenStart 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose ListenLoop 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose ListenLoop 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose ListenLoop 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose ListenEnd 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose ListenEnd 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose ListenEnd 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Alert 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Alert 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Alert 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose TurnLeft 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose TurnLeft 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose TurnLeft 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose TurnRight 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose TurnRight 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose TurnRight 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose AttackBite 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose AttackBite 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose AttackBite 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose AttackClaw 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose AttackClaw 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose AttackClaw 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Lunge 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Lunge 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Lunge 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Search 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Search 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Search 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Investigate 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Investigate 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Investigate 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Stunned 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Stunned 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Stunned 1",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Recover 0",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Recover 0.5",
+      "passed": true
+    },
+    {
+      "check": "Finite pose Recover 1",
+      "passed": true
+    },
+    {
+      "check": "All six hearing valves actually change pose",
+      "passed": true
+    },
+    {
+      "check": "Creature height in metres",
+      "passed": true,
+      "skin_bounds": [
+        [
+          -1.2567310333251953,
+          -2.234584331512451,
+          0.0687960535287857
+        ],
+        [
+          1.260352611541748,
+          1.7370524406433105,
+          2.8955209255218506
+        ]
+      ]
+    },
+    {
+      "check": "4K map Skin BaseColor",
+      "passed": true
+    },
+    {
+      "check": "4K map Skin Normal",
+      "passed": true
+    },
+    {
+      "check": "4K map Skin Mask",
+      "passed": true
+    },
+    {
+      "check": "4K map Armor BaseColor",
+      "passed": true
+    },
+    {
+      "check": "4K map Armor Normal",
+      "passed": true
+    },
+    {
+      "check": "4K map Armor Mask",
+      "passed": true
+    },
+    {
+      "check": "4K map Tissue BaseColor",
+      "passed": true
+    },
+    {
+      "check": "4K map Tissue Normal",
+      "passed": true
+    },
+    {
+      "check": "4K map Tissue Mask",
+      "passed": true
+    },
+    {
+      "check": "Exported/reimported FBX contains 55 deform bones",
+      "passed": true
+    },
+    {
+      "check": "Exported/reimported FBX contains all 19 named takes",
+      "passed": true,
+      "takes": [
+        "Vesper_Rig.001|Alert",
+        "Vesper_Rig.001|AttackBite",
+        "Vesper_Rig.001|AttackClaw",
+        "Vesper_Rig.001|Idle",
+        "Vesper_Rig.001|IdleBreathing",
+        "Vesper_Rig.001|Investigate",
+        "Vesper_Rig.001|ListenEnd",
+        "Vesper_Rig.001|ListenLoop",
+        "Vesper_Rig.001|ListenStart",
+        "Vesper_Rig.001|Lunge",
+        "Vesper_Rig.001|Recover",
+        "Vesper_Rig.001|Run",
+        "Vesper_Rig.001|Search",
+        "Vesper_Rig.001|Sprint",
+        "Vesper_Rig.001|Stalk",
+        "Vesper_Rig.001|Stunned",
+        "Vesper_Rig.001|TurnLeft",
+        "Vesper_Rig.001|TurnRight",
+        "Vesper_Rig.001|Walk"
+      ]
+    },
+    {
+      "check": "FBX re-import has four skinned material meshes",
+      "passed": true
+    },
+    {
+      "check": "FBX deformed surface Idle 0",
+      "passed": true,
+      "max_sampled_distance_metres": 3.117593905699323e-06
+    },
+    {
+      "check": "FBX deformed surface Idle 0.5",
+      "passed": true,
+      "max_sampled_distance_metres": 0.0006156250601634383
+    },
+    {
+      "check": "FBX deformed surface Walk 0",
+      "passed": true,
+      "max_sampled_distance_metres": 2.3909283299872186e-06
+    },
+    {
+      "check": "FBX deformed surface Walk 0.5",
+      "passed": true,
+      "max_sampled_distance_metres": 0.0001910186983877793
+    },
+    {
+      "check": "FBX deformed surface Run 0",
+      "passed": true,
+      "max_sampled_distance_metres": 2.8333472528174752e-06
+    },
+    {
+      "check": "FBX deformed surface Run 0.5",
+      "passed": true,
+      "max_sampled_distance_metres": 3.4787110507750185e-06
+    },
+    {
+      "check": "FBX deformed surface ListenLoop 0",
+      "passed": true,
+      "max_sampled_distance_metres": 3.117593905699323e-06
+    },
+    {
+      "check": "FBX deformed surface ListenLoop 0.5",
+      "passed": true,
+      "max_sampled_distance_metres": 0.0007932200096547604
+    },
+    {
+      "check": "FBX deformed surface AttackBite 0",
+      "passed": true,
+      "max_sampled_distance_metres": 3.117593905699323e-06
+    },
+    {
+      "check": "FBX deformed surface AttackBite 0.5",
+      "passed": true,
+      "max_sampled_distance_metres": 0.0013344603357836604
+    },
+    {
+      "check": "FBX LOD1 matches shared bone names",
+      "passed": true
+    },
+    {
+      "check": "FBX LOD1 rest transforms and four UV meshes",
+      "passed": true,
+      "max_bone_matrix_error": 0.0
+    },
+    {
+      "check": "FBX LOD2 matches shared bone names",
+      "passed": true
+    },
+    {
+      "check": "FBX LOD2 rest transforms and four UV meshes",
+      "passed": true,
+      "max_bone_matrix_error": 0.0
+    }
+  ],
+  "passed": 97,
+  "failed": 0
+}

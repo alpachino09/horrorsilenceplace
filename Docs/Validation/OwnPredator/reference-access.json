@@ -1,0 +1,17 @@
+{
+  "requests": [
+    {
+      "url": "https://www.ilm.com/vfx/a-quiet-place/",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "url": "https://bloody-disgusting.com/movie/3509290/images-monsters-quiet-place-originally-looked-way-different/",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    },
+    {
+      "url": "https://scified.com/info/a-quiet-place-aliens-death-angels",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+    }
+  ],
+  "claim": "No claim that blocked reference pages were visually reviewed"
+}

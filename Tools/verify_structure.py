@@ -9,7 +9,7 @@ import uuid
 root = pathlib.Path(__file__).resolve().parents[1]
 assets = root / "Assets/_Silence"
 network_package = root / "LocalPackages/com.silence.multiplayer"
-source_roots = [assets, network_package]
+source_roots = [assets, root / "Assets/Creatures/SilencePredator", network_package]
 checks = []
 
 
