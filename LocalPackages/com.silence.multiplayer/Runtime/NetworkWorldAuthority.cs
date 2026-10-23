@@ -21,7 +21,10 @@ namespace Silence.Multiplayer
         internal void Register(NetworkPlayer player)
         {
             players.Add(player.Context, player);
-            if (IsServer) gates[player.OwnerClientId] = new InteractionGate();
+            // NGO spawns the host player before sweeping in-scene NetworkObjects.
+            // The player's role is initialized here; this world's IsServer may
+            // still be false until its own OnNetworkSpawn. Use the spawned actor.
+            if (player.IsServer) gates[player.OwnerClientId] = new InteractionGate();
             player.Context.Bind(this);
         }
         internal void Unregister(NetworkPlayer player)

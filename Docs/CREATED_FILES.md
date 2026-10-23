@@ -64,6 +64,7 @@ Generated-сцены/префабы создаются в настоящем Uni
 - [`Docs/SPRINT02_RU.md`](../Docs/SPRINT02_RU.md)
 - [`Docs/THIRD_PARTY_LICENSES.md`](../Docs/THIRD_PARTY_LICENSES.md)
 - [`Docs/Validation/core-final.trx`](../Docs/Validation/core-final.trx)
+- [`Docs/Validation/host-interaction-startup-review.json`](../Docs/Validation/host-interaction-startup-review.json)
 - [`Docs/Validation/owner-network-2026-10-23.json`](../Docs/Validation/owner-network-2026-10-23.json)
 - [`Docs/Validation/source-check.txt`](../Docs/Validation/source-check.txt)
 - [`Docs/Validation/sprint02-api-review.json`](../Docs/Validation/sprint02-api-review.json)

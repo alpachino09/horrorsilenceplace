@@ -1,0 +1,28 @@
+{
+  "kind": "official source startup-order review and owner observations; NOT runtime verification of the fix",
+  "upstreamCommit": "ddd715da4695a278a143d9af3530fd60a3814b73",
+  "sources": [
+    {
+      "path": "Runtime/Core/NetworkManager.cs",
+      "sha256": "46bed269dd8feee471de4f40735ede2854797823ed94eca4c2b68f0d7c3ab94c"
+    },
+    {
+      "path": "Runtime/Core/NetworkBehaviour.cs",
+      "sha256": "996c1eee9d75118ad5b9ae695b81474eff76b8ed1867ff290d2a54b89a35ad8e"
+    }
+  ],
+  "facts": [
+    "HostServerInitialize handles host player approval before spawning in-scene objects.",
+    "InternalOnNetworkSpawn initializes the spawned behaviour role via UpdateNetworkProperties.",
+    "Registration now checks the already spawned player.IsServer, not the world role before its scene spawn."
+  ],
+  "ownerEvidence": {
+    "validatorScreenshotUtc": "2026-10-23T01:49:47.5362360Z",
+    "validatorFailures": 0,
+    "singleHostLaunchReported": true,
+    "doorInteractionRegressionReported": true
+  },
+  "regressionProcedure": "Re-run single-host door and pickup interaction; development smoke --players 1 also checks host pickup.",
+  "fixExecutedInUnity": false,
+  "twoProcessNetworkVerified": false
+}
