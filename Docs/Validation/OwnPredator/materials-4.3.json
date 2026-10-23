@@ -1,0 +1,93 @@
+{
+  "kind": "Actual bpy renamed/missing-node regression; no translated macOS GUI launched",
+  "blender": "4.3.2",
+  "generator_sha256": "17dfb39adbab2331e71810eb37b1b13773fa9a5a39c9c61438f297ffe45f4617",
+  "checks": [
+    {
+      "check": "material: original English lookup fails for renamed default nodes",
+      "passed": true
+    },
+    {
+      "check": "material renamed: real shader exists",
+      "passed": true
+    },
+    {
+      "check": "material renamed: shader is linked to output",
+      "passed": true
+    },
+    {
+      "check": "material renamed: repeated lookup creates no duplicate nodes",
+      "passed": true
+    },
+    {
+      "check": "material missing shader: real shader exists",
+      "passed": true
+    },
+    {
+      "check": "material missing shader: shader is linked to output",
+      "passed": true
+    },
+    {
+      "check": "material missing shader: repeated lookup creates no duplicate nodes",
+      "passed": true
+    },
+    {
+      "check": "material empty tree: real shader exists",
+      "passed": true
+    },
+    {
+      "check": "material empty tree: shader is linked to output",
+      "passed": true
+    },
+    {
+      "check": "material empty tree: repeated lookup creates no duplicate nodes",
+      "passed": true
+    },
+    {
+      "check": "world: original English lookup fails for renamed default nodes",
+      "passed": true
+    },
+    {
+      "check": "world renamed: real shader exists",
+      "passed": true
+    },
+    {
+      "check": "world renamed: shader is linked to output",
+      "passed": true
+    },
+    {
+      "check": "world renamed: repeated lookup creates no duplicate nodes",
+      "passed": true
+    },
+    {
+      "check": "world missing shader: real shader exists",
+      "passed": true
+    },
+    {
+      "check": "world missing shader: shader is linked to output",
+      "passed": true
+    },
+    {
+      "check": "world missing shader: repeated lookup creates no duplicate nodes",
+      "passed": true
+    },
+    {
+      "check": "world empty tree: real shader exists",
+      "passed": true
+    },
+    {
+      "check": "world empty tree: shader is linked to output",
+      "passed": true
+    },
+    {
+      "check": "world empty tree: repeated lookup creates no duplicate nodes",
+      "passed": true
+    },
+    {
+      "check": "User language and translation settings stay unchanged",
+      "passed": true
+    }
+  ],
+  "passed": 21,
+  "failed": 0
+}

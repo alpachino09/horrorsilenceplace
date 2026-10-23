@@ -16,7 +16,7 @@
 В этом случае используйте **локальный файл**, без `urllib` и запросов к GitHub:
 
 1. Войдите в свой GitHub в браузере, откройте
-   [create_predator.py](https://github.com/alpachino09/horrorsilenceplace/blob/8d52a34ae8722f3233f10cfe5743ce8acae362ae/Tools/OwnPredator/create_predator.py)
+   [create_predator.py](https://github.com/alpachino09/horrorsilenceplace/blob/codex/original-predator/Tools/OwnPredator/create_predator.py)
    и нажмите **Download raw file** (стрелка вниз над кодом).
    Сохраните файл `create_predator.py` в папку **Загрузки / Downloads**.
 2. В Python Console Blender (Shift + F4) вставьте одной строкой:
@@ -27,12 +27,22 @@ from pathlib import Path; exec(compile((Path.home() / "Downloads" / "create_pred
 
 Это запускает тот же генератор с диска. Интернет для моделирования и экспорта не нужен.
 
-Проверенная среда: Blender **4.3.2**, CPU, и Python-модуль **bpy 5.2.3** / Python 3.13 на Linux.
-В обеих выполнена полная генерация с картами 4096 и повторное открытие/импорт с 97 проверками,
-0 ошибок (`Docs/Validation/OwnPredator/blender.json` и `blender-5.2.json`).
+Проверенные среды: Blender **4.3.2**, CPU, и Python-модуль **bpy 5.2.3** / Python 3.13 на Linux.
+Исправленная версия полностью создана с картами 4096 в bpy 5.2.3 и прошла 97 проверок
+повторного открытия/импорта (`Docs/Validation/OwnPredator/material-fix-roundtrip.json`).
+По 21 дополнительной проверке узлов материалов/мира выполнены в обеих версиях.
+До исправления полная генерация также выполнялась в 4.3.2 (`blender.json`) и 5.2.3 (`blender-5.2.json`).
 Интерфейс приложения Blender 5.2 и macOS здесь не запускались.
 Скрипт не требует платных сервисов и дополнительных пакетов: используется numpy,
 входящий в Blender. Минимальная проверка версии в коде — 4.2; остальные версии не проверены.
+
+Ошибка `AttributeError: 'NoneType' object has no attribute 'inputs'` в старой версии
+возникала, если поиск английского имени `Principled BSDF` не находил узел. Исправленный
+генератор выбирает шейдер/выход по `bl_idname`, создаёт отсутствующие узлы и связывает
+их; тот же способ применяется к полу и фону. Язык и настройки перевода пользователя
+не меняются. Проверки воспроизводят отсутствие/переименование узлов настоящего bpy,
+включая русские имена; полноценный русский интерфейс macOS здесь не запускался.
+Если старый файл уже скачан, замените его новым `create_predator.py` в Downloads.
 
 1. Открой Blender. Нажми **Shift + F4**: откроется Python Console.
 2. Вставь одной строкой:

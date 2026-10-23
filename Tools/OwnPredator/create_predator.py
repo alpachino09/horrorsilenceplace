@@ -72,8 +72,23 @@ def maps(kind):
  mask=image_file(kind+'_Mask',packed,True,1-rough)
  return base,norm,mask
 
+def ensure_shader(owner,shader_type,output_type):
+ # Default node names can be localized or renamed. RNA types remain stable.
+ # Blender 5.2 creates node trees automatically; older versions need use_nodes.
+ if owner.node_tree is None:owner.use_nodes=True
+ tree=owner.node_tree
+ if tree is None:raise RuntimeError('Cannot create shader node tree for '+owner.name)
+ shader=next((node for node in tree.nodes if node.bl_idname==shader_type),None)
+ if shader is None:shader=tree.nodes.new(shader_type)
+ outputs=[node for node in tree.nodes if node.bl_idname==output_type]
+ output=next((node for node in outputs if node.is_active_output),None)
+ if output is None:output=outputs[0] if outputs else tree.nodes.new(output_type)
+ # These trees belong to newly created materials/worlds, never existing user art.
+ if not any(link.from_socket==shader.outputs[0] and link.to_socket==output.inputs[0] for link in tree.links):tree.links.new(shader.outputs[0],output.inputs[0])
+ return shader
+
 def material(name):
- m=bpy.data.materials.new('Vesper_'+name);m.use_nodes=True;n=m.node_tree.nodes;l=m.node_tree.links;p=n.get('Principled BSDF')
+ m=bpy.data.materials.new('Vesper_'+name);p=ensure_shader(m,'ShaderNodeBsdfPrincipled','ShaderNodeOutputMaterial');n=m.node_tree.nodes;l=m.node_tree.links
  if name=='Bone':
   p.inputs['Base Color'].default_value=(.24,.205,.155,1);p.inputs['Roughness'].default_value=.43
  else:
@@ -458,13 +473,13 @@ for obj in refparts:
 def area(name,position,target,power,color,size):
  data=bpy.data.lights.new(name,'AREA');data.energy=power;data.color=color;data.shape='DISK';data.size=size
  obj=link(bpy.data.objects.new(name,data));obj.location=position;obj.rotation_euler=(V(target)-obj.location).to_track_quat('-Z','Y').to_euler();return obj
-world=bpy.data.worlds.new('Vesper neutral studio');world.use_nodes=True;world.node_tree.nodes['Background'].inputs[0].default_value=(.18,.20,.24,1);world.node_tree.nodes['Background'].inputs[1].default_value=.45;SCENE.world=world
+world=bpy.data.worlds.new('Vesper neutral studio');background=ensure_shader(world,'ShaderNodeBackground','ShaderNodeOutputWorld');background.inputs[0].default_value=(.18,.20,.24,1);background.inputs[1].default_value=.45;SCENE.world=world
 area('Studio key',(4,-5,6),(0,-.4,1.7),1600,(1,.87,.74),4)
 area('Studio fill',(-4,-2,4),(0,-.4,1.6),1000,(.64,.77,1),4)
 area('Studio rim',(0,4,6),(0,0,1.8),1800,(.76,.86,1),3)
 # Plain floor is demo infrastructure, not creature anatomy.
 plane=mesh('Demo floor',[(-100,-100,0),(100,-100,0),(100,100,0),(-100,100,0)],[(0,1,2,3)],'Skin',record=False)
-floormaterial=bpy.data.materials.new('Studio floor');floormaterial.diffuse_color=(.035,.04,.045,1);floormaterial.use_nodes=True;floormaterial.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(.035,.04,.045,1);plane.data.materials.clear();plane.data.materials.append(floormaterial)
+floormaterial=bpy.data.materials.new('Studio floor');floormaterial.diffuse_color=(.035,.04,.045,1);floor_shader=ensure_shader(floormaterial,'ShaderNodeBsdfPrincipled','ShaderNodeOutputMaterial');floor_shader.inputs['Base Color'].default_value=(.035,.04,.045,1);plane.data.materials.clear();plane.data.materials.append(floormaterial)
 CAMERAS={}
 for name,position,target,lens in [('Front',(4.4,-7,3.7),(0,-.15,1.5),46),('Side',(6.5,0,2.8),(0,-.2,1.5),46),('Back',(4.3,5.5,3.5),(0,.0,1.5),46),('HeadClose',(2.1,-4.4,3.4),(0,-1.55,2.52),62)]:
  data=bpy.data.cameras.new(name);data.lens=lens;cam=link(bpy.data.objects.new('Camera_'+name,data));cam.location=position;cam.rotation_euler=(V(target)-cam.location).to_track_quat('-Z','Y').to_euler();CAMERAS[name]=cam

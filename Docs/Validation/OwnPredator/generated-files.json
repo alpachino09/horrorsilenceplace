@@ -1,11 +1,11 @@
 {
-  "kind": "Actual generated files outside git; regenerate locally using the published script",
-  "workspace_path": "/workspace/generated-art/SilencePredator",
-  "generator_sha256": "24abe0363651337c33b187e41c700dec1aaada196f83a0f06c0c72f67b98461b",
+  "kind": "Actual generated files for material-node fix; outside git and reproducible with generator",
+  "workspace_path": "/workspace/generated-art/SilencePredatorMaterialFix",
+  "generator_sha256": "17dfb39adbab2331e71810eb37b1b13773fa9a5a39c9c61438f297ffe45f4617",
   "generation": {
     "generator": "SILENCE Vesper 0.1",
     "seed": 73819,
-    "blender": "4.3.2",
+    "blender": "5.2.3 LTS",
     "native_unity_tested": false,
     "art_approved": false,
     "clips": [
@@ -196,83 +196,83 @@
       "Unity Editor API compilation, FBX rig/clip import, native performance and live multiplayer not run",
       "Death excluded: existing game does not allow killing this predator"
     ],
-    "seconds": 41.224199533462524
+    "seconds": 39.131802558898926
   },
   "files": [
-    {
-      "path": "SilencePredator.blend",
-      "bytes": 4156940,
-      "sha256": "7007d0384ec49037b3c55a44ae95a19da768a1b1db1d2a80e79e155c3577abc0"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Models/Vesper_LOD0.fbx",
-      "bytes": 7958508,
-      "sha256": "41b6b6a194269b22c7aaaf2571c3efee7fc83ec4a58cd1c564b6cad767b73973"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Models/Vesper_LOD1.fbx",
-      "bytes": 1406700,
-      "sha256": "618814c661792c82fad50b89214d6b58e96b223169e311eb2e4ec8f8813bea4a"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Models/Vesper_LOD2.fbx",
-      "bytes": 666812,
-      "sha256": "53f3be418902f5a3b6d9d3b00b565e3d37671f4e893b6853cb85d821cc828867"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Textures/Armor_BaseColor.png",
-      "bytes": 1035733,
-      "sha256": "64c5346cc26070545e54d66a1b645f4756c58829248c01b8299b9224f57f60fa"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Textures/Armor_Mask.png",
-      "bytes": 9944180,
-      "sha256": "0d1bef0223a49d7be523371c2a71da75437cf1a9ea97e114adc30ed28cf32366"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Textures/Armor_Normal.png",
-      "bytes": 12802026,
-      "sha256": "879cb999c92be76acc0b5b59c88111b6e88a39563339d01b50d6dfd2d39bb351"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Textures/Skin_BaseColor.png",
-      "bytes": 2293393,
-      "sha256": "2b46d15b4ebc0b18c1693016f55444f85b3e4e82ebc958e6f73f2bfdd6127a4d"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Textures/Skin_Mask.png",
-      "bytes": 14047408,
-      "sha256": "1a05979874d3964a7205d565b30f2f1a0569afd5fcad8425c99a46988e3badb7"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Textures/Skin_Normal.png",
-      "bytes": 15585963,
-      "sha256": "a4824e30a61c11c7a86304f59a5474a7c559845175a310cf033f7cf4e14dde78"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Textures/Tissue_BaseColor.png",
-      "bytes": 2587073,
-      "sha256": "1b285f709c230c7a752404327ef9ba24eadbe5093e8415db6600fac186ee847e"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Textures/Tissue_Mask.png",
-      "bytes": 9567343,
-      "sha256": "4873536a98e8292831a530b3ef015fdf04564fb8936522c4bdc4bbca999d3a0c"
-    },
-    {
-      "path": "Assets/Creatures/SilencePredator/Textures/Tissue_Normal.png",
-      "bytes": 12885960,
-      "sha256": "9e5b376ff8d2e02ff98993c1eb6a3361dd7d7836d9e80f9815c3c1a5945cd213"
-    },
     {
       "path": "Assets/Creatures/SilencePredator/Editor/SilencePredatorSetup.cs",
       "bytes": 11789,
       "sha256": "f5388a05a6377ae419f2b32d07406369093083b296f8232799690a687c422cda"
     },
     {
+      "path": "Assets/Creatures/SilencePredator/Models/Vesper_LOD0.fbx",
+      "bytes": 7963516,
+      "sha256": "db46ccecdd4dd0751f342dd6cbe9e27d4862fab126a64ff1005e1a0ecd4071f7"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Models/Vesper_LOD1.fbx",
+      "bytes": 1401692,
+      "sha256": "6250310ad988e84bc5c1fd3a1be81565b69bc05d0e6b62f6753e8f4859a0c707"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Models/Vesper_LOD2.fbx",
+      "bytes": 665372,
+      "sha256": "7b915b49aef2f96bda6f5fda579151e4d0796b3e5e7eb702b98e5444959f701f"
+    },
+    {
       "path": "Assets/Creatures/SilencePredator/Scripts/MonsterAnimationController.cs",
       "bytes": 2003,
       "sha256": "4961bca3a1290579712e3f6feaff90bef310d41c2c756c48874ee50490bce7ea"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Armor_BaseColor.png",
+      "bytes": 1035806,
+      "sha256": "2ea12979f0c610afd25ef10b766759c76166fcec4265e42be4c475271335807e"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Armor_Mask.png",
+      "bytes": 9944253,
+      "sha256": "d09dfc6a151b9a2fa69cf571b371d201fe763ced952b9d72b0276939d1b702df"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Armor_Normal.png",
+      "bytes": 12802099,
+      "sha256": "e6e3d899d502290dee86c5ccbace3245591abe8e068ec7b8a8e20f125561679e"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Skin_BaseColor.png",
+      "bytes": 2293466,
+      "sha256": "fe17262997b3d4ad927acf3d6623333b10053402046bfd38df5ae7fc8989a477"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Skin_Mask.png",
+      "bytes": 14047481,
+      "sha256": "01d2ca81d70a1c44844f7bfc1b97e185497777c144b2e44b2144958e8df81a4a"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Skin_Normal.png",
+      "bytes": 15586036,
+      "sha256": "516e7007a3658f6b24c6bc0926e5964533155ffb2cc2164b88564edb46046fd1"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Tissue_BaseColor.png",
+      "bytes": 2587146,
+      "sha256": "1855762856ab74344fc61afe302ad492e2309df0baa969c37ae779632abae991"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Tissue_Mask.png",
+      "bytes": 9567416,
+      "sha256": "bd4f3986c768cd1f78f312b0ea9168d4c88aeb32fc1d40792d832cc568bea673"
+    },
+    {
+      "path": "Assets/Creatures/SilencePredator/Textures/Tissue_Normal.png",
+      "bytes": 12886033,
+      "sha256": "1ba4beb900aa3f52ab58457a2dfd041f704cc5f9bac6f1f4fee3db0253d4a0b7"
+    },
+    {
+      "path": "SilencePredator.blend",
+      "bytes": 4194959,
+      "sha256": "7a4be3dededb6a8e3fee0f4dcf8e6876a62af31add00ce3e73d3e7cb165142e6"
     }
   ]
 }

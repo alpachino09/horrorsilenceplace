@@ -1,7 +1,7 @@
 {
   "kind": "Actual procedural original creature first pass; not completed AAA art",
-  "generator_sha256": "24abe0363651337c33b187e41c700dec1aaada196f83a0f06c0c72f67b98461b",
-  "blender_version": "4.3.2",
+  "generator_sha256": "17dfb39adbab2331e71810eb37b1b13773fa9a5a39c9c61438f297ffe45f4617",
+  "blender_version": "5.2.3 LTS",
   "blender_checks": {
     "passed": 97,
     "failed": 0
@@ -46,6 +46,19 @@
     "passed": 97,
     "failed": 0,
     "native_mac_gui_tested": false,
-    "report": "local-file-5.2.json"
+    "report": "material-fix-roundtrip.json"
+  },
+  "latest_full_generation_report": "material-fix-roundtrip.json",
+  "material_regression": {
+    "blender_4_3_2": {
+      "passed": 21,
+      "failed": 0
+    },
+    "bpy_5_2_3": {
+      "passed": 21,
+      "failed": 0
+    },
+    "native_translated_mac_gui_tested": false,
+    "scope": "Actual bpy nodes renamed including Russian names; missing shaders and empty trees; old English-name lookup failure reproduced."
   }
 }
