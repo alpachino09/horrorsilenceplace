@@ -1,7 +1,8 @@
 # Файлы SILENCE — подготовка интеграции внешности монстра 0.4.1
 
 [Текущий отдельный этап и ограничения](CreatureArt/README_RU.md).
-Сам выбранный monster asset пока отсутствует; купленные модели этим изменением не публикуются.
+Пять бесплатных кандидатов осмотрены: в репозитории только рендеры и их лицензия,
+исходные 3D-ассеты ещё не добавлены в Assets SILENCE. Купленные модели не публикуются.
 Сцены/AnimatorController/копии AnimationClip создаются в настоящем Unity после получения ассета.
 
 - [`.gitignore`](../.gitignore)
@@ -161,6 +162,15 @@
 - [`Assets/_Silence/Tests/PlayMode/FarmSmokeTests.cs`](../Assets/_Silence/Tests/PlayMode/FarmSmokeTests.cs)
 - [`Assets/_Silence/Tests/PlayMode/Silence.PlayModeTests.asmdef`](../Assets/_Silence/Tests/PlayMode/Silence.PlayModeTests.asmdef)
 - [`Docs/CREATED_FILES.md`](../Docs/CREATED_FILES.md)
+- [`Docs/CreatureArt/FreeCandidates/01-Tyrant.png`](../Docs/CreatureArt/FreeCandidates/01-Tyrant.png)
+- [`Docs/CreatureArt/FreeCandidates/02-Mantis.png`](../Docs/CreatureArt/FreeCandidates/02-Mantis.png)
+- [`Docs/CreatureArt/FreeCandidates/03-Dragoon.png`](../Docs/CreatureArt/FreeCandidates/03-Dragoon.png)
+- [`Docs/CreatureArt/FreeCandidates/04-Marauder.png`](../Docs/CreatureArt/FreeCandidates/04-Marauder.png)
+- [`Docs/CreatureArt/FreeCandidates/05-Dretch.png`](../Docs/CreatureArt/FreeCandidates/05-Dretch.png)
+- [`Docs/CreatureArt/FreeCandidates/README_RU.md`](../Docs/CreatureArt/FreeCandidates/README_RU.md)
+- [`Docs/CreatureArt/FreeCandidates/UNVANQUISHED_COPYING.txt`](../Docs/CreatureArt/FreeCandidates/UNVANQUISHED_COPYING.txt)
+- [`Docs/CreatureArt/FreeCandidates/comparison.png`](../Docs/CreatureArt/FreeCandidates/comparison.png)
+- [`Docs/CreatureArt/FreeCandidates/inventory.json`](../Docs/CreatureArt/FreeCandidates/inventory.json)
 - [`Docs/CreatureArt/README_RU.md`](../Docs/CreatureArt/README_RU.md)
 - [`Docs/CreatureArt/RESEARCH_STATUS.json`](../Docs/CreatureArt/RESEARCH_STATUS.json)
 - [`Docs/DECISIONS.md`](../Docs/DECISIONS.md)
@@ -179,6 +189,7 @@
 - [`Docs/SPRINT02_STATUS_HISTORY.md`](../Docs/SPRINT02_STATUS_HISTORY.md)
 - [`Docs/THIRD_PARTY_LICENSES.md`](../Docs/THIRD_PARTY_LICENSES.md)
 - [`Docs/Validation/CreatureArt/api-review.json`](../Docs/Validation/CreatureArt/api-review.json)
+- [`Docs/Validation/CreatureArt/free-candidates.json`](../Docs/Validation/CreatureArt/free-candidates.json)
 - [`Docs/Validation/CreatureArt/source-preservation.json`](../Docs/Validation/CreatureArt/source-preservation.json)
 - [`Docs/Validation/CreatureArt/source.txt`](../Docs/Validation/CreatureArt/source.txt)
 - [`Docs/Validation/CreatureArt/status.json`](../Docs/Validation/CreatureArt/status.json)
@@ -251,6 +262,7 @@
 - [`README_RU.md`](../README_RU.md)
 - [`Tools/CoreTests/Silence.CoreTests.csproj`](../Tools/CoreTests/Silence.CoreTests.csproj)
 - [`Tools/CoreTests/packages.lock.json`](../Tools/CoreTests/packages.lock.json)
+- [`Tools/CreatureArt/render_free_candidates.py`](../Tools/CreatureArt/render_free_candidates.py)
 - [`Tools/SourceChecks/Program.cs`](../Tools/SourceChecks/Program.cs)
 - [`Tools/SourceChecks/SourceChecks.csproj`](../Tools/SourceChecks/SourceChecks.csproj)
 - [`Tools/Tests/test_network_smoke_runner.py`](../Tools/Tests/test_network_smoke_runner.py)

@@ -1,7 +1,7 @@
 {
-  "scope": "Creature art import/presentation preparation; no realistic model delivered",
+  "scope": "Five actual free creature candidates inspected and previewed; import/presentation tools prepared",
   "recorded_utc": "2026-10-23T11:59:19.480338+00:00",
-  "research": "All attempted marketplace/search pages blocked with HTTP403; no concrete product/price/license verified",
+  "research": "Marketplace/search pages blocked, but free Unvanquished source package accessed through GitHub",
   "asset_selected": false,
   "asset_imported": false,
   "model_quality_approved": false,
@@ -9,5 +9,7 @@
   "attack_animation_connected": false,
   "unchanged_existing_gameplay_runtime_files": 74,
   "checks": "C# syntax in source.txt; assembly/structure in structure.json; these are not native tests",
-  "required_next": "Accessible model listing content/screenshots/video or owner-provided licensed rigged asset"
+  "required_next": "Choose a candidate design, convert the licensed IQE rig/animations to FBX and validate in native Unity",
+  "free_candidates_verified": 5,
+  "candidate_preview_inventory": "../../CreatureArt/FreeCandidates/inventory.json"
 }

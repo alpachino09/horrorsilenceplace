@@ -56,3 +56,12 @@ Python NumPy/SciPy/Pillow используются только при пере�
 не требует. FBX импортируется штатным Unity ModelImporter, дополнительный платный importer не нужен.
 Upstream Graphics/UnityCsReference изучен для API; его файлы не копировались в проект игры.
 Custom HLSL содержит обращения к установленным штатным URP includes; исходники пакета не встроены.
+
+## Unvanquished — только каталог бесплатных кандидатов
+
+В Docs/CreatureArt/FreeCandidates добавлены Blender-рендеры пяти настоящих моделей из
+UnvanquishedAssets/res-players_src.dpkdir (Unvanquished team). Сами исходные меши/текстуры
+в Assets SILENCE этим изменением не добавлены.
+Официальный Unvanquished/COPYING.txt указывает для медиа CC BY-SA 2.5. Рендеры как производные
+изображения опубликованы также под CC BY-SA 2.5 с атрибуцией и ссылками на исходники.
+[Подробности, источник, локальная копия COPYING и воспроизведение](CreatureArt/FreeCandidates/README_RU.md).

@@ -1,0 +1,11 @@
+{
+  "kind": "Source asset and rendered candidate inventory checks; not native Unity validation",
+  "source_revision": "bbf9e8f276b3cf3f4b3fab217f2c947d2dd25515",
+  "models": 5,
+  "rendered_model_previews": 5,
+  "comparison_figure": true,
+  "all_models_have_joints_and_named_stand_walk_run_attack": true,
+  "preview_hashes_match": true,
+  "native_unity_import_run": false,
+  "selected_candidate": null
+}

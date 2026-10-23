@@ -1,6 +1,6 @@
 {
   "checked_utc": "2026-10-23T11:55:38.950094+00:00",
-  "status": "blocked; no candidate listing contents or prices verified",
+  "status": "Five actual free candidates verified via public GitHub source; marketplace pages remain blocked",
   "requests": [
     {
       "url": "https://www.google.com/search?q=Unity+Asset+Store+blind+monster+rigged+creature+horror",
@@ -35,8 +35,17 @@
       "result": "Tunnel connection failed: 403 Forbidden"
     }
   ],
-  "downloaded_model": null,
+  "downloaded_model": "Unvanquished level0-level4 sources checked out under /tmp for inspection; not imported into Unity",
   "purchase_performed": false,
   "selected_candidate": null,
-  "required_to_select": "Accessible listing content/screenshots/video and license details, or an owner-provided purchased package"
+  "required_to_select": "Owner art preference after inspecting actual rendered candidate gallery",
+  "updated_utc": "2026-10-23T12:13:17.669787+00:00",
+  "verified_free_candidates": [
+    "Tyrant",
+    "Mantis",
+    "Dragoon",
+    "Marauder",
+    "Dretch"
+  ],
+  "free_candidate_inventory": "FreeCandidates/inventory.json"
 }
