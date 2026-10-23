@@ -30,8 +30,8 @@ namespace Silence.Multiplayer.Editor
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Stop Play Mode first.");
             var package = UnityEditor.PackageManager.PackageInfo.FindForAssembly(typeof(NetworkManager).Assembly);
-            if (package == null || package.version != "2.7.0")
-                throw new InvalidOperationException("This adapter targets official Netcode for GameObjects 2.7.0. Installed: " + package?.version);
+            if (package == null || package.version != "2.13.3")
+                throw new InvalidOperationException("This adapter targets official Netcode for GameObjects 2.13.3. Installed: " + package?.version);
             if (AssetDatabase.IsValidFolder(Output))
             {
                 if (File.Exists(Marker) && File.Exists(ScenePath) && File.Exists(PlayerPath))

@@ -40,7 +40,7 @@ check(definitions["Silence.Core"].get("noEngineReferences"), "pure core has no e
 check(definitions["Silence.Editor"].get("includePlatforms") == ["Editor"], "editor code excluded from players")
 check(definitions["Silence.Multiplayer.Editor"].get("includePlatforms") == ["Editor"], "multiplayer editor excluded from players")
 package = json.loads((network_package / "package.json").read_text())
-check(package["dependencies"] == {"com.unity.netcode.gameobjects": "2.7.0", "com.unity.transport": "2.6.0"},
+check(package["dependencies"] == {"com.unity.netcode.gameobjects": "2.13.3", "com.unity.transport": "2.6.0"},
       "official networking dependencies pinned to inspected source versions")
 check(not (root / "Packages/manifest.json").exists(), "source pack does not replace owner project manifest")
 

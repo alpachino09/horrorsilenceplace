@@ -21,10 +21,10 @@ Unity-пакеты и SDK не включены в распространяем�
 
 ## Новые выбранные зависимости Sprint 02
 
-- Netcode for GameObjects 2.7.0, Unity Technologies:
-  https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/ngo/2.7.0/com.unity.netcode.gameobjects
+- Netcode for GameObjects 2.13.3, Unity Technologies:
+  https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/ddd715da4695a278a143d9af3530fd60a3814b73/com.unity.netcode.gameobjects
   Лицензия официального пакета — Unity Companion License (LICENSE.md), Unity-dependent projects.
-  Для изучения использован commit b1ca57132eb8fde7f25eb287df93021e68a57087, без копирования пакета в репозиторий игры.
+  Для изучения использован commit ddd715da4695a278a143d9af3530fd60a3814b73, без копирования пакета в репозиторий игры.
 - Unity Transport 2.6.0: официальный com.unity.transport, зависимость NGO из его package.json.
   Устанавливается UPM; точную лицензию/уведомления установленного пакета сохраняет Unity Package Manager.
   Это выбранная зависимость, а не утверждение о её наличии в проекте владельца или о публичном домене.

@@ -1,7 +1,7 @@
 # Сетевой контракт Sprint 02
 
-Реализация: `LocalPackages/com.silence.multiplayer`. Используются API официального NGO 2.7.0,
-проверенные по tag `ngo/2.7.0`, commit `b1ca57132eb8fde7f25eb287df93021e68a57087`.
+Реализация: `LocalPackages/com.silence.multiplayer`. Используются API официального NGO 2.13.3,
+проверенные по commit `ddd715da4695a278a143d9af3530fd60a3814b73`.
 Зависимость Transport 2.6.0 взята из его package.json. Установка через UPM; версии действительно
 установленных пакетов проверяет Editor-валидатор. В облачном Unity пакеты не установлены:
 Editor отсутствует, Unity Registry в этой среде ответил HTTP 403.

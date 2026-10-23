@@ -34,7 +34,7 @@ namespace Silence.Multiplayer.Editor
             report.AppendLine("Unity: " + Application.unityVersion);
             var packages = UnityEditor.PackageManager.PackageInfo.GetAllRegisteredPackages();
             foreach (var package in packages.OrderBy(p => p.name)) report.AppendLine("PACKAGE " + package.name + " " + package.version);
-            Check(packages.Any(p => p.name == "com.unity.netcode.gameobjects" && p.version == "2.7.0"), "NGO 2.7.0");
+            Check(packages.Any(p => p.name == "com.unity.netcode.gameobjects" && p.version == "2.13.3"), "NGO 2.13.3");
             Check(packages.Any(p => p.name == "com.unity.transport" && p.version == "2.6.0"), "Transport 2.6.0");
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(NetworkFarmGenerator.PlayerPath);
             Check(prefab != null, "Network player prefab exists");

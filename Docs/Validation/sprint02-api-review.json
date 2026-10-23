@@ -1,8 +1,8 @@
 {
   "kind": "official source signature review only; NOT Unity compilation/ILPP/runtime validation",
-  "url": "https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/ngo/2.7.0",
-  "commit": "b1ca57132eb8fde7f25eb287df93021e68a57087",
-  "ngo": "2.7.0",
+  "url": "https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/tree/ddd715da4695a278a143d9af3530fd60a3814b73/com.unity.netcode.gameobjects",
+  "commit": "ddd715da4695a278a143d9af3530fd60a3814b73",
+  "ngo": "2.13.3",
   "transportDependency": "2.6.0",
   "checks": [
     {
@@ -43,7 +43,7 @@
     },
     {
       "source": "Runtime/Transports/UTP/UnityTransport.cs",
-      "sha256": "902cb286d979e463b579fc12e69b2ae8f5a11e512c5cdd73d752ca90db72f1b2",
+      "sha256": "4925659bb1d7b7d4b0a5ffeb7b5331ca74f762a5f87e96cdc4a912769b81ff53",
       "signatures": [
         {
           "text": "public void SetConnectionData(string ipv4Address, ushort port, string listenAddress = null)",
@@ -53,7 +53,7 @@
     },
     {
       "source": "Runtime/Core/NetworkManager.cs",
-      "sha256": "459e616a14a7fac0ba29abcc116a8b68bb0faeded3a250b337fec75c3f79483c",
+      "sha256": "46bed269dd8feee471de4f40735ede2854797823ed94eca4c2b68f0d7c3ab94c",
       "signatures": [
         {
           "text": "public Action<ConnectionApprovalRequest, ConnectionApprovalResponse> ConnectionApprovalCallback",
@@ -83,7 +83,7 @@
     },
     {
       "source": "Runtime/Timing/NetworkTickSystem.cs",
-      "sha256": "fcf8c2c7833b5f4c7fece8fca13bb108ec2d3d9becdd6fe5da7ac7f56a0ee8bc",
+      "sha256": "a3cce52e0b02098f376e1980525471360efedb37bb5cc28a489f8281cb567105",
       "signatures": [
         {
           "text": "public event Action Tick",
@@ -129,7 +129,7 @@
     },
     {
       "source": "Runtime/SceneManagement/DefaultSceneManagerHandler.cs",
-      "sha256": "4348f8eb80f627ca852fcf9cb9a5583f07b7b6833ee2d315391e496bf71ce99b",
+      "sha256": "99f5085bd80b033a8821743cddea8f2304f9d01a1f2eabc8b5ae52124c688a38",
       "signatures": [
         {
           "text": "public bool ClientShouldPassThrough",
@@ -137,6 +137,28 @@
         },
         {
           "text": "sceneName == activeScene.name",
+          "found": true
+        }
+      ]
+    },
+    {
+      "source": "Runtime/Components/RigidbodyContactEventManager.cs",
+      "sha256": "f3e582a6bee943457d3b3d4cd5e683ff3692df3af303a25176da2bbf54f253bc",
+      "signatures": [
+        {
+          "text": "#if UNITY_6000_2_OR_NEWER",
+          "found": true
+        },
+        {
+          "text": "Dictionary<EntityId, Rigidbody>",
+          "found": true
+        },
+        {
+          "text": "var instanceId = rigidbody.GetEntityId();",
+          "found": true
+        },
+        {
+          "text": "PairedHeaders[index].bodyEntityId",
           "found": true
         }
       ]
