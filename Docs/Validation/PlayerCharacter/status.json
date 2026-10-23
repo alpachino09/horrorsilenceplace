@@ -1,0 +1,32 @@
+{
+  "scope": "Preparatory player-avatar integration; visual reconstruction blocked by missing reference images",
+  "task_progress_estimate_percent": 20,
+  "reference_identified_from_owner_text": true,
+  "reference_visually_examined": false,
+  "new_character_meshes_created": 0,
+  "new_character_textures_created": 0,
+  "new_character_animation_clips_created": 0,
+  "new_character_unity_prefab_created": false,
+  "controller_created": false,
+  "existing_player_wire_packets_changed": false,
+  "existing_generated_scenes_changed": false,
+  "native_unity_editor_available": false,
+  "native_api_binding_checked": false,
+  "ngo_ilpp_checked": false,
+  "native_rendering_checked": false,
+  "host_client_checked": false,
+  "performance_checked": false,
+  "native_builds_created": false,
+  "core_tests": {
+    "passed": 119,
+    "failed": 0
+  },
+  "network_prefab_api_reference": "Official Netcode for GameObjects 2.13.3 cached package sources",
+  "network_configuration": "Only copied scene gains a new avatar NetworkBehaviour and a new protocol (at least 5); both binaries must be rebuilt",
+  "needed_from_owner": "Front/side/back reference images and a face closeup, or licensed model source files",
+  "structure_checks": {
+    "passed": 193,
+    "failed": 0
+  },
+  "syntax": "C# 9 syntax: 116 files, 5 preprocessor configurations, 0 errors. Unity API binding is NOT checked."
+}

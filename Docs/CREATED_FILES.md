@@ -1,17 +1,17 @@
-# Файлы SILENCE — Vesper в игровой сцене
+# Файлы SILENCE — подготовка главного персонажа
 
-[Инструкция подключения](VesperGame/README_RU.md). В репозитории находятся реальный
-`ArtSource/VesperGame/Vesper_Game.blend`, три skinned FBX с 22 клипами и 12 PNG 4K.
-Восстановлена наша Vesper 0.2 с 104 клыками по явному выбору владельца.
-Добавлены игровой драйвер анимации, сетевые события слуха/атаки и меню 18/19/20.
+[Текущий статус и нужные референсы](PlayerCharacter/README_RU.md). Написаны
+PlayerMotionModel, PlayerAvatarState/Network, Presentation, Visibility, Definition
+и установщик PlayerAvatarWorkshop (меню 21). Созданы реальные исходники и отчёты.
+Референс Crossbow Girl определён по описанию владельца; изображения/исходники
+ещё не получены. Модель, текстуры, клипы, AnimatorController и новый player prefab
+главного персонажа пока не созданы. Unity Editor отсутствует в облаке.
 
-Проверено: 122 проверки Blender/FBX, 6 проверок нормалей и 101 тест ядра без ошибок;
-C# синтаксис проверен отдельно. Отчёты: [Validation/VesperGame](Validation/VesperGame).
-Unity Editor в облаке отсутствует: игровая сцена, prefab и AnimatorController
-создаются командой 18 в проекте владельца. Play, импорт/API/ILPP, кооператив
-и производительность ещё не проверены. Ультрареализм не заявляется достигнутым.
+Проверено: 119 тестов ядра без ошибок, синтаксис 116 C#-файлов в 5 конфигурациях
+и 193 статические проверки структуры. Это не нативная компиляция/Play/кооператив.
+Отчёты: [Validation/PlayerCharacter](Validation/PlayerCharacter).
 
-Ниже — файлы текущего репозитория, включая предыдущие системы игры:
+Предыдущие системы и реальные файлы Vesper сохранены в списке репозитория:
 
 - [`.gitignore`](../.gitignore)
 - [`ArtSource/VesperGame/Vesper_Game.blend`](../ArtSource/VesperGame/Vesper_Game.blend)
@@ -115,6 +115,9 @@ Unity Editor в облаке отсутствует: игровая сцена, 
 - [`Assets/_Silence/Graphics/Runtime/GraphicsQualityManager.cs`](../Assets/_Silence/Graphics/Runtime/GraphicsQualityManager.cs)
 - [`Assets/_Silence/Graphics/Runtime/GraphicsQualityProfile.cs`](../Assets/_Silence/Graphics/Runtime/GraphicsQualityProfile.cs)
 - [`Assets/_Silence/Graphics/Runtime/LegacyRendererMask.cs`](../Assets/_Silence/Graphics/Runtime/LegacyRendererMask.cs)
+- [`Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarDefinition.cs`](../Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarDefinition.cs)
+- [`Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarPresentation.cs`](../Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarPresentation.cs)
+- [`Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarVisibility.cs`](../Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarVisibility.cs)
 - [`Assets/_Silence/Graphics/Runtime/Silence.Graphics.asmdef`](../Assets/_Silence/Graphics/Runtime/Silence.Graphics.asmdef)
 - [`Assets/_Silence/Graphics/Runtime/VesperGamePresentation.cs`](../Assets/_Silence/Graphics/Runtime/VesperGamePresentation.cs)
 - [`Assets/_Silence/Graphics/Runtime/VisualAtmosphere.cs`](../Assets/_Silence/Graphics/Runtime/VisualAtmosphere.cs)
@@ -139,6 +142,7 @@ Unity Editor в облаке отсутствует: игровая сцена, 
 - [`Assets/_Silence/Scripts/Core/InventoryModel.cs`](../Assets/_Silence/Scripts/Core/InventoryModel.cs)
 - [`Assets/_Silence/Scripts/Core/NoiseMath.cs`](../Assets/_Silence/Scripts/Core/NoiseMath.cs)
 - [`Assets/_Silence/Scripts/Core/PlayerCommand.cs`](../Assets/_Silence/Scripts/Core/PlayerCommand.cs)
+- [`Assets/_Silence/Scripts/Core/PlayerMotionModel.cs`](../Assets/_Silence/Scripts/Core/PlayerMotionModel.cs)
 - [`Assets/_Silence/Scripts/Core/SessionAdmission.cs`](../Assets/_Silence/Scripts/Core/SessionAdmission.cs)
 - [`Assets/_Silence/Scripts/Core/Silence.Core.asmdef`](../Assets/_Silence/Scripts/Core/Silence.Core.asmdef)
 - [`Assets/_Silence/Scripts/Core/SurvivalModel.cs`](../Assets/_Silence/Scripts/Core/SurvivalModel.cs)
@@ -169,6 +173,7 @@ Unity Editor в облаке отсутствует: игровая сцена, 
 - [`Assets/_Silence/Scripts/Networking/OfflineWorldAuthority.cs`](../Assets/_Silence/Scripts/Networking/OfflineWorldAuthority.cs)
 - [`Assets/_Silence/Scripts/Player/ActorGameplayInput.cs`](../Assets/_Silence/Scripts/Player/ActorGameplayInput.cs)
 - [`Assets/_Silence/Scripts/Player/FirstPersonMotor.cs`](../Assets/_Silence/Scripts/Player/FirstPersonMotor.cs)
+- [`Assets/_Silence/Scripts/Player/PlayerAvatarState.cs`](../Assets/_Silence/Scripts/Player/PlayerAvatarState.cs)
 - [`Assets/_Silence/Scripts/Player/PlayerContext.cs`](../Assets/_Silence/Scripts/Player/PlayerContext.cs)
 - [`Assets/_Silence/Scripts/Player/PlayerFlashlight.cs`](../Assets/_Silence/Scripts/Player/PlayerFlashlight.cs)
 - [`Assets/_Silence/Scripts/Player/PlayerLook.cs`](../Assets/_Silence/Scripts/Player/PlayerLook.cs)
@@ -188,6 +193,7 @@ Unity Editor в облаке отсутствует: игровая сцена, 
 - [`Assets/_Silence/Tests/EditMode/CoreTests.cs`](../Assets/_Silence/Tests/EditMode/CoreTests.cs)
 - [`Assets/_Silence/Tests/EditMode/GameplayModelTests.cs`](../Assets/_Silence/Tests/EditMode/GameplayModelTests.cs)
 - [`Assets/_Silence/Tests/EditMode/NetworkRulesTests.cs`](../Assets/_Silence/Tests/EditMode/NetworkRulesTests.cs)
+- [`Assets/_Silence/Tests/EditMode/PlayerMotionTests.cs`](../Assets/_Silence/Tests/EditMode/PlayerMotionTests.cs)
 - [`Assets/_Silence/Tests/EditMode/Silence.EditModeTests.asmdef`](../Assets/_Silence/Tests/EditMode/Silence.EditModeTests.asmdef)
 - [`Assets/_Silence/Tests/PlayMode/FarmSmokeTests.cs`](../Assets/_Silence/Tests/PlayMode/FarmSmokeTests.cs)
 - [`Assets/_Silence/Tests/PlayMode/Silence.PlayModeTests.asmdef`](../Assets/_Silence/Tests/PlayMode/Silence.PlayModeTests.asmdef)
@@ -224,6 +230,11 @@ Unity Editor в облаке отсутствует: игровая сцена, 
 - [`Docs/OwnPredator/README_RU.md`](../Docs/OwnPredator/README_RU.md)
 - [`Docs/OwnPredator/REQUEST_RU.md`](../Docs/OwnPredator/REQUEST_RU.md)
 - [`Docs/OwnPredator/REVISION_02_RU.md`](../Docs/OwnPredator/REVISION_02_RU.md)
+- [`Docs/PlayerCharacter/ANIMATOR_CONTRACT_RU.md`](../Docs/PlayerCharacter/ANIMATOR_CONTRACT_RU.md)
+- [`Docs/PlayerCharacter/NATIVE_CHECKS_RU.md`](../Docs/PlayerCharacter/NATIVE_CHECKS_RU.md)
+- [`Docs/PlayerCharacter/README_RU.md`](../Docs/PlayerCharacter/README_RU.md)
+- [`Docs/PlayerCharacter/TASK_RU.txt`](../Docs/PlayerCharacter/TASK_RU.txt)
+- [`Docs/PlayerCharacter/reference.json`](../Docs/PlayerCharacter/reference.json)
 - [`Docs/ProjectBrief/00_START_HERE_RU.md`](../Docs/ProjectBrief/00_START_HERE_RU.md)
 - [`Docs/ProjectBrief/01_GDD_RU.md`](../Docs/ProjectBrief/01_GDD_RU.md)
 - [`Docs/ProjectBrief/02_ARCHITECTURE_RU.md`](../Docs/ProjectBrief/02_ARCHITECTURE_RU.md)
@@ -263,6 +274,11 @@ Unity Editor в облаке отсутствует: игровая сцена, 
 - [`Docs/Validation/OwnPredator/source.txt`](../Docs/Validation/OwnPredator/source.txt)
 - [`Docs/Validation/OwnPredator/structure.json`](../Docs/Validation/OwnPredator/structure.json)
 - [`Docs/Validation/OwnPredator/summary.json`](../Docs/Validation/OwnPredator/summary.json)
+- [`Docs/Validation/PlayerCharacter/core-tests.json`](../Docs/Validation/PlayerCharacter/core-tests.json)
+- [`Docs/Validation/PlayerCharacter/source-versions.json`](../Docs/Validation/PlayerCharacter/source-versions.json)
+- [`Docs/Validation/PlayerCharacter/source.txt`](../Docs/Validation/PlayerCharacter/source.txt)
+- [`Docs/Validation/PlayerCharacter/status.json`](../Docs/Validation/PlayerCharacter/status.json)
+- [`Docs/Validation/PlayerCharacter/structure.json`](../Docs/Validation/PlayerCharacter/structure.json)
 - [`Docs/Validation/VesperGame/asset-files.json`](../Docs/Validation/VesperGame/asset-files.json)
 - [`Docs/Validation/VesperGame/blender.json`](../Docs/Validation/VesperGame/blender.json)
 - [`Docs/Validation/VesperGame/core-tests.json`](../Docs/Validation/VesperGame/core-tests.json)
@@ -323,6 +339,7 @@ Unity Editor в облаке отсутствует: игровая сцена, 
 - [`LocalPackages/com.silence.multiplayer/Editor/Silence.Multiplayer.Editor.asmdef`](../LocalPackages/com.silence.multiplayer/Editor/Silence.Multiplayer.Editor.asmdef)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/CreatureArtWorkshop.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/CreatureArtWorkshop.cs)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/LightingConfigurator.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/LightingConfigurator.cs)
+- [`LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerAvatarWorkshop.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerAvatarWorkshop.cs)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/Silence.Visual.Editor.asmdef`](../LocalPackages/com.silence.multiplayer/Editor/Visual/Silence.Visual.Editor.asmdef)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/TerrainBuilder.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/TerrainBuilder.cs)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/VegetationPainter.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/VegetationPainter.cs)
@@ -344,6 +361,7 @@ Unity Editor в облаке отсутствует: игровая сцена, 
 - [`LocalPackages/com.silence.multiplayer/Runtime/NetworkSession.cs`](../LocalPackages/com.silence.multiplayer/Runtime/NetworkSession.cs)
 - [`LocalPackages/com.silence.multiplayer/Runtime/NetworkSmokeProbe.cs`](../LocalPackages/com.silence.multiplayer/Runtime/NetworkSmokeProbe.cs)
 - [`LocalPackages/com.silence.multiplayer/Runtime/NetworkWorldAuthority.cs`](../LocalPackages/com.silence.multiplayer/Runtime/NetworkWorldAuthority.cs)
+- [`LocalPackages/com.silence.multiplayer/Runtime/PlayerAvatarNetwork.cs`](../LocalPackages/com.silence.multiplayer/Runtime/PlayerAvatarNetwork.cs)
 - [`LocalPackages/com.silence.multiplayer/Runtime/Silence.Multiplayer.asmdef`](../LocalPackages/com.silence.multiplayer/Runtime/Silence.Multiplayer.asmdef)
 - [`LocalPackages/com.silence.multiplayer/package.json`](../LocalPackages/com.silence.multiplayer/package.json)
 - [`README.md`](../README.md)

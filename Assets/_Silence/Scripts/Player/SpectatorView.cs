@@ -7,6 +7,8 @@ namespace Silence.Player
         private PlayerContext actor;
         private Camera spectator;
         private AudioListener listener;
+        public Camera SpectatorCamera => spectator;
+        public PlayerContext ObservedActor { get; private set; }
         private void Awake() => actor = GetComponent<PlayerContext>();
         private void LateUpdate()
         {
@@ -14,6 +16,7 @@ namespace Silence.Player
             bool dead = !actor.Vitals.Alive;
             if (!dead)
             {
+                ObservedActor = null;
                 if (spectator != null) { spectator.enabled = false; listener.enabled = false; }
                 actor.View.enabled = true; actor.View.GetComponent<AudioListener>().enabled = true;
                 return;
@@ -28,6 +31,7 @@ namespace Silence.Player
             spectator.enabled = listener.enabled = true;
             PlayerContext target = null;
             foreach (var other in actor.Game.Actors) if (other != actor && other.Vitals.Alive) { target = other; break; }
+            ObservedActor = target != null ? target : actor;
             Transform eye = target != null ? target.View.transform : actor.View.transform;
             spectator.transform.SetPositionAndRotation(eye.position, eye.rotation);
         }

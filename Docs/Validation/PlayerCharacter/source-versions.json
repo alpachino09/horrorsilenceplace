@@ -1,0 +1,66 @@
+{
+  "kind": "Source versions inspected; no native Unity API compilation",
+  "branch": "codex/player-character-integration",
+  "files": [
+    {
+      "path": "Assets/_Silence/Editor/SilenceSourceUpdater.cs",
+      "sha256": "778c769e8b9f2b4e8e4c7bb4eedc79655ee47530228187dbd13dbc696051ddc0"
+    },
+    {
+      "path": "Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarDefinition.cs",
+      "sha256": "6913e2661d1c6c8bdde4d6445b35b030d53ce5fdde489343808bfda3558fd991"
+    },
+    {
+      "path": "Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarPresentation.cs",
+      "sha256": "2d1a7ec13f233dfee2b9aa9be4b48cf8d4700c1d3680777cf74548a847d93fb2"
+    },
+    {
+      "path": "Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarVisibility.cs",
+      "sha256": "3643633d6668ae0dd273f5c70a69b6aa6340d4ec2173639f1f8acf2c2099b3ba"
+    },
+    {
+      "path": "Assets/_Silence/Scripts/Core/PlayerMotionModel.cs",
+      "sha256": "70041fdaf1e63c568e74d4af4be29ce36b239098f3e47378a453d90e61eed453"
+    },
+    {
+      "path": "Assets/_Silence/Scripts/Player/PlayerAvatarState.cs",
+      "sha256": "27a43d180aba41a1edd626a71ac8a691a7be6da95d58c7a7824cfa231ba16882"
+    },
+    {
+      "path": "Assets/_Silence/Scripts/Player/SpectatorView.cs",
+      "sha256": "b6f3b920c9db8ba42dfe29dcc70d9bb2e83f79b4d4182478661da4dd05ec4c29"
+    },
+    {
+      "path": "Assets/_Silence/Tests/EditMode/PlayerMotionTests.cs",
+      "sha256": "a44bef6e537b19b05a0e9d2857a29e71e83e2710d496735d5a88b4669b541d85"
+    },
+    {
+      "path": "LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerAvatarWorkshop.cs",
+      "sha256": "7a1b4f705d637c70375780bb07f81669d2df52a4f0d7432b8317b900d91ff1f5"
+    },
+    {
+      "path": "LocalPackages/com.silence.multiplayer/Runtime/PlayerAvatarNetwork.cs",
+      "sha256": "a694f4787724c8077bddf1704b683e97c28b57f24dbf7617280366dd62e9be52"
+    },
+    {
+      "path": "Tools/CoreTests/Silence.CoreTests.csproj",
+      "sha256": "ce5119892120a510777528a4ca1427b0396c4239697e264e06ae718961f0bb4b"
+    }
+  ],
+  "official_ngo_package_version": "2.13.3",
+  "ngo_api_reference_hashes": [
+    {
+      "path": "Runtime/Configuration/NetworkConfig.cs",
+      "sha256": "112a63a2992cf73ac3c71a44dab707ddf4c663c3dedd6820d7c3dad223f19a94"
+    },
+    {
+      "path": "Runtime/Configuration/NetworkPrefabs.cs",
+      "sha256": "f23a4c76bdf7c6da83e510a6c2057032dfb5937d193863656311418c58e21cdf"
+    },
+    {
+      "path": "Runtime/Configuration/NetworkPrefabsList.cs",
+      "sha256": "5f29619d70d80574cc50d98284005f3a92928c501557f15b2c6bf9c587e6b144"
+    }
+  ],
+  "owner_task_sha256": "ad2559f16c95bc42d2f773fea9fd4b6300c130ccce949104370bef701dfc37cf"
+}

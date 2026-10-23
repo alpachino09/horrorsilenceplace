@@ -1,0 +1,54 @@
+{
+  "name": "Crossbow Girl",
+  "short_url": "https://fab.com/s/194271dfc8cb",
+  "listing_url": "https://www.fab.com/listings/edf670ba-1967-4b84-bbea-544847c9b6e2",
+  "provenance": "Name and specifications supplied by project owner from the listing; no visual/file verification",
+  "page_access": "Proxy tunnel HTTP 403 for short and full URLs",
+  "images_received": false,
+  "source_asset_received": false,
+  "appearance_verified": false,
+  "purchase_budget": 0,
+  "license_verified": false,
+  "claimed_features": [
+    "52 ARKit Blendshapes",
+    "Quinn_Simple bone positions and proportions",
+    "Modular",
+    "Dirt Snow Rain Material Function",
+    "Material ID maps for color customization",
+    "Low Poly",
+    "Rigged to Epic skeleton with IK bones",
+    "Unreal Engine 5 skeleton",
+    "Tested in Game Animation Sample by publisher"
+  ],
+  "claimed_meshes": {
+    "SK_CrossbowGirl_Dressed": {
+      "vertices": 63379,
+      "triangles": 97598
+    },
+    "SK_CrossbowGirl_Underwear": {
+      "vertices": 27117,
+      "triangles": 45944
+    },
+    "SK_Crossbow": {
+      "vertices": 20816,
+      "triangles": 22538
+    },
+    "SK_Bolt": {
+      "vertices": 510,
+      "triangles": 366
+    }
+  },
+  "claimed_material_count": 19,
+  "claimed_material_instance_count": 0,
+  "claimed_texture_count": 85,
+  "claimed_texture_resolutions": [
+    2048,
+    4096
+  ],
+  "pending": [
+    "Front, side and back images",
+    "Face and outfit closeups",
+    "Optional original licensed source files",
+    "Visual reconstruction and comparison"
+  ]
+}
