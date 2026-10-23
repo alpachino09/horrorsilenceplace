@@ -1,12 +1,8 @@
-# Файлы SILENCE — визуальный блок 0.4.0
+# Файлы SILENCE — подготовка интеграции внешности монстра 0.4.1
 
-Полный перечень исходников, моделей, текстур, документации и облачных отчётов.
-Новые `.unity`, `.prefab`, `.mat`, TerrainData и NavMeshData создаёт настоящий Unity через меню 14;
-они не выданы за уже собранную и проверенную сцену в этом checkout.
-
-[Установка и ограничения визуального среза](VisualRebuild/README_RU.md).
-[Результаты реально выполненных проверок](Validation/VisualRebuild/summary.json).
-[Предыдущий игровой блок](GAMEPLAY_RU.md).
+[Текущий отдельный этап и ограничения](CreatureArt/README_RU.md).
+Сам выбранный monster asset пока отсутствует; купленные модели этим изменением не публикуются.
+Сцены/AnimatorController/копии AnimationClip создаются в настоящем Unity после получения ассета.
 
 - [`.gitignore`](../.gitignore)
 - [`Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD0.fbx`](../Assets/_Silence/Art/VisualRebuild/Models/Barn_LOD0.fbx)
@@ -84,6 +80,7 @@
 - [`Assets/_Silence/Editor/SilenceProjectValidator.cs`](../Assets/_Silence/Editor/SilenceProjectValidator.cs)
 - [`Assets/_Silence/Editor/SilenceSceneGenerator.cs`](../Assets/_Silence/Editor/SilenceSceneGenerator.cs)
 - [`Assets/_Silence/Editor/SilenceSourceUpdater.cs`](../Assets/_Silence/Editor/SilenceSourceUpdater.cs)
+- [`Assets/_Silence/Graphics/Runtime/CreatureModelPresentation.cs`](../Assets/_Silence/Graphics/Runtime/CreatureModelPresentation.cs)
 - [`Assets/_Silence/Graphics/Runtime/FarmFogVolume.cs`](../Assets/_Silence/Graphics/Runtime/FarmFogVolume.cs)
 - [`Assets/_Silence/Graphics/Runtime/FlashlightPresentation.cs`](../Assets/_Silence/Graphics/Runtime/FlashlightPresentation.cs)
 - [`Assets/_Silence/Graphics/Runtime/GraphicsQualityManager.cs`](../Assets/_Silence/Graphics/Runtime/GraphicsQualityManager.cs)
@@ -164,6 +161,8 @@
 - [`Assets/_Silence/Tests/PlayMode/FarmSmokeTests.cs`](../Assets/_Silence/Tests/PlayMode/FarmSmokeTests.cs)
 - [`Assets/_Silence/Tests/PlayMode/Silence.PlayModeTests.asmdef`](../Assets/_Silence/Tests/PlayMode/Silence.PlayModeTests.asmdef)
 - [`Docs/CREATED_FILES.md`](../Docs/CREATED_FILES.md)
+- [`Docs/CreatureArt/README_RU.md`](../Docs/CreatureArt/README_RU.md)
+- [`Docs/CreatureArt/RESEARCH_STATUS.json`](../Docs/CreatureArt/RESEARCH_STATUS.json)
 - [`Docs/DECISIONS.md`](../Docs/DECISIONS.md)
 - [`Docs/GAMEPLAY_RU.md`](../Docs/GAMEPLAY_RU.md)
 - [`Docs/IMPLEMENTATION_STATUS.md`](../Docs/IMPLEMENTATION_STATUS.md)
@@ -179,6 +178,11 @@
 - [`Docs/SPRINT02_RU.md`](../Docs/SPRINT02_RU.md)
 - [`Docs/SPRINT02_STATUS_HISTORY.md`](../Docs/SPRINT02_STATUS_HISTORY.md)
 - [`Docs/THIRD_PARTY_LICENSES.md`](../Docs/THIRD_PARTY_LICENSES.md)
+- [`Docs/Validation/CreatureArt/api-review.json`](../Docs/Validation/CreatureArt/api-review.json)
+- [`Docs/Validation/CreatureArt/source-preservation.json`](../Docs/Validation/CreatureArt/source-preservation.json)
+- [`Docs/Validation/CreatureArt/source.txt`](../Docs/Validation/CreatureArt/source.txt)
+- [`Docs/Validation/CreatureArt/status.json`](../Docs/Validation/CreatureArt/status.json)
+- [`Docs/Validation/CreatureArt/structure.json`](../Docs/Validation/CreatureArt/structure.json)
 - [`Docs/Validation/VisualRebuild/api-review.json`](../Docs/Validation/VisualRebuild/api-review.json)
 - [`Docs/Validation/VisualRebuild/assets.json`](../Docs/Validation/VisualRebuild/assets.json)
 - [`Docs/Validation/VisualRebuild/core-regression.trx`](../Docs/Validation/VisualRebuild/core-regression.trx)
@@ -219,6 +223,7 @@
 - [`LocalPackages/com.silence.multiplayer/Editor/NetworkFarmGenerator.cs`](../LocalPackages/com.silence.multiplayer/Editor/NetworkFarmGenerator.cs)
 - [`LocalPackages/com.silence.multiplayer/Editor/NetworkProjectValidator.cs`](../LocalPackages/com.silence.multiplayer/Editor/NetworkProjectValidator.cs)
 - [`LocalPackages/com.silence.multiplayer/Editor/Silence.Multiplayer.Editor.asmdef`](../LocalPackages/com.silence.multiplayer/Editor/Silence.Multiplayer.Editor.asmdef)
+- [`LocalPackages/com.silence.multiplayer/Editor/Visual/CreatureArtWorkshop.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/CreatureArtWorkshop.cs)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/LightingConfigurator.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/LightingConfigurator.cs)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/Silence.Visual.Editor.asmdef`](../LocalPackages/com.silence.multiplayer/Editor/Visual/Silence.Visual.Editor.asmdef)
 - [`LocalPackages/com.silence.multiplayer/Editor/Visual/TerrainBuilder.cs`](../LocalPackages/com.silence.multiplayer/Editor/Visual/TerrainBuilder.cs)

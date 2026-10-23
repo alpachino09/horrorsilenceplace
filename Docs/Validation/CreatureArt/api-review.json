@@ -1,0 +1,23 @@
+{
+  "files": [
+    {
+      "file": "AnimatorController.cs",
+      "sha256": "291c9b6f5b3ce7fa10f343c3ccd588e52ed5bf0a62271374db31d267cf8e9657",
+      "source": "Unity-Technologies/UnityCsReference 6000.6",
+      "kind": "Upstream source review, not Unity API compilation"
+    },
+    {
+      "file": "AnimationUtility.bindings.cs",
+      "sha256": "f68c2dd4d3131cde847019219530f72951f45a524d8c358a89d70a323dc4b82e",
+      "source": "Unity-Technologies/UnityCsReference 6000.6",
+      "kind": "Upstream source review, not Unity API compilation"
+    },
+    {
+      "file": "AnimationClip.bindings.cs",
+      "sha256": "e4f7695dc5a28789e2127ae98759cacccf7d5714a890bcb24b9c53a29ae76ec1",
+      "source": "Unity-Technologies/UnityCsReference 6000.6",
+      "kind": "Upstream source review, not Unity API compilation"
+    }
+  ],
+  "reviewed": "AnimatorController and AnimationClip/AnimationUtility properties and functions; full Unity binding unverified"
+}

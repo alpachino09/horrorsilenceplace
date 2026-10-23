@@ -1,0 +1,303 @@
+{
+  "base": "23f2a07",
+  "unchanged_files": 74,
+  "files": [
+    {
+      "file": "Assets/_Silence/Scripts/AssemblyInfo.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Audio/CreatureAudio.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Audio/MaskingAmbientSound.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Audio/MicrophoneNoiseMeter.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Audio/WorldAudio.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Config/ChapterDefinition.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Config/GameplaySettings.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Config/PlayerSettings.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/AcousticModels.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/CampaignModel.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/CommandInbox.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/CreatureMind.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/InteractionGate.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/InteractionRules.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/InventoryModel.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/NoiseMath.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/PlayerCommand.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/SessionAdmission.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/Silence.Core.asmdef",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Core/SurvivalModel.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Creatures/CreatureVisual.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Creatures/HearingCreature.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Creatures/RuntimeNavigation.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Gameplay/GameplayDirector.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Gameplay/WorldAtmosphere.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Input/PlayerInputReader.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/BreakableBarrier.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/CarryableProp.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/ChapterExit.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/IInteractable.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/Interactable.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/InteractionDiagnostics.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/InteractionScanner.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/ItemPickup.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/ManualDoor.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/MissionRadio.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/PrototypeDoor.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/PrototypeRadio.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Interactions/TeammateAid.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Inventory/ItemDefinition.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Missions/BootstrapLoader.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Missions/PrototypeExit.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Networking/FarmBootstrap.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Networking/IWorldAuthority.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Networking/OfflineWorldAuthority.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Player/ActorGameplayInput.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Player/FirstPersonMotor.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Player/PlayerContext.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Player/PlayerFlashlight.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Player/PlayerLook.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Player/SpectatorView.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Save/CampaignSaveStore.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/SceneQuery.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/Silence.Runtime.asmdef",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/SoundSimulation/AcousticMaskingZone.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/SoundSimulation/AcousticOcclusion.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/SoundSimulation/NoiseEvent.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/SoundSimulation/NoiseSystem.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/SoundSimulation/SurfaceMaterial.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/UI/GameplayHud.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/UI/PrototypeHud.cs",
+      "unchanged": true
+    },
+    {
+      "file": "Assets/_Silence/Scripts/UI/PrototypePreferences.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/GameplayActorNetwork.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/GameplayCreatureNetwork.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/GameplayPackets.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/GameplaySmokeProbe.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/GameplayWorldNetwork.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/NetworkInteractable.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/NetworkPackets.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/NetworkPlayer.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/NetworkSession.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/NetworkSmokeProbe.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/NetworkWorldAuthority.cs",
+      "unchanged": true
+    },
+    {
+      "file": "LocalPackages/com.silence.multiplayer/Runtime/Silence.Multiplayer.asmdef",
+      "unchanged": true
+    }
+  ],
+  "kind": "Source equality only; no native creature/physics/network test executed"
+}

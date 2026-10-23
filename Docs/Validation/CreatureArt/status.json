@@ -1,0 +1,13 @@
+{
+  "scope": "Creature art import/presentation preparation; no realistic model delivered",
+  "recorded_utc": "2026-10-23T11:59:19.480338+00:00",
+  "research": "All attempted marketplace/search pages blocked with HTTP403; no concrete product/price/license verified",
+  "asset_selected": false,
+  "asset_imported": false,
+  "model_quality_approved": false,
+  "native_unity_compilation_or_gameplay_checked": false,
+  "attack_animation_connected": false,
+  "unchanged_existing_gameplay_runtime_files": 74,
+  "checks": "C# syntax in source.txt; assembly/structure in structure.json; these are not native tests",
+  "required_next": "Accessible model listing content/screenshots/video or owner-provided licensed rigged asset"
+}

@@ -1,0 +1,42 @@
+{
+  "checked_utc": "2026-10-23T11:55:38.950094+00:00",
+  "status": "blocked; no candidate listing contents or prices verified",
+  "requests": [
+    {
+      "url": "https://www.google.com/search?q=Unity+Asset+Store+blind+monster+rigged+creature+horror",
+      "result": "Tunnel connection failed: 403 Forbidden"
+    },
+    {
+      "url": "https://www.bing.com/search?q=Unity+Asset+Store+blind+monster+rigged+creature+horror",
+      "result": "Tunnel connection failed: 403 Forbidden"
+    },
+    {
+      "url": "https://html.duckduckgo.com/html/?q=Unity+blind+monster+rigged+creature+horror+asset",
+      "result": "Tunnel connection failed: 403 Forbidden"
+    },
+    {
+      "url": "https://assetstore.unity.com/?q=monster%20crawler&orderBy=1",
+      "result": "Tunnel connection failed: 403 Forbidden"
+    },
+    {
+      "url": "https://www.fab.com/search?q=blind%20monster",
+      "result": "Tunnel connection failed: 403 Forbidden"
+    },
+    {
+      "url": "https://www.cgtrader.com/3d-models?keywords=blind+monster",
+      "result": "Tunnel connection failed: 403 Forbidden"
+    },
+    {
+      "url": "https://sketchfab.com/search?features=downloadable&q=blind+monster&type=models",
+      "result": "Tunnel connection failed: 403 Forbidden"
+    },
+    {
+      "url": "https://www.protofactor.biz",
+      "result": "Tunnel connection failed: 403 Forbidden"
+    }
+  ],
+  "downloaded_model": null,
+  "purchase_performed": false,
+  "selected_candidate": null,
+  "required_to_select": "Accessible listing content/screenshots/video and license details, or an owner-provided purchased package"
+}
