@@ -1,0 +1,10 @@
+{
+  "blender": "5.2.3 LTS",
+  "usd_import_export_fixture_passed": true,
+  "fbx_roundtrip_fixture_passed": true,
+  "missing_source_rejected": true,
+  "fixture_is_actual_flashlight": false,
+  "actual_user_usdz_available": false,
+  "actual_art_import_tested": false,
+  "native_unity_tested": false
+}

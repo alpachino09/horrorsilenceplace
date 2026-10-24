@@ -175,6 +175,24 @@
           "processors": "",
           "interactions": "",
           "initialStateCheck": false
+        },
+        {
+          "name": "ReloadFlashlight",
+          "type": "Button",
+          "id": "1934dce1-cd2d-4754-9914-2d9460db5a0f",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
+        },
+        {
+          "name": "HolsterFlashlight",
+          "type": "Button",
+          "id": "4cc9624a-a823-4682-aaac-8b19ccca2d2b",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
         }
       ],
       "bindings": [
@@ -604,6 +622,28 @@
           "processors": "",
           "groups": "",
           "action": "DoorControl",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "5c8e64a8-4a4b-4c34-8435-87686c8f5eae",
+          "path": "<Keyboard>/r",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "ReloadFlashlight",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "b4dc1fd2-c697-46a9-adc4-3ba03b31bbd8",
+          "path": "<Keyboard>/h",
+          "interactions": "",
+          "processors": "",
+          "groups": "",
+          "action": "HolsterFlashlight",
           "isComposite": false,
           "isPartOfComposite": false
         }

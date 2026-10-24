@@ -29,7 +29,7 @@ namespace Silence.Multiplayer
         }
         private void Publish()
         {
-            status.Value = new ActorStatus { Health = (byte)actor.Vitals.State, Charge = actor.FlashlightCharge,
+            status.Value = new ActorStatus { Health = (byte)actor.Vitals.State, Charge = actor.Flashlight == null ? actor.FlashlightCharge : 0,
                 Stamina = actor.Stamina.Value, Noise = actor.NoiseLevel,
                 HeldObject = actor.HeldProp != null ? actor.HeldProp.GetComponent<NetworkObject>().NetworkObjectId : 0,
                 Carried = actor.CarriedBy != null, CarriedBy = actor.CarriedBy != null ? actor.CarriedBy.SourceId : 0 };
@@ -37,7 +37,7 @@ namespace Silence.Multiplayer
         private void Changed(ActorStatus previous, ActorStatus current) { if (!IsServer) Apply(current); }
         private void Apply(ActorStatus value)
         {
-            actor.Vitals.ApplySnapshot((VitalState)value.Health); actor.FlashlightCharge = value.Charge;
+            actor.Vitals.ApplySnapshot((VitalState)value.Health); if (actor.Flashlight == null) actor.FlashlightCharge = value.Charge;
             actor.Stamina.ApplySnapshot(value.Stamina); actor.NoiseLevel = value.Noise;
             if (value.HeldObject != 0 && NetworkManager.SpawnManager.SpawnedObjects.TryGetValue(value.HeldObject, out var entity))
                 actor.HeldProp = entity.GetComponent<CarryableProp>();

@@ -23,6 +23,7 @@ namespace Silence.Player
         public int SourceId { get; internal set; }
         public float FlashlightCharge { get; internal set; } = 1;
         public bool FlashlightOn { get; internal set; } = true;
+        public FlashlightController Flashlight { get; internal set; }
         public float NoiseLevel { get; internal set; }
         public CarryableProp HeldProp { get; internal set; }
         public PlayerContext CarriedBy { get; internal set; }

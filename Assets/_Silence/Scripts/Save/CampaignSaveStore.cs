@@ -8,10 +8,10 @@ using Silence.Player;
 
 namespace Silence.Save
 {
-    [Serializable] public sealed class SavedPlayer { public int capacity; public string[] items; }
+    [Serializable] public sealed class SavedPlayer { public int capacity, batteryPacks, batteryPackCapacity; public string[] items; }
     [Serializable] public sealed class CampaignSave
     {
-        public int version = 1, chapter;
+        public int version = 2, chapter;
         public bool helped, research;
         public SavedPlayer[] players;
     }
@@ -23,7 +23,7 @@ namespace Silence.Save
         {
             var save = new CampaignSave { chapter = (int)campaign.Chapter, helped = campaign.HelpedSurvivors,
                 research = campaign.PreservedResearch, players = actors.Select(a => new SavedPlayer {
-                    capacity = a.Inventory.Capacity, items = a.Inventory.Items.Where(id => id != "held_prop").ToArray() }).ToArray() };
+                    capacity = a.Inventory.Capacity, batteryPacks = a.Inventory.BatteryPacks, batteryPackCapacity = a.Inventory.BatteryPackCapacity, items = a.Inventory.Items.Where(id => id != "held_prop").ToArray() }).ToArray() };
             string temporary = PathName + ".tmp";
             Directory.CreateDirectory(Application.persistentDataPath);
             File.WriteAllText(temporary, JsonUtility.ToJson(save, true));
@@ -37,11 +37,11 @@ namespace Silence.Save
             {
                 if (!File.Exists(PathName)) return false;
                 var parsed = JsonUtility.FromJson<CampaignSave>(File.ReadAllText(PathName));
-                if (parsed == null || parsed.version != 1 || parsed.chapter < 0 || parsed.chapter > 6 ||
+                if (parsed == null || (parsed.version != 1 && parsed.version != 2) || parsed.chapter < 0 || parsed.chapter > 6 ||
                     parsed.players == null || parsed.players.Length < 1 || parsed.players.Length > 4) return false;
                 foreach (var player in parsed.players)
                 {
-                    if (player == null || player.items == null || player.items.Any(id =>
+                    if (player == null || player.batteryPacks < 0 || player.batteryPacks > 12 || player.batteryPackCapacity < 0 || player.batteryPackCapacity > 12 || player.batteryPacks > player.batteryPackCapacity || player.items == null || player.items.Any(id =>
                         id != "battery" && id != "medicine" && id != "rescue_kit")) return false;
                     new InventoryModel().ApplySnapshot(player.capacity, player.items);
                 }

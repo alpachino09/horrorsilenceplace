@@ -13,6 +13,7 @@ namespace Silence.Player
         private readonly StepCycle stepCycle = new StepCycle();
         private readonly Collider[] overlaps = new Collider[32];
         public bool IsCrouched { get; private set; }
+        public bool IsSprinting { get; private set; }
 
         private void Awake()
         {
@@ -46,6 +47,7 @@ namespace Silence.Player
             var config = player.Settings;
             if (IsCrouched && !crouch && !CanStand()) crouch = true;
             IsCrouched = crouch;
+            IsSprinting = sprint && !crouch && axis.sqrMagnitude > .01f;
             float height = crouch ? config.crouchingHeight : config.standingHeight;
             controller.height = height;
             controller.center = Vector3.up * (height * 0.5f);

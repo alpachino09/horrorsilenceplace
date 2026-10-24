@@ -55,6 +55,7 @@ namespace Silence.UI
             GUILayout.Label(T("Шум", "Noise")); Meter(new Color(.7f, .4f, .2f), actor.NoiseLevel, 170);
             GUILayout.Label(T("Силы", "Stamina")); Meter(new Color(.35f, .55f, .4f), actor.Stamina.Value, 170);
             GUILayout.Label(T("Фонарь: ", "Flashlight: ") + Mathf.RoundToInt(actor.FlashlightCharge * 100) + "%");
+            if (actor.Flashlight != null) GUILayout.Label(T("Батарейки: ", "Spare packs: ") + actor.Inventory.BatteryPacks + " · R");
             GUILayout.EndArea();
             if (actor.Vitals.State == VitalState.Wounded)
                 GUI.Box(new Rect(width / 2 - 225, 25, 450, 45), T("Ранение. Лекарство поможет; двигайтесь тише.", "Wounded. Use medicine; move quietly."));
@@ -163,7 +164,7 @@ namespace Silence.UI
         {
             switch (id)
             {
-                case "battery": return T("Батарейка", "Battery"); case "medicine": return T("Лекарство", "Medicine");
+                case "flashlight_cells": return T("Комплект батареек", "Battery pack"); case "battery": return T("Батарейка", "Battery"); case "medicine": return T("Лекарство", "Medicine");
                 case "document": return T("Документ", "Document"); case "rescue_kit": return T("Спасательный набор", "Rescue kit");
                 case "held_prop": return T("Занято переноской", "Carrying an object"); default: return id;
             }

@@ -46,7 +46,7 @@ check(not (root / "Packages/manifest.json").exists(), "source pack does not repl
 
 asset = json.loads((assets / "Settings/SilenceControls.inputactions").read_text())
 ids = []
-expected = {"Move", "Look", "LookStick", "Sprint", "Crouch", "Jump", "Interact", "Flashlight", "Inventory", "Pause", "Capture", "Use1", "Use2", "Use3", "Use4", "Use5", "Drop", "Throw", "DoorControl"}
+expected = {"Move", "Look", "LookStick", "Sprint", "Crouch", "Jump", "Interact", "Flashlight", "Inventory", "Pause", "Capture", "Use1", "Use2", "Use3", "Use4", "Use5", "Drop", "Throw", "DoorControl", "ReloadFlashlight", "HolsterFlashlight"}
 for action_map in asset["maps"]:
     ids.append(action_map["id"])
     names = {action["name"] for action in action_map["actions"]}
@@ -56,6 +56,10 @@ for action_map in asset["maps"]:
     check(all(binding["action"] in names for binding in action_map["bindings"]), "bindings reference existing actions")
     check(not any(b["action"] == "Capture" and b["path"].startswith("<Mouse>")
                   for b in action_map["bindings"]), "settings mouse does not capture the cursor")
+for action_map in asset["maps"]:
+    for binding in action_map["bindings"]:
+        if binding["action"] in {"ReloadFlashlight", "HolsterFlashlight"}:
+            check(not any(other["path"] == binding["path"] and other["action"] != binding["action"] for other in action_map["bindings"]), "no flashlight input conflict " + binding["path"])
 check(len(ids) == len(set(ids)), "unique input UUIDs")
 check(all(str(uuid.UUID(value)) == value for value in ids), "valid input UUIDs")
 

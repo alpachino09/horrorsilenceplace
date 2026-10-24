@@ -24,6 +24,8 @@ namespace Silence.Interactions
             bool added = definition.id == "backpack" ? player.Inventory.Expand() : player.Inventory.TryAdd(definition.id);
             if (!added)
             {
+                if (definition.id == Silence.Core.InventoryModel.FlashlightCellId)
+                { player.ShowMessage(PrototypePreferences.English ? "Battery pouch full." : "Запас батареек заполнен."); return false; }
                 player.ShowMessage(PrototypePreferences.English
                     ? "No free space (" + player.Inventory.Capacity + " slots)." : "Нет свободного места (" + player.Inventory.Capacity + " слотов).");
                 return false;

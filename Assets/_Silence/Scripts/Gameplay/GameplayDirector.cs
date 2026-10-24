@@ -26,6 +26,7 @@ namespace Silence.Gameplay
         [SerializeField] private HearingCreature creature;
         private readonly List<PlayerContext> actors = new List<PlayerContext>();
         private readonly Dictionary<PlayerContext, string[]> checkpoint = new Dictionary<PlayerContext, string[]>();
+        private readonly Dictionary<PlayerContext, int> checkpointPacks = new Dictionary<PlayerContext, int>();
         private readonly Dictionary<PlayerContext, int> checkpointCapacities = new Dictionary<PlayerContext, int>();
         private readonly Dictionary<PlayerContext, float> nextPain = new Dictionary<PlayerContext, float>();
         private ItemPickup[] pickups;
@@ -75,7 +76,7 @@ namespace Silence.Gameplay
                 for (int i = actor.Inventory.Items.Count - 1; i >= 0; i--) TryDropSlot(actor, i);
                 vote?.Remove(unchecked((ulong)actor.SourceId));
             }
-            actors.Remove(actor); checkpoint.Remove(actor); checkpointCapacities.Remove(actor); nextPain.Remove(actor);
+            actors.Remove(actor); checkpoint.Remove(actor); checkpointCapacities.Remove(actor); checkpointPacks.Remove(actor); nextPain.Remove(actor);
         }
         public bool CanAct(PlayerContext actor) => Started && Phase == RoundPhase.Playing && actor.Vitals.Alive;
         public void BeginRound()
@@ -90,6 +91,8 @@ namespace Silence.Gameplay
                 for (int i = 0; i < actors.Count && i < save.players.Length; i++)
                 {
                     actors[i].Inventory.ApplySnapshot(save.players[i].capacity, save.players[i].items);
+                    if (save.version >= 2 && save.players[i].batteryPackCapacity > 0 && actors[i].Inventory.BatteryPacksConfigured)
+                        actors[i].Inventory.ApplyBatteryPacksSnapshot(actors[i].Inventory.BatteryPackCapacity, Mathf.Min(save.players[i].batteryPacks, actors[i].Inventory.BatteryPackCapacity));
                 }
             }
             Started = true;
@@ -100,7 +103,7 @@ namespace Silence.Gameplay
             foreach (var actor in actors)
             {
                 checkpoint[actor] = actor.Inventory.Items.Where(id => id != "held_prop" && id != "document").ToArray();
-                checkpointCapacities[actor] = actor.Inventory.Capacity;
+                checkpointCapacities[actor] = actor.Inventory.Capacity; checkpointPacks[actor] = actor.Inventory.BatteryPacks;
             }
         }
         private void StartChapter()
@@ -116,6 +119,8 @@ namespace Silence.Gameplay
                 var actor = actors[i];
                 actor.Vitals.Reset(); actor.Stamina.Reset(); actor.FlashlightCharge = 1;
                 actor.Inventory.ApplySnapshot(checkpointCapacities[actor], checkpoint[actor]);
+                if (actor.Inventory.BatteryPacksConfigured) actor.Inventory.ApplyBatteryPacksSnapshot(actor.Inventory.BatteryPackCapacity,checkpointPacks[actor]);
+                actor.Flashlight?.ResetForChapter();
                 Warp(actor, Chapter.spawnPoints[i % Chapter.spawnPoints.Length]);
             }
             creature?.BeginChapter(Chapter, Rules);
@@ -145,7 +150,7 @@ namespace Silence.Gameplay
                 actor.NoiseLevel = Mathf.Max(0, actor.NoiseLevel - Time.deltaTime * .65f);
                 if (actor.CarriedBy != null) actor.transform.position = actor.CarriedBy.transform.position - actor.CarriedBy.transform.forward * .5f + Vector3.up * .8f;
                 if (!actor.Vitals.Alive) continue;
-                if (actor.FlashlightOn && actor.FlashlightCharge > 0)
+                if (actor.Flashlight == null && actor.FlashlightOn && actor.FlashlightCharge > 0)
                     actor.FlashlightCharge = Mathf.Max(0, actor.FlashlightCharge - Time.deltaTime / Rules.BatterySeconds);
                 if (actor.Vitals.State == VitalState.Wounded && (!nextPain.TryGetValue(actor, out float at) || Time.time >= at))
                 { nextPain[actor] = Time.time + 9; Emit(actor, actor.transform.position + Vector3.up, .18f, 12, NoiseKind.Pain); }
@@ -222,6 +227,8 @@ namespace Silence.Gameplay
             if (slot < 0 || slot >= actor.Inventory.Items.Count) return false;
             string id = actor.Inventory.Items[slot];
             bool used = false;
+            if (id == "battery" && actor.Flashlight != null)
+            { actor.ShowMessage(Text("Эта батарейка для радио. Для фонарика используйте R и запасные комплекты.", "Radio battery. Reload flashlight with R and spare packs.")); return false; }
             if (id == "medicine") used = actor.Vitals.Heal();
             if (id == "battery" && actor.FlashlightCharge < .95f)
             {

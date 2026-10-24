@@ -9,7 +9,7 @@ namespace Silence.Input
         private InputActionAsset instance;
         private InputAction move, look, lookStick, sprint, crouch, jump;
         private InputAction interact, flashlight, inventory, pause, capture;
-        private InputAction drop, throwItem, doorControl;
+        private InputAction drop, throwItem, doorControl, reloadFlashlight, holsterFlashlight;
         private readonly InputAction[] useSlots = new InputAction[5];
         public InputActionAsset Template => template;
         public Vector2 Move => move?.ReadValue<Vector2>() ?? Vector2.zero;
@@ -20,6 +20,8 @@ namespace Silence.Input
         public bool JumpPressed => jump != null && jump.WasPressedThisFrame();
         public bool InteractPressed => interact != null && interact.WasPressedThisFrame();
         public bool FlashlightPressed => flashlight != null && flashlight.WasPressedThisFrame();
+        public bool ReloadFlashlightPressed => reloadFlashlight != null && reloadFlashlight.WasPressedThisFrame();
+        public bool HolsterFlashlightPressed => holsterFlashlight != null && holsterFlashlight.WasPressedThisFrame();
         public bool InventoryPressed => inventory != null && inventory.WasPressedThisFrame();
         public bool PausePressed => pause != null && pause.WasPressedThisFrame();
         public bool CapturePressed => capture != null && capture.WasPressedThisFrame();
@@ -49,6 +51,7 @@ namespace Silence.Input
             interact = Find("Interact"); flashlight = Find("Flashlight");
             inventory = Find("Inventory"); pause = Find("Pause"); capture = Find("Capture");
             drop = Optional("Drop"); throwItem = Optional("Throw"); doorControl = Optional("DoorControl");
+            reloadFlashlight = Optional("ReloadFlashlight"); holsterFlashlight = Optional("HolsterFlashlight");
             for (int i = 0; i < 5; i++) useSlots[i] = Optional("Use" + (i + 1));
             instance.Enable();
         }

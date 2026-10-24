@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-24T02:21:09.514762+00:00",
+  "actual_core_tests": {
+    "total": 141,
+    "passed": 141,
+    "failed": 0,
+    "new_flashlight_tests": 22,
+    "trx_location": "TestResults/Flashlight",
+    "evidence": "core.trx"
+  },
+  "csharp_syntax": {
+    "files": 129,
+    "symbol_configurations": 5,
+    "errors": 0,
+    "unity_api_binding_tested": false
+  },
+  "structure": {
+    "passed": 217,
+    "failed": 0
+  },
+  "python_syntax_passed": true,
+  "actual_user_flashlight_file_available": false,
+  "actual_model_import_tested": false,
+  "procedural_contact_reviewed_on_actual_model": false,
+  "native_unity_compilation_tested": false,
+  "ngo_ilpp_tested": false,
+  "native_play_tested": false,
+  "multiplayer_runtime_tested": false,
+  "fps_profiled": false,
+  "audio_clips_assigned": false,
+  "deployment": "Source code and tools only; native art/scene/controller are created on owner machine after supplying the actual asset."
+}

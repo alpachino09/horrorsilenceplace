@@ -11,6 +11,7 @@ namespace Silence.Player
         private void Awake() => player = GetComponent<PlayerContext>();
         private void Update()
         {
+            if (player.Flashlight != null) return;
             if (player.IsLocalOwner && player.Input.GameplayActive &&
                 player.Input.FlashlightPressed && lamp != null)
                 lamp.enabled = !lamp.enabled;

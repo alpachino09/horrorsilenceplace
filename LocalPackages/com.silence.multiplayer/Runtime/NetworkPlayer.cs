@@ -123,7 +123,7 @@ namespace Silence.Multiplayer
                 yaw = Mathf.Repeat(yaw + look.x, 360f);
                 pitch = Mathf.Clamp(pitch - look.y, -85f, 85f);
                 if (input.JumpPressed) command.JumpSequence++;
-                if (input.FlashlightPressed) lampOn = !lampOn;
+                if (Context.Flashlight == null && input.FlashlightPressed) lampOn = !lampOn;
             }
             Vector2 axis = active ? input.Move : Vector2.zero;
             command.X = axis.x; command.Z = axis.y;
@@ -141,7 +141,7 @@ namespace Silence.Multiplayer
             {
                 if (!IsServer) transform.rotation = Quaternion.Euler(0, yaw, 0);
                 Context.View.transform.localRotation = Quaternion.Euler(pitch, 0, 0);
-                if (lamp != null) lamp.enabled = lampOn && Context.FlashlightCharge > 0 && Context.Vitals.Alive;
+                if (lamp != null) lamp.enabled = Context.Flashlight == null && lampOn && Context.FlashlightCharge > 0 && Context.Vitals.Alive;
             }
         }
 
@@ -160,8 +160,8 @@ namespace Silence.Multiplayer
                 transform.rotation = Quaternion.Euler(0, accepted.Yaw, 0);
                 Context.View.transform.localRotation = Quaternion.Euler(accepted.Pitch, 0, 0);
                 lampOn = accepted.Flashlight;
-                Context.FlashlightOn = lampOn && Context.FlashlightCharge > 0 && Context.Vitals.Alive;
-                if (lamp != null) lamp.enabled = Context.FlashlightOn;
+                if (Context.Flashlight == null) Context.FlashlightOn = lampOn && Context.FlashlightCharge > 0 && Context.Vitals.Alive;
+                if (lamp != null) lamp.enabled = Context.Flashlight == null && Context.FlashlightOn;
                 motor.Simulate(new Vector2(accepted.X, accepted.Z), accepted.Sprint, accepted.Crouch,
                     jump, 1f / NetworkManager.NetworkConfig.TickRate);
             }
@@ -238,7 +238,7 @@ namespace Silence.Multiplayer
             SetBodyHeight(controller.height);
             pose.Value = new PlayerPose { Position = transform.position, Yaw = transform.eulerAngles.y,
                 Pitch = Context.View.transform.localEulerAngles.x, Height = controller.height,
-                Flashlight = lampOn && Context.FlashlightCharge > 0 && Context.Vitals.Alive, Tick = ++serverTick };
+                Flashlight = Context.Flashlight != null ? Context.FlashlightOn : lampOn && Context.FlashlightCharge > 0 && Context.Vitals.Alive, Tick = ++serverTick };
         }
         private void ApplyPose(PlayerPose state, bool snap)
         {
@@ -251,7 +251,7 @@ namespace Silence.Multiplayer
             eye.y = Mathf.Lerp(eye.y, state.Height - .16f, blend);
             Context.View.transform.localPosition = eye;
             if (!IsOwner) Context.View.transform.localRotation = Quaternion.Euler(state.Pitch, 0, 0);
-            if (lamp != null && !IsOwner) lamp.enabled = state.Flashlight;
+            if (lamp != null && !IsOwner) lamp.enabled = Context.Flashlight == null && state.Flashlight;
             SetBodyHeight(state.Height);
         }
         private void SetBodyHeight(float height)
