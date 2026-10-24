@@ -1,0 +1,876 @@
+{
+  "kind": "static structure checks only",
+  "checks": [
+    {
+      "check": "unique assembly Silence.Editor",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.Runtime",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.Graphics",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.Core",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.PlayModeTests",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.EditModeTests",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.HoodedGirl.Editor",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.HoodedGirl",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.Multiplayer",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.Multiplayer.Editor",
+      "passed": true
+    },
+    {
+      "check": "unique assembly Silence.Visual.Editor",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Editor",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Runtime",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Graphics",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Core",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.PlayModeTests",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.EditModeTests",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.HoodedGirl.Editor",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.HoodedGirl",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Multiplayer",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Multiplayer.Editor",
+      "passed": true
+    },
+    {
+      "check": "assembly reference names Silence.Visual.Editor",
+      "passed": true
+    },
+    {
+      "check": "acyclic internal assembly graph",
+      "passed": true
+    },
+    {
+      "check": "pure core has no engine references",
+      "passed": true
+    },
+    {
+      "check": "editor code excluded from players",
+      "passed": true
+    },
+    {
+      "check": "multiplayer editor excluded from players",
+      "passed": true
+    },
+    {
+      "check": "official networking dependencies pinned to inspected source versions",
+      "passed": true
+    },
+    {
+      "check": "source pack does not replace owner project manifest",
+      "passed": true
+    },
+    {
+      "check": "all input actions present",
+      "passed": true
+    },
+    {
+      "check": "bindings reference existing actions",
+      "passed": true
+    },
+    {
+      "check": "settings mouse does not capture the cursor",
+      "passed": true
+    },
+    {
+      "check": "no flashlight input conflict <Keyboard>/r",
+      "passed": true
+    },
+    {
+      "check": "no flashlight input conflict <Keyboard>/h",
+      "passed": true
+    },
+    {
+      "check": "unique input UUIDs",
+      "passed": true
+    },
+    {
+      "check": "valid input UUIDs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime AssemblyInfo.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime SceneQuery.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime FarmBootstrap.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime OfflineWorldAuthority.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime IWorldAuthority.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime SurvivalModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime InteractionRules.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime FlashlightModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime CommandInbox.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerMotionModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime InventoryModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime SessionAdmission.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime NoiseMath.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime CampaignModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime CreatureMind.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime InteractionGate.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime CreatureMotionMath.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerCommand.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime AcousticModels.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime CreatureVisual.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime RuntimeNavigation.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime HearingCreature.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime ItemDefinition.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime AcousticOcclusion.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime NoiseEvent.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime NoiseSystem.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime SurfaceMaterial.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime AcousticMaskingZone.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime MicrophoneNoiseMeter.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime WorldAudio.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime MaskingAmbientSound.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime CreatureAudio.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerFlashlight.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerLook.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime FirstPersonMotor.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerContext.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime SpectatorView.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerAvatarState.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime ActorGameplayInput.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime BootstrapLoader.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PrototypeExit.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime CampaignSaveStore.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PrototypePreferences.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime GameplayHud.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PrototypeHud.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime ItemPickup.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PrototypeRadio.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime CarryableProp.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime ChapterExit.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime IInteractable.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime BreakableBarrier.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime MissionRadio.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime TeammateAid.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime Interactable.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime ManualDoor.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime InteractionDiagnostics.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PrototypeDoor.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime InteractionScanner.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerInputReader.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime GameplaySettings.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime ChapterDefinition.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime PlayerSettings.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime WorldAtmosphere.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime GameplayDirector.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime FlashlightAnimationController.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime FlashlightController.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime FlashlightProfile.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime FlashlightVisuals.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime FlashlightArtRig.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in runtime FlashlightAudioController.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime PlayerAvatarNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkPackets.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime GameplayActorNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime FlashlightNetworkSync.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime GameplayCreatureNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkSession.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkSmokeProbe.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkInteractable.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime GameplayPackets.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkPlayer.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime GameplayWorldNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime GameplaySmokeProbe.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in network runtime NetworkWorldAuthority.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core SurvivalModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core InteractionRules.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core FlashlightModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core CommandInbox.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core PlayerMotionModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core InventoryModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core SessionAdmission.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core NoiseMath.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core CampaignModel.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core CreatureMind.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core InteractionGate.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core CreatureMotionMath.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core PlayerCommand.cs",
+      "passed": true
+    },
+    {
+      "check": "no Unity API in pure core AcousticModels.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/VisualSettingsUI.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/LegacyRendererMask.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/FlashlightPresentation.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/VisualAtmosphere.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/CreatureModelPresentation.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/GraphicsQualityProfile.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/GraphicsQualityManager.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/FarmFogVolume.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/VesperGamePresentation.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarVisibility.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarDefinition.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarPresentation.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarFace.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Networking/FarmBootstrap.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Networking/OfflineWorldAuthority.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Creatures/CreatureVisual.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Creatures/RuntimeNavigation.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Creatures/HearingCreature.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Inventory/ItemDefinition.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/SoundSimulation/NoiseSystem.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/SoundSimulation/SurfaceMaterial.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/SoundSimulation/AcousticMaskingZone.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Audio/MicrophoneNoiseMeter.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Audio/WorldAudio.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Audio/MaskingAmbientSound.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Audio/CreatureAudio.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/PlayerFlashlight.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/PlayerLook.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/FirstPersonMotor.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/PlayerContext.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/SpectatorView.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/PlayerAvatarState.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/ActorGameplayInput.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Missions/BootstrapLoader.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Missions/PrototypeExit.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/UI/GameplayHud.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/UI/PrototypeHud.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Interactions/ItemPickup.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Interactions/PrototypeRadio.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Interactions/CarryableProp.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Interactions/ChapterExit.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Interactions/BreakableBarrier.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Interactions/MissionRadio.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Interactions/TeammateAid.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Interactions/Interactable.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Interactions/ManualDoor.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Interactions/PrototypeDoor.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Interactions/InteractionScanner.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Input/PlayerInputReader.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Config/GameplaySettings.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Config/ChapterDefinition.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Config/PlayerSettings.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Gameplay/WorldAtmosphere.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Gameplay/GameplayDirector.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/Flashlight/FlashlightAnimationController.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/Flashlight/FlashlightController.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/Flashlight/FlashlightProfile.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/Flashlight/FlashlightVisuals.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/Flashlight/FlashlightArtRig.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/_Silence/Scripts/Player/Flashlight/FlashlightAudioController.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/Creatures/SilencePredator/Scripts/MonsterAnimationController.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename Assets/Characters/HoodedGirl/Scripts/HoodedGirlDemo.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename LocalPackages/com.silence.multiplayer/Runtime/PlayerAvatarNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename LocalPackages/com.silence.multiplayer/Runtime/GameplayActorNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename LocalPackages/com.silence.multiplayer/Runtime/FlashlightNetworkSync.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename LocalPackages/com.silence.multiplayer/Runtime/GameplayCreatureNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename LocalPackages/com.silence.multiplayer/Runtime/NetworkSession.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename LocalPackages/com.silence.multiplayer/Runtime/NetworkSmokeProbe.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename LocalPackages/com.silence.multiplayer/Runtime/NetworkInteractable.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename LocalPackages/com.silence.multiplayer/Runtime/NetworkPlayer.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename LocalPackages/com.silence.multiplayer/Runtime/GameplayWorldNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename LocalPackages/com.silence.multiplayer/Runtime/GameplaySmokeProbe.cs",
+      "passed": true
+    },
+    {
+      "check": "Unity script filename LocalPackages/com.silence.multiplayer/Runtime/NetworkWorldAuthority.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in graphics runtime VisualSettingsUI.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in graphics runtime LegacyRendererMask.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in graphics runtime FlashlightPresentation.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in graphics runtime VisualAtmosphere.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in graphics runtime CreatureModelPresentation.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in graphics runtime GraphicsQualityProfile.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in graphics runtime GraphicsQualityManager.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in graphics runtime FarmFogVolume.cs",
+      "passed": true
+    },
+    {
+      "check": "no editor API in graphics runtime VesperGamePresentation.cs",
+      "passed": true
+    },
+    {
+      "check": "visual tools excluded from players",
+      "passed": true
+    },
+    {
+      "check": "six original documents preserved",
+      "passed": true
+    },
+    {
+      "check": "all 126 questionnaire entries",
+      "passed": true
+    }
+  ],
+  "passed": 217,
+  "failed": 0,
+  "csharp_assets": 129
+}

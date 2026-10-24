@@ -38,6 +38,8 @@
 
 ## Установить в Unity
 
+При ошибке `Cannot create a new scene additively with an untitled scene unsaved` из CreateDemo используйте [исправление сцены просмотра 0.3.3](PREVIEW_SCENE_FIX_033_RU.md).
+
 При `CS1513: } expected` после ручной правки используйте [автоматическую замену полного файла 0.3.2](IMPORT_RECOVERY_032_RU.md).
 
 Если пункт 22 останавливается на `Expected the prepared Humanoid hierarchy`, установите [однофайловое исправление 0.3.1](IMPORT_FIX_031_RU.md).

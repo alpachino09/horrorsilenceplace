@@ -87,14 +87,17 @@ namespace Silence.HoodedGirl.Editor
                 AssetDatabase.CreateAsset(definition, output + "/HoodedGirl.asset");
                 var errors = PlayerAvatarWorkshop.DefinitionErrors(definition);
                 if (errors.Count > 0) throw new InvalidOperationException(string.Join("\n", errors));
-                CreateDemo(prefab, clips, output);
+                // Reuse the one workspace scene. Opening another additive scene while this
+                // workspace is still untitled is rejected by Unity's scene manager.
+                Object.DestroyImmediate(root); root = null;
+                CreateDemo(prefab, clips, output, workScene);
                 AssetDatabase.SaveAssets(); PlayerAvatarWorkshop.Show(definition);
                 Debug.Log("SILENCE: HoodedGirl assets prepared at " + output + ". Current scene: " + originalScene.path +
                     ". Menu 21 copies the OPEN improved scene. Native first-person rendering, animation quality and Host/Client still need Play checks. Blender SSS is not reproduced by URP Lit.");
             }
             finally
             {
-                Object.DestroyImmediate(root);
+                if (root != null) Object.DestroyImmediate(root);
                 if (workScene.IsValid() && workScene.isLoaded) EditorSceneManager.CloseScene(workScene, true);
                 if (originalScene.IsValid() && originalScene.isLoaded) SceneManager.SetActiveScene(originalScene);
             }
@@ -107,29 +110,26 @@ namespace Silence.HoodedGirl.Editor
             if (scenes.Length == 0) throw new InvalidOperationException("Run menu 22 first.");
             if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) EditorSceneManager.OpenScene(scenes[scenes.Length - 1]);
         }
-        private static void CreateDemo(GameObject prefab, Dictionary<string, AnimationClip> clips, string output)
+        private static void CreateDemo(GameObject prefab, Dictionary<string, AnimationClip> clips, string output, Scene scene)
         {
+            if (!scene.IsValid() || !scene.isLoaded) throw new InvalidOperationException("The HoodedGirl workspace scene is unavailable.");
+            SceneManager.SetActiveScene(scene);
             var demoController = AnimatorController.CreateAnimatorControllerAtPath(output + "/HoodedGirl_Demo.controller");
             foreach (var pair in clips)
             {
                 var state = demoController.layers[0].stateMachine.AddState(pair.Key); state.motion = pair.Value;
                 if (pair.Key == "Idle") demoController.layers[0].stateMachine.defaultState = state;
             }
-            var previous = SceneManager.GetActiveScene(); var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive); SceneManager.SetActiveScene(scene);
-            try
-            {
-                var actor = (GameObject)PrefabUtility.InstantiatePrefab(prefab); var animator = actor.GetComponentInChildren<Animator>(); animator.runtimeAnimatorController = demoController; animator.applyRootMotion = false;
-                var demo = actor.AddComponent<Silence.HoodedGirl.HoodedGirlDemo>(); demo.model = animator;
-                var view = new GameObject("Preview Camera").AddComponent<Camera>(); view.tag = "MainCamera"; view.nearClipPlane = .02f; view.farClipPlane = 30; view.clearFlags = CameraClearFlags.SolidColor; view.backgroundColor = new Color(.025f, .028f, .033f); view.gameObject.AddComponent<AudioListener>();
-                view.transform.position = new Vector3(1.8f, 1.18f, 3.7f); view.transform.LookAt(Vector3.up * .88f); view.fieldOfView = 30; demo.viewCamera = view;
-                foreach (var value in new[] { (new Vector3(35,-35,0),1.6f,new Color(1,.91f,.83f)),(new Vector3(20,145,0),.6f,new Color(.8f,.88f,1)) })
-                { var light = new GameObject("Studio light").AddComponent<Light>(); light.type = LightType.Directional; light.transform.rotation = Quaternion.Euler(value.Item1); light.intensity = value.Item2; light.color = value.Item3; light.shadows = LightShadows.Soft; }
-                var floor = GameObject.CreatePrimitive(PrimitiveType.Plane); floor.name = "Preview floor"; floor.transform.position = new Vector3(0,-.002f,0); Object.DestroyImmediate(floor.GetComponent<Collider>());
-                var floorMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit")) { name = "Preview floor" }; floorMaterial.SetColor("_BaseColor", new Color(.035f,.04f,.045f));
-                AssetDatabase.CreateAsset(floorMaterial, output + "/Materials/PreviewFloor.mat"); floor.GetComponent<Renderer>().sharedMaterial = floorMaterial;
-                if (!EditorSceneManager.SaveScene(scene, output + "/HoodedGirl_Demo.unity")) throw new IOException("Cannot save art preview scene.");
-            }
-            finally { EditorSceneManager.CloseScene(scene, true); if (previous.IsValid() && previous.isLoaded) SceneManager.SetActiveScene(previous); }
+            var actor = (GameObject)PrefabUtility.InstantiatePrefab(prefab); var animator = actor.GetComponentInChildren<Animator>(); animator.runtimeAnimatorController = demoController; animator.applyRootMotion = false;
+            var demo = actor.AddComponent<Silence.HoodedGirl.HoodedGirlDemo>(); demo.model = animator;
+            var view = new GameObject("Preview Camera").AddComponent<Camera>(); view.tag = "MainCamera"; view.nearClipPlane = .02f; view.farClipPlane = 30; view.clearFlags = CameraClearFlags.SolidColor; view.backgroundColor = new Color(.025f, .028f, .033f); view.gameObject.AddComponent<AudioListener>();
+            view.transform.position = new Vector3(1.8f, 1.18f, 3.7f); view.transform.LookAt(Vector3.up * .88f); view.fieldOfView = 30; demo.viewCamera = view;
+            foreach (var value in new[] { (new Vector3(35,-35,0),1.6f,new Color(1,.91f,.83f)),(new Vector3(20,145,0),.6f,new Color(.8f,.88f,1)) })
+            { var light = new GameObject("Studio light").AddComponent<Light>(); light.type = LightType.Directional; light.transform.rotation = Quaternion.Euler(value.Item1); light.intensity = value.Item2; light.color = value.Item3; light.shadows = LightShadows.Soft; }
+            var floor = GameObject.CreatePrimitive(PrimitiveType.Plane); floor.name = "Preview floor"; floor.transform.position = new Vector3(0,-.002f,0); Object.DestroyImmediate(floor.GetComponent<Collider>());
+            var floorMaterial = new Material(Shader.Find("Universal Render Pipeline/Lit")) { name = "Preview floor" }; floorMaterial.SetColor("_BaseColor", new Color(.035f,.04f,.045f));
+            AssetDatabase.CreateAsset(floorMaterial, output + "/Materials/PreviewFloor.mat"); floor.GetComponent<Renderer>().sharedMaterial = floorMaterial;
+            if (!EditorSceneManager.SaveScene(scene, output + "/HoodedGirl_Demo.unity")) throw new IOException("Cannot save art preview scene.");
         }
         private static bool IsHeadSurface(string name) => new[] { "Face", "Eye.", "Brows", "Lashes", "Hair", "Hood", "Neck_Wrap", "Mouth_", "Teeth_", "Tongue" }.Any(p => name.StartsWith(p, StringComparison.Ordinal));
         private static string ModelPath(int level) => Art + "/Models/HoodedGirl_LOD" + level + ".fbx";
@@ -175,7 +175,7 @@ namespace Silence.HoodedGirl.Editor
             var animator = prepared != null ? prepared.GetComponentInChildren<Animator>(true) : null;
             if (animator == null || animator.avatar == null || !animator.avatar.isValid || !animator.avatar.isHuman)
                 throw new InvalidOperationException("Unity did not create a valid Humanoid Avatar for " + path + ". Bone mapping completed: " + human.Length + "/" + humanNames.Length + ". Inspect this FBX's Rig / Configure and import errors.");
-            Debug.Log("SILENCE HoodedGirl import fix 0.3.2: LOD" + level + " mapped " + human.Length + "/" + humanNames.Length + " bones; Humanoid Avatar valid.");
+            Debug.Log("SILENCE HoodedGirl import fix 0.3.3: LOD" + level + " mapped " + human.Length + "/" + humanNames.Length + " bones; Humanoid Avatar valid.");
         }
         private static Dictionary<string, Material> Materials(MaterialFile file, string output)
         {

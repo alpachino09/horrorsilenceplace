@@ -1,0 +1,34 @@
+{
+  "version": "0.3.3",
+  "utc": "2026-10-24T22:08:05.542967+00:00",
+  "cause": "CreateDemo opened a second additive scene while Prepare still owned an untitled workspace.",
+  "change": "Destroy temporary art instance after saving prefab; create demo in the same workspace; outer finally closes workspace and restores original scene.",
+  "source_flow_inspection": {
+    "total_new_scene_calls": 1,
+    "new_scene_calls_inside_create_demo": 0,
+    "create_demo_receives_workspace": true,
+    "create_demo_saves_provided_workspace": true,
+    "workspace_cleanup_owned_by_outer_finally": true,
+    "kind": "Static source inspection; not Unity execution"
+  },
+  "core_tests": {
+    "passed": 151,
+    "failed": 0,
+    "scene_lifecycle_executed_in_unity": false
+  },
+  "csharp_syntax": {
+    "files": 129,
+    "configurations": 5,
+    "errors": 0,
+    "unity_api_binding_tested": false
+  },
+  "archive": {
+    "path": "Downloads/SILENCE_HoodedGirl_AutoFix_0.3.3.zip",
+    "bytes": 12291,
+    "sha256": "410fde5a65d864a06ca2996d0c30a01e091394cfab37424ecce4386b88ef85b5",
+    "payload_matches_source": true,
+    "supporting_files_unchanged": true,
+    "source_sha256": "7fd5f7d3ac2929f82426829d2a29e74c8d85bd18bbdae989f2da8b60719347e0"
+  },
+  "native_unity_play_tested": false
+}
