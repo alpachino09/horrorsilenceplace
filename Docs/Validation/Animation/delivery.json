@@ -1,9 +1,9 @@
 {
   "kind": "delivery integrity/static updater compatibility; not a Unity test",
-  "archive": "Downloads/SILENCE_HumanMotion_0.4.1.zip",
-  "bytes": 307550,
-  "sha256": "407ab4cddedbe2ebb1d00d069060bb147c642c2125eadfcf707f6b019c13a3d1",
-  "passed": 339,
+  "archive": "Downloads/SILENCE_HumanMotion_0.4.2.zip",
+  "bytes": 309622,
+  "sha256": "537ceb741bcf408ec53cb434aeb7492c8e8589fd4a97e971cb2041ed30a4006d",
+  "passed": 341,
   "failed": 0,
   "checks": [
     {
@@ -1012,6 +1012,14 @@
     },
     {
       "check": "current complete source Docs/Animation/REPORT_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Docs/Animation/SCOPE_FIX_042_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/Animation/SCOPE_FIX_042_RU.md",
       "passed": true
     },
     {

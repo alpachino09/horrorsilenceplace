@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -9,6 +10,7 @@ internal static class Program
 {
     private static int Main(string[] args)
     {
+        if (args.Length == 1 && args[0] == "--self-test-scopes") return ScopeChecks.SelfTest();
         if (args.Length == 0 || args.Any(path => !Directory.Exists(path)))
         {
             Console.Error.WriteLine("Usage: SourceChecks <source-directory> [additional-source-directory ...]");
@@ -28,12 +30,15 @@ internal static class Program
             new[] { "UNITY_INCLUDE_INSTRUMENTATION", "UNITY_6000_6_OR_NEWER", "ENABLE_INPUT_SYSTEM" },
             new[] { "UNITY_6000_6_OR_NEWER", "ENABLE_INPUT_SYSTEM" }
         };
+        var variantTrees = configurations.Select(_ => new List<SyntaxTree>()).ToArray();
         foreach (string file in files.OrderBy(p => p))
         {
-            foreach (string[] symbols in configurations)
+            for (int configuration = 0; configuration < configurations.Length; configuration++)
             {
+                string[] symbols = configurations[configuration];
                 var tree = CSharpSyntaxTree.ParseText(File.ReadAllText(file),
                     new CSharpParseOptions(LanguageVersion.CSharp9, preprocessorSymbols: symbols), file);
+                variantTrees[configuration].Add(tree);
                 foreach (var diagnostic in tree.GetDiagnostics().Where(d => d.Severity == DiagnosticSeverity.Error))
                 {
                     Console.Error.WriteLine(diagnostic);
@@ -44,7 +49,12 @@ internal static class Program
         }
         Console.WriteLine($"C# 9 syntax: {files.Length} files, {configurations.Length} preprocessor configurations, {errors} errors. Unity API binding is NOT checked.");
         Console.WriteLine($"Diagnostic build guards: {configurations.Length} configurations, {guardErrors} contract errors. Editor/instrumented code is present; release automation is excluded.");
-        return errors == 0 && guardErrors == 0 ? 0 : 1;
+        int scopeErrors = 0;
+        for (int configuration = 0; configuration < configurations.Length; configuration++)
+            foreach (var diagnostic in ScopeChecks.Find(variantTrees[configuration]))
+            { Console.Error.WriteLine(diagnostic); scopeErrors++; }
+        Console.WriteLine($"Selected C# scope diagnostics (CS0136, CS0128, CS0100): {configurations.Length} configurations, {scopeErrors} errors. Other semantic errors and Unity API binding are NOT checked.");
+        return errors == 0 && guardErrors == 0 && scopeErrors == 0 ? 0 : 1;
     }
 
     private static int CheckDiagnosticGuards(string file, SyntaxTree tree, string[] symbols)

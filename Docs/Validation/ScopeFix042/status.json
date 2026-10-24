@@ -1,0 +1,22 @@
+{
+  "version": "Human Motion 0.4.2",
+  "scope": "Fix CS0136 crouch-transition loop; add selected C# name-scope compiler diagnostics",
+  "runtime_files_changed": 0,
+  "editor_files_changed": 1,
+  "reported_error_reproduced_before_fix": true,
+  "before_unique_conflicts": 1,
+  "preprocessor_configurations": 7,
+  "selected_scope_diagnostic_codes": [
+    "CS0136",
+    "CS0128",
+    "CS0100"
+  ],
+  "after_selected_scope_errors": 0,
+  "scope_detector_regressions_passed": 8,
+  "scope_detector_regressions_failed": 0,
+  "csharp_files_checked": 146,
+  "syntax_errors": 0,
+  "static_structure_passed": 230,
+  "native_unity_compilation_run": false,
+  "other_semantic_and_unity_api_errors_checked": false
+}

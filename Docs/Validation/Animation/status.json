@@ -1,5 +1,5 @@
 {
-  "version": "Human Motion 0.4.1",
+  "version": "Human Motion 0.4.2",
   "branch": "codex/player-character-integration",
   "core_nunit": {
     "passed": 170,
@@ -20,10 +20,10 @@
     "failed": 0
   },
   "delivery": {
-    "files": 167,
-    "passed_checks": 339,
-    "bytes": 307550,
-    "sha256": "407ab4cddedbe2ebb1d00d069060bb147c642c2125eadfcf707f6b019c13a3d1"
+    "files": 168,
+    "passed_checks": 341,
+    "bytes": 309622,
+    "sha256": "537ceb741bcf408ec53cb434aeb7492c8e8589fd4a97e971cb2041ed30a4006d"
   },
   "actual_source_anim_files": 23,
   "source_fbx_bones": 65,
@@ -48,5 +48,16 @@
     "deprecated_macro_references_replaced": 11,
     "managed_variant_contracts_checked": true,
     "native_UAC0009_analyzer_run": false
+  },
+  "selected_scope_checks": {
+    "codes": [
+      "CS0136",
+      "CS0128",
+      "CS0100"
+    ],
+    "configurations": 7,
+    "errors": 0,
+    "detector_regressions_passed": 8,
+    "native_unity_compilation_run": false
   }
 }

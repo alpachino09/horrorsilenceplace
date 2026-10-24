@@ -124,7 +124,7 @@ namespace Silence.Multiplayer.Editor.Visual
                 var t = machine.AddAnyStateTransition(states[to]); Blend(t, .08f); Flag(t, "Dead", false); Flag(t, "Grounded", false);
                 t.AddCondition(to == "Jump" ? AnimatorConditionMode.Greater : AnimatorConditionMode.Less, .1f, "VerticalSpeed");
                 var land = states[to].AddTransition(states["Land"]); Blend(land, .08f); Flag(land, "Grounded", true); Flag(land, "Dead", false); Flag(land, "Crouched", false);
-                foreach (string target in new[] { "Crouch", "CrouchIdle" }) { var crouch = states[to].AddTransition(states[target]); Blend(crouch, .08f); Ground(crouch, target); }
+                foreach (string destinationState in new[] { "Crouch", "CrouchIdle" }) { var crouch = states[to].AddTransition(states[destinationState]); Blend(crouch, .08f); Ground(crouch, destinationState); }
             }
             foreach (bool left in new[] { true, false })
             {

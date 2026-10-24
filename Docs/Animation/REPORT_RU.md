@@ -1,4 +1,12 @@
-# Human Motion 0.4.1 — результат и границы проверки
+# Human Motion 0.4.2 — результат и границы проверки
+
+Версия 0.4.2 исправляет CS0136 в `PlayerAnimationControllerBuilder.Build`:
+переменная цикла переходов приседа переименована из `target` в `destinationState`,
+чтобы не перекрывать параметр `Animator target`. Движения и переходы не изменены.
+Реальный C# compiler воспроизвёл эту ошибку до исправления; после исправления
+selected scope checks CS0136/CS0128/CS0100 прошли во всех семи конфигурациях.
+Добавлены восемь проверок самого детектора, включая допустимое переиспользование
+имён в sibling blocks и параметрах local function. Это не полная Unity-компиляция.
 
 Версия 0.4.1 заменяет устаревший `DEVELOPMENT_BUILD` в пяти файлах диагностики
 на `UNITY_INCLUDE_INSTRUMENTATION`, включая Conditional-атрибуты.
@@ -165,7 +173,8 @@ hit/startle и отдельных поворотов 45/135°. Сейчас ис
 `FlashlightAnimationController.cs`, `OfflineWorldAuthority.cs`,
 `NetworkWorldAuthority.cs`, `NetworkPlayer.cs`, `PlayerAvatarNetwork.cs`,
 `SilenceSourceUpdater.cs`, `.gitignore`, `Tools/CoreTests/Silence.CoreTests.csproj`,
-`Tools/verify_structure.py`.
+`Tools/verify_structure.py`, `Tools/SourceChecks/Program.cs`,
+`Tools/SourceChecks/ScopeChecks.cs`.
 
 Фактические Unity prefab/controller/scenes создаются **в Editor по кнопке 25**;
 их точные имена и paths приведены в [инструкции установки](README_RU.md).

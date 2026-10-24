@@ -11,7 +11,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "0.4.1"
+VERSION = "0.4.2"
 NAME = "SILENCE_HumanMotion_" + VERSION
 DIRECTORIES = ["Assets/_Silence/Scripts", "Assets/_Silence/Editor", "Assets/_Silence/Tests",
                "Assets/_Silence/Settings", "Assets/_Silence/Graphics",
@@ -29,6 +29,8 @@ def build():
     for path in (ROOT / "Docs/Animation").glob("*.md"):
         files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
     files["README_RU.md"] = (f"SILENCE Human Motion {VERSION}\n\n"
+        "Для ошибки CS0136 в PlayerAnimationControllerBuilder обнови код через 00 из этой папки.\n"
+        "После компиляции нажми Console → Clear и продолжай пункт 25; пересоздание мира для исправления не требуется.\n\n"
         "Если версия 0.4.0 уже установлена и появились жёлтые UAC0009, достаточно обновить код через 00.\n"
         "Импорт пакета и создание мира повторять не нужно: после компиляции очисти Console и продолжай пункт 25.\n\n"
         "Останови Play. В Unity: SILENCE → 00 Update Sources From Folder.\n"
