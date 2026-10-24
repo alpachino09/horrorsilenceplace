@@ -1,0 +1,2261 @@
+{
+  "kind": "Actual Blender source and FBX roundtrip checks; no Unity execution",
+  "blender": "5.2.3 LTS",
+  "checks": [
+    {
+      "check": "55 deform bones",
+      "passed": true
+    },
+    {
+      "check": "mesh names do not collide with skeleton bone names",
+      "passed": true
+    },
+    {
+      "check": "no weapon objects",
+      "passed": true
+    },
+    {
+      "check": "LOD 0 exists",
+      "passed": true
+    },
+    {
+      "check": "LOD 0 height in metres",
+      "passed": true,
+      "height": 1.748873233795166
+    },
+    {
+      "check": "Face populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Face finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Face no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Face UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Face finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Face material references",
+      "passed": true
+    },
+    {
+      "check": "Face material indices",
+      "passed": true
+    },
+    {
+      "check": "Face one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Face normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Eye.L populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Eye.L finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Eye.L no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Eye.L UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Eye.L finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Eye.L material references",
+      "passed": true
+    },
+    {
+      "check": "Eye.L material indices",
+      "passed": true
+    },
+    {
+      "check": "Eye.L one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Eye.L normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Eye.R populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Eye.R finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Eye.R no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Eye.R UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Eye.R finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Eye.R material references",
+      "passed": true
+    },
+    {
+      "check": "Eye.R material indices",
+      "passed": true
+    },
+    {
+      "check": "Eye.R one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Eye.R normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Brows populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Brows finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Brows no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Brows UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Brows finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Brows material references",
+      "passed": true
+    },
+    {
+      "check": "Brows material indices",
+      "passed": true
+    },
+    {
+      "check": "Brows one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Brows normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Lashes populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Lashes finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Lashes no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Lashes UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Lashes finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Lashes material references",
+      "passed": true
+    },
+    {
+      "check": "Lashes material indices",
+      "passed": true
+    },
+    {
+      "check": "Lashes one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Lashes normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Mouth_Interior UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior material references",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior material indices",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Mouth_Interior normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Teeth_Upper UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper material references",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper material indices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Teeth_Upper normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Teeth_Lower UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower material references",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower material indices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Teeth_Lower normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Tongue populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Tongue finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Tongue no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Tongue UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Tongue finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Tongue material references",
+      "passed": true
+    },
+    {
+      "check": "Tongue material indices",
+      "passed": true
+    },
+    {
+      "check": "Tongue one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Tongue normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Hood populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Hood finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Hood no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Hood UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Hood finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Hood material references",
+      "passed": true
+    },
+    {
+      "check": "Hood material indices",
+      "passed": true
+    },
+    {
+      "check": "Hood one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Hood normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Hood_Trim UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim material references",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim material indices",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Hood_Trim normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Neck_Wrap UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap material references",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap material indices",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Neck_Wrap normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Hair populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Hair finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Hair no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Hair UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Hair finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Hair material references",
+      "passed": true
+    },
+    {
+      "check": "Hair material indices",
+      "passed": true
+    },
+    {
+      "check": "Hair one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Hair normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Body_Clothed UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed material references",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed material indices",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Body_Clothed normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Footwear_Left UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left material references",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left material indices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left one to four skin influences",
+      "passed": true,
+      "maximum": 2
+    },
+    {
+      "check": "Footwear_Left normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Footwear_Right UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right material references",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right material indices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right one to four skin influences",
+      "passed": true,
+      "maximum": 2
+    },
+    {
+      "check": "Footwear_Right normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "LOD 0 face exact 52 ARKit channel names",
+      "passed": true,
+      "count": 52
+    },
+    {
+      "check": "LOD 0 face no empty morphs",
+      "passed": true,
+      "empty": []
+    },
+    {
+      "check": "LOD 0 face no duplicate morphs",
+      "passed": true,
+      "duplicates": []
+    },
+    {
+      "check": "LOD 0 face bounded facial displacement",
+      "passed": true,
+      "max_metres": 0.037248726934194565
+    },
+    {
+      "check": "LOD 1 exists",
+      "passed": true
+    },
+    {
+      "check": "LOD 1 height in metres",
+      "passed": true,
+      "height": 1.748873233795166
+    },
+    {
+      "check": "Face_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Face_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Face_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Eye.L_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Eye.L_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Eye.R_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Eye.R_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Brows_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Brows_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Lashes_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Lashes_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Lashes_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Lashes_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Lashes_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Lashes_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Lashes_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Lashes_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Lashes_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Mouth_Interior_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Mouth_Interior_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Teeth_Upper_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Teeth_Upper_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Teeth_Lower_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Teeth_Lower_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Tongue_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Tongue_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Hood_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Hood_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Hood_Trim_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Hood_Trim_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Neck_Wrap_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Neck_Wrap_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Hair_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Hair_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Body_Clothed_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Body_Clothed_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Footwear_Left_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 2
+    },
+    {
+      "check": "Footwear_Left_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD1 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD1 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD1 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Footwear_Right_LOD1 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD1 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD1 material references",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD1 material indices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD1 one to four skin influences",
+      "passed": true,
+      "maximum": 2
+    },
+    {
+      "check": "Footwear_Right_LOD1 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "LOD 1 face exact 52 ARKit channel names",
+      "passed": true,
+      "count": 52
+    },
+    {
+      "check": "LOD 1 face no empty morphs",
+      "passed": true,
+      "empty": []
+    },
+    {
+      "check": "LOD 1 face no duplicate morphs",
+      "passed": true,
+      "duplicates": []
+    },
+    {
+      "check": "LOD 1 face bounded facial displacement",
+      "passed": true,
+      "max_metres": 0.037420157343149185
+    },
+    {
+      "check": "LOD 2 exists",
+      "passed": true
+    },
+    {
+      "check": "LOD 2 height in metres",
+      "passed": true,
+      "height": 1.748873233795166
+    },
+    {
+      "check": "Face_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Face_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Face_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Eye.L_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Eye.L_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Eye.R_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Eye.R_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Brows_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Brows_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Mouth_Interior_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Mouth_Interior_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Mouth_Interior_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Teeth_Upper_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Upper_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Teeth_Upper_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Teeth_Lower_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Teeth_Lower_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Tongue_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Tongue_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Hood_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Hood_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Hood_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Hood_Trim_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Hood_Trim_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Hood_Trim_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Neck_Wrap_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Neck_Wrap_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Neck_Wrap_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Hair_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Hair_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 1
+    },
+    {
+      "check": "Hair_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Body_Clothed_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Body_Clothed_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 4
+    },
+    {
+      "check": "Body_Clothed_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Footwear_Left_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Left_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 2
+    },
+    {
+      "check": "Footwear_Left_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD2 populated mesh",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD2 finite vertices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD2 no degenerate faces",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "check": "Footwear_Right_LOD2 UV layer exists",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD2 finite UVs",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD2 material references",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD2 material indices",
+      "passed": true
+    },
+    {
+      "check": "Footwear_Right_LOD2 one to four skin influences",
+      "passed": true,
+      "maximum": 2
+    },
+    {
+      "check": "Footwear_Right_LOD2 normalized skin weights",
+      "passed": true
+    },
+    {
+      "check": "LOD 2 face exact 52 ARKit channel names",
+      "passed": true,
+      "count": 52
+    },
+    {
+      "check": "LOD 2 face no empty morphs",
+      "passed": true,
+      "empty": []
+    },
+    {
+      "check": "LOD 2 face no duplicate morphs",
+      "passed": true,
+      "duplicates": []
+    },
+    {
+      "check": "LOD 2 face bounded facial displacement",
+      "passed": true,
+      "max_metres": 0.037420157343149185
+    },
+    {
+      "check": "Face saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Eye.L saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Eye.R saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Brows saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Lashes saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Tongue saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD1 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD1 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD1 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD1 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Lashes_LOD1 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD1 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD1 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Face_LOD2 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Eye.L_LOD2 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Eye.R_LOD2 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Brows_LOD2 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Teeth_Lower_LOD2 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "Tongue_LOD2 saved neutral expression",
+      "passed": true
+    },
+    {
+      "check": "LeftUpperArm T pose rest direction",
+      "passed": true
+    },
+    {
+      "check": "LeftLowerArm T pose rest direction",
+      "passed": true
+    },
+    {
+      "check": "RightUpperArm T pose rest direction",
+      "passed": true
+    },
+    {
+      "check": "RightLowerArm T pose rest direction",
+      "passed": true
+    },
+    {
+      "check": "texture file Eyes_BaseColor",
+      "passed": true
+    },
+    {
+      "check": "texture dimensions Eyes_BaseColor",
+      "passed": true,
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "check": "texture file Fabric_BaseColor",
+      "passed": true
+    },
+    {
+      "check": "texture dimensions Fabric_BaseColor",
+      "passed": true,
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "check": "texture file Fabric_Mask",
+      "passed": true
+    },
+    {
+      "check": "texture dimensions Fabric_Mask",
+      "passed": true,
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "check": "data color space Fabric_Mask",
+      "passed": true
+    },
+    {
+      "check": "texture file Fabric_Normal",
+      "passed": true
+    },
+    {
+      "check": "texture dimensions Fabric_Normal",
+      "passed": true,
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "check": "data color space Fabric_Normal",
+      "passed": true
+    },
+    {
+      "check": "texture file Hair_BaseColorAlpha",
+      "passed": true
+    },
+    {
+      "check": "texture dimensions Hair_BaseColorAlpha",
+      "passed": true,
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "check": "texture file Leather_BaseColor",
+      "passed": true
+    },
+    {
+      "check": "texture dimensions Leather_BaseColor",
+      "passed": true,
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "check": "texture file Leather_Mask",
+      "passed": true
+    },
+    {
+      "check": "texture dimensions Leather_Mask",
+      "passed": true,
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "check": "data color space Leather_Mask",
+      "passed": true
+    },
+    {
+      "check": "texture file Leather_Normal",
+      "passed": true
+    },
+    {
+      "check": "texture dimensions Leather_Normal",
+      "passed": true,
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "check": "data color space Leather_Normal",
+      "passed": true
+    },
+    {
+      "check": "texture file Skin_BaseColor",
+      "passed": true
+    },
+    {
+      "check": "texture dimensions Skin_BaseColor",
+      "passed": true,
+      "width": 4096,
+      "height": 4096
+    },
+    {
+      "check": "texture file Skin_Mask",
+      "passed": true
+    },
+    {
+      "check": "texture dimensions Skin_Mask",
+      "passed": true,
+      "width": 4096,
+      "height": 4096
+    },
+    {
+      "check": "data color space Skin_Mask",
+      "passed": true
+    },
+    {
+      "check": "texture file Skin_Normal",
+      "passed": true
+    },
+    {
+      "check": "texture dimensions Skin_Normal",
+      "passed": true,
+      "width": 4096,
+      "height": 4096
+    },
+    {
+      "check": "data color space Skin_Normal",
+      "passed": true
+    },
+    {
+      "check": "21 body actions",
+      "passed": true
+    },
+    {
+      "check": "actual saved action sole contact Walk",
+      "passed": true,
+      "max_metres": 4.530927100176996e-08
+    },
+    {
+      "check": "actual saved action sole contact Run",
+      "passed": true,
+      "max_metres": 4.903409944745363e-08
+    },
+    {
+      "check": "actual saved action sole contact CrouchWalk",
+      "passed": true,
+      "max_metres": 9.853221882849539e-08
+    },
+    {
+      "check": "FBX 0 one skeleton",
+      "passed": true
+    },
+    {
+      "check": "FBX 0 skeleton bone count",
+      "passed": true,
+      "count": 56
+    },
+    {
+      "check": "FBX 0 face present",
+      "passed": true
+    },
+    {
+      "check": "FBX 0 face exact 52 ARKit channel names",
+      "passed": true,
+      "count": 52
+    },
+    {
+      "check": "FBX 0 face no empty morphs",
+      "passed": true,
+      "empty": []
+    },
+    {
+      "check": "FBX 0 face no duplicate morphs",
+      "passed": true,
+      "duplicates": []
+    },
+    {
+      "check": "FBX 0 face bounded facial displacement",
+      "passed": true,
+      "max_metres": 0.0372486487030983
+    },
+    {
+      "check": "FBX body actions imported",
+      "passed": true,
+      "count": 168
+    },
+    {
+      "check": "FBX replay sole contact Walk",
+      "passed": true,
+      "max_metres": 3.6423955407371977e-07
+    },
+    {
+      "check": "FBX replay sole contact Run",
+      "passed": true,
+      "max_metres": 5.610503990283178e-07
+    },
+    {
+      "check": "FBX replay sole contact CrouchWalk",
+      "passed": true,
+      "max_metres": 2.2964576373851742e-07
+    },
+    {
+      "check": "FBX 1 one skeleton",
+      "passed": true
+    },
+    {
+      "check": "FBX 1 skeleton bone count",
+      "passed": true,
+      "count": 56
+    },
+    {
+      "check": "FBX 1 face present",
+      "passed": true
+    },
+    {
+      "check": "FBX 1 face exact 52 ARKit channel names",
+      "passed": true,
+      "count": 52
+    },
+    {
+      "check": "FBX 1 face no empty morphs",
+      "passed": true,
+      "empty": []
+    },
+    {
+      "check": "FBX 1 face no duplicate morphs",
+      "passed": true,
+      "duplicates": []
+    },
+    {
+      "check": "FBX 1 face bounded facial displacement",
+      "passed": true,
+      "max_metres": 0.037420157343149185
+    },
+    {
+      "check": "FBX 2 one skeleton",
+      "passed": true
+    },
+    {
+      "check": "FBX 2 skeleton bone count",
+      "passed": true,
+      "count": 56
+    },
+    {
+      "check": "FBX 2 face present",
+      "passed": true
+    },
+    {
+      "check": "FBX 2 face exact 52 ARKit channel names",
+      "passed": true,
+      "count": 52
+    },
+    {
+      "check": "FBX 2 face no empty morphs",
+      "passed": true,
+      "empty": []
+    },
+    {
+      "check": "FBX 2 face no duplicate morphs",
+      "passed": true,
+      "duplicates": []
+    },
+    {
+      "check": "FBX 2 face bounded facial displacement",
+      "passed": true,
+      "max_metres": 0.037420157343149185
+    }
+  ],
+  "passed": 525,
+  "failed": 0
+}

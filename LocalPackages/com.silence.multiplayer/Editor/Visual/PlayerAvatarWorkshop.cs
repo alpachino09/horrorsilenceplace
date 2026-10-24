@@ -20,6 +20,7 @@ namespace Silence.Multiplayer.Editor.Visual
         private string result;
         [MenuItem("SILENCE/21 Player Avatar Workshop")]
         public static void Open() => GetWindow<PlayerAvatarWorkshop>("SILENCE Player");
+        public static void Show(PlayerAvatarDefinition ready) { var window = GetWindow<PlayerAvatarWorkshop>("SILENCE Player"); window.definition = ready; }
         private void OnGUI()
         {
             EditorGUILayout.LabelField("Главный игровой персонаж", EditorStyles.boldLabel);
@@ -137,6 +138,7 @@ namespace Silence.Multiplayer.Editor.Visual
                     var animator = art.GetComponentsInChildren<Animator>(true).Single(); animator.runtimeAnimatorController = value.controller;
                     contents.AddComponent<PlayerAvatarState>();
                     contents.AddComponent<PlayerAvatarPresentation>().Configure(animator);
+                    contents.AddComponent<PlayerAvatarFace>().Configure(art.GetComponentsInChildren<SkinnedMeshRenderer>(true));
                     var hidden = value.firstPersonHiddenRenderers.Select(p => FindRenderer(art, p)).ToArray();
                     contents.AddComponent<PlayerAvatarVisibility>().Configure(hidden);
                     contents.AddComponent<PlayerAvatarNetwork>();

@@ -1,0 +1,213 @@
+{
+  "files": [
+    {
+      "path": "Assets/Characters/HoodedGirl/Documentation/DELIVERY_RU.md",
+      "bytes": 954,
+      "sha256": "81fe0f483beda62c695d0b5a090a5c9b13bbcf79708887adf2042495f2e67bae"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Documentation/animation.json",
+      "bytes": 4009,
+      "sha256": "c15e3ffd74ad9f9a9b841b24857b713fffce5f99422be499fb5cbad82db27dca"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Documentation/facial_expressions.json",
+      "bytes": 961,
+      "sha256": "e9498f9f9a6100bc173342327af52bbabd53a4bba7f60473814b6d7cdc22614b"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Documentation/humanoid_mapping.json",
+      "bytes": 2107,
+      "sha256": "3e0c41527204fa47be6e95e98cee92100da0fcb5651c6cd42ef93ca5d6a27da1"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Documentation/materials.json",
+      "bytes": 5473,
+      "sha256": "78e293995881586c7e7df9662309a831e73d0e8166683f39c663e895b2d9a472"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Documentation/model_manifest.json",
+      "bytes": 976,
+      "sha256": "5f0a165be5418f9d8e2f365a40bc6f47fd246f7b816b693917d1fb54e79e974b"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Documentation/reference_analysis.md",
+      "bytes": 5685,
+      "sha256": "2737226e1fd04d9205cc8d0b4e7f96bb6112957232ce02d4fbb8709f70be740a"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Editor/HoodedGirlPreparation.cs",
+      "bytes": 23260,
+      "sha256": "c96efcb8146c3cf0f7d6add33ed0f02486d9d1a4054ba33d171a59f1afd415c2"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Editor/Silence.HoodedGirl.Editor.asmdef",
+      "bytes": 235,
+      "sha256": "c785387753bac5023751136423ff6170ed9b7d0908f3890463f157ab81ab5883"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Models/HoodedGirl_LOD0.fbx",
+      "bytes": 32928924,
+      "sha256": "c4f958586baee415182d5ce53ad8a6a8537f40188cd26baf31818c2ba8649933"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Models/HoodedGirl_LOD1.fbx",
+      "bytes": 10169484,
+      "sha256": "6f3394b768f2980fdcf0132452210026558bf2e9f853b2a61a5236eb30bcc311"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Models/HoodedGirl_LOD2.fbx",
+      "bytes": 8278332,
+      "sha256": "922949ecd3f14eb621434916bdd0f1eeacebdab6629de5bc1175c5cf1fccec2c"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Scripts/HoodedGirlDemo.cs",
+      "bytes": 4228,
+      "sha256": "5160d8b46c9d6544b44c3c339274659a4ad860e488bdab928a5baeb9cf363276"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Scripts/Silence.HoodedGirl.asmdef",
+      "bytes": 122,
+      "sha256": "6a55df594f1a566a04b30e3a3c3c8dffc24edd4b0f21b118c9a85ea0b8666cd3"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Textures/Eyes_BaseColor.png",
+      "bytes": 1237873,
+      "sha256": "c357703f6e2faa2ffa1105db8776a530b81f14305d05babaa47ddf25b4ccc4c4"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Textures/Fabric_BaseColor.png",
+      "bytes": 2936084,
+      "sha256": "197208429a13c28e4de37acbee0f9bddfaecae1046bf3bdfc46af715bd6e1c69"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Textures/Fabric_Mask.png",
+      "bytes": 1820361,
+      "sha256": "6673b9ea59a69286d272cdebfddd1ac063ba9baee2c118e40ffd3c6456fcd0a1"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Textures/Fabric_Normal.png",
+      "bytes": 2264442,
+      "sha256": "ed3797fb73873902849ded0f94b863713804859bf4aca73c511cc4cf3bc0702b"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Textures/Hair_BaseColorAlpha.png",
+      "bytes": 707777,
+      "sha256": "f442a1cee3bfd06a953cfce2c030aa95557d5fe0c509188ca961f231e51e6439"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Textures/Leather_BaseColor.png",
+      "bytes": 2890734,
+      "sha256": "cebba468ffc379bf6e928a057c454b79f41b86777891981b96e3524944bd2d0d"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Textures/Leather_Mask.png",
+      "bytes": 2529979,
+      "sha256": "a70a84e6723aaa7060657379b58f82914d0aa3f1d96949a110597e5cb787e654"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Textures/Leather_Normal.png",
+      "bytes": 4294606,
+      "sha256": "f745b3e25bc3113012c5197e88443f24c37989686bf086845fbf43816b39b806"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Textures/Skin_BaseColor.png",
+      "bytes": 1158028,
+      "sha256": "380a75706fe0daa82cbdee0ef6896c349cdfc1b2535b0ff06fde3bdb53455bc1"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Textures/Skin_Mask.png",
+      "bytes": 344211,
+      "sha256": "a727b22743cc184df93c522bb8a5623a43e576798e7a1b025ec49c78f2840d79"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Textures/Skin_Normal.png",
+      "bytes": 22451974,
+      "sha256": "dfecfdbb6244ceb9d94a3434e3f8c28b9bf9a66fe7c1b5582e94267a95b37e36"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/HoodedGirl.blend",
+      "bytes": 20320455,
+      "sha256": "dcf6244495a8cc5f4b9b59c84f16b7f85c26e6a94b01a9a6fa48347a0d83787a"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/body_back.png",
+      "bytes": 603065,
+      "sha256": "5220cce12e1d3f736f67fca4f454415393b2a20be1d70083030271ac0990242e"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/body_front.png",
+      "bytes": 604972,
+      "sha256": "63df46c340b25a0ff42c4d36b2a002dcbb121ccb7e90cf3ce0827cdff232cda0"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/body_side.png",
+      "bytes": 590764,
+      "sha256": "3bea48bef4b768fd700d20877e1843572f53540325317f41c858cc5232054a4a"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/face_blink.png",
+      "bytes": 429659,
+      "sha256": "8eed35ccf8d978c962be62e067a1402837d5bb0498ac3550ed57b5476056bd7a"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/face_fear.png",
+      "bytes": 432063,
+      "sha256": "5e70e7d51aea9f4ba11d69e32e3474c1ce1598c3a07c43e3e641293c0b98b7a8"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/face_mouth_open.png",
+      "bytes": 433403,
+      "sha256": "c2852d7d88a269e003edfb997c1ea802ff993fd8797202b2c3f30bad125117c4"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/face_neutral.png",
+      "bytes": 431012,
+      "sha256": "9dfbdce87fdb775d499c90701c7225cc73c5a75468a996ac7c26d2b3b1494ea5"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/face_pain.png",
+      "bytes": 431406,
+      "sha256": "15c99eb0a8255267b198b5afdf43d7f48dee6e35b0564f61cc8f5c585fd6afd3"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/face_surprise.png",
+      "bytes": 433544,
+      "sha256": "2b56b0a93d3720d81303b3ae8212cd6ab3f7dd669d1da0250070283b29e7c6d0"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/face_tension.png",
+      "bytes": 430606,
+      "sha256": "0508efb894489223be83ad489d78f17f2c193766cf74c21b1e513bfeffda2b4a"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/pose_CrouchWalk.png",
+      "bytes": 595653,
+      "sha256": "eac97067d3b73d8bfe14528db34b77c944efffc3bf1531bbb0c2b6004e0f5ed8"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/pose_Run.png",
+      "bytes": 606254,
+      "sha256": "e7c1fd7219d4f3eaabe384752f2cdabb847c20d41067f8188648ac924fe04c7b"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/pose_UseItem.png",
+      "bytes": 604089,
+      "sha256": "a01a2c7122a2523e23b3c16bd3e639524346578e7cdd3a92a83fc135ad33dd04"
+    },
+    {
+      "path": "ArtSource/HoodedGirl/Previews/pose_Walk.png",
+      "bytes": 608584,
+      "sha256": "b65723214afbc419885c08d1ccbffad7dfddb18f6f1e69d1cefd9481b8ea4446"
+    }
+  ],
+  "native_unity_tested": false,
+  "core_tests_passed": 119,
+  "art_review": {
+    "examined_actual_blender_renders": true,
+    "expressions_seven_visibly_distinct": true,
+    "exact_likeness_approved": false,
+    "photorealism_approved": false,
+    "remaining": "Face likeness, hair cards and cloth realism require further art refinement; native Unity import and game testing pending."
+  }
+}

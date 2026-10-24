@@ -1,0 +1,7 @@
+{
+  "blender": "5.2.3 LTS",
+  "bpy": true,
+  "cycles_cpu_render": true,
+  "fbx_export": true,
+  "fixture_is_character": false
+}

@@ -1,0 +1,57 @@
+{
+  "blender": "5.2.3 LTS",
+  "height_target_metres": [
+    1.7,
+    1.75
+  ],
+  "deform_bones": 55,
+  "body_clip_count": 21,
+  "body_clips": [
+    "Idle",
+    "Walk",
+    "WalkBack",
+    "StrafeLeft",
+    "StrafeRight",
+    "Run",
+    "CrouchIdle",
+    "CrouchWalk",
+    "TurnLeft",
+    "TurnRight",
+    "LookAround",
+    "Jump",
+    "Fall",
+    "Land",
+    "CarryIdle",
+    "CarryWalk",
+    "WoundedIdle",
+    "WoundedWalk",
+    "Death",
+    "UseItem",
+    "BreathGame"
+  ],
+  "primary_head_blendshapes": 52,
+  "lods": [
+    {
+      "level": 0,
+      "objects": 16,
+      "triangles": 207756,
+      "bytes": 32928924
+    },
+    {
+      "level": 1,
+      "objects": 16,
+      "triangles": 125628,
+      "bytes": 10169484
+    },
+    {
+      "level": 2,
+      "objects": 15,
+      "triangles": 87401,
+      "bytes": 8278332
+    }
+  ],
+  "weapons_included": false,
+  "native_unity_tested": false,
+  "exact_likeness_approved": false,
+  "photorealistic_quality_approved": false
+}

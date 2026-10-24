@@ -1,0 +1,7 @@
+{
+  "name": "Silence.HoodedGirl.Editor",
+  "rootNamespace": "Silence.HoodedGirl.Editor",
+  "references": ["Silence.HoodedGirl", "Silence.Graphics", "Silence.Visual.Editor"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

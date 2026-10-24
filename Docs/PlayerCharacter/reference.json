@@ -2,11 +2,11 @@
   "name": "Crossbow Girl",
   "short_url": "https://fab.com/s/194271dfc8cb",
   "listing_url": "https://www.fab.com/listings/edf670ba-1967-4b84-bbea-544847c9b6e2",
-  "provenance": "Name and specifications supplied by project owner from the listing; no visual/file verification",
+  "provenance": "Listing specifications supplied by owner; three inline reference images visually examined; original Fab asset not received",
   "page_access": "Proxy tunnel HTTP 403 for short and full URLs",
-  "images_received": false,
+  "images_received": true,
   "source_asset_received": false,
-  "appearance_verified": false,
+  "appearance_verified": true,
   "purchase_budget": 0,
   "license_verified": false,
   "claimed_features": [
@@ -46,9 +46,7 @@
     4096
   ],
   "pending": [
-    "Front, side and back images",
-    "Face and outfit closeups",
-    "Optional original licensed source files",
-    "Visual reconstruction and comparison"
+    "Art review of reconstruction against three inline references",
+    "Native Unity import and Play checks"
   ]
 }

@@ -30,7 +30,8 @@ namespace Silence.Multiplayer
         }
         private void Publish()
         {
-            snapshot.Value = (byte)(128 | (controller.enabled && controller.isGrounded ? 1 : 0) |
+            bool running = NetworkSession.Instance != null && NetworkSession.Instance.World != null && NetworkSession.Instance.World.Running;
+            snapshot.Value = (byte)(128 | (!running || controller.enabled && controller.isGrounded ? 1 : 0) |
                 (motor.IsCrouched ? 2 : 0) | (actor.HeldProp != null || actor.HeldTeammate != null ? 4 : 0));
         }
         private void Apply()

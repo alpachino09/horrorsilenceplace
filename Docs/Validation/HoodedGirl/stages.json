@@ -1,0 +1,51 @@
+{
+  "location_during_build": "/workspace/generated-art/HoodedGirl/Stages",
+  "reproduction": "Tools/HoodedGirl/run_macos.sh",
+  "files": [
+    {
+      "file": "03_anatomy_blockout.blend",
+      "bytes": 732007,
+      "sha256": "949fd033c9511991b7d4d3a967723256ea46e9d82f05eaec2bb221e1597d4381"
+    },
+    {
+      "file": "04_face_refined.blend",
+      "bytes": 5600032,
+      "sha256": "d932cbc8651c941fa4d12e520ec5b6be96de563508397f56bc6cf006e321e1cd"
+    },
+    {
+      "file": "05_hood_hair_neckwrap.blend",
+      "bytes": 6616906,
+      "sha256": "ae64788bd8f111138640f84c8444dc82ca33374c8d0c07799a0aa6b2d66885d2"
+    },
+    {
+      "file": "06_clothing_gloves_footwear.blend",
+      "bytes": 8444619,
+      "sha256": "5d6af609b82273f55027d2cde4d9300f1dd323d37e214c088039b5509eec23e4"
+    },
+    {
+      "file": "07_geometry.blend",
+      "bytes": 8447529,
+      "sha256": "8f69bca5e4223e221c0008e3fa4bf99a49638f46ebdbf92056888243497a3c62"
+    },
+    {
+      "file": "08_uv_pbr.blend",
+      "bytes": 8447529,
+      "sha256": "8f69bca5e4223e221c0008e3fa4bf99a49638f46ebdbf92056888243497a3c62"
+    },
+    {
+      "file": "09_humanoid_rig.blend",
+      "bytes": 9885021,
+      "sha256": "a52a870ea8fe618f14c64448fd1352d2fbcfc37dbdd2318961e2ea1670c6f1ee"
+    },
+    {
+      "file": "10_animation_facial.blend",
+      "bytes": 11198141,
+      "sha256": "cb5ef129d60e9447cb370c9a9553e650b04c595e2deebe0afffc619eea9b0cb7"
+    },
+    {
+      "file": "11_fbx_export.blend",
+      "bytes": 20320389,
+      "sha256": "11cde86bb731fd427e77611696cfb17c38eb39b34fd08aac3588cbf33842aeb3"
+    }
+  ]
+}

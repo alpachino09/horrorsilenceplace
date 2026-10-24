@@ -1,0 +1,221 @@
+{
+  "blender": "5.2.3 LTS",
+  "clips": [
+    {
+      "name": "Idle",
+      "frames": [
+        1,
+        85
+      ],
+      "seconds": 2.8,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "Walk",
+      "frames": [
+        1,
+        23
+      ],
+      "seconds": 0.7333333333333333,
+      "loop": true,
+      "max_planted_sole_height_error": 1.1010449441073433e-07
+    },
+    {
+      "name": "WalkBack",
+      "frames": [
+        1,
+        23
+      ],
+      "seconds": 0.7333333333333333,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "StrafeLeft",
+      "frames": [
+        1,
+        25
+      ],
+      "seconds": 0.8,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "StrafeRight",
+      "frames": [
+        1,
+        25
+      ],
+      "seconds": 0.8,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "Run",
+      "frames": [
+        1,
+        16
+      ],
+      "seconds": 0.5,
+      "loop": true,
+      "max_planted_sole_height_error": 4.903409944745363e-08
+    },
+    {
+      "name": "CrouchIdle",
+      "frames": [
+        1,
+        85
+      ],
+      "seconds": 2.8,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "CrouchWalk",
+      "frames": [
+        1,
+        28
+      ],
+      "seconds": 0.9,
+      "loop": true,
+      "max_planted_sole_height_error": 9.853221882849539e-08
+    },
+    {
+      "name": "TurnLeft",
+      "frames": [
+        1,
+        31
+      ],
+      "seconds": 1.0,
+      "loop": false,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "TurnRight",
+      "frames": [
+        1,
+        31
+      ],
+      "seconds": 1.0,
+      "loop": false,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "LookAround",
+      "frames": [
+        1,
+        81
+      ],
+      "seconds": 2.6666666666666665,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "Jump",
+      "frames": [
+        1,
+        21
+      ],
+      "seconds": 0.6666666666666666,
+      "loop": false,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "Fall",
+      "frames": [
+        1,
+        31
+      ],
+      "seconds": 1.0,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "Land",
+      "frames": [
+        1,
+        13
+      ],
+      "seconds": 0.4,
+      "loop": false,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "CarryIdle",
+      "frames": [
+        1,
+        85
+      ],
+      "seconds": 2.8,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "CarryWalk",
+      "frames": [
+        1,
+        23
+      ],
+      "seconds": 0.7333333333333333,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "WoundedIdle",
+      "frames": [
+        1,
+        85
+      ],
+      "seconds": 2.8,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "WoundedWalk",
+      "frames": [
+        1,
+        29
+      ],
+      "seconds": 0.9333333333333333,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "Death",
+      "frames": [
+        1,
+        51
+      ],
+      "seconds": 1.6666666666666667,
+      "loop": false,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "UseItem",
+      "frames": [
+        1,
+        31
+      ],
+      "seconds": 1.0,
+      "loop": false,
+      "max_planted_sole_height_error": null
+    },
+    {
+      "name": "BreathGame",
+      "frames": [
+        1,
+        85
+      ],
+      "seconds": 2.8,
+      "loop": true,
+      "max_planted_sole_height_error": null
+    }
+  ],
+  "pole_angles": {
+    "Left": 1.5707963705062866,
+    "Right": 1.5707963705062866
+  },
+  "native_unity_tested": false,
+  "art_quality_approved": false
+}

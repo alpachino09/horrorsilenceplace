@@ -1,0 +1,225 @@
+{
+  "source": "https://github.com/makehumancommunity/makehuman",
+  "commit": "a8bc2d54ff0ac92e78ff71431b1023eda42bf482",
+  "license": "CC0-1.0 for the vendored graphical assets; no MakeHuman application code copied",
+  "identity_weights": {
+    "macrodetails/caucasian-female-young": 1.0,
+    "head/head-oval": 0.2,
+    "head/head-scale-horiz-decr": 0.08,
+    "chin/chin-width-decr": 0.15,
+    "chin/chin-prominent-decr": 0.05,
+    "nose/nose-width2-decr": 0.12,
+    "nose/nose-width3-decr": 0.1,
+    "nose/nose-nostrils-width-decr": 0.12,
+    "nose/nose-greek-incr": 0.08,
+    "mouth/mouth-upperlip-volume-incr": 0.15,
+    "mouth/mouth-lowerlip-volume-incr": 0.2,
+    "mouth/mouth-scale-horiz-incr": 0.07,
+    "bodyshapes/bodyshapes-elvs-fem-lean-column": 0.15,
+    "expression/units/caucasian/mouth-open": -0.035,
+    "expression/units/caucasian/eye-left-closure": 0.075,
+    "expression/units/caucasian/eye-right-closure": 0.075
+  },
+  "files": [
+    {
+      "path": "3dobjs/base.obj",
+      "sha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c"
+    },
+    {
+      "path": "rigs/default.mhskel",
+      "sha256": "99f179bce0aa850b45d4191a1d0d234c5851f881c057439470ded3bddf729a24"
+    },
+    {
+      "path": "rigs/default_weights.mhw",
+      "sha256": "0f3641d651ae3d00ad6b4ccee43142edb109d3bd909d27d9e4139ef1beed8625"
+    },
+    {
+      "path": "targets/macrodetails/caucasian-female-young.target",
+      "sha256": "118379f6e8ba9266247fdb8788a20e1df40a239f97ced0b9905bcbcc74f6e820"
+    },
+    {
+      "path": "targets/head/head-oval.target",
+      "sha256": "a17cd3a600588a344babe520fbd4d4edcb096db3328051fe692dfb997a1a678d"
+    },
+    {
+      "path": "targets/head/head-scale-horiz-decr.target",
+      "sha256": "cadb55b340cb94e96131860beb68b2e46204fccc7ee8f963f66cc9d22b03af0c"
+    },
+    {
+      "path": "targets/chin/chin-width-decr.target",
+      "sha256": "ac081bd1652c203fc8973f20988a868a423a49f1fe6449cb974727fd46c26af1"
+    },
+    {
+      "path": "targets/chin/chin-prominent-decr.target",
+      "sha256": "071afc623e6feb38afa5dde7abca83710c062bf1281e30a51fa42a6fbacfc00e"
+    },
+    {
+      "path": "targets/nose/nose-width2-decr.target",
+      "sha256": "d3301686c7dfd94b0a39fd0693ff26ea66d24b08037488f814e7a8bb340109d9"
+    },
+    {
+      "path": "targets/nose/nose-width3-decr.target",
+      "sha256": "eb3e782e1b335f10c68be43ccc75bea98193f330b4d0c7f98f9773f580ce12c3"
+    },
+    {
+      "path": "targets/nose/nose-nostrils-width-decr.target",
+      "sha256": "381335aed6091e8b394092dabea983b89bc2e35f548ced6b5ab2eca6dabc8bd2"
+    },
+    {
+      "path": "targets/nose/nose-greek-incr.target",
+      "sha256": "26377458cdc453ff93a9b025c3a6043b4c5f3000173fb125e5b2a7cc66981855"
+    },
+    {
+      "path": "targets/mouth/mouth-upperlip-volume-incr.target",
+      "sha256": "b124cbd9b9be318264f61a143da603b42e0357ed92b4b6afd1b31a83daaf8568"
+    },
+    {
+      "path": "targets/mouth/mouth-lowerlip-volume-incr.target",
+      "sha256": "dbdaf045b00c67bf8672d53bc8cf94eb3e3dea316de6fe18a278f7080564c65d"
+    },
+    {
+      "path": "targets/mouth/mouth-scale-horiz-incr.target",
+      "sha256": "ccfc39cca249883ebc46af6f2c96c4130df13a67ebce30a2550af17a48637770"
+    },
+    {
+      "path": "targets/bodyshapes/bodyshapes-elvs-fem-lean-column.target",
+      "sha256": "170942f78210859465bfa909d6a5f72b3cddb9c128db996cc529649a76e90b1a"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eyebrows-right-inner-up.target",
+      "sha256": "c97c24303a308d042f353e00038f35bc15b0d253cbdc9213dbe50fb01809893c"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eye-right-opened-up.target",
+      "sha256": "1e342b3b0731d5cdbd5e223817303c0364782f0de52887cc3e414fdb451c184f"
+    },
+    {
+      "path": "targets/expression/units/caucasian/neck-platysma.target",
+      "sha256": "3f0fba349a5724eef7a9c9473acdbb43a9e8e77b4864e69d743f0b3676e44769"
+    },
+    {
+      "path": "targets/expression/units/caucasian/nose-compression.target",
+      "sha256": "b676ac07df061d30b770889675b08368082bb9b4b97e22057b854b4c49618df2"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eyebrows-left-up.target",
+      "sha256": "4f770b7281ed9502c2e164850e41265310a445d0534bbc9a8faa949c05677775"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eyebrows-left-down.target",
+      "sha256": "89999e77f486dda420fde6d67ca7e32e885d80e816111e776ff292efe41b209d"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eyebrows-right-up.target",
+      "sha256": "496a446cb77aad463dfd952a8a648e758ee0954c64a96a4e4412f9a042391881"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eye-left-closure.target",
+      "sha256": "e38cb77fd888de3d0d944efe6f3511bf3ca4076b0397fa7c840d8368f08205c2"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-protusion.target",
+      "sha256": "012c571c381c3dee06591132110d7d64fb2abd49d883afc619f6bc6c0000d2f4"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-part-later.target",
+      "sha256": "5128d051612b61a4cf15b664c3c5439e10718b98cc3411be5cad363cae5b4b02"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-pursing.target",
+      "sha256": "02b08ad99c2345e83cbd4c77819fadef2af8c7fc3111211fc169459eb7f37d10"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eye-left-slit.target",
+      "sha256": "f2724e8d865211ded6022ba886ece6a47ca9bbb4d279f302f93329d3fa624d10"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-depression.target",
+      "sha256": "906a614c24a63a126abeb28b2adbc84efb5f08b49d76fe8ce79fbd0ca9732f9f"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-open.target",
+      "sha256": "07377ba3a3eb1b92b00029908f896ea1f8cc50356789f54268d897f2e89c2843"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-compression.target",
+      "sha256": "b7abd0826708d7e4344559583edd0fc80e098b08b91f3e6d67d83b1eed20ccbe"
+    },
+    {
+      "path": "targets/expression/units/caucasian/nose-depression.target",
+      "sha256": "545f4e4e9f59637f3a80c3d1a0367f7b08a3317fd487c096b0531bac096e1bca"
+    },
+    {
+      "path": "targets/expression/units/caucasian/nose-left-elevation.target",
+      "sha256": "5a63b622bfb21bd0cf530f64a66eb8ebfe01e81e1edbfc706161ca8472b3656e"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-depression-retraction.target",
+      "sha256": "0ebefb40c4374e628c9595a74f5222bff6323474c87d2d93d1249593806bdc23"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eye-right-closure.target",
+      "sha256": "58faf2c199272bfd87478ea122cdaa4b4b8669505be0d75f777c5471527b2b15"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eye-right-slit.target",
+      "sha256": "713283452d24f0b68d9026e26fb3b3ee2e479dd33b31021926f94bf4e593d368"
+    },
+    {
+      "path": "targets/expression/units/caucasian/nose-right-elevation.target",
+      "sha256": "4ebad1433573bc5b9577dc5808537752e93c68e59f4422472b2e753b53a260f0"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eyebrows-left-extern-up.target",
+      "sha256": "ea63558d1e7fce6004cc4f7cd912d7058791134a00b113fb9f2a757a0bb96b2f"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-elevation.target",
+      "sha256": "0b306cea4b0bb372d408b69a55332b8ddb252b3f2d4bfdd6b9d5c34da0f90e32"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eyebrows-right-extern-up.target",
+      "sha256": "80675b2f74ba16b8d86ab1cf95a5660cf5b02e603bdd6396d85a7d18a84ee3fa"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eye-left-opened-up.target",
+      "sha256": "c379cbc9106315180fc5646ff8fd063268f47d2f564598606559d82a589c1310"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eyebrows-left-inner-up.target",
+      "sha256": "2fa94d522d54bb33078c72ac111da75005b5b2bf495d647c6e9fd5b41245b287"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-upward-retraction.target",
+      "sha256": "aaaed4ee0c13401352b4b6dc8d0bccb61bfda0996ed2718a456a0c32e5f32d0a"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-eversion.target",
+      "sha256": "80ab01c962f5ed9d70492e2fe5802bd5106867c21969bb71ddb19e66c5d6ae9b"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-corner-puller.target",
+      "sha256": "75ec1f2356c381aa44065f2b812daafae85c5a918843b978d04cf6d8bc79dbe4"
+    },
+    {
+      "path": "targets/expression/units/caucasian/nose-right-dilatation.target",
+      "sha256": "e7b0721836584890f4a4bc9df4c028ef87e72868f336154f66cae6ac42e89734"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-retraction.target",
+      "sha256": "245fe1fa08e91091a2f236b88f4117e78157a4c17cff0a125e819e2a237e0048"
+    },
+    {
+      "path": "targets/expression/units/caucasian/nose-left-dilatation.target",
+      "sha256": "a4964a35efe3c7b8a7209702d5533147f93c3b7f093c459c2e460da4991da6c9"
+    },
+    {
+      "path": "targets/expression/units/caucasian/mouth-parling.target",
+      "sha256": "2da1d3143b3fcf4193629fc5c26b015b8c505cc3258dc41ecd3e20d598b65ccb"
+    },
+    {
+      "path": "targets/expression/units/caucasian/eyebrows-right-down.target",
+      "sha256": "86f0d1440944fa4754d24c128f7d105f6a93dbd6ce9204be972bcb2ad5be4cec"
+    }
+  ]
+}
