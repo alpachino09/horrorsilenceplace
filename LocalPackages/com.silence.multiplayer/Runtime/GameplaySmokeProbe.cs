@@ -15,7 +15,7 @@ namespace Silence.Multiplayer
     // Explicit development-only checks. No passing result exists until Unity actually executes this coroutine.
     public sealed class GameplaySmokeProbe : MonoBehaviour
     {
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
+#if UNITY_EDITOR || UNITY_INCLUDE_INSTRUMENTATION
         [Serializable] private sealed class Entry { public string name; public bool passed; }
         [Serializable] private sealed class Report
         {

@@ -1,1 +1,2 @@
-C# 9 syntax: 146 files, 5 preprocessor configurations, 0 errors. Unity API binding is NOT checked.
+C# 9 syntax: 146 files, 7 preprocessor configurations, 0 errors. Unity API binding is NOT checked.
+Diagnostic build guards: 7 configurations, 0 contract errors. Editor/instrumented code is present; release automation is excluded.

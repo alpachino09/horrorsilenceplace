@@ -11,7 +11,8 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
-NAME = "SILENCE_HumanMotion_0.4.0"
+VERSION = "0.4.1"
+NAME = "SILENCE_HumanMotion_" + VERSION
 DIRECTORIES = ["Assets/_Silence/Scripts", "Assets/_Silence/Editor", "Assets/_Silence/Tests",
                "Assets/_Silence/Settings", "Assets/_Silence/Graphics",
                "Assets/Characters/HoodedGirl/Editor", "Assets/Characters/HoodedGirl/Scripts",
@@ -27,7 +28,9 @@ def build():
                 files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
     for path in (ROOT / "Docs/Animation").glob("*.md"):
         files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
-    files["README_RU.md"] = ("SILENCE Human Motion 0.4.0\n\n"
+    files["README_RU.md"] = (f"SILENCE Human Motion {VERSION}\n\n"
+        "Если версия 0.4.0 уже установлена и появились жёлтые UAC0009, достаточно обновить код через 00.\n"
+        "Импорт пакета и создание мира повторять не нужно: после компиляции очисти Console и продолжай пункт 25.\n\n"
         "Останови Play. В Unity: SILENCE → 00 Update Sources From Folder.\n"
         "Выбери ЭТУ распакованную папку с Assets и LocalPackages внутри, не Unity-проект.\n"
         "После компиляции открой свой игровой мир с героиней, не просмотр 23.\n"
@@ -37,7 +40,7 @@ def build():
         "Площадка проверки отдельная; кнопка Возврата в окне 25 снова открывает игровой мир.\n"
         "Подробная инструкция: Docs/Animation/README_RU.md. Ограничения: Docs/Animation/REPORT_RU.md.\n"
         "Код и исходные данные проверены в облаке. Unity Play/ILPP/сеть/качество движений ещё требуют проверки.\n").encode()
-    manifest = {"version": "0.4.0", "kind": "code-only update; import the original user-provided Unity animation package separately",
+    manifest = {"version": VERSION, "kind": "code-only update; import the original user-provided Unity animation package separately",
                 "requires_existing_prepared_hooded_girl": True, "native_unity_play_tested": False,
                 "original_basic_motions_sha256": "20b52be48a73cd5a288d6c405b17d27e0a0541fdfa777a1fa36db7d3c51e5b7d",
                 "files": [{"path": name, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()} for name, data in sorted(files.items())]}

@@ -27,7 +27,7 @@ namespace Silence.Multiplayer
         private uint interactionSequence, serverTick;
         private uint gameplaySequence;
         private bool lampOn = true;
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
+#if UNITY_EDITOR || UNITY_INCLUDE_INSTRUMENTATION
         private bool automated;
         private PlayerCommand automationCommand;
         internal void SetAutomationInput(PlayerCommand value) { automated = true; automationCommand = value; }
@@ -102,7 +102,7 @@ namespace Silence.Multiplayer
             scanner.enabled = controls;
             hud.enabled = controls && Context.Game == null;
             if (!controls) return;
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
+#if UNITY_EDITOR || UNITY_INCLUDE_INSTRUMENTATION
             if (automated)
             {
                 uint sequence = command.Sequence;

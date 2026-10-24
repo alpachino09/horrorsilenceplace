@@ -116,7 +116,7 @@ namespace Silence.Multiplayer
             Returning = true;
             lastStatus = reason;
             PlayerLook.Capture(false);
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
+#if UNITY_EDITOR || UNITY_INCLUDE_INSTRUMENTATION
             GetComponent<NetworkSmokeProbe>()?.Abort(reason);
 #endif
             StartCoroutine(ShutdownAndReload());

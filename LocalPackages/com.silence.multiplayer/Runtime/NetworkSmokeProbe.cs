@@ -1,7 +1,7 @@
 using UnityEngine;
 using Silence.Interactions;
 
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
+#if UNITY_EDITOR || UNITY_INCLUDE_INSTRUMENTATION
 using System;
 using System.IO;
 using System.Linq;
@@ -11,13 +11,13 @@ using Silence.Player;
 
 namespace Silence.Multiplayer
 {
-    // In release builds this is an inert component; no automation or warping API is compiled.
+    // Without instrumentation this is inert; no automation or warping API is compiled.
     public sealed class NetworkSmokeProbe : MonoBehaviour
     {
         [SerializeField] private ItemPickup contestedItem;
         public void Configure(ItemPickup item) => contestedItem = item;
 
-#if UNITY_EDITOR || DEVELOPMENT_BUILD
+#if UNITY_EDITOR || UNITY_INCLUDE_INSTRUMENTATION
         [Serializable]
         private sealed class Evidence
         {

@@ -1,5 +1,5 @@
 {
-  "version": "Human Motion 0.4.0",
+  "version": "Human Motion 0.4.1",
   "branch": "codex/player-character-integration",
   "core_nunit": {
     "passed": 170,
@@ -11,7 +11,7 @@
   },
   "csharp_syntax": {
     "files": 146,
-    "configurations": 5,
+    "configurations": 7,
     "errors": 0,
     "unity_api_binding_checked": false
   },
@@ -20,10 +20,10 @@
     "failed": 0
   },
   "delivery": {
-    "files": 166,
-    "passed_checks": 337,
-    "bytes": 305122,
-    "sha256": "56125b5cc8bea88bb1849a41a46e9502f8f92f805a23791113166a417ab0b18e"
+    "files": 167,
+    "passed_checks": 339,
+    "bytes": 307550,
+    "sha256": "407ab4cddedbe2ebb1d00d069060bb147c642c2125eadfcf707f6b019c13a3d1"
   },
   "actual_source_anim_files": 23,
   "source_fbx_bones": 65,
@@ -42,5 +42,11 @@
     "four-player builds and performance checks",
     "dedicated directional crouch and authored start/stop/flinch clips",
     "real tactical flashlight asset and calibrated contact review"
-  ]
+  ],
+  "diagnostic_fix": {
+    "runtime_files_changed": 5,
+    "deprecated_macro_references_replaced": 11,
+    "managed_variant_contracts_checked": true,
+    "native_UAC0009_analyzer_run": false
+  }
 }

@@ -1,0 +1,29 @@
+{
+  "version": "Human Motion 0.4.1",
+  "scope": "UAC0009 diagnostic directive replacement",
+  "unity_source_version": "6000.6.7f1",
+  "reference_commit": "d0e5e3e00a4f454bc2853234708c3d7c67ebca9a",
+  "references": [
+    {
+      "path": "Editor/Mono/PlayerSettings.bindings.cs",
+      "sha256": "7f267ba333ec5c3b0f5dc19e14f9a885e069d89c1069ed0726a4b8b10a6815a0"
+    },
+    {
+      "path": "Editor/Mono/Scripting/ScriptCompilation/EditorCompilationInterface.cs",
+      "sha256": "0db063e8815a3e3d334a1385925418909ec0e8b3c975366e9922ab4fed78cadd"
+    },
+    {
+      "path": "Modules/ProjectAuditorEditor/API/Enums/CodeAnalysisFlags.cs",
+      "sha256": "5d43a6dd5e6fa9bd04b010d0d8721f0c24cc765f5f7ac29e9f4c27fae7a19de6"
+    }
+  ],
+  "runtime_files_changed": 5,
+  "legacy_references_replaced": 11,
+  "syntax_files": 146,
+  "preprocessor_configurations": 7,
+  "syntax_errors": 0,
+  "diagnostic_guard_contract_errors": 0,
+  "static_structure_passed": 230,
+  "native_unity_compilation_run": false,
+  "native_UAC0009_analyzer_run": false
+}
