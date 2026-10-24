@@ -1,0 +1,29 @@
+{
+  "version": "0.3.2",
+  "utc": "2026-10-24T21:58:43.176601+00:00",
+  "purpose": "Whole-file recovery through the existing source updater after a manual fragment edit caused CS1513.",
+  "archive": "Downloads/SILENCE_HoodedGirl_AutoFix_0.3.2.zip",
+  "archive_bytes": 12102,
+  "archive_sha256": "97c14a56b4d8631b09536084901535dcb766d3651c7ac9f7ac363b68900b3b44",
+  "complete_script_replacement_sha256": "e49f87b7a01c12a6a26682a74724d116e2852efb25088f40680f4ada9ca66b2a",
+  "updater_source_roots_checked_at": [
+    "aff38df",
+    "c5e19a0"
+  ],
+  "archive_file_payloads_match": true,
+  "supporting_updater_interface_package_files_unchanged": true,
+  "core_tests_passed": 151,
+  "core_tests_failed": 0,
+  "csharp_files": 129,
+  "symbol_configurations": 5,
+  "syntax_errors": 0,
+  "native_updater_execution_tested": false,
+  "native_humanoid_import_tested": false,
+  "native_play_tested": false,
+  "contents": [
+    "Assets/Characters/HoodedGirl/Editor/HoodedGirlPreparation.cs",
+    "Assets/_Silence/Editor/SilenceSourceUpdater.cs",
+    "Assets/_Silence/Scripts/Networking/IWorldAuthority.cs",
+    "LocalPackages/com.silence.multiplayer/package.json"
+  ]
+}

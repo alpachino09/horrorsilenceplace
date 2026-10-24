@@ -175,7 +175,7 @@ namespace Silence.HoodedGirl.Editor
             var animator = prepared != null ? prepared.GetComponentInChildren<Animator>(true) : null;
             if (animator == null || animator.avatar == null || !animator.avatar.isValid || !animator.avatar.isHuman)
                 throw new InvalidOperationException("Unity did not create a valid Humanoid Avatar for " + path + ". Bone mapping completed: " + human.Length + "/" + humanNames.Length + ". Inspect this FBX's Rig / Configure and import errors.");
-            Debug.Log("SILENCE HoodedGirl import fix 0.3.1: LOD" + level + " mapped " + human.Length + "/" + humanNames.Length + " bones; Humanoid Avatar valid.");
+            Debug.Log("SILENCE HoodedGirl import fix 0.3.2: LOD" + level + " mapped " + human.Length + "/" + humanNames.Length + " bones; Humanoid Avatar valid.");
         }
         private static Dictionary<string, Material> Materials(MaterialFile file, string output)
         {
