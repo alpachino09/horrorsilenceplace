@@ -1,8 +1,8 @@
-#if UNITY_EDITOR
 using System;
-using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+#if UNITY_EDITOR
+using System.IO;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEditor.SceneManagement;
@@ -137,17 +137,27 @@ namespace Silence.HoodedGirl.Editor
         {
             string path = ModelPath(level); var importer = AssetImporter.GetAtPath(path) as ModelImporter;
             if (importer == null) throw new FileNotFoundException("FBX missing or import incomplete: " + path);
+            // Inspect the complete source hierarchy before Humanoid processing. Unity can
+            // otherwise hide optimized transforms or discard unweighted jaw/finger bones.
+            if (importer.animationType != ModelImporterAnimationType.Generic || importer.avatarSetup != ModelImporterAvatarSetup.NoAvatar || importer.optimizeGameObjects || importer.optimizeBones || importer.importAnimation != (level == 0))
+            {
+                importer.animationType = ModelImporterAnimationType.Generic; importer.avatarSetup = ModelImporterAvatarSetup.NoAvatar;
+                importer.optimizeGameObjects = false; importer.optimizeBones = false; importer.importAnimation = level == 0; importer.SaveAndReimport();
+            }
             var imported = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            if (imported == null) throw new InvalidOperationException("FBX hierarchy is unavailable after import: " + path);
             var transforms = imported.GetComponentsInChildren<Transform>(true);
-            var names = new HashSet<string>(transforms.Select(t => t.name));
-            var human = HumanTrait.BoneName.Where(names.Contains).Select(n => new HumanBone { boneName = n, humanName = n, limit = new HumanLimit { useDefaultValues = true } }).ToArray();
-            if (human.Length < 50) throw new InvalidOperationException("Expected the prepared Humanoid hierarchy: " + path);
+            string[] humanNames = HumanTrait.BoneName;
+            IReadOnlyList<HoodedGirlBoneBinding> bindings;
+            try { bindings = HoodedGirlBoneMapping.Resolve(humanNames, transforms.Select(t => t.name)); }
+            catch (InvalidOperationException error) { throw new InvalidOperationException(path + ": " + error.Message, error); }
+            var human = bindings.Select(b => new HumanBone { boneName = b.BoneName, humanName = b.HumanName, limit = new HumanLimit { useDefaultValues = true } }).ToArray();
             var description = importer.humanDescription; description.human = human;
             description.skeleton = transforms.Select(t => new SkeletonBone { name = t.name, position = t.localPosition, rotation = t.localRotation, scale = t.localScale }).ToArray();
             description.armStretch = .05f; description.legStretch = .05f; description.upperArmTwist = .5f; description.lowerArmTwist = .5f;
             description.upperLegTwist = .5f; description.lowerLegTwist = .5f; description.feetSpacing = 0;
             importer.animationType = ModelImporterAnimationType.Human; importer.avatarSetup = ModelImporterAvatarSetup.CreateFromThisModel; importer.humanDescription = description;
-            importer.optimizeGameObjects = false; importer.importBlendShapes = true; importer.importAnimation = level == 0; importer.addCollider = false;
+            importer.optimizeGameObjects = false; importer.optimizeBones = false; importer.importBlendShapes = true; importer.importAnimation = level == 0; importer.addCollider = false;
             importer.importNormals = ModelImporterNormals.Import; importer.importTangents = ModelImporterTangents.CalculateMikk; importer.animationCompression = ModelImporterAnimationCompression.Off;
             if (level == 0)
             {
@@ -161,6 +171,11 @@ namespace Silence.HoodedGirl.Editor
                 importer.clipAnimations = clips;
             }
             importer.SaveAndReimport();
+            var prepared = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            var animator = prepared != null ? prepared.GetComponentInChildren<Animator>(true) : null;
+            if (animator == null || animator.avatar == null || !animator.avatar.isValid || !animator.avatar.isHuman)
+                throw new InvalidOperationException("Unity did not create a valid Humanoid Avatar for " + path + ". Bone mapping completed: " + human.Length + "/" + humanNames.Length + ". Inspect this FBX's Rig / Configure and import errors.");
+            Debug.Log("SILENCE HoodedGirl import fix 0.3.1: LOD" + level + " mapped " + human.Length + "/" + humanNames.Length + " bones; Humanoid Avatar valid.");
         }
         private static Dictionary<string, Material> Materials(MaterialFile file, string output)
         {
@@ -255,3 +270,40 @@ namespace Silence.HoodedGirl.Editor
     }
 }
 #endif
+
+// Kept in this same replacement file so the installation fix needs only one file.
+// This name resolver has no Unity API dependencies and is exercised by real .NET tests.
+namespace Silence.HoodedGirl.Editor
+{
+    internal readonly struct HoodedGirlBoneBinding
+    {
+        public string HumanName { get; }
+        public string BoneName { get; }
+        public HoodedGirlBoneBinding(string humanName, string boneName) { HumanName = humanName; BoneName = boneName; }
+    }
+
+    internal static class HoodedGirlBoneMapping
+    {
+        public static IReadOnlyList<HoodedGirlBoneBinding> Resolve(IReadOnlyList<string> humanNames, IEnumerable<string> transformNames)
+        {
+            if (humanNames == null || humanNames.Count == 0) throw new ArgumentException("Humanoid bone names are missing.", nameof(humanNames));
+            if (transformNames == null) throw new ArgumentNullException(nameof(transformNames));
+            var names = transformNames.Where(n => !string.IsNullOrEmpty(n)).GroupBy(n => n, StringComparer.Ordinal).ToDictionary(g => g.Key, g => g.Count(), StringComparer.Ordinal);
+            var bindings = new List<HoodedGirlBoneBinding>(); var missing = new List<string>();
+            var used = new HashSet<string>(StringComparer.Ordinal);
+            foreach (string humanName in humanNames)
+            {
+                if (string.IsNullOrWhiteSpace(humanName)) throw new ArgumentException("Humanoid name is empty.", nameof(humanNames));
+                // Mecanim labels can contain spaces (notably fingers); FBX bone names do not.
+                // Preserve the exact API label in HumanBone.humanName.
+                string boneName = string.Concat(humanName.Where(c => !char.IsWhiteSpace(c)));
+                if (!used.Add(boneName)) throw new InvalidOperationException("Ambiguous Humanoid labels for bone " + boneName);
+                if (!names.TryGetValue(boneName, out int count)) { missing.Add(humanName + " [" + boneName + "]"); continue; }
+                if (count != 1) throw new InvalidOperationException("Duplicate FBX transform for Humanoid bone " + boneName + ": " + count);
+                bindings.Add(new HoodedGirlBoneBinding(humanName, boneName));
+            }
+            if (missing.Count > 0) throw new InvalidOperationException("Missing Humanoid bones: " + string.Join(", ", missing) + ". Matched " + bindings.Count + "/" + humanNames.Count + "; FBX transform names: " + names.Count + ".");
+            return bindings;
+        }
+    }
+}

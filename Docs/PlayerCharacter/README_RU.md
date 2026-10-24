@@ -38,6 +38,8 @@
 
 ## Установить в Unity
 
+Если пункт 22 останавливается на `Expected the prepared Humanoid hierarchy`, установите [однофайловое исправление 0.3.1](IMPORT_FIX_031_RU.md).
+
 1. Выйти из Play. Из нового ZIP вручную обновить один файл
    `Assets/_Silence/Editor/SilenceSourceUpdater.cs` в своём проекте.
 2. После компиляции: **SILENCE → 00 Update Sources From Folder**. Выбрать

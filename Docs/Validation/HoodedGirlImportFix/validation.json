@@ -1,0 +1,38 @@
+{
+  "fix": "0.3.1",
+  "utc": "2026-10-24T21:41:27.839951+00:00",
+  "problem": "Exact string match ignored whitespace in Mecanim human labels; threshold guard aborted import before preview creation.",
+  "mapping_behavior": "Normalize whitespace only for bone lookup; preserve exact HumanTrait label in HumanBone.humanName. Reject missing and ambiguous bones.",
+  "inspection": "Import full unoptimized Generic / NoAvatar hierarchy before constructing Humanoid description; disable bone/transform optimization. Validate native Avatar after import.",
+  "actual_tests": {
+    "passed": 151,
+    "failed": 0,
+    "new_regression_tests": 10,
+    "unity_api_binding_tested": false
+  },
+  "fbx_lods_checked": [
+    {
+      "level": 0,
+      "bones": 56,
+      "sha256": "c4f958586baee415182d5ce53ad8a6a8537f40188cd26baf31818c2ba8649933"
+    },
+    {
+      "level": 1,
+      "bones": 56,
+      "sha256": "6f3394b768f2980fdcf0132452210026558bf2e9f853b2a61a5236eb30bcc311"
+    },
+    {
+      "level": 2,
+      "bones": 56,
+      "sha256": "922949ecd3f14eb621434916bdd0f1eeacebdab6629de5bc1175c5cf1fccec2c"
+    }
+  ],
+  "name_format_reference": {
+    "url": "https://github.com/ousttrue/UniHumanoid/blob/ce7bb798ee9a9492d1f7d5815a99bd0c779ad18d/Scripts/AvatarDescription.cs",
+    "note": "Public implementation independently normalizes whitespace when converting HumanTrait names; no code imported from it."
+  },
+  "native_unity_import_tested": false,
+  "native_play_tested": false,
+  "replacement_file": "Assets/Characters/HoodedGirl/Editor/HoodedGirlPreparation.cs",
+  "replacement_sha256": "5a377a1c1ea2cd69c5bb0cca6f9e79a84b97845c9cbed4a64ea12b5e4dd75741"
+}
