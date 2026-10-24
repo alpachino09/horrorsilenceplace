@@ -1,0 +1,14 @@
+test_absolute_paths_are_rejected (test_package_audit.ArchiveSafetyTests.test_absolute_paths_are_rejected) ... ok
+test_archive_links_are_rejected (test_package_audit.ArchiveSafetyTests.test_archive_links_are_rejected) ... ok
+test_backslash_traversal_is_rejected (test_package_audit.ArchiveSafetyTests.test_backslash_traversal_is_rejected) ... ok
+test_duplicate_paths_are_rejected (test_package_audit.ArchiveSafetyTests.test_duplicate_paths_are_rejected) ... ok
+test_existing_different_file_aborts_all_writes (test_package_audit.ArchiveSafetyTests.test_existing_different_file_aborts_all_writes) ... ok
+test_existing_symlink_cannot_escape_extraction_root (test_package_audit.ArchiveSafetyTests.test_existing_symlink_cannot_escape_extraction_root) ... ok
+test_relative_traversal_is_rejected_without_writes (test_package_audit.ArchiveSafetyTests.test_relative_traversal_is_rejected_without_writes) ... ok
+test_scripts_and_binaries_cannot_be_extracted (test_package_audit.ArchiveSafetyTests.test_scripts_and_binaries_cannot_be_extracted) ... ok
+test_valid_nested_paths_and_spaces_are_preserved (test_package_audit.ArchiveSafetyTests.test_valid_nested_paths_and_spaces_are_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.009s
+
+OK

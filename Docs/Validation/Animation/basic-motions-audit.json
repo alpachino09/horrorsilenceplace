@@ -1,0 +1,947 @@
+{
+  "package_sha256": "20b52be48a73cd5a288d6c405b17d27e0a0541fdfa777a1fa36db7d3c51e5b7d",
+  "assets": [
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Controler/Basic Motions_Controler.controller",
+      "guid": "046374c9522499e439ab690069293f89",
+      "bytes": 19841,
+      "sha256": "7563e3faae00b157d11d591ba1adb2a5f08d6c4b649056bc35f040564a069ad5"
+    },
+    {
+      "path": "Assets/PolyOne/Character Animation Pack/Materials/Joints_M.mat",
+      "guid": "068b0be388f57dd46b2688384b6118a8",
+      "bytes": 6088,
+      "sha256": "342cc01a50a5440e402be395e32adda0354412ecb6facf40e9b5e9be54d91c60"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run.anim",
+      "guid": "0824048eea4f4c3468da8583ec09a01c",
+      "bytes": 620335,
+      "sha256": "bae7aeba0b047661df38cbc8a32267d0ed86e6956f5a5837a88cc088c23a7a05"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation",
+      "guid": "13038f03c1746dc4fa35788b9a86e7e7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Up Stairs.anim",
+      "guid": "227091afbe0715e45bf27823f64b8814",
+      "bytes": 584958,
+      "sha256": "54cc54419db323fcf477c6f0349a12523c171141b0c71b146c1024dbe955d34f"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Pointing Forward.anim",
+      "guid": "23617129bda650c40b4d3f44f825fade",
+      "bytes": 909017,
+      "sha256": "482c6b6b57d0d593ce2be8ddbd1a3b94b87af3ca731cb332bfab658edbec3c02"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Materials/Base_M.mat",
+      "guid": "31c383d62ae2c2f4192379cf196ddfe9",
+      "bytes": 6080,
+      "sha256": "7a0cb916931a61966360920f76fe172fa5b5a3dc1b2b7256f6b2a96f1501c715"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Yelling.anim",
+      "guid": "45cdb85526755f6419fd662779362e99",
+      "bytes": 1992031,
+      "sha256": "86b4b0e2820869bb615f2d8728a79066b491200f403335622c114a52caec26fc"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Fast.anim",
+      "guid": "5680f512d64b49d4baefc78cbf28025a",
+      "bytes": 532064,
+      "sha256": "d8b48b89fee6bfc85f32072348b956dd53e8633475d5ec88e43ccbdeecc53738"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Jumping Down.anim",
+      "guid": "58bf57b7d36980347923c5516c654267",
+      "bytes": 1019456,
+      "sha256": "6c1eaf05e59c80d95feda19394b5e13cd1db9475e4711a557d88b270cc2052a7"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions",
+      "guid": "5ac55e6f0d59fa44e8771936e433344d",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Turn 180.anim",
+      "guid": "5dcea7f3bac524645bbc5bdf9ac4bb56",
+      "bytes": 597225,
+      "sha256": "9081103a3eece7ee3e8422e8ca901e6ecb1f983a61fc64d34ccb1e2049d08676"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Turn Left.anim",
+      "guid": "6c7ba1094b42fed428dc6dc8cbe0f83e",
+      "bytes": 442905,
+      "sha256": "addded9ab0792ce7fac45331370e52c9309ce9dafb5dc900a2a3068468b6ecf9"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Prefabs/SM_DemoCharacter.prefab",
+      "guid": "7327b306e0911f2438145dcb5d9aac35",
+      "bytes": 74369,
+      "sha256": "57ca7216375d9574f75463bbf5d2c214d57cb06676f8ca9abf42ed1e02b99c05"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Idle.anim",
+      "guid": "75dc0a30dc68695408189f6f0b2ce451",
+      "bytes": 1676528,
+      "sha256": "fc0b8326c6d584f7cefeeb86a108bf104a34bc3744b63df03a4870883a9343f4"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Model",
+      "guid": "7ff4398a9a45b5243b458ba7be0a4fde",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Dying.anim",
+      "guid": "8565a24897f4b934ab9961f8886f5485",
+      "bytes": 1817541,
+      "sha256": "7bf27c35ac862af6a021a3af5e74b32c37ee6a7e05e6b258ac805ac4f370abe8"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Prefabs",
+      "guid": "8a78b6bf8d77c914282d8d1f34d211c6",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Assets/PolyOne/Character Animation Pack/Materials/Base_M.mat",
+      "guid": "8c7d9f8c8d473574bb2380ee37955a0d",
+      "bytes": 6080,
+      "sha256": "7a0cb916931a61966360920f76fe172fa5b5a3dc1b2b7256f6b2a96f1501c715"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Climbing Down Wall.anim",
+      "guid": "91dc9a242d6dd5a49b68d16968b44c08",
+      "bytes": 2206063,
+      "sha256": "91251195744976533e99ada095bf3014e8f9d3090fece65edc5036bd0f82fa0b"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Controler",
+      "guid": "945733a77a5ef0f439925ad3f6c929d7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Walking Turn 180.anim",
+      "guid": "9828d4436723a394baf8cb204c877218",
+      "bytes": 653746,
+      "sha256": "1514b9d0ab07a5389a5252eb7182d728573bdb088b25771b90a0dff2a215b7ed"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Scene/Demo_Basic Motions.unity",
+      "guid": "9bbc63a34fb67a2499b872f1ff8705f7",
+      "bytes": 159600,
+      "sha256": "c456a781565250419497a1a5c9cd79be11bcb439f17baaba7b2fe5b671a8c780"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Tripping.anim",
+      "guid": "a1e25aacfcbbeae4ebf48eea8ebd566c",
+      "bytes": 1520506,
+      "sha256": "24b8db0f6c47160b77a45f307dc3032c119a0d4a6b7e4bc15c2b9057f5df8555"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Right.anim",
+      "guid": "a912f273b54b0724d9a386b5b710e2f6",
+      "bytes": 816643,
+      "sha256": "a29d169db5c9f7690e7ca1b0b9dbff6bed1e73ea3774d24907526695cf222c6b"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Walk.anim",
+      "guid": "aa47e2a2970913b49a627fdca6b33de7",
+      "bytes": 855953,
+      "sha256": "22226ae0274e65a1924e9c01e43f59573d3d88f50ec9db62f92b2d1d0eec490c"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Sad.anim",
+      "guid": "b3b1202dd2d06d94baf5b18956fc7d5a",
+      "bytes": 723066,
+      "sha256": "3b45c47f039c19e37a644dd15db4ce80e917ff56e12d9809b0fad666d3d43b3b"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Timeline",
+      "guid": "b77a8a1ffbfb812499480b43228b4550",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Materials/Plane_M.mat",
+      "guid": "bd995d258a00b0545be560e27461cf78",
+      "bytes": 6085,
+      "sha256": "7a3e913a0a6188dc17f3b2b463f630638593a30f93c8abf3a388889b87c0cb4c"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Scene",
+      "guid": "c7234335a3ea62b4789a60871c48bb49",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Backward.anim",
+      "guid": "caafb41ae946ba24b95ca4dfc2d2d071",
+      "bytes": 378024,
+      "sha256": "2b6a9dcd5132c0c8a363a8103d7913281b761d439a11d303a0361c92f8073502"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Model/SM_DemoCharacter.fbx",
+      "guid": "cce7c7924ba6a4d44b46f60b75581945",
+      "bytes": 1837632,
+      "sha256": "feeafba92db07a8610c858216ccfa0b9eb01b4a7a8f5887a54f1d5203fabfff8"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Happy.anim",
+      "guid": "ce4f652646e99b94bb38b8cd15c99d89",
+      "bytes": 481160,
+      "sha256": "77e9eefe74c10e248a7c03c7b8686aaf1414985f32002c1642f7813a55349e16"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Materials",
+      "guid": "d3e3a260579fde34e81b4e53af6ac5b9",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Left.anim",
+      "guid": "d71998ac78c99bc4db2a3b7b39f3dcf1",
+      "bytes": 395958,
+      "sha256": "0b27065a2f4f425704814b4184ba87d3de244ab4b8de4706b32fcbee6e3c8b06"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Angry.anim",
+      "guid": "d89540da28d05e548b2ec9a0d41ab39a",
+      "bytes": 3494883,
+      "sha256": "980b801a2d6e3253e1553b8ec4909b5db801fda49a2306e7a4aff4aaf329679b"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Materials/Joints_M.mat",
+      "guid": "e42c0608933a3c648ab005fb6de887f5",
+      "bytes": 6088,
+      "sha256": "342cc01a50a5440e402be395e32adda0354412ecb6facf40e9b5e9be54d91c60"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Timeline/Basic Motions Timeline.playable",
+      "guid": "e476cbe7f7e979c4eb1269d3a2608bbb",
+      "bytes": 81847,
+      "sha256": "c0d51480ff5b3b3b5ed7fa9b869a388913595c88610a2c940fb8fe195214a1c6"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Walk Sad.anim",
+      "guid": "e8ea1b54b1470044ab83fdc3346f3790",
+      "bytes": 1375141,
+      "sha256": "10a07df5ade6ebaa777065d777a56884f4983e37eae1fd5d7e1da4b7b489d861"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Turn Right.anim",
+      "guid": "ea502bdb588757341b80375064ec95e7",
+      "bytes": 910537,
+      "sha256": "f318425517c384e8354502bf67f63376d40e31fdb402382fa623c9c134e61ef2"
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Jumping Up.anim",
+      "guid": "ef973ac5effaa584e934d2344fce80b5",
+      "bytes": 617185,
+      "sha256": "eb663ce31a6fa447f079a1bc41109075034ed76fa99448c13baacfa07a4ea95e"
+    }
+  ],
+  "clips": [
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Angry.anim",
+      "guid": "d89540da28d05e548b2ec9a0d41ab39a",
+      "bytes": 3494883,
+      "sha256": "980b801a2d6e3253e1553b8ec4909b5db801fda49a2306e7a4aff4aaf329679b",
+      "name": "Angry",
+      "duration": 19.166668,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 14231,
+      "legacy": false,
+      "root_displacement_human_units": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "root_speed_human_units": 0.0,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Climbing Down Wall.anim",
+      "guid": "91dc9a242d6dd5a49b68d16968b44c08",
+      "bytes": 2206063,
+      "sha256": "91251195744976533e99ada095bf3014e8f9d3090fece65edc5036bd0f82fa0b",
+      "name": "Climbing Down Wall",
+      "duration": 2.0,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 4382,
+      "legacy": false,
+      "root_displacement_human_units": [
+        -1.0000000001675335e-08,
+        -1.1534054,
+        -5.200000000038507e-09
+      ],
+      "root_speed_human_units": 5.635601122194224e-09,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Dying.anim",
+      "guid": "8565a24897f4b934ab9961f8886f5485",
+      "bytes": 1817541,
+      "sha256": "7bf27c35ac862af6a021a3af5e74b32c37ee6a7e05e6b258ac805ac4f370abe8",
+      "name": "Dying",
+      "duration": 4.65,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 7370,
+      "legacy": false,
+      "root_displacement_human_units": [
+        0.068130437,
+        -0.81810104,
+        2.1366326399999997
+      ],
+      "root_speed_human_units": 0.4597244292007829,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Happy.anim",
+      "guid": "ce4f652646e99b94bb38b8cd15c99d89",
+      "bytes": 481160,
+      "sha256": "77e9eefe74c10e248a7c03c7b8686aaf1414985f32002c1642f7813a55349e16",
+      "name": "Happy",
+      "duration": 1.9833335,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 1832,
+      "legacy": false,
+      "root_displacement_human_units": [
+        -0.00036201669999999997,
+        0.0,
+        -1.1831000000000341e-05
+      ],
+      "root_speed_human_units": 0.00018262686116911892,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Idle.anim",
+      "guid": "75dc0a30dc68695408189f6f0b2ce451",
+      "bytes": 1676528,
+      "sha256": "fc0b8326c6d584f7cefeeb86a108bf104a34bc3744b63df03a4870883a9343f4",
+      "name": "Idle",
+      "duration": 9.916667,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 6731,
+      "legacy": false,
+      "root_displacement_human_units": [
+        -4.020000000026433e-08,
+        -1.4000000003733248e-07,
+        -1.7604999999996929e-07
+      ],
+      "root_speed_human_units": 1.820988859589287e-08,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Jumping Down.anim",
+      "guid": "58bf57b7d36980347923c5516c654267",
+      "bytes": 1019456,
+      "sha256": "6c1eaf05e59c80d95feda19394b5e13cd1db9475e4711a557d88b270cc2052a7",
+      "name": "Jumping Down",
+      "duration": 2.4,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 4075,
+      "legacy": false,
+      "root_displacement_human_units": [
+        -0.0035247740000000014,
+        -0.5567738,
+        2.1790748079999998
+      ],
+      "root_speed_human_units": 0.9079490244819015,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Jumping Up.anim",
+      "guid": "ef973ac5effaa584e934d2344fce80b5",
+      "bytes": 617185,
+      "sha256": "eb663ce31a6fa447f079a1bc41109075034ed76fa99448c13baacfa07a4ea95e",
+      "name": "Jumping Up",
+      "duration": 0.8333334,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 2417,
+      "legacy": false,
+      "root_displacement_human_units": [
+        0.098637086,
+        0.62052955,
+        -0.023230895
+      ],
+      "root_speed_human_units": 0.12160297902032939,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Pointing Forward.anim",
+      "guid": "23617129bda650c40b4d3f44f825fade",
+      "bytes": 909017,
+      "sha256": "482c6b6b57d0d593ce2be8ddbd1a3b94b87af3ca731cb332bfab658edbec3c02",
+      "name": "Pointing Forward",
+      "duration": 4.6833334,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 3601,
+      "legacy": false,
+      "root_displacement_human_units": [
+        -3.000000000155656e-09,
+        0.0,
+        -1.1200000000002874e-07
+      ],
+      "root_speed_human_units": 2.392316792293084e-08,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run.anim",
+      "guid": "0824048eea4f4c3468da8583ec09a01c",
+      "bytes": 620335,
+      "sha256": "bae7aeba0b047661df38cbc8a32267d0ed86e6956f5a5837a88cc088c23a7a05",
+      "name": "Run",
+      "duration": 0.6333334,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 2431,
+      "legacy": false,
+      "root_displacement_human_units": [
+        4.19999999995771e-08,
+        0.0,
+        9.000000000120023e-08
+      ],
+      "root_speed_human_units": 1.568173605629987e-07,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Backward.anim",
+      "guid": "caafb41ae946ba24b95ca4dfc2d2d071",
+      "bytes": 378024,
+      "sha256": "2b6a9dcd5132c0c8a363a8103d7913281b761d439a11d303a0361c92f8073502",
+      "name": "Run Backward",
+      "duration": 0.5666667,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 1433,
+      "legacy": false,
+      "root_displacement_human_units": [
+        2.2099999999946815e-08,
+        0.0,
+        0.0
+      ],
+      "root_speed_human_units": 3.8999997705788636e-08,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Fast.anim",
+      "guid": "5680f512d64b49d4baefc78cbf28025a",
+      "bytes": 532064,
+      "sha256": "d8b48b89fee6bfc85f32072348b956dd53e8633475d5ec88e43ccbdeecc53738",
+      "name": "Run Fast",
+      "duration": 0.5166667,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 2073,
+      "legacy": false,
+      "root_displacement_human_units": [
+        5.909999999977045e-08,
+        -0.0019184600000000662,
+        0.0001974649999999939
+      ],
+      "root_speed_human_units": 0.00038219031504085313,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Left.anim",
+      "guid": "d71998ac78c99bc4db2a3b7b39f3dcf1",
+      "bytes": 395958,
+      "sha256": "0b27065a2f4f425704814b4184ba87d3de244ab4b8de4706b32fcbee6e3c8b06",
+      "name": "Run Left",
+      "duration": 0.53333336,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 1508,
+      "legacy": false,
+      "root_displacement_human_units": [
+        -0.658618111,
+        1.299999999870849e-07,
+        2.2727327730000004
+      ],
+      "root_speed_human_units": 4.4366999112897645,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Right.anim",
+      "guid": "a912f273b54b0724d9a386b5b710e2f6",
+      "bytes": 816643,
+      "sha256": "a29d169db5c9f7690e7ca1b0b9dbff6bed1e73ea3774d24907526695cf222c6b",
+      "name": "Run Right",
+      "duration": 0.53333336,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 1508,
+      "legacy": false,
+      "root_displacement_human_units": [
+        -0.658618111,
+        1.299999999870849e-07,
+        2.2727327730000004
+      ],
+      "root_speed_human_units": 4.4366999112897645,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": true,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Turn 180.anim",
+      "guid": "5dcea7f3bac524645bbc5bdf9ac4bb56",
+      "bytes": 597225,
+      "sha256": "9081103a3eece7ee3e8422e8ca901e6ecb1f983a61fc64d34ccb1e2049d08676",
+      "name": "Run Turn 180",
+      "duration": 0.65000004,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 2338,
+      "legacy": false,
+      "root_displacement_human_units": [
+        0.00088091998,
+        -9.999999994736442e-08,
+        -0.095257778
+      ],
+      "root_speed_human_units": 0.14655668509829298,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Run Up Stairs.anim",
+      "guid": "227091afbe0715e45bf27823f64b8814",
+      "bytes": 584958,
+      "sha256": "54cc54419db323fcf477c6f0349a12523c171141b0c71b146c1024dbe955d34f",
+      "name": "Run Up Stairs",
+      "duration": 0.5833334,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 2279,
+      "legacy": false,
+      "root_displacement_human_units": [
+        0.00030778930000000026,
+        0.43714659999999994,
+        0.47999284600000003
+      ],
+      "root_speed_human_units": 0.8228449539885329,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Sad.anim",
+      "guid": "b3b1202dd2d06d94baf5b18956fc7d5a",
+      "bytes": 723066,
+      "sha256": "3b45c47f039c19e37a644dd15db4ce80e917ff56e12d9809b0fad666d3d43b3b",
+      "name": "Sad",
+      "duration": 2.7833335,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 2841,
+      "legacy": false,
+      "root_displacement_human_units": [
+        -9.200000000014752e-08,
+        -1.299999999870849e-07,
+        -6.099999999911732e-08
+      ],
+      "root_speed_human_units": 3.965952606027174e-08,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Tripping.anim",
+      "guid": "a1e25aacfcbbeae4ebf48eea8ebd566c",
+      "bytes": 1520506,
+      "sha256": "24b8db0f6c47160b77a45f307dc3032c119a0d4a6b7e4bc15c2b9057f5df8555",
+      "name": "Tripping",
+      "duration": 2.0833335,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 6159,
+      "legacy": false,
+      "root_displacement_human_units": [
+        0.49802455830000003,
+        -0.8217772,
+        2.681426566
+      ],
+      "root_speed_human_units": 1.3090961160847896,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Turn Left.anim",
+      "guid": "6c7ba1094b42fed428dc6dc8cbe0f83e",
+      "bytes": 442905,
+      "sha256": "addded9ab0792ce7fac45331370e52c9309ce9dafb5dc900a2a3068468b6ecf9",
+      "name": "Turn Left",
+      "duration": 0.9333334,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 1691,
+      "legacy": false,
+      "root_displacement_human_units": [
+        0.017398674,
+        0.0,
+        0.0020751585
+      ],
+      "root_speed_human_units": 0.01877355956282287,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Turn Right.anim",
+      "guid": "ea502bdb588757341b80375064ec95e7",
+      "bytes": 910537,
+      "sha256": "f318425517c384e8354502bf67f63376d40e31fdb402382fa623c9c134e61ef2",
+      "name": "Turn Right",
+      "duration": 0.9333334,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 1691,
+      "legacy": false,
+      "root_displacement_human_units": [
+        0.017398674,
+        0.0,
+        0.0020751585
+      ],
+      "root_speed_human_units": 0.01877355956282287,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": true,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Walk.anim",
+      "guid": "aa47e2a2970913b49a627fdca6b33de7",
+      "bytes": 855953,
+      "sha256": "22226ae0274e65a1924e9c01e43f59573d3d88f50ec9db62f92b2d1d0eec490c",
+      "name": "Walk",
+      "duration": 1.0166668,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 3392,
+      "legacy": false,
+      "root_displacement_human_units": [
+        -2.519999999991973e-08,
+        -0.0005683999999999134,
+        8.229999999987553e-08
+      ],
+      "root_speed_human_units": 8.466063433367203e-08,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Walk Sad.anim",
+      "guid": "e8ea1b54b1470044ab83fdc3346f3790",
+      "bytes": 1375141,
+      "sha256": "10a07df5ade6ebaa777065d777a56884f4983e37eae1fd5d7e1da4b7b489d861",
+      "name": "Walk Sad",
+      "duration": 1.4666667,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 2647,
+      "legacy": false,
+      "root_displacement_human_units": [
+        -1.5670000000052656e-08,
+        0.0,
+        1.079458408
+      ],
+      "root_speed_human_units": 0.7359943523637649,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Walking Turn 180.anim",
+      "guid": "9828d4436723a394baf8cb204c877218",
+      "bytes": 653746,
+      "sha256": "1514b9d0ab07a5389a5252eb7182d728573bdb088b25771b90a0dff2a215b7ed",
+      "name": "Walking Turn 180",
+      "duration": 1.0,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 2566,
+      "legacy": false,
+      "root_displacement_human_units": [
+        0.0126728207,
+        0.0,
+        -0.100728941
+      ],
+      "root_speed_human_units": 0.10152300202159031,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    },
+    {
+      "path": "Assets/PolyOne/Basic Motions/Animation/Yelling.anim",
+      "guid": "45cdb85526755f6419fd662779362e99",
+      "bytes": 1992031,
+      "sha256": "86b4b0e2820869bb615f2d8728a79066b491200f403335622c114a52caec26fc",
+      "name": "Yelling",
+      "duration": 7.833334,
+      "sample_rate": 60,
+      "curve_count": 130,
+      "key_count": 8038,
+      "legacy": false,
+      "root_displacement_human_units": [
+        -3.449999999962164e-08,
+        1.3999999992631018e-07,
+        -9.300000000135589e-08
+      ],
+      "root_speed_human_units": 1.2662934288941627e-08,
+      "humanoid_curve_count": 130,
+      "muscle_curve_count": 95,
+      "events": 0,
+      "mirrored": false,
+      "foot_translation_curves": [
+        "LeftFootT.x",
+        "LeftFootT.y",
+        "LeftFootT.z",
+        "RightFootT.x",
+        "RightFootT.y",
+        "RightFootT.z"
+      ]
+    }
+  ],
+  "native_unity_import_tested": false,
+  "quantum_source_files_present": false,
+  "asset_count": 41,
+  "clip_count": 23
+}

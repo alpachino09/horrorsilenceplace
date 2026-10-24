@@ -308,6 +308,7 @@ namespace Silence.Gameplay
             if (!IsAuthority || !CanAct(actor) || !actor.Vitals.TryHit(Time.unscaledTimeAsDouble, Rules.AttackGrace)) return false;
             DropHeld(actor, 0); DropTeammate(actor);
             if (actor.CarriedBy != null) DropTeammate(actor.CarriedBy);
+            actor.PublishAnimationCue(AnimationCueKind.Hit, creature != null ? creature.transform.position : actor.transform.position + actor.transform.forward);
             Emit(actor, actor.View.transform.position, .65f, 28, NoiseKind.Pain);
             StateChanged?.Invoke(); return true;
         }
@@ -335,6 +336,7 @@ namespace Silence.Gameplay
             var cc = actor.GetComponent<CharacterController>();
             bool enabledBefore = cc.enabled; cc.enabled = false; actor.transform.position = position; cc.enabled = enabledBefore;
             actor.SetSpawn(position, actor.transform.rotation);
+            actor.GetComponent<FirstPersonMotor>()?.ResetMotion();
         }
         private void SaveCheckpoint()
         {

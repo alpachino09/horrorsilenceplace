@@ -35,6 +35,7 @@ namespace Silence.Networking
                 actor.Settings.interactionRange, unobstructed)) return false;
             nextInteractionTime = Time.time + 0.15f;
             if (!target.Apply(actor)) return false;
+            actor.PublishAnimationCue(AnimationCueKind.Interact, hit.point);
             EmitNoise(actor, NoiseKind.Interaction, 0.2f);
             return true;
         }

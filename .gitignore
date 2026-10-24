@@ -35,3 +35,8 @@ artifacts/
 __pycache__/
 *.blend1
 *.blend2
+
+# User-supplied third-party animation art stays local; import the original licensed package.
+Assets/PolyOne/
+Assets/PolyOne.meta
+*.unitypackage

@@ -126,8 +126,9 @@ namespace Silence.Multiplayer
                 if (Context.Flashlight == null && input.FlashlightPressed) lampOn = !lampOn;
             }
             Vector2 axis = active ? input.Move : Vector2.zero;
+            if (active && input.CarefulWalk) axis *= .45f;
             command.X = axis.x; command.Z = axis.y;
-            command.Sprint = active && input.Sprint;
+            command.Sprint = active && input.Sprint && !input.CarefulWalk;
             command.Crouch = active && input.Crouch;
             command.Yaw = yaw; command.Pitch = pitch; command.Flashlight = lampOn;
         }

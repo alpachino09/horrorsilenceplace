@@ -9,7 +9,9 @@ namespace Silence.Core
         private readonly Dictionary<ulong, int> slots = new Dictionary<ulong, int>();
         public int Count => slots.Count;
         public bool Running { get; private set; }
-        public const string Protocol = "SILENCE-GAME-3";
+        // AvatarMotionSnapshot replaced the old byte payload. Reject old builds even
+        // if someone starts a preserved pre-upgrade scene with its old NGO config.
+        public const string Protocol = "SILENCE-GAME-4";
 
         public bool TryJoin(ulong clientId, string protocol, out int slot, out string reason)
         {

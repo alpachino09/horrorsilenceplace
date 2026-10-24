@@ -1,0 +1,48 @@
+{
+  "kind": "Public C# API source inspection, not Unity compilation",
+  "unity_version": "6000.6.7f1",
+  "commit": "d0e5e3e00a4f454bc2853234708c3d7c67ebca9a",
+  "native_compilation_run": false,
+  "files": [
+    {
+      "path": "Editor/Mono/Animation/AnimationClipSettings.bindings.cs",
+      "sha256": "f39e4c3fe0de13fde7726cf99e92ad888ba18daad54bb2885e0a60c3834d79c9",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Editor/Mono/Animation/AnimationClipSettings.bindings.cs"
+    },
+    {
+      "path": "Editor/Mono/Animation/AnimationUtility.bindings.cs",
+      "sha256": "f68c2dd4d3131cde847019219530f72951f45a524d8c358a89d70a323dc4b82e",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Editor/Mono/Animation/AnimationUtility.bindings.cs"
+    },
+    {
+      "path": "Editor/Mono/AnimatorControllerLayer.bindings.cs",
+      "sha256": "2b496be4c0e007b54b1c26f4ab93f602f90e061c939fd37aec5902a616c2b138",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Editor/Mono/AnimatorControllerLayer.bindings.cs"
+    },
+    {
+      "path": "Editor/Mono/StateMachine.bindings.cs",
+      "sha256": "b4d24ae6fae203621826844512e7ea92192c453141286afab2e3b02903c8090a",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Editor/Mono/StateMachine.bindings.cs"
+    },
+    {
+      "path": "Editor/Mono/EditorSceneManager.bindings.cs",
+      "sha256": "b3f1a2f2b2f83144399d39f3b969efdb362d5d23c3b07673988a16093f1b3536",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Editor/Mono/EditorSceneManager.bindings.cs"
+    },
+    {
+      "path": "Modules/Animation/ScriptBindings/Animator.bindings.cs",
+      "sha256": "4665d835e263159136f0b247e20c7f24fc20e6e3051cd7b0fb184eaa12a0fd45",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/Animation/ScriptBindings/Animator.bindings.cs"
+    },
+    {
+      "path": "Modules/Animation/ScriptBindings/AnimationClipPlayable.bindings.cs",
+      "sha256": "b18e2dacd59845563a84566aaf0a804cadd3572b4313aa4f2ec3f54df7243556",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/Animation/ScriptBindings/AnimationClipPlayable.bindings.cs"
+    },
+    {
+      "path": "Modules/Animation/ScriptBindings/AnimationPlayableOutput.bindings.cs",
+      "sha256": "d749ebb6cb2fa515cecfa925497b94949d12d588e3d9d4319c15f406109fb7c7",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/Animation/ScriptBindings/AnimationPlayableOutput.bindings.cs"
+    }
+  ]
+}

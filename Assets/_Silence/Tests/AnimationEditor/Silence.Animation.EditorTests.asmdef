@@ -1,0 +1,8 @@
+{
+  "name": "Silence.Animation.EditorTests",
+  "rootNamespace": "Silence.Tests.Animation",
+  "references": ["Silence.Core", "Silence.Runtime", "Silence.Graphics", "Silence.Multiplayer", "Silence.Visual.Editor", "Unity.Netcode.Runtime"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": false
+}

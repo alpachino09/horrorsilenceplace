@@ -69,8 +69,10 @@ namespace Silence.Editor
             bool vesper = File.Exists(Path.Combine(source, "Assets/Creatures/SilencePredator/Documentation/game-animation.json"));
             bool player = File.Exists(Path.Combine(source, "Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarDefinition.cs"));
             bool hoodedGirl = File.Exists(Path.Combine(source, "Assets/Characters/HoodedGirl/Models/HoodedGirl_LOD0.fbx"));
+            bool humanMotion = File.Exists(Path.Combine(source, "LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerAnimationWorkshop.cs"));
             Debug.Log("SILENCE: updated " + files.Length + " source/art/package files. Scenes, Generated and existing .meta preserved. " +
-                "Backup: " + backup + (hoodedGirl ? ". Wait for compilation, then SILENCE / 22 Prepare Hooded Girl Assets. Menu 23 opens an isolated preview. To install, open your latest improved GAME scene and use menu 21; that tool copies the open scene. Tactical flashlight workshop: menu 24, requires the actual flashlight model and calibrated parts." :
+                "Backup: " + backup + (humanMotion ? ". Wait for compilation, open your latest GAME scene with the girl (not preview 23), then SILENCE / 25 Human Animation Workshop. Import the original Basic Motions unitypackage and install into a COPY of the open world. The separate review lab is optional; button Return opens the game world again. Rebuild BOTH Host and Client." :
+                hoodedGirl ? ". Wait for compilation, then SILENCE / 22 Prepare Hooded Girl Assets. Menu 23 opens an isolated preview. To install, open your latest improved GAME scene and use menu 21; that tool copies the open scene. Tactical flashlight workshop: menu 24, requires the actual flashlight model and calibrated parts." :
                 player ? ". Player avatar tools: SILENCE / 21 Player Avatar Workshop. Installation requires a finished art model and controller. Keep your latest improved scene open; the tool copies that scene." :
                 vesper ? ". Wait for compilation, open the latest game scene with your improved environment, then run SILENCE / 18 Install Vesper in Game Scene. The installer copies the OPEN scene; Campaign may be the old prototype." : ". Wait for compilation, then SILENCE / 03 Install Multiplayer Package."));
         }

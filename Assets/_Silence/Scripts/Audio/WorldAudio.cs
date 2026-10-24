@@ -23,7 +23,7 @@ namespace Silence.Audio
                 source.rolloffMode = AudioRolloffMode.Linear; source.minDistance = 1; source.maxDistance = 30;
                 pool[i] = source;
             }
-            steps = new AudioClip[7];
+            steps = new AudioClip[Enum.GetValues(typeof(SurfaceKind)).Length];
             for (int i = 0; i < steps.Length; i++) steps[i] = Make("Footstep_" + (SurfaceKind)i, .22f, 55 + i * 70, .7f, 100 + i);
             impact = Make("Impact", .5f, 170, .85f, 201);
             hinge = Make("Hinge", .25f, 380, .3f, 202);
@@ -39,7 +39,8 @@ namespace Silence.Audio
             var source = pool[next++ % pool.Length]; source.transform.position = sound.Position;
             source.maxDistance = sound.Range; source.volume = Mathf.Clamp01(sound.Intensity * .65f + .05f);
             source.pitch = sound.Kind == NoiseKind.Footstep ? 1 : .9f;
-            source.clip = sound.Kind == NoiseKind.Footstep ? steps[(int)sound.Surface] : sound.Kind == NoiseKind.Impact
+            int surface = (int)sound.Surface;
+            source.clip = sound.Kind == NoiseKind.Footstep ? steps[surface >= 0 && surface < steps.Length ? surface : 0] : sound.Kind == NoiseKind.Impact
                 ? impact : sound.Kind == NoiseKind.Pain ? pain : hinge;
             source.Play();
         }

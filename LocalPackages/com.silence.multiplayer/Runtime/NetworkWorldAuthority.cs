@@ -123,6 +123,7 @@ namespace Silence.Multiplayer
             if (actor.Game == null) player.SendFeedback(applied);
             else player.SendGameplayFeedback(applied, actor.MessageUntil != previousMessageTime ? actor.Message : "");
             if (!applied) return;
+            actor.PublishAnimationCue(AnimationCueKind.Interact, hit.point);
             state.Capture();
             player.PublishInventory();
             EmitNoise(actor, NoiseKind.Interaction, .2f);

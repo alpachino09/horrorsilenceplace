@@ -1,0 +1,10 @@
+  Silence.CoreTests -> /workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll
+Test run for /workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+WARNING: Overwriting results file: /tmp/silence-animation-tests/CharacterAnimation.trx
+Results File: /tmp/silence-animation-tests/CharacterAnimation.trx
+
+Passed!  - Failed:     0, Passed:   170, Skipped:     0, Total:   170, Duration: 128 ms - Silence.CoreTests.dll (net8.0)

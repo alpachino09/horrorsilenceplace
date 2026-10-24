@@ -193,6 +193,15 @@
           "processors": "",
           "interactions": "",
           "initialStateCheck": false
+        },
+        {
+          "name": "CarefulWalk",
+          "type": "Button",
+          "id": "554f3569-f45a-4ff7-b1ab-2e826a7216ee",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
         }
       ],
       "bindings": [
@@ -644,6 +653,17 @@
           "processors": "",
           "groups": "",
           "action": "HolsterFlashlight",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "4576c69c-11ad-486e-ab9c-370a5c5b7974",
+          "path": "<Keyboard>/leftAlt",
+          "interactions": "",
+          "processors": "",
+          "groups": "Keyboard&Mouse",
+          "action": "CarefulWalk",
           "isComposite": false,
           "isPartOfComposite": false
         }

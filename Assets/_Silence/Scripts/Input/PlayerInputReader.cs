@@ -9,13 +9,14 @@ namespace Silence.Input
         private InputActionAsset instance;
         private InputAction move, look, lookStick, sprint, crouch, jump;
         private InputAction interact, flashlight, inventory, pause, capture;
-        private InputAction drop, throwItem, doorControl, reloadFlashlight, holsterFlashlight;
+        private InputAction drop, throwItem, doorControl, reloadFlashlight, holsterFlashlight, carefulWalk;
         private readonly InputAction[] useSlots = new InputAction[5];
         public InputActionAsset Template => template;
         public Vector2 Move => move?.ReadValue<Vector2>() ?? Vector2.zero;
         public Vector2 MouseLook => look?.ReadValue<Vector2>() ?? Vector2.zero;
         public Vector2 StickLook => lookStick?.ReadValue<Vector2>() ?? Vector2.zero;
         public bool Sprint => sprint != null && sprint.IsPressed();
+        public bool CarefulWalk => carefulWalk != null && carefulWalk.IsPressed();
         public bool Crouch => crouch != null && crouch.IsPressed();
         public bool JumpPressed => jump != null && jump.WasPressedThisFrame();
         public bool InteractPressed => interact != null && interact.WasPressedThisFrame();
@@ -52,6 +53,7 @@ namespace Silence.Input
             inventory = Find("Inventory"); pause = Find("Pause"); capture = Find("Capture");
             drop = Optional("Drop"); throwItem = Optional("Throw"); doorControl = Optional("DoorControl");
             reloadFlashlight = Optional("ReloadFlashlight"); holsterFlashlight = Optional("HolsterFlashlight");
+            carefulWalk = Optional("CarefulWalk");
             for (int i = 0; i < 5; i++) useSlots[i] = Optional("Use" + (i + 1));
             instance.Enable();
         }

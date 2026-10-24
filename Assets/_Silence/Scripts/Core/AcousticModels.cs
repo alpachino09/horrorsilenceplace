@@ -2,7 +2,7 @@ using System;
 
 namespace Silence.Core
 {
-    public enum SurfaceKind : byte { Dirt, Grass, Wood, Concrete, Glass, Metal, Water }
+    public enum SurfaceKind : byte { Dirt, Grass, Wood, Concrete, Glass, Metal, Water, Gravel }
     public readonly struct StepProfile
     {
         public readonly float Intensity, Range;
@@ -18,6 +18,7 @@ namespace Silence.Core
                 case SurfaceKind.Glass: intensity = .8f; range = 30; break;
                 case SurfaceKind.Metal: intensity = .6f; range = 25; break;
                 case SurfaceKind.Water: intensity = .4f; range = 20; break;
+                case SurfaceKind.Gravel: intensity = .34f; range = 19; break;
                 default: intensity = .17f; range = 13; break;
             }
             return new StepProfile(NoiseMath.Clamp01(intensity * (crouching ? .24f : running ? 1.8f : 1)), range);

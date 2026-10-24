@@ -35,6 +35,21 @@ namespace Silence.Player
         public Quaternion SpawnRotation { get; private set; }
         public string Message { get; private set; }
         public float MessageUntil { get; private set; }
+        public event System.Action<PlayerAnimationCue> AnimationCue;
+        // Authority emits once; the existing avatar network bridge distributes the event.
+        public void PublishAnimationCue(AnimationCueKind kind, Vector3 point, float strength = 1)
+        {
+            if (Authority == null || !Authority.CanSimulate(this)) return;
+            ApplyAnimationCue(new PlayerAnimationCue(kind, point, strength));
+        }
+        public void ApplyAnimationCue(PlayerAnimationCue cue)
+        {
+            bool Finite(float x) => !float.IsNaN(x) && !float.IsInfinity(x);
+            if (cue.Kind < AnimationCueKind.Interact || cue.Kind > AnimationCueKind.Inspect ||
+                !Finite(cue.Point.x) || !Finite(cue.Point.y) || !Finite(cue.Point.z) ||
+                !Finite(cue.Strength) || cue.Strength < 0 || cue.Strength > 1) return;
+            AnimationCue?.Invoke(cue);
+        }
         public void ShowMessage(string text)
         {
             Message = text;

@@ -17,6 +17,7 @@ namespace Silence.Player
         private Quaternion rightRotation;
         private bool hasRightGoal;
         private float weight;
+        private ILeftHandIKClaim otherHandIK;
         private Vector3 tapLocal,capLocal,socketLocal;
         private Quaternion tapRotation,capRotation,socketRotation;
         private LocalRest cap,oldCells,newCells;
@@ -31,6 +32,7 @@ namespace Silence.Player
         public void Configure(FlashlightVisuals value)
         {
             view=value;animator=GetComponent<Animator>();motor=view.Actor.GetComponent<FirstPersonMotor>();aim=view.Actor.View.transform.rotation;
+            otherHandIK=GetComponent<ILeftHandIKClaim>();
             var art=view.Art;
             void Marker(Transform t,out Vector3 pos,out Quaternion rot)
             { Matrix4x4 m=art.transform.worldToLocalMatrix*t.localToWorldMatrix;pos=m.GetColumn(3);rot=m.rotation; }
@@ -78,7 +80,7 @@ namespace Silence.Player
         }
         private void OnAnimatorIK(int layer)
         {
-            if(layer!=0 || view==null || view.Art==null || animator==null)return;
+            if(view==null || view.Art==null || animator==null || !PlayerAnimatorIK.IsFinalPass(animator,layer))return;
             var frame=view.Controller.Frame;float phase=frame.duration>0?Mathf.Clamp01((float)((view.Controller.Clock-frame.startedAt)/frame.duration)):1;
             animator.SetIKPositionWeight(AvatarIKGoal.RightHand,weight);animator.SetIKRotationWeight(AvatarIKGoal.RightHand,weight);
             animator.SetIKPosition(AvatarIKGoal.RightHand,rightPosition+rightRotation*view.GripPosition);animator.SetIKRotation(AvatarIKGoal.RightHand,rightRotation*view.GripRotation);
@@ -99,7 +101,8 @@ namespace Silence.Player
                 if(phase>.12f && phase<.28f)rotation*=Quaternion.AngleAxis(-720*Smooth(.12f,.28f,phase),Vector3.forward);
                 if(phase>.83f)rotation*=Quaternion.AngleAxis(720*Smooth(.83f,.95f,phase),Vector3.forward);
             }
-            animator.SetIKPositionWeight(AvatarIKGoal.LeftHand,leftWeight*weight);animator.SetIKRotationWeight(AvatarIKGoal.LeftHand,leftWeight*weight);
+            if(leftWeight>0 || otherHandIK==null || !otherHandIK.OwnsLeftHand)
+            { animator.SetIKPositionWeight(AvatarIKGoal.LeftHand,leftWeight*weight);animator.SetIKRotationWeight(AvatarIKGoal.LeftHand,leftWeight*weight); }
             if(leftWeight>0){animator.SetIKPosition(AvatarIKGoal.LeftHand,left);animator.SetIKRotation(AvatarIKGoal.LeftHand,rotation);}
             animator.SetIKHintPositionWeight(AvatarIKHint.LeftElbow,leftWeight*weight*.5f);animator.SetIKHintPosition(AvatarIKHint.LeftElbow,view.Actor.View.transform.TransformPoint(new Vector3(-.42f,-.33f,.13f)));
         }
