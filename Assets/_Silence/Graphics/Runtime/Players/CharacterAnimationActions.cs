@@ -20,6 +20,7 @@ namespace Silence.Graphics.Players
         private int upper = -1, reactions = -1;
         public bool OwnsLeftHand => actor != null && actor.Vitals.Alive && current == AnimationCueKind.Interact && Time.time < actionUntil && !FlashlightBusy && !Carrying;
         public bool AllowFeet => current != AnimationCueKind.Trip || Time.time >= actionUntil;
+        public bool AllowRelaxedArms => Time.time >= actionUntil;
         public bool HasLookTarget => Time.time < lookUntil;
         public Vector3 LookTarget => point;
         private bool Carrying => actor.HeldProp != null || actor.HeldTeammate != null || actor.CarriedBy != null;

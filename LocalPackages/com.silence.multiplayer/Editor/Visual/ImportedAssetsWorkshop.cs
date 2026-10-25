@@ -15,7 +15,7 @@ namespace Silence.Multiplayer.Editor.Visual
 {
     public sealed class ImportedAssetsWorkshop : EditorWindow
     {
-        public const string Version="0.5.0";
+        public const string Version="0.5.1";
         [SerializeField] private DefaultAsset textureFolder,motionFolder;
         [SerializeField] private bool textures=true,motions=true,details;
         [SerializeField] private float tileMetres=4;

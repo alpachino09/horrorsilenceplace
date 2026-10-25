@@ -1,9 +1,9 @@
 {
   "kind": "delivery integrity/static updater compatibility; not a Unity test",
-  "archive": "Downloads/SILENCE_HumanMotion_0.5.0.zip",
-  "bytes": 432353,
-  "sha256": "be77184c5511a3da5292122649f2771cc6e4270ff38d7b3f2bca2d5211e0ad9f",
-  "passed": 623,
+  "archive": "Downloads/SILENCE_HumanMotion_0.5.1.zip",
+  "bytes": 437685,
+  "sha256": "093ba0df33c02a089f5266f1c92642e98d876b7cbf8103fc072d903be8c490ed",
+  "passed": 631,
   "failed": 0,
   "checks": [
     {
@@ -272,6 +272,10 @@
     },
     {
       "check": "full installer includes verified source Assets/_Silence/Scripts/Core/InventoryModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/NaturalArmPostureModel.cs",
       "passed": true
     },
     {
@@ -580,6 +584,10 @@
     },
     {
       "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/ImportedAssetTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/NaturalArmPostureTests.cs",
       "passed": true
     },
     {
@@ -1255,6 +1263,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Scripts/Core/NaturalArmPostureModel.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Core/NaturalArmPostureModel.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Scripts/Core/NoiseMath.cs",
       "passed": true
     },
@@ -1871,6 +1887,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Tests/EditMode/NaturalArmPostureTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/EditMode/NaturalArmPostureTests.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Tests/EditMode/NetworkRulesTests.cs",
       "passed": true
     },
@@ -1972,6 +1996,14 @@
     },
     {
       "check": "current complete source Docs/Animation/NATIVE_CHECKS_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Docs/Animation/NATURAL_ARMS_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/Animation/NATURAL_ARMS_RU.md",
       "passed": true
     },
     {

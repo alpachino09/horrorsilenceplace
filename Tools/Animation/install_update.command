@@ -71,4 +71,4 @@ done
 printf 'SILENCE @VERSION@\nProject: %s\nBackup: %s\nFiles: %s\n' "$project" "$backup" "${#files[@]}" > "$project/Library/Silence/UpdateInstalled.txt"
 started=0
 printf '\nУстановлено SILENCE @VERSION@: %s проверенных файлов.\nПроект: %s\nBackup: %s\n' "${#files[@]}" "$project" "$backup"
-printf 'Импортированные ассеты и .meta сохранены. Открой этот проект в Unity, дождись компиляции.\nДалее SILENCE → 28 Imported Textures and Human Motions.\n'
+printf 'Импортированные ассеты и .meta сохранены. Открой этот проект в Unity, дождись компиляции.\nДля исправления рук: Play в нынешнем мире; создавать новую копию не нужно.\nПодключение новых ассетов при необходимости: SILENCE → 28 Imported Textures and Human Motions.\n'

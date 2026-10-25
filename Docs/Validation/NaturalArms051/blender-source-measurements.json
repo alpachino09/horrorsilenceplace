@@ -1,0 +1,14 @@
+{
+  "kind": "Previously observed read-only Blender inspection in this task; not the user Unity Avatar or screenshot pose",
+  "source": "HoodedGirl 11_fbx_export.blend / Idle first frame",
+  "source_sha256": "11cde86bb731fd427e77611696cfb17c38eb39b34fd08aac3588cbf33842aeb3",
+  "coordinate_system": "Blender metres, Z up",
+  "torso_weighted_mesh_max_half_width": 0.1743992567062378,
+  "torso_weighted_mesh_max_half_depth": 0.16309331357479095,
+  "shoulder_half_span": 0.1662869155406952,
+  "hips_height": 0.885259211063385,
+  "left_upper_arm_height": 1.3581007719039917,
+  "left_elbow_height": 1.113541603088379,
+  "left_hand_height": 0.8921193480491638,
+  "native_unity_measurement": false
+}

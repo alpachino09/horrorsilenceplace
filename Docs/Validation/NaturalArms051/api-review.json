@@ -1,0 +1,21 @@
+{
+  "kind": "Public API source review, not native compilation",
+  "unity_version": "6000.6.7f1",
+  "commit": "d0e5e3e00a4f454bc2853234708c3d7c67ebca9a",
+  "facts": [
+    "Animator GetIKPositionWeight/GetIKRotationWeight and position/rotation/hint setters are public and used inside the final OnAnimatorIK callback",
+    "Quaternion.FromToRotation is public; wrist orientation follows forearm direction without assuming FBX local axes"
+  ],
+  "files": [
+    {
+      "path": "Modules/Animation/ScriptBindings/Animator.bindings.cs",
+      "sha256": "4665d835e263159136f0b247e20c7f24fc20e6e3051cd7b0fb184eaa12a0fd45",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/Animation/ScriptBindings/Animator.bindings.cs"
+    },
+    {
+      "path": "Runtime/Export/Math/Math.bindings.cs",
+      "sha256": "dc2b00fd7e71c634a2f0c598ae1736348c4bb95169bb6144b68594df621ff040",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Math/Math.bindings.cs"
+    }
+  ]
+}

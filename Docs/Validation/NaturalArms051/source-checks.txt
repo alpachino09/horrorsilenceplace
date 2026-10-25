@@ -1,0 +1,3 @@
+C# 9 syntax: 179 files, 7 preprocessor configurations, 0 errors. Unity API binding is NOT checked.
+Diagnostic build guards: 7 configurations, 0 contract errors. Editor/instrumented code is present; release automation is excluded.
+Selected C# scope diagnostics (CS0136, CS0128, CS0100): 7 configurations, 0 errors. Other semantic errors and Unity API binding are NOT checked.

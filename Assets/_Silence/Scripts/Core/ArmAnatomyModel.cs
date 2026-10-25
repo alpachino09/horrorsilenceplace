@@ -69,14 +69,15 @@ namespace Silence.Core
         // A two-link solve with measured limb lengths, a stable pole plane and
         // a nonzero elbow bend. Never stretches the skeleton to reach a target.
         public static ArmSolution Solve(RigVector shoulder, RigVector elbow, RigVector requested,
-            float upper, float forearm, float side, TorsoEnvelope torso, float handRadius, float armRadius, BodyCapsule[] limbs=null)
+            float upper, float forearm, float side, TorsoEnvelope torso, float handRadius, float armRadius, BodyCapsule[] limbs=null,
+            TorsoEnvelope? attachment=null,RigVector? elbowHint=null)
         {
             if (!shoulder.Finite || !elbow.Finite || !requested.Finite || !(upper > .02f && upper < 1) || !(forearm > .02f && forearm < 1))
                 return new ArmSolution(requested, elbow, false, true);
             float sign = side < 0 ? -1 : 1;
             var hand = Clear(requested, torso, limbs, handRadius, sign);
-            var preferred = new RigVector(sign, -.15f, .25f).Normalized;
-            bool correction = (hand-requested).Length > .0001f || Contact(shoulder,elbow,requested,torso,limbs,armRadius);
+            var preferred = new RigVector(sign*.25f, -.65f, .4f).Normalized;
+            bool correction = (hand-requested).Length > .0001f || Contact(shoulder,elbow,requested,torso,limbs,armRadius,attachment);
             var solved = elbow;
             for (int iteration = 0; iteration < 8; iteration++)
             {
@@ -87,7 +88,7 @@ namespace Silence.Core
                 float distance = Math.Max(minimum, Math.Min(maximum, delta.Length));
                 var direction = delta.Length > .0001f ? delta.Normalized : new RigVector(sign*.1f, -1, .2f).Normalized;
                 hand = shoulder+direction*distance;
-                var pole = elbow-shoulder;
+                var pole = (elbowHint ?? elbow)-shoulder;
                 pole = pole-direction*RigVector.Dot(pole, direction);
                 if (pole.Length < .01f || iteration > 0 || Inside(elbow,torso,limbs,armRadius))
                     pole = preferred-direction*RigVector.Dot(preferred, direction);
@@ -95,14 +96,14 @@ namespace Silence.Core
                 float along = (upper*upper-forearm*forearm+distance*distance)/(2*distance);
                 float height = (float)Math.Sqrt(Math.Max(0, upper*upper-along*along));
                 solved = shoulder+direction*along+pole.Normalized*height;
-                bool contact = Contact(shoulder, solved, hand, torso, limbs, armRadius) || Inside(hand, torso, limbs, handRadius);
+                bool contact = Contact(shoulder, solved, hand, torso, limbs, armRadius,attachment) || Inside(hand, torso, limbs, handRadius);
                 if (!contact) break;
                 correction = true;
                 if (iteration == 7) break;
                 // Iterate a bounded outward adjustment; unreachable cases are reported.
                 hand = Clear(hand+preferred*.018f, torso, limbs, handRadius, sign);
             }
-            bool remaining = Contact(shoulder, solved, hand, torso, limbs, armRadius) || Inside(hand, torso, limbs, handRadius);
+            bool remaining = Contact(shoulder, solved, hand, torso, limbs, armRadius,attachment) || Inside(hand, torso, limbs, handRadius);
             correction |= (hand-requested).Length > .002f || Inside(elbow,torso,limbs,armRadius);
             return new ArmSolution(hand, solved, correction, remaining);
         }
@@ -121,13 +122,13 @@ namespace Silence.Core
             if(limbs!=null)for(int i=0;i<limbs.Length;i++)if((limbs[i].Clear(p,radius,p.X)-p).Length>.0001f)return true;
             return false;
         }
-        private static bool Contact(RigVector shoulder, RigVector elbow, RigVector hand, TorsoEnvelope torso, BodyCapsule[] limbs, float radius)
+        private static bool Contact(RigVector shoulder, RigVector elbow, RigVector hand, TorsoEnvelope torso, BodyCapsule[] limbs, float radius,TorsoEnvelope? attachment)
         {
             for (int i=0; i<=6; i++)
                 if (Inside(elbow+(hand-elbow)*(i/6f),torso,limbs,radius)) return true;
             // The shoulder joint joins the torso; test beyond that attachment.
             for(int i=2;i<=6;i++)
-                if(Inside(shoulder+(elbow-shoulder)*(i/6f),torso,limbs,radius))return true;
+                if(Inside(shoulder+(elbow-shoulder)*(i/6f),attachment ?? torso,limbs,radius))return true;
             return false;
         }
     }

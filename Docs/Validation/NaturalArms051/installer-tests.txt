@@ -1,0 +1,10 @@
+test_copy_failure_restores_old_code_and_removes_new_files (__main__.FullInstallerTests.test_copy_failure_restores_old_code_and_removes_new_files) ... ok
+test_full_update_adds_new_code_preserves_vendor_art_world_and_meta (__main__.FullInstallerTests.test_full_update_adds_new_code_preserves_vendor_art_world_and_meta) ... ok
+test_reinstall_preserves_sources_and_separate_backups (__main__.FullInstallerTests.test_reinstall_preserves_sources_and_separate_backups) ... ok
+test_tampered_source_is_rejected_before_writing (__main__.FullInstallerTests.test_tampered_source_is_rejected_before_writing) ... ok
+test_wrong_project_is_rejected_before_writing (__main__.FullInstallerTests.test_wrong_project_is_rejected_before_writing) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 38.179s
+
+OK

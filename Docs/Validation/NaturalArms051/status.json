@@ -1,0 +1,46 @@
+{
+  "version": "0.5.1",
+  "scope": "Natural unclaimed arm goals and shoulder attachment clearance in existing runtime IK coordinator",
+  "user_evidence": "Screenshot shows abducted elbows; user confirms the pose occurs without flashlight or items",
+  "core_tests": {
+    "passed": 275,
+    "failed": 0,
+    "new_cases": 11,
+    "new_random_pose_checks": 500
+  },
+  "installer_tests": {
+    "passed": 5,
+    "failed": 0,
+    "exact_shipped_script_sha256": "ad21b535345d23e34a49da697ccaf20df9fcb98599405cff2a16315d3dbf86ed",
+    "platform": "Linux bash; macOS folder picker not run"
+  },
+  "csharp_source_checks": {
+    "files": 179,
+    "configurations": 7,
+    "syntax_errors": 0,
+    "guard_errors": 0,
+    "selected_scope_errors": 0,
+    "unity_api_binding_checked": false
+  },
+  "static_structure": {
+    "passed": 251,
+    "failed": 0
+  },
+  "delivery": {
+    "files": 214,
+    "passed": 631,
+    "bytes": 437685,
+    "sha256": "093ba0df33c02a089f5266f1c92642e98d876b7cbf8103fc072d903be8c490ed"
+  },
+  "new_prefab_or_scene_required": false,
+  "source_bone_scale_changed": false,
+  "independent_ik_controller_added": false,
+  "runtime_network_packet_changed": false,
+  "native_unity_compilation_run": false,
+  "native_unity_play_tested": false,
+  "native_visual_acceptance_confirmed": false,
+  "user_pose_bone_angles_measured": false,
+  "existing_natural_idle_retained_by_model": true,
+  "authored_walk_swing_retained_by_model": true,
+  "active_ik_hand_goals_have_priority_over_neutral_posture": true
+}
