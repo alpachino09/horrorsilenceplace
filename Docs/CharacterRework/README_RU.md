@@ -1,8 +1,9 @@
 # Персонажи и руки — техническое обновление 0.4.4
 
-**Для остановки 27 на Body_Clothed установи 0.4.6 через 00 и снова выполни 27
-из текущего игрового мира.** Повторять 25 и вручную менять протокол не нужно.
-Подробности: [BOUNDS_FIX_RU.md](BOUNDS_FIX_RU.md).
+**Для ошибки Basic_Idle / Body_Clothed / размер 130 метров установи 0.4.7
+через 00 и снова выполни 27 из текущего игрового мира.** Повторять 25 и
+вручную менять протокол не нужно. Версия 0.4.6 не устранила ошибку на Mac.
+Подробности и границы проверки: [SKINNING_SCALE_FIX_RU.md](SKINNING_SCALE_FIX_RU.md).
 
 **Исправление 0.4.5:** два жёлтых CS0618 в `BasicMotionsCatalog` устранены
 заменой импорта на `UnityEditor.AssetPackage.Package.Import` для Unity 6.6+.
@@ -18,9 +19,9 @@
 ## Установка простыми шагами
 
 1. Останови Play и сохрани **свой нынешний улучшенный игровой мир** с героиней.
-2. Скачай `Downloads/SILENCE_HumanMotion_0.4.4.zip` кнопкой **Download raw file**
+2. Скачай `Downloads/SILENCE_HumanMotion_0.4.7.zip` кнопкой **Download raw file**
    на GitHub. Распакуй. В Unity: **SILENCE → 00 Update Sources From Folder**,
-   выбери распакованную папку `SILENCE_HumanMotion_0.4.4` с Assets и LocalPackages.
+   выбери распакованную папку `SILENCE_HumanMotion_0.4.7` с Assets и LocalPackages.
 3. Дождись компиляции. **SILENCE → 27 Character Rework and Audit →
    Создать копию мира: исправить и проверить персонажей**.
 4. Дождись проверки клипов с полоской прогресса. Она обрабатывает реальные

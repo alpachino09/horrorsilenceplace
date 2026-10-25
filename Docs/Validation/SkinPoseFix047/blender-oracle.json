@@ -1,0 +1,45 @@
+{
+  "kind": "Blender native deformation compared to production C# SkinPoseModel; not Unity retarget sampling",
+  "source_sha256": "11cde86bb731fd427e77611696cfb17c38eb39b34fd08aac3588cbf33842aeb3",
+  "blender": "5.2.3 LTS",
+  "renderer": "Body_Clothed",
+  "original_vertices": 39041,
+  "fixture": "Tools/CharacterRework/Tests/SkinPoseFixture.json",
+  "fixture_sha256": "889b9627c24b866ff7af218ddae1370bfb52aeb79ae6e9186539c4af7d5108ca",
+  "sampled_vertices": 64,
+  "poses": [
+    {
+      "clip": "Idle",
+      "phase": 0
+    },
+    {
+      "clip": "Idle",
+      "phase": 0.5
+    },
+    {
+      "clip": "Walk",
+      "phase": 0.25
+    },
+    {
+      "clip": "Run",
+      "phase": 0.5
+    },
+    {
+      "clip": "CrouchIdle",
+      "phase": 0
+    },
+    {
+      "clip": "Jump",
+      "phase": 0.25
+    },
+    {
+      "clip": "Death",
+      "phase": 1
+    }
+  ],
+  "comparisons": 448,
+  "tolerance_meters": 0.0002,
+  "worst_error_meters": 4.5197459e-07,
+  "passed": true,
+  "native_unity_run": false
+}

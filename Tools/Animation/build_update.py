@@ -11,7 +11,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "0.4.6"
+VERSION = "0.4.7"
 NAME = "SILENCE_HumanMotion_" + VERSION
 DIRECTORIES = ["Assets/_Silence/Scripts", "Assets/_Silence/Editor", "Assets/_Silence/Tests",
                "Assets/_Silence/Settings", "Assets/_Silence/Graphics",
@@ -31,6 +31,16 @@ def build():
     for path in (ROOT / "Docs/CharacterRework").glob("*.md"):
         files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
     files["README_RU.md"] = (f"SILENCE Human Motion {VERSION}\n\n"
+        "0.4.7: измерение skin по костям и bind poses вместо преобразования результата BakeMesh.\n"
+        "Это обновление для ошибки Basic_Idle / Body_Clothed / размер 130 метров после 0.4.6.\n"
+        "Останови Play, обнови код через 00 из этой распакованной папки, дождись компиляции.\n"
+        "Оставь открытым свой текущий игровой ..._Motion мир и снова создай копию через 27.\n"
+        "25, импорт модели и ручная смена протокола для этого обновления не нужны.\n"
+        "Реальная большая деформация не уменьшается автоматически: при отказе полная диагностика\n"
+        "появится в Console как SILENCE CharacterRework diagnostics и сохранится в Library/Silence.\n"
+        "Подробности: Docs/CharacterRework/SKINNING_SCALE_FIX_RU.md.\n"
+        "Математика проверена также на настоящих деформированных вершинах Blender-модели;\n"
+        "нативный Humanoid-сэмплинг в Unity 6000.6.7f1 в облаке не запускался.\n\n"
         "0.4.6 исправляет проверку bounds в пункте 27: отдельные позы, полная матрица масштаба, изолированный AnimatorController.\n"
         "Если 27 остановился на Body_Clothed: обнови через 00, дождись компиляции и снова создай копию через 27\n"
         "из своего ТЕКУЩЕГО ..._Motion мира. Повторять импорт пакета и генерацию анимаций через 25 ради старого сообщения не нужно.\n"

@@ -1,0 +1,45 @@
+{
+  "version": "0.4.7",
+  "scope": "Actor-space bounds via bind-pose skinning; diagnose genuine Avatar-scale failures without guessed resizing",
+  "core_tests": {
+    "passed": 213,
+    "failed": 0,
+    "new_cases": 11
+  },
+  "blender_deformation_oracle": {
+    "comparisons": 448,
+    "passed": true,
+    "worst_error_meters": 4.5197459e-07,
+    "native_unity_retarget_test": false
+  },
+  "csharp_source_checks": {
+    "files": 170,
+    "configurations": 7,
+    "syntax_errors": 0,
+    "guard_errors": 0,
+    "selected_scope_errors": 0,
+    "unity_api_binding_checked": false
+  },
+  "static_structure": {
+    "passed": 247,
+    "failed": 0
+  },
+  "delivery": {
+    "files": 199,
+    "passed": 403,
+    "bytes": 384845,
+    "sha256": "f7ba4eed15dcfbe35f79f735f8f913b350ecf56c8a3e942c6e0fd69dca21e01d"
+  },
+  "new_native_test_cases_provided_but_not_run": 12,
+  "native_unity_compilation_run": false,
+  "native_unity_pose_sampling_run": false,
+  "user_failure_reproduced_in_native_unity": false,
+  "original_user_failure_json_received": false,
+  "previous_update_046_resolved_user_failure": false,
+  "native_success_on_user_mac_confirmed": false,
+  "failure_diagnostics_also_logged_to_console": true,
+  "automatic_hundredfold_resize": false,
+  "original_scene_preserved_on_failure": true,
+  "manual_protocol_change_required": false,
+  "repeat_menu_25_required": false
+}

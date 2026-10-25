@@ -1,9 +1,9 @@
 {
   "kind": "delivery integrity/static updater compatibility; not a Unity test",
-  "archive": "Downloads/SILENCE_HumanMotion_0.4.6.zip",
-  "bytes": 373649,
-  "sha256": "b6d9bf327e107dba3831dfe2ece0fe2dc513700c3a3b41f938e9d54ceb34951e",
-  "passed": 393,
+  "archive": "Downloads/SILENCE_HumanMotion_0.4.7.zip",
+  "bytes": 384845,
+  "sha256": "f7ba4eed15dcfbe35f79f735f8f913b350ecf56c8a3e942c6e0fd69dca21e01d",
+  "passed": 403,
   "failed": 0,
   "checks": [
     {
@@ -511,6 +511,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Scripts/Core/SkinPoseModel.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Core/SkinPoseModel.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Scripts/Core/SurvivalModel.cs",
       "passed": true
     },
@@ -999,6 +1007,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Tests/AnimationEditor/SkinPoseReferenceTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/AnimationEditor/SkinPoseReferenceTests.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Tests/EditMode/ArmAnatomyTests.cs",
       "passed": true
     },
@@ -1076,6 +1092,14 @@
     },
     {
       "check": "current complete source Assets/_Silence/Tests/EditMode/SkinBoundsTests.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Tests/EditMode/SkinPoseTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/EditMode/SkinPoseTests.cs",
       "passed": true
     },
     {
@@ -1188,6 +1212,14 @@
     },
     {
       "check": "current complete source Docs/CharacterRework/REPORT_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Docs/CharacterRework/SKINNING_SCALE_FIX_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/CharacterRework/SKINNING_SCALE_FIX_RU.md",
       "passed": true
     },
     {
@@ -1364,6 +1396,14 @@
     },
     {
       "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/Silence.Visual.Editor.asmdef",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/Visual/SkinPoseSampler.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/SkinPoseSampler.cs",
       "passed": true
     },
     {

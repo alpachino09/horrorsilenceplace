@@ -20,6 +20,9 @@
     <Compile Include="../../Assets/_Silence/Tests/EditMode/PlayerViewTests.cs" />
     <Compile Include="../../Assets/_Silence/Tests/EditMode/ArmAnatomyTests.cs" />
     <Compile Include="../../Assets/_Silence/Tests/EditMode/SkinBoundsTests.cs" />
+    <Compile Include="../../Assets/_Silence/Tests/EditMode/SkinPoseTests.cs" />
+    <Compile Include="../CharacterRework/Tests/SkinPoseFixtureTests.cs" />
+    <None Include="../CharacterRework/Tests/SkinPoseFixture.json" Link="SkinPoseFixture.json" CopyToOutputDirectory="PreserveNewest" />
     <Compile Include="../../Assets/Characters/HoodedGirl/Editor/HoodedGirlPreparation.cs" />
     <Compile Include="../HoodedGirl/Tests/HumanoidMappingTests.cs" />
     <None Include="../HoodedGirl/Tests/fbx_hierarchy.json" Link="HoodedGirl-fbx-hierarchy.json" CopyToOutputDirectory="PreserveNewest" />

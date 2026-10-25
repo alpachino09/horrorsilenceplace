@@ -19,7 +19,7 @@ namespace Silence.Multiplayer.Editor.Visual
         [Serializable] public sealed class Report
         {
             public string kind="Unity Editor geometry/pose measurements; native Play acceptance is separate";
-            public string samplingMode="Isolated AnimatorController, applyRootMotion=false, reset between clips";
+            public string samplingMode="Isolated AnimatorController, applyRootMotion=false, reset between clips; bind-pose CPU skinning in actor space";
             public int opaqueMaterials, normalizedMeshes, sampledClips, sampledPoses;
             public bool nativePoseSampled, envelopeSampled, nativePlayTested;
             public float torsoWidth, torsoDepth;
@@ -27,14 +27,17 @@ namespace Silence.Multiplayer.Editor.Visual
             public List<Skin> skins=new List<Skin>();
             public List<Pose> poses=new List<Pose>();
         }
-        [Serializable] public sealed class Skin { public string renderer, mesh; public int vertices, repairedVertices; public Vector3 sampledBoundsSize, maximumPoseActorSize; }
+        [Serializable] public sealed class Skin { public string renderer, mesh; public int vertices, repairedVertices; public Vector3 sampledBoundsSize, maximumPoseActorSize, restActorSize; }
         [Serializable] public sealed class Pose { public string clip; public float seconds, leftWristFromHips, rightWristFromHips; public Vector3 leftWrist, rightWrist; }
         [Serializable] public sealed class Failure
         {
-            public string version="0.4.6", scene, clip, clipPath, renderer, message;
-            public float seconds, expectedHeight, planarHipTravel;
-            public Vector3 localBoundsSize, actorBoundsSize, rendererScale;
+            public string version="0.4.7", scene, clip, clipPath, renderer, message, avatarPath, nativeBakeError;
+            public string measurement="sum(weight * bone.localToWorld * bindpose * shapedVertex); preview world = actor space";
+            public float seconds, expectedHeight, planarHipTravel, humanScale;
+            public Vector3 localBoundsSize, actorBoundsSize, restActorBoundsSize, rendererScale, nativeBakeLocalSize, nativeBakeTransformedSize;
+            public List<BoneMeasure> bones=new List<BoneMeasure>();
         }
+        [Serializable] public sealed class BoneMeasure { public string bone;public float restParentDistance,poseParentDistance;public Vector3 restScale,poseScale; }
         private sealed class Rest
         {
             public Transform transform;public Vector3 position,scale;public Quaternion rotation;
@@ -100,7 +103,7 @@ namespace Silence.Multiplayer.Editor.Visual
         {
             var clips=source.runtimeAnimatorController.animationClips.Where(c=>c!=null && c.isHumanMotion && c.name!="BreathGame").Distinct().ToArray();
             if(clips.Length==0)throw new InvalidOperationException("Нет Humanoid-клипов для проверки деформаций.");
-            Scene preview=EditorSceneManager.NewPreviewScene();GameObject clone=null;Mesh baked=null;
+            Scene preview=EditorSceneManager.NewPreviewScene();GameObject clone=null;
             string controllerPath=folder+"/__PoseSampling.controller";
             var measured=new Bounds[originals.Length];var hasBounds=new bool[originals.Length];float width=.08f,depth=.07f;
             var context=new Failure{scene=SceneManager.GetActiveScene().path,expectedHeight=actor.Settings.standingHeight};
@@ -118,7 +121,15 @@ namespace Silence.Multiplayer.Editor.Visual
                 animator.fireEvents=false;animator.cullingMode=AnimatorCullingMode.AlwaysAnimate;animator.Rebind();
                 var rest=clone.GetComponentsInChildren<Transform>(true).Select(t=>new Rest(t)).ToArray();
                 var copies=clone.GetComponentsInChildren<SkinnedMeshRenderer>(true).ToDictionary(r=>AnimationUtility.CalculateTransformPath(r.transform,clone.transform));
-                baked=new Mesh{name="SILENCE temporary pose bounds"};
+                var samplers=report.skins.Select(s=>new SkinPoseSampler(copies[s.renderer])).ToArray();
+                for(int r=0;r<samplers.Length;r++){context.renderer=report.skins[r].renderer;samplers[r].Sample(Matrix4x4.identity);report.skins[r].restActorSize=samplers[r].ActorBounds.size;}
+                context.humanScale=animator.humanScale;context.avatarPath=AssetDatabase.GetAssetPath(animator.avatar);
+                var tracked=new[]{HumanBodyBones.Hips,HumanBodyBones.Spine,HumanBodyBones.Chest,HumanBodyBones.Head,
+                    HumanBodyBones.LeftUpperArm,HumanBodyBones.LeftLowerArm,HumanBodyBones.LeftHand,
+                    HumanBodyBones.RightUpperArm,HumanBodyBones.RightLowerArm,HumanBodyBones.RightHand,
+                    HumanBodyBones.LeftUpperLeg,HumanBodyBones.LeftLowerLeg,HumanBodyBones.LeftFoot};
+                var trackedBones=tracked.Select(animator.GetBoneTransform).Where(t=>t!=null && t.parent!=null).ToArray();
+                foreach(var bone in trackedBones)context.bones.Add(new BoneMeasure{bone=bone.name,restParentDistance=Vector3.Distance(bone.position,bone.parent.position),restScale=bone.lossyScale});
                 // Match gameplay's controller root-motion processing. Raw clip
                 // Playables and state retained from a preceding clip are not used.
                 var controller=AnimatorController.CreateAnimatorControllerAtPath(controllerPath);
@@ -140,6 +151,7 @@ namespace Silence.Multiplayer.Editor.Visual
                         context.seconds=clips[c].length*f/8;context.renderer=null;context.localBoundsSize=context.actorBoundsSize=Vector3.zero;
                         animator.Play(stateHash,0,f/8f);animator.Update(0);
                         if(animator.GetCurrentAnimatorStateInfo(0).fullPathHash!=stateHash)throw new InvalidOperationException("Не запущено изолированное состояние проверки: "+clips[c].name);
+                        for(int b=0;b<trackedBones.Length;b++){var bone=trackedBones[b];context.bones[b].poseParentDistance=Vector3.Distance(bone.position,bone.parent.position);context.bones[b].poseScale=bone.lossyScale;}
                         var hip=animator.GetBoneTransform(HumanBodyBones.Hips);var upper=animator.GetBoneTransform(HumanBodyBones.UpperChest) ?? animator.GetBoneTransform(HumanBodyBones.Chest);
                         var left=animator.GetBoneTransform(HumanBodyBones.LeftHand);var right=animator.GetBoneTransform(HumanBodyBones.RightHand);
                         if(!Finite(hip.position))throw new InvalidOperationException("Некорректная позиция Hips: "+clips[c].name);
@@ -150,22 +162,27 @@ namespace Silence.Multiplayer.Editor.Visual
                         for(int r=0;r<originals.Length;r++)
                         {
                             var copy=copies[report.skins[r].renderer];context.renderer=report.skins[r].renderer;
-                            baked.Clear();copy.BakeMesh(baked,false);baked.RecalculateBounds();
-                            var bounds=baked.bounds;var actorBounds=ToActorBounds(bounds,copy.transform.localToWorldMatrix);
+                            context.restActorBoundsSize=report.skins[r].restActorSize;
+                            var sampler=samplers[r];sampler.Sample(Matrix4x4.identity);
+                            var bounds=sampler.LocalBounds;var actorBounds=sampler.ActorBounds;
                             context.localBoundsSize=bounds.size;context.actorBoundsSize=actorBounds.size;context.rendererScale=copy.transform.lossyScale;
                             if(!Finite(bounds.center) || !Finite(bounds.size) || !Finite(actorBounds.center) || !Finite(actorBounds.size))throw new InvalidOperationException("Неконечная геометрия в "+clips[c].name+", "+copy.name);
-                            if(actorBounds.size.magnitude>actor.Settings.standingHeight*4)throw new InvalidOperationException("Слишком большая отдельная поза: "+clips[c].name+", t="+context.seconds.ToString("F3")+", "+copy.name+", размер в метрах "+actorBounds.size+". Исходный мир сохранён.");
+                            if(actorBounds.size.magnitude>actor.Settings.standingHeight*4)
+                            {
+                                CompareNativeBake(copy,context);
+                                throw new InvalidOperationException("Большая поза подтверждена по костям и bind poses: "+clips[c].name+", t="+context.seconds.ToString("F3")+", "+copy.name+", размер в метрах "+actorBounds.size+", Avatar humanScale="+context.humanScale.ToString("F4")+". Исходный мир сохранён.");
+                            }
                             report.skins[r].maximumPoseActorSize=Vector3.Max(report.skins[r].maximumPoseActorSize,actorBounds.size);
                             if(!hasBounds[r]){measured[r]=bounds;hasBounds[r]=true;}else measured[r].Encapsulate(bounds);
-                            bool neutral=clips[c].name=="Idle" || clips[c].name.EndsWith("|Idle",StringComparison.Ordinal);
+                            bool neutral=clips[c].name=="Idle" || clips[c].name=="Basic_Idle" || clips[c].name.EndsWith("|Idle",StringComparison.Ordinal);
                             if(f!=0 || !neutral || !copy.name.StartsWith("Body_Clothed",StringComparison.Ordinal))continue;
-                            var vertices=baked.vertices;var weights=copy.sharedMesh.boneWeights;
+                            var vertices=sampler.ActorVertices;var weights=copy.sharedMesh.boneWeights;
                             var torso=new HashSet<int>(copy.bones.Select((b,i)=>new{b,i}).Where(b=>b.b==hip || b.b==upper || b.b==animator.GetBoneTransform(HumanBodyBones.Spine) || b.b==animator.GetBoneTransform(HumanBodyBones.Chest)).Select(b=>b.i));
                             Vector3 up=(upper.position-hip.position).normalized;Quaternion basis=Quaternion.LookRotation(Vector3.ProjectOnPlane(Vector3.forward,up),up);Quaternion inverse=Quaternion.Inverse(basis);
                             for(int i=0;i<vertices.Length;i++)
                             {
                                 var w=weights[i];float t=(torso.Contains(w.boneIndex0)?w.weight0:0)+(torso.Contains(w.boneIndex1)?w.weight1:0)+(torso.Contains(w.boneIndex2)?w.weight2:0)+(torso.Contains(w.boneIndex3)?w.weight3:0);
-                                Vector3 p=inverse*(copy.transform.TransformPoint(vertices[i])-hip.position);
+                                Vector3 p=inverse*(vertices[i]-hip.position);
                                 if(t>.7f && p.y>.05f && p.y<(upper.position-hip.position).magnitude-.025f){width=Mathf.Max(width,Mathf.Abs(p.x));depth=Mathf.Max(depth,Mathf.Abs(p.z));report.envelopeSampled=true;}
                             }
                         }
@@ -187,15 +204,24 @@ namespace Silence.Multiplayer.Editor.Visual
             catch(Exception error)
             {
                 context.message=error.Message;
-                try{Directory.CreateDirectory("Library/Silence");File.WriteAllText("Library/Silence/CharacterReworkFailure.json",JsonUtility.ToJson(context,true));}
+                try{Directory.CreateDirectory("Library/Silence");string json=JsonUtility.ToJson(context,true);File.WriteAllText("Library/Silence/CharacterReworkFailure.json",json);Debug.Log("SILENCE CharacterRework diagnostics — скопируй эту запись целиком:\n"+json);}
                 catch(Exception io){Debug.LogWarning("Не записана диагностика: "+io.Message);}
                 throw new InvalidOperationException(error.Message+" Диагностика: Library/Silence/CharacterReworkFailure.json",error);
             }
             finally
             {
-                EditorUtility.ClearProgressBar();if(baked!=null)Object.DestroyImmediate(baked);if(clone!=null)Object.DestroyImmediate(clone);
+                EditorUtility.ClearProgressBar();if(clone!=null)Object.DestroyImmediate(clone);
                 AssetDatabase.DeleteAsset(controllerPath);EditorSceneManager.ClosePreviewScene(preview);
             }
+        }
+        private static void CompareNativeBake(SkinnedMeshRenderer renderer,Failure failure)
+        {
+            // A comparison only: native BakeMesh output never controls bounds
+            // or bypasses a genuine deformation detected by bind-pose skinning.
+            var mesh=new Mesh();
+            try{renderer.BakeMesh(mesh,false);mesh.RecalculateBounds();failure.nativeBakeLocalSize=mesh.bounds.size;failure.nativeBakeTransformedSize=ToActorBounds(mesh.bounds,renderer.transform.localToWorldMatrix).size;}
+            catch(Exception e){failure.nativeBakeError=e.Message;}
+            finally{Object.DestroyImmediate(mesh);}
         }
         private static bool Finite(Vector3 p)=>!float.IsNaN(p.x) && !float.IsNaN(p.y) && !float.IsNaN(p.z) && !float.IsInfinity(p.x) && !float.IsInfinity(p.y) && !float.IsInfinity(p.z);
     }

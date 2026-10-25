@@ -1,0 +1,35 @@
+{
+  "kind": "Public API/source review, not native Unity compilation",
+  "unity_version": "6000.6.7f1",
+  "commit": "d0e5e3e00a4f454bc2853234708c3d7c67ebca9a",
+  "native_compilation_run": false,
+  "facts": [
+    "Mesh.GetBlendShapeFrameVertices/Weight/Count, boneWeights and bindposes are public",
+    "SkinnedMeshRenderer.bones/GetBlendShapeWeight and diagnostic BakeMesh(Mesh,bool) are public",
+    "Matrix4x4 inverse/MultiplyPoint3x4/GetColumn are public",
+    "Animator humanScale and GetBoneTransform are public",
+    "Runtime skinning is unchanged; CPU measurements run only in editor preparation"
+  ],
+  "files": [
+    {
+      "path": "Runtime/Export/Graphics/Mesh.bindings.cs",
+      "sha256": "cc5252e2ba5325cb049d9288b98c3dc01c6277fc8dfdd0f023fa3c011dd16ac7",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Graphics/Mesh.bindings.cs"
+    },
+    {
+      "path": "Runtime/Export/Graphics/GraphicsRenderers.bindings.cs",
+      "sha256": "3426763e4f89ff0c30e5992e7ee60f649a99a34e2ed42848f2b8bed0c7b5fad9",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Graphics/GraphicsRenderers.bindings.cs"
+    },
+    {
+      "path": "Runtime/Export/Math/Matrix4x4.cs",
+      "sha256": "5a91bf3c208cedbfa199ec80bdc93cbe4899ec0a3a9f69cfd3edb5cfb3286eb5",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Math/Matrix4x4.cs"
+    },
+    {
+      "path": "Modules/Animation/ScriptBindings/Animator.bindings.cs",
+      "sha256": "4665d835e263159136f0b247e20c7f24fc20e6e3051cd7b0fb184eaa12a0fd45",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/Animation/ScriptBindings/Animator.bindings.cs"
+    }
+  ]
+}
