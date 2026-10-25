@@ -26,8 +26,10 @@ namespace Silence.Multiplayer.Editor.Visual
             public List<string> preservedMaterials=new List<string>();
             public List<Skin> skins=new List<Skin>();
             public List<Pose> poses=new List<Pose>();
+            public List<BoneMeasure> rig=new List<BoneMeasure>();
+            public List<string> geometryNotes=new List<string>();
         }
-        [Serializable] public sealed class Skin { public string renderer, mesh; public int vertices, repairedVertices; public Vector3 sampledBoundsSize, maximumPoseActorSize, restActorSize; }
+        [Serializable] public sealed class Skin { public string renderer, mesh; public int vertices, repairedVertices,triangles,degenerateTriangles,missingOrInvalidNormals; public Vector3 sampledBoundsSize, maximumPoseActorSize, restActorSize; }
         [Serializable] public sealed class Pose { public string clip; public float seconds, leftWristFromHips, rightWristFromHips; public Vector3 leftWrist, rightWrist; }
         [Serializable] public sealed class Failure
         {
@@ -59,6 +61,12 @@ namespace Silence.Multiplayer.Editor.Visual
                 if(chain.Any(t=>t==null) || !chain[1].IsChildOf(chain[0]) || !chain[2].IsChildOf(chain[1]))throw new InvalidOperationException("Неверная иерархия плечо/локоть/кисть: "+side[0]);
             }
             var visual=VisualRoot(actor,model);var report=new Report();
+            foreach(HumanBodyBones name in Enum.GetValues(typeof(HumanBodyBones)))
+            {
+                if(name==HumanBodyBones.LastBone)continue;var bone=model.GetBoneTransform(name);if(bone==null)continue;
+                if(!Finite(bone.lossyScale) || bone.lossyScale.x==0 || bone.lossyScale.y==0 || bone.lossyScale.z==0)throw new InvalidOperationException("Нулевая/некорректная шкала кости: "+name);
+                report.rig.Add(new BoneMeasure{bone=name+" / "+bone.name,restScale=bone.lossyScale,restParentDistance=bone.parent!=null?Vector3.Distance(bone.position,bone.parent.position):0});
+            }
             report.opaqueMaterials=CharacterSurfaceFixer.Prepare(visual,folder,report.preservedMaterials);
             var renderers=visual.GetComponentsInChildren<SkinnedMeshRenderer>(true);
             var repaired=new Dictionary<Mesh,Mesh>();
@@ -67,6 +75,20 @@ namespace Silence.Multiplayer.Editor.Visual
                 var mesh=renderer.sharedMesh;if(mesh==null)throw new InvalidOperationException("Нет меша: "+renderer.name);
                 if(renderer.bones.Any(b=>b==null) || mesh.bindposes.Length!=renderer.bones.Length)throw new InvalidOperationException("Повреждены bind poses/ссылки костей: "+renderer.name);
                 var record=new Skin{renderer=AnimationUtility.CalculateTransformPath(renderer.transform,visual),mesh=AssetDatabase.GetAssetPath(mesh),vertices=mesh.vertexCount};
+                var points=mesh.vertices;var normals=mesh.normals;var triangles=mesh.triangles;
+                Matrix4x4 toActor=actor.transform.worldToLocalMatrix*renderer.transform.localToWorldMatrix;
+                record.triangles=triangles.Length/3;
+                for(int v=0;v<points.Length;v++)
+                {
+                    if(!Finite(points[v]))throw new InvalidOperationException("Неконечная вершина "+v+" / "+renderer.name);
+                    if(normals.Length!=points.Length || !Finite(normals[v]) || normals[v].sqrMagnitude<.01f)record.missingOrInvalidNormals++;
+                }
+                for(int t=0;t<triangles.Length;t+=3)
+                {
+                    Vector3 a=toActor.MultiplyPoint3x4(points[triangles[t]]),b=toActor.MultiplyPoint3x4(points[triangles[t+1]]),c=toActor.MultiplyPoint3x4(points[triangles[t+2]]);
+                    if(Vector3.Cross(b-a,c-a).sqrMagnitude<1e-16f)record.degenerateTriangles++;
+                }
+                if(record.degenerateTriangles>0 || record.missingOrInvalidNormals>0)report.geometryNotes.Add(renderer.name+": degenerate triangles="+record.degenerateTriangles+", invalid/missing normals="+record.missingOrInvalidNormals+". Requires source inspection; geometry was not guessed.");
                 var weights=mesh.boneWeights;
                 if(weights.Length!=mesh.vertexCount)throw new InvalidOperationException("Нужен доступный четырёхвесовой skin: "+renderer.name);
                 for(int i=0;i<weights.Length;i++)

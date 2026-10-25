@@ -19,6 +19,14 @@ namespace Silence.Multiplayer.Editor.Visual
 {
     public static class AnimationLabBuilder
     {
+        private static string ReturnKey=>"SILENCE.CharacterReview.Source:"+Application.dataPath;
+        public static void ReturnToSource()
+        {
+            if(EditorApplication.isPlayingOrWillChangePlaymode)throw new InvalidOperationException("Сначала останови Play.");
+            string path=EditorPrefs.GetString(ReturnKey,"");
+            if(!path.StartsWith("Assets/",StringComparison.Ordinal) || !File.Exists(path))throw new InvalidOperationException("Нет записанного исходного мира этой площадки. Открой свой игровой мир в Project.");
+            if(EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())EditorSceneManager.OpenScene(path,OpenSceneMode.Single);
+        }
         public static string Create()
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Сначала останови Play.");
@@ -63,12 +71,14 @@ namespace Silence.Multiplayer.Editor.Visual
                 var service = new GameObject("Offline lab services"); var noise = service.AddComponent<NoiseSystem>(); var authority = service.AddComponent<OfflineWorldAuthority>(); authority.Configure(noise);
                 service.AddComponent<FarmBootstrap>().Configure(authority, actor);
                 var observer = new GameObject("Body review camera").AddComponent<Camera>(); observer.enabled = false;
-                var lab = service.AddComponent<HumanMotionLab>(); lab.actor = actor; lab.observer = observer; lab.originalBasicClips = BasicMotionsCatalog.Load().Values.OrderBy(c => c.name).ToArray();
+                var lab = service.AddComponent<HumanMotionLab>(); lab.actor = actor; lab.observer = observer;
+                lab.originalBasicClips=actorObject.GetComponent<PlayerAvatarPresentation>().Model.runtimeAnimatorController.animationClips.Where(c=>c!=null).Distinct().OrderBy(c=>c.name).ToArray();
+                service.AddComponent<CharacterReviewProbe>().actor=actor;
                 var light = new GameObject("Review light").AddComponent<Light>(); light.type = LightType.Directional; light.intensity = 1.6f; light.transform.rotation = Quaternion.Euler(40, -25, 0);
                 RenderSettings.ambientLight = new Color(.35f, .35f, .35f);
                 AssetDatabase.SaveAssets();
                 if (!EditorSceneManager.SaveScene(scene, folder + "/HumanMotion_Lab.unity")) throw new IOException("Не удалось сохранить площадку.");
-                saved = true;
+                File.WriteAllText(folder+"/review-source.json",JsonUtility.ToJson(new ReviewSource{sourceScene=source.path},true));saved = true;
             }
             finally
             {
@@ -77,8 +87,10 @@ namespace Silence.Multiplayer.Editor.Visual
                 if (!saved) AssetDatabase.DeleteAsset(folder);
             }
             AssetDatabase.Refresh(); string path = folder + "/HumanMotion_Lab.unity"; EditorSceneManager.OpenScene(path, OpenSceneMode.Single);
+            EditorPrefs.SetString(ReturnKey,source.path);
             Debug.Log("SILENCE: отдельная площадка " + path + ". Основной мир не изменён; build settings не заменены. Play, затем кнопка управления мышью. Это локальная проверка, не сетевой тест.");
             return path;
         }
+        [Serializable] private sealed class ReviewSource {public string sourceScene;}
     }
 }

@@ -18,9 +18,12 @@ namespace Silence.Tests
         [TestCase("Run Right",ImportedMotion.RunRight)]
         [TestCase("Crouching_Idle01",ImportedMotion.CrouchIdle)]
         [TestCase("CrouchWalk",ImportedMotion.CrouchWalk)]
+        [TestCase("WoundedIdle",ImportedMotion.WoundedIdle)]
+        [TestCase("Female_Injured_Walking01",ImportedMotion.WoundedWalk)]
         public void LocomotionNamesMapToTheCorrectDirection(string name,ImportedMotion role)
             => Assert.That(ImportedAssetModel.Motion(name),Is.EqualTo(role));
-        [TestCase("Walk Sad")] [TestCase("Run Up Stairs")] [TestCase("CarryWalk")] [TestCase("WoundedIdle")] [TestCase("Walking Turn 180")] [TestCase("Run Turn 180")] [TestCase("Rifle Idle")]
+        [TestCase("Walk Sad")] [TestCase("Run Up Stairs")] [TestCase("CarryWalk")] [TestCase("Walking Turn 180")] [TestCase("Run Turn 180")] [TestCase("Rifle Idle")]
+        [TestCase("Wounded Carrying Idle")] [TestCase("Injured Walking Turn 180")]
         public void SpecialActionsDoNotReplaceOrdinaryLocomotion(string name)=>Assert.That(ImportedAssetModel.Motion(name),Is.Null);
         [Test] public void FemaleAndInPlaceRecordingsHaveAnExplicitPreference()
         {

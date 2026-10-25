@@ -1,9 +1,9 @@
 {
   "kind": "delivery integrity/static updater compatibility; not a Unity test",
-  "archive": "Downloads/SILENCE_HumanMotion_0.5.1.zip",
-  "bytes": 437685,
-  "sha256": "093ba0df33c02a089f5266f1c92642e98d876b7cbf8103fc072d903be8c490ed",
-  "passed": 631,
+  "archive": "Downloads/SILENCE_HumanMotion_0.6.0.zip",
+  "bytes": 469389,
+  "sha256": "7f4cf3f784291bac36cbb04e8b41e1b695787252094a72496a9378df6b12ab07",
+  "passed": 653,
   "failed": 0,
   "checks": [
     {
@@ -139,6 +139,10 @@
       "passed": true
     },
     {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/CharacterReviewProbe.cs",
+      "passed": true
+    },
+    {
       "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/FootstepAnimationBridge.cs",
       "passed": true
     },
@@ -236,6 +240,14 @@
     },
     {
       "check": "full installer includes verified source Assets/_Silence/Scripts/Core/CharacterAnimationModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/CharacterRenderRules.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/CharacterReviewModel.cs",
       "passed": true
     },
     {
@@ -539,6 +551,10 @@
       "passed": true
     },
     {
+      "check": "full installer includes verified source Assets/_Silence/Tests/AnimationEditor/CharacterAuditReferenceTests.cs",
+      "passed": true
+    },
+    {
       "check": "full installer includes verified source Assets/_Silence/Tests/AnimationEditor/CharacterReworkReferenceTests.cs",
       "passed": true
     },
@@ -568,6 +584,10 @@
     },
     {
       "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/CharacterAnimationTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/CharacterRebuildTests.cs",
       "passed": true
     },
     {
@@ -656,6 +676,10 @@
     },
     {
       "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/BasicMotionsCatalog.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterAuditWorkshop.cs",
       "passed": true
     },
     {
@@ -991,6 +1015,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Graphics/Runtime/Players/CharacterReviewProbe.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Graphics/Runtime/Players/CharacterReviewProbe.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Graphics/Runtime/Players/FootstepAnimationBridge.cs",
       "passed": true
     },
@@ -1188,6 +1220,22 @@
     },
     {
       "check": "current complete source Assets/_Silence/Scripts/Core/CharacterAnimationModel.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Scripts/Core/CharacterRenderRules.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Core/CharacterRenderRules.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Scripts/Core/CharacterReviewModel.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Core/CharacterReviewModel.cs",
       "passed": true
     },
     {
@@ -1791,6 +1839,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Tests/AnimationEditor/CharacterAuditReferenceTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/AnimationEditor/CharacterAuditReferenceTests.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Tests/AnimationEditor/CharacterReworkReferenceTests.cs",
       "passed": true
     },
@@ -1852,6 +1908,14 @@
     },
     {
       "check": "current complete source Assets/_Silence/Tests/EditMode/CharacterAnimationTests.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Tests/EditMode/CharacterRebuildTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/EditMode/CharacterRebuildTests.cs",
       "passed": true
     },
     {
@@ -2063,6 +2127,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Docs/CharacterRework/REBUILD_V2_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/CharacterRework/REBUILD_V2_RU.md",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Docs/CharacterRework/REFERENCES_RU.md",
       "passed": true
     },
@@ -2076,6 +2148,14 @@
     },
     {
       "check": "current complete source Docs/CharacterRework/REPORT_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Docs/CharacterRework/REPORT_V2_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/CharacterRework/REPORT_V2_RU.md",
       "passed": true
     },
     {
@@ -2180,6 +2260,14 @@
     },
     {
       "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/BasicMotionsCatalog.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterAuditWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterAuditWorkshop.cs",
       "passed": true
     },
     {

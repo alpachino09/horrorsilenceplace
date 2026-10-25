@@ -20,6 +20,7 @@
     <Compile Include="../../Assets/_Silence/Tests/EditMode/PlayerViewTests.cs" />
     <Compile Include="../../Assets/_Silence/Tests/EditMode/ArmAnatomyTests.cs" />
     <Compile Include="../../Assets/_Silence/Tests/EditMode/NaturalArmPostureTests.cs" />
+    <Compile Include="../../Assets/_Silence/Tests/EditMode/CharacterRebuildTests.cs" />
     <Compile Include="../../Assets/_Silence/Tests/EditMode/SkinBoundsTests.cs" />
     <Compile Include="../../Assets/_Silence/Tests/EditMode/SkinPoseTests.cs" />
     <Compile Include="../../Assets/_Silence/Tests/EditMode/ImportedAssetTests.cs" />

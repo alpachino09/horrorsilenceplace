@@ -19,6 +19,8 @@ namespace Silence.Player
         public Vector3 aimEuler;
         public Vector3 leftPalmWristToContact = new Vector3(0,.045f,.025f);
         [Range(0,1)] public float fingerGrip = .62f;
+        [Tooltip("Direction toward the palm in hand-local axes. Zero infers it from the Avatar; ambiguous calibration skips finger curl.")]
+        public Vector3 rightPalmInward,leftPalmInward;
         public AudioClip buttonClick, palmTap, unscrewCap, removeCells, insertCells, screwCap, equip, holster;
         [Range(0,1)] public float soundVolume = .35f;
         [TextArea] public string calibrationNotes;

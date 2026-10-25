@@ -19,7 +19,7 @@ namespace Silence.Graphics.Players
         private float pelvis;
         private Vector3 lean, previousVelocity;
         private readonly Plant leftPlant = new Plant(), rightPlant = new Plant();
-        private sealed class Plant { public bool down; public Transform surface; public Vector3 anchor; }
+        private sealed class Plant { public bool down,hasNormal; public Transform surface; public Vector3 anchor,normal; }
         public void Configure(PlayerContext value, PlayerAnimationProfile settings) { actor = value; profile = settings; }
         private void Start()
         {
@@ -70,7 +70,7 @@ namespace Silence.Graphics.Players
             if (grounded) animator.bodyPosition += Vector3.up * pelvis;
             Foot(AvatarIKGoal.LeftFoot, left, leftPlant, hitL, l, leftWeight);
             Foot(AvatarIKGoal.RightFoot, right, rightPlant, hitR, r, rightWeight);
-            if (!close) return;
+            if (!close) { previousVelocity=state.Velocity;return; }
             Vector3 velocity = state.Velocity;
             Vector3 acceleration = (velocity - previousVelocity) / Mathf.Max(.01f, Time.deltaTime); previousVelocity = velocity;
             Vector3 localAcceleration = actor.transform.InverseTransformDirection(acceleration);
@@ -103,7 +103,7 @@ namespace Silence.Graphics.Players
         {
             float applied = hit ? weight : 0;
             animator.SetIKPositionWeight(goal, applied); animator.SetIKRotationWeight(goal, applied * .75f);
-            if (!hit || weight < .3f) { plant.down = false; return; }
+            if (!hit || weight < .3f) { plant.down = false;plant.hasNormal=false; return; }
             Vector3 desired = ground.point + Vector3.up * profile.soleThickness;
             if (!plant.down && weight > .6f)
             { plant.down = true; plant.surface = ground.collider.transform; plant.anchor = plant.surface.InverseTransformPoint(desired); }
@@ -119,9 +119,10 @@ namespace Silence.Graphics.Players
             animator.SetIKPosition(goal, bone.position + correction);
             // Imported foot bones need not use local Y as their sole normal. Mecanim's
             // current IK goal rotation carries the Avatar's bone-axis correction.
-            Quaternion slope = Quaternion.FromToRotation(Vector3.up, ground.normal) * animator.GetIKRotation(goal);
+            plant.normal=plant.hasNormal?Vector3.Slerp(plant.normal,ground.normal,1-Mathf.Exp(-12*Time.deltaTime)):ground.normal;plant.hasNormal=true;
+            Quaternion slope = Quaternion.FromToRotation(Vector3.up, plant.normal) * animator.GetIKRotation(goal);
             animator.SetIKRotation(goal, slope);
         }
-        private void OnDisable() { leftPlant.down = rightPlant.down = false; pelvis = 0; previousVelocity = lean = Vector3.zero; }
+        private void OnDisable() { leftPlant.down = rightPlant.down = leftPlant.hasNormal = rightPlant.hasNormal = false; pelvis = 0; previousVelocity = lean = Vector3.zero; }
     }
 }

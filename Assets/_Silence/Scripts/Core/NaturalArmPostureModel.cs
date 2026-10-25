@@ -18,16 +18,16 @@ namespace Silence.Core
         public static float AttachmentWidth(float torsoWidth,float shoulderHalfSpan)
             => Math.Min(torsoWidth,Math.Max(.06f,Math.Abs(shoulderHalfSpan)*.88f));
         public static NaturalArmPlan Plan(RigVector shoulder,RigVector elbow,RigVector hand,
-            float upper,float forearm,float side,float speed,float torsoWidth,float handRadius,float armRadius)
+            float upper,float forearm,float side,float speed,float torsoWidth,float handRadius,float armRadius,bool alreadyCorrecting=false)
         {
             if(!shoulder.Finite || !elbow.Finite || !hand.Finite || !(upper>.02f && upper<1 && forearm>.02f && forearm<1))
                 return new NaturalArmPlan(hand,elbow,false);
             float sign=side<0?-1:1,reach=upper+forearm;
             if(float.IsNaN(speed) || float.IsInfinity(speed))speed=0;
             float gait=Clamp(speed/3.6f),running=Clamp((speed-1.5f)/2.1f);
-            float abduction=(18+24*gait)*(float)Math.PI/180;
+            float abduction=(18+24*gait-(alreadyCorrecting?4:0))*(float)Math.PI/180;
             float outward=(elbow.X-shoulder.X)*sign;
-            float backLimit=.05f+.23f*gait;
+            float backLimit=(.05f+.23f*gait)*(alreadyCorrecting?.85f:1);
             bool spread=outward>upper*(float)Math.Sin(abduction)+.005f;
             bool crossed=hand.X*sign<.01f;
             bool rear=hand.Z-shoulder.Z < -backLimit;
@@ -50,6 +50,13 @@ namespace Silence.Core
                 shoulder.Y-upper*.96f,shoulder.Z+.035f+swing*.25f);
         }
         private static float Clamp(float value)=>Max(0,Min(1,value));
+        public static float Blend(float current,bool correcting,float seconds)
+        {
+            if(float.IsNaN(current) || float.IsInfinity(current))current=0;
+            if(float.IsNaN(seconds) || float.IsInfinity(seconds) || seconds<=0)return Clamp(current);
+            float target=correcting?1:0;
+            return Clamp(target+(Clamp(current)-target)*(float)Math.Exp(-Math.Min(seconds,.5f)/.10f));
+        }
         private static float Min(float a,float b)=>Math.Min(a,b);
         private static float Max(float a,float b)=>Math.Max(a,b);
     }

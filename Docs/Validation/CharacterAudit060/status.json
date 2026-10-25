@@ -1,0 +1,113 @@
+{
+  "version": "0.6.0",
+  "kind": "Technical source and delivery stage complete. Full visual/native character acceptance remains incomplete.",
+  "full_user_request": "Docs/CharacterRework/TASK_RU.md",
+  "report": "Docs/CharacterRework/REPORT_V2_RU.md",
+  "install": "Docs/CharacterRework/REBUILD_V2_RU.md",
+  "core_tests": {
+    "passed": 301,
+    "failed": 0,
+    "skipped": 0,
+    "runtime": ".NET 8 NUnit; not Unity"
+  },
+  "source_checks": {
+    "files": 185,
+    "configurations": 7,
+    "syntax_errors": 0,
+    "diagnostic_guard_errors": 0,
+    "selected_scope_errors": 0,
+    "unity_api_binding_checked": false
+  },
+  "structure": {
+    "passed": 256,
+    "failed": 0
+  },
+  "full_installer_tests": {
+    "passed": 5,
+    "failed": 0,
+    "environment": "Linux Bash with disposable project fixtures, not native macOS dialog execution",
+    "scope": "Exact shipped installer and sources; final subsequent documentation-only README revision does not change installer or sources."
+  },
+  "delivery": {
+    "archive": "Downloads/SILENCE_HumanMotion_0.6.0.zip",
+    "bytes": 469389,
+    "sha256": "7f4cf3f784291bac36cbb04e8b41e1b695787252094a72496a9378df6b12ab07",
+    "checks_passed": 653,
+    "checks_failed": 0
+  },
+  "blender": {
+    "version": "5.2.3 LTS",
+    "source": "/workspace/generated-art/HoodedGirl/Stages/11_fbx_export.blend",
+    "sha256": "11cde86bb731fd427e77611696cfb17c38eb39b34fd08aac3588cbf33842aeb3",
+    "meshes_inspected": 47,
+    "clips": 20,
+    "poses": 260,
+    "full_source_art_reauthored": false,
+    "intersection_test": "Evaluated LOD0 selected crossing hand/body garment triangle surfaces, 13 samples per action. Not containment/all surfaces/continuous motion/Unity retarget proof.",
+    "known_source_clip_defects_not_claimed_fixed": [
+      {
+        "clip": "WalkBack",
+        "maximum_triangle_pairs": 38
+      },
+      {
+        "clip": "CrouchIdle",
+        "maximum_triangle_pairs": 497
+      },
+      {
+        "clip": "WoundedWalk",
+        "maximum_triangle_pairs": 161
+      },
+      {
+        "clip": "StrafeLeft",
+        "maximum_triangle_pairs": 335
+      },
+      {
+        "clip": "StrafeRight",
+        "maximum_triangle_pairs": 333
+      },
+      {
+        "clip": "Death",
+        "maximum_triangle_pairs": 1123
+      }
+    ]
+  },
+  "references": [
+    {
+      "url": "https://github.com/Unity-Technologies/UnityCsReference",
+      "commit": "d0e5e3e00a4f454bc2853234708c3d7c67ebca9a"
+    },
+    {
+      "url": "https://github.com/needle-mirror/com.unity.animation.rigging",
+      "commit": "1bd2bf88886c18e9012b90f9c3c331bc85c2f513"
+    },
+    {
+      "name": "BaseShaderGUI.cs",
+      "sha256": "a90794f18d4231109d79443c421e89f8aeb5e42f5db84f752150b069426e4555",
+      "source": "https://github.com/Unity-Technologies/Graphics/tree/master/Packages/com.unity.render-pipelines.universal",
+      "note": "Previously retrieved source; branch master is not a pinned package revision."
+    },
+    {
+      "name": "Lit.shader",
+      "sha256": "1ec00dad6eb08102ef586e693a5cad6f27443143a0c881667e6305e61bb08628",
+      "source": "https://github.com/Unity-Technologies/Graphics/tree/master/Packages/com.unity.render-pipelines.universal",
+      "note": "Previously retrieved source; branch master is not a pinned package revision."
+    }
+  ],
+  "native": {
+    "unity_compilation_run": false,
+    "unity_editmode_run": false,
+    "new_editmode_fixtures_supplied": 2,
+    "unity_play_run": false,
+    "four_player_run": false,
+    "actual_user_flashlight_calibrated": false,
+    "all_triangle_intersections_eliminated": false,
+    "aaa_quality_achieved": false
+  },
+  "outstanding": [
+    "Inspect and replace actually used problematic source clips using real licensed local recordings (Kevin Iglesias through 28) or reauthor source; do not assume unavailable clips are imported.",
+    "Compile in Unity 6000.6.7f1 and run EditMode.",
+    "Calibrate actual flashlight grip, palm directions, fingers, cap and battery contacts.",
+    "Run 15 visual cases, verify other-player camera in actual Host/Client with up to four players, and profile low FPS.",
+    "Audit and accept separate creature geometry/animation in native environment."
+  ]
+}

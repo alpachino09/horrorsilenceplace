@@ -1,0 +1,1170 @@
+{
+  "kind": "Actual Blender evaluated-surface BVH overlaps; not Unity acceptance",
+  "hand_faces": 17138,
+  "body_faces": 14931,
+  "samples": 260,
+  "poses": [
+    {
+      "clip": "Idle",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 15.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 22.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 29.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 36.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 43.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 50.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 57.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 64.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 71.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 78.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 85.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "Walk",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 2.833333333333333,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 4.666666666666666,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 6.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.333333333333332,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 10.166666666666666,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 12.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 13.833333333333334,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 15.666666666666666,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 17.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 19.333333333333332,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 21.166666666666668,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 23.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "WalkBack",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 2.833333333333333,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 4.666666666666666,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 6.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.333333333333332,
+          "overlapping_triangle_pairs": 16
+        },
+        {
+          "frame": 10.166666666666666,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 12.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 13.833333333333334,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 15.666666666666666,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 17.5,
+          "overlapping_triangle_pairs": 12
+        },
+        {
+          "frame": 19.333333333333332,
+          "overlapping_triangle_pairs": 38
+        },
+        {
+          "frame": 21.166666666666668,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 23.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 38
+    },
+    {
+      "clip": "Run",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 2.25,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 3.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 4.75,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 6.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 7.25,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 9.75,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 11.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 12.25,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 13.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 14.75,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 16.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "CrouchIdle",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 453
+        },
+        {
+          "frame": 8.0,
+          "overlapping_triangle_pairs": 434
+        },
+        {
+          "frame": 15.0,
+          "overlapping_triangle_pairs": 497
+        },
+        {
+          "frame": 22.0,
+          "overlapping_triangle_pairs": 426
+        },
+        {
+          "frame": 29.0,
+          "overlapping_triangle_pairs": 494
+        },
+        {
+          "frame": 36.0,
+          "overlapping_triangle_pairs": 401
+        },
+        {
+          "frame": 43.0,
+          "overlapping_triangle_pairs": 399
+        },
+        {
+          "frame": 50.0,
+          "overlapping_triangle_pairs": 384
+        },
+        {
+          "frame": 57.0,
+          "overlapping_triangle_pairs": 474
+        },
+        {
+          "frame": 64.0,
+          "overlapping_triangle_pairs": 478
+        },
+        {
+          "frame": 71.0,
+          "overlapping_triangle_pairs": 475
+        },
+        {
+          "frame": 78.0,
+          "overlapping_triangle_pairs": 443
+        },
+        {
+          "frame": 85.0,
+          "overlapping_triangle_pairs": 453
+        }
+      ],
+      "maximum_triangle_pairs": 497
+    },
+    {
+      "clip": "CrouchWalk",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 3.25,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 5.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 7.75,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 10.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 12.25,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 14.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 16.75,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 19.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 21.25,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 23.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 25.75,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 28.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "CarryIdle",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 15.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 22.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 29.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 36.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 43.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 50.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 57.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 64.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 71.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 78.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 85.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "CarryWalk",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 2.833333333333333,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 4.666666666666666,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 6.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.333333333333332,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 10.166666666666666,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 12.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 13.833333333333334,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 15.666666666666666,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 17.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 19.333333333333332,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 21.166666666666668,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 23.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "WoundedIdle",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 15.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 22.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 29.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 36.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 43.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 50.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 57.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 64.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 71.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 78.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 85.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "WoundedWalk",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 3.3333333333333335,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 5.666666666666667,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 10.333333333333334,
+          "overlapping_triangle_pairs": 161
+        },
+        {
+          "frame": 12.666666666666666,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 15.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 17.333333333333332,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 19.666666666666668,
+          "overlapping_triangle_pairs": 134
+        },
+        {
+          "frame": 22.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 24.333333333333332,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 26.666666666666668,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 29.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 161
+    },
+    {
+      "clip": "UseItem",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 3.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 6.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 11.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 13.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 16.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 18.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 21.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 23.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 26.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 28.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 31.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "TurnLeft",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 3.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 6.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 11.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 13.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 16.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 18.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 21.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 23.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 26.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 28.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 31.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "TurnRight",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 3.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 6.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 11.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 13.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 16.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 18.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 21.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 23.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 26.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 28.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 31.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "StrafeLeft",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 3.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 5.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 7.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 9.0,
+          "overlapping_triangle_pairs": 130
+        },
+        {
+          "frame": 11.0,
+          "overlapping_triangle_pairs": 335
+        },
+        {
+          "frame": 13.0,
+          "overlapping_triangle_pairs": 128
+        },
+        {
+          "frame": 15.0,
+          "overlapping_triangle_pairs": 106
+        },
+        {
+          "frame": 17.0,
+          "overlapping_triangle_pairs": 317
+        },
+        {
+          "frame": 19.0,
+          "overlapping_triangle_pairs": 60
+        },
+        {
+          "frame": 21.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 23.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 25.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 335
+    },
+    {
+      "clip": "StrafeRight",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 121
+        },
+        {
+          "frame": 3.0,
+          "overlapping_triangle_pairs": 100
+        },
+        {
+          "frame": 5.0,
+          "overlapping_triangle_pairs": 265
+        },
+        {
+          "frame": 7.0,
+          "overlapping_triangle_pairs": 38
+        },
+        {
+          "frame": 9.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 11.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 13.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 15.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 17.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 19.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 21.0,
+          "overlapping_triangle_pairs": 146
+        },
+        {
+          "frame": 23.0,
+          "overlapping_triangle_pairs": 333
+        },
+        {
+          "frame": 25.0,
+          "overlapping_triangle_pairs": 121
+        }
+      ],
+      "maximum_triangle_pairs": 333
+    },
+    {
+      "clip": "Jump",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 2.666666666666667,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 4.333333333333334,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 6.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 7.666666666666667,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 9.333333333333334,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 11.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 12.666666666666666,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 14.333333333333334,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 16.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 17.666666666666668,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 19.333333333333332,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 21.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "Fall",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 3.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 6.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 11.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 13.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 16.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 18.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 21.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 23.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 26.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 28.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 31.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "Land",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 2.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 3.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 4.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 5.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 6.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 7.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 8.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 9.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 10.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 11.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 12.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 13.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    },
+    {
+      "clip": "Death",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 5.166666666666667,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 9.333333333333334,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 13.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 17.666666666666668,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 21.833333333333332,
+          "overlapping_triangle_pairs": 344
+        },
+        {
+          "frame": 26.0,
+          "overlapping_triangle_pairs": 1123
+        },
+        {
+          "frame": 30.166666666666668,
+          "overlapping_triangle_pairs": 43
+        },
+        {
+          "frame": 34.333333333333336,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 38.5,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 42.666666666666664,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 46.833333333333336,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 51.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 1123
+    },
+    {
+      "clip": "LookAround",
+      "samples": [
+        {
+          "frame": 1.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 7.666666666666667,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 14.333333333333334,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 21.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 27.666666666666668,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 34.333333333333336,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 41.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 47.666666666666664,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 54.333333333333336,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 61.0,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 67.66666666666667,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 74.33333333333333,
+          "overlapping_triangle_pairs": 0
+        },
+        {
+          "frame": 81.0,
+          "overlapping_triangle_pairs": 0
+        }
+      ],
+      "maximum_triangle_pairs": 0
+    }
+  ],
+  "limitations": "Only selected >0.65 weighted hand/body garment surfaces in LOD0, 13 times per clip; not every vertex, time or mesh. No containment test for fully enclosed noncrossing surfaces.",
+  "native_unity_tested": false
+}

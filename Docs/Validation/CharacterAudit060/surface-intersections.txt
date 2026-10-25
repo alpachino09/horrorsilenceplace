@@ -1,0 +1,21 @@
+00:00.303  blend            | Read blend: "/workspace/generated-art/HoodedGirl/Stages/11_fbx_export.blend"
+Idle 0
+Walk 0
+WalkBack 38
+Run 0
+CrouchIdle 497
+CrouchWalk 0
+CarryIdle 0
+CarryWalk 0
+WoundedIdle 0
+WoundedWalk 161
+UseItem 0
+TurnLeft 0
+TurnRight 0
+StrafeLeft 335
+StrafeRight 333
+Jump 0
+Fall 0
+Land 0
+Death 1123
+LookAround 0

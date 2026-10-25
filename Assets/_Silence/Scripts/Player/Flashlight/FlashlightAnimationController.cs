@@ -17,6 +17,8 @@ namespace Silence.Player
         private Quaternion rightRotation;
         private bool hasRightGoal;
         private float weight;
+        private float leftPoseClaim;
+        public int CalibratedFingerCount { get; private set; }
         private ILeftHandIKClaim otherHandIK;
         private IArmPoseConstraints armConstraints;
         private ICharacterIKCoordinator coordinator;
@@ -24,7 +26,7 @@ namespace Silence.Player
         private Quaternion tapRotation,capRotation,socketRotation;
         private LocalRest cap,oldCells,newCells;
         private readonly List<Finger> fingers=new List<Finger>();
-        private sealed class Finger { public Transform bone;public Quaternion basis;public bool applied,left,thumb;public float factor; }
+        private sealed class Finger { public Transform bone;public Quaternion basis,neutral;public Vector3 axis;public bool applied,left,thumb;public int segment; }
         private sealed class LocalRest
         {
             public Transform value,parent;public Vector3 position;public Quaternion rotation;public bool active;
@@ -33,6 +35,7 @@ namespace Silence.Player
         }
         public void Configure(FlashlightVisuals value)
         {
+            RestoreFingers();fingers.Clear();CalibratedFingerCount=0;
             view=value;animator=GetComponent<Animator>();motor=view.Actor.GetComponent<FirstPersonMotor>();aim=view.Actor.View.transform.rotation;
             otherHandIK=GetComponent<ILeftHandIKClaim>();
             armConstraints=GetComponent<IArmPoseConstraints>();
@@ -46,8 +49,32 @@ namespace Silence.Player
             {
                 string name=bone.ToString();bool finger=name.Contains("Thumb")||name.Contains("Index")||name.Contains("Middle")||name.Contains("Ring")||name.Contains("Little");
                 if(!finger || bone==HumanBodyBones.LastBone)continue;
-                var t=animator.GetBoneTransform(bone);if(t!=null)fingers.Add(new Finger { bone=t,left=name.StartsWith("Left",StringComparison.Ordinal),thumb=name.Contains("Thumb"),factor=name.Contains("Intermediate")?1.2f:name.Contains("Distal")?.7f:1 });
+                var t=animator.GetBoneTransform(bone);if(t!=null)
+                {
+                    bool left=name.StartsWith("Left",StringComparison.Ordinal);Vector3 inward=PalmInward(left);
+                    Vector3 direction=t.childCount>0?t.GetChild(0).position-t.position:t.parent!=null?t.position-t.parent.position:Vector3.zero;
+                    var axis=FingerCurlModel.BendAxis(new RigVector(direction.x,direction.y,direction.z),new RigVector(inward.x,inward.y,inward.z));
+                    if(axis.Length<.5f)continue;
+                    fingers.Add(new Finger { bone=t,neutral=t.localRotation,axis=t.InverseTransformDirection(new Vector3(axis.X,axis.Y,axis.Z)).normalized,
+                        left=left,thumb=name.Contains("Thumb"),segment=name.Contains("Intermediate")?1:name.Contains("Distal")?2:0 });
+                }
             }
+            CalibratedFingerCount=fingers.Count;
+        }
+        private Vector3 PalmInward(bool left)
+        {
+            var hand=animator.GetBoneTransform(left?HumanBodyBones.LeftHand:HumanBodyBones.RightHand);
+            if(hand==null)return Vector3.zero;
+            Vector3 authored=left?view.Profile.leftPalmInward:view.Profile.rightPalmInward;
+            if(authored.sqrMagnitude>.01f)return hand.TransformDirection(authored.normalized);
+            var index=animator.GetBoneTransform(left?HumanBodyBones.LeftIndexProximal:HumanBodyBones.RightIndexProximal);
+            var little=animator.GetBoneTransform(left?HumanBodyBones.LeftLittleProximal:HumanBodyBones.RightLittleProximal);
+            var middle=animator.GetBoneTransform(left?HumanBodyBones.LeftMiddleProximal:HumanBodyBones.RightMiddleProximal);
+            var thumb=animator.GetBoneTransform(left?HumanBodyBones.LeftThumbDistal:HumanBodyBones.RightThumbDistal);
+            if(index==null || little==null || middle==null || thumb==null)return Vector3.zero;
+            Vector3 normal=Vector3.Cross(middle.position-hand.position,index.position-little.position).normalized;
+            float volar=Vector3.Dot(thumb.position-hand.position,normal);
+            return Mathf.Abs(volar)>.001f?normal*Mathf.Sign(volar):Vector3.zero;
         }
         private static float Smooth(float a,float b,float t) => Mathf.SmoothStep(0,1,Mathf.InverseLerp(a,b,t));
         private static float Tap(float t) { float Pulse(float at) => Mathf.Exp(-Mathf.Pow((t-at)/.022f,2));return Mathf.Max(Pulse(.51f),Mathf.Max(Pulse(.65f),Pulse(.79f))); }
@@ -116,6 +143,7 @@ namespace Silence.Player
             if(leftWeight>0 || otherHandIK==null || !otherHandIK.OwnsLeftHand)
             { animator.SetIKPositionWeight(AvatarIKGoal.LeftHand,leftWeight*weight);animator.SetIKRotationWeight(AvatarIKGoal.LeftHand,leftWeight*weight); }
             if(leftWeight>0){animator.SetIKPosition(AvatarIKGoal.LeftHand,left);animator.SetIKRotation(AvatarIKGoal.LeftHand,rotation);}
+            leftPoseClaim=leftWeight*weight;
             animator.SetIKHintPositionWeight(AvatarIKHint.LeftElbow,leftWeight*weight*.5f);animator.SetIKHintPosition(AvatarIKHint.LeftElbow,view.Actor.View.transform.TransformPoint(new Vector3(-.42f,-.33f,.13f)));
         }
         private void LateUpdate()
@@ -124,9 +152,14 @@ namespace Silence.Player
             var frame=view.Controller.Frame;float phase=frame.duration>0?Mathf.Clamp01((float)((view.Controller.Clock-frame.startedAt)/frame.duration)):1;
             foreach(var f in fingers)
             {
-                if(f.bone==null)continue;float curl=f.left?(frame.state==FlashlightState.ReloadingBatteries?.42f:0):view.Profile.fingerGrip;
+                if(f.bone==null || !view.Actor.Vitals.Alive || f.left && leftPoseClaim<=.001f || !f.left && weight<=.001f)continue;
+                float curl=f.left?(frame.state==FlashlightState.ReloadingBatteries?.42f:0):view.Profile.fingerGrip;
                 if(f.thumb && !f.left && frame.state==FlashlightState.FailureReaction)curl+=.20f*(Mathf.Exp(-Mathf.Pow((phase-.22f)/.025f,2))+Mathf.Exp(-Mathf.Pow((phase-.32f)/.025f,2)));
-                f.basis=f.bone.localRotation;f.bone.localRotation=f.basis*Quaternion.Euler(60*curl*f.factor*weight,0,0);f.applied=true;
+                f.basis=f.bone.localRotation;Quaternion relative=Quaternion.Inverse(f.neutral)*f.basis;
+                float projection=relative.x*f.axis.x+relative.y*f.axis.y+relative.z*f.axis.z;
+                float current=Mathf.DeltaAngle(0,2*Mathf.Atan2(projection,relative.w)*Mathf.Rad2Deg);
+                float desired=FingerCurlModel.Degrees(f.thumb,f.segment,curl),claim=f.left?leftPoseClaim:weight;
+                f.bone.localRotation=f.basis*Quaternion.AngleAxis(Mathf.DeltaAngle(current,desired)*claim,f.axis);f.applied=true;
             }
             cap.Restore();oldCells.Restore();newCells.Restore();
             if(frame.state!=FlashlightState.ReloadingBatteries)return;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Silence.Player;
+using Silence.Core;
 
 namespace Silence.Graphics.Players
 {
@@ -23,8 +24,9 @@ namespace Silence.Graphics.Players
         private bool firstPersonMaterialState;
         private ShadowCastingMode[] baseline = Array.Empty<ShadowCastingMode>();
         private PlayerContext actor;
-        private readonly Stack<Frame> frames = new Stack<Frame>();
+        private readonly CharacterRenderScopes<Frame> frames = new CharacterRenderScopes<Frame>();
         private readonly Stack<Frame> pool = new Stack<Frame>();
+        private int renderFrame=-1;
         public IReadOnlyList<Renderer> HiddenRenderers => headRenderers;
         public IReadOnlyList<Renderer> BodyRenderers => bodyRenderers;
         public void ConfigureBody(Renderer[] renderers) { RestoreMaterials(); bodyRenderers = renderers ?? Array.Empty<Renderer>(); exteriorMaterials = null; firstPersonMaterials = null; }
@@ -58,6 +60,7 @@ namespace Silence.Graphics.Players
         private void Begin(Camera camera)
         {
             if (camera == null || actor == null || headRenderers.Length == 0) return;
+            if(renderFrame!=Time.frameCount){if(frames.Count>0)Restore();renderFrame=Time.frameCount;}
             bool hide = actor.IsLocalOwner && (actor.ViewRig != null ? actor.ViewRig.IsFirstPersonCamera(camera) : camera == actor.View);
             var spectator = camera.GetComponentInParent<SpectatorView>();
             hide |= spectator != null && spectator.SpectatorCamera == camera && spectator.ObservedActor == actor;
@@ -70,17 +73,16 @@ namespace Silence.Graphics.Players
                 frame.previous[i] = headRenderers[i].shadowCastingMode;
                 headRenderers[i].shadowCastingMode = hide ? ShadowCastingMode.ShadowsOnly : baseline[i];
             }
-            frames.Push(frame);
+            frames.Push(camera,frame);
         }
         private void End(Camera camera)
         {
             // A disabled/destroyed camera may omit its matching callback; unwind to a known state.
-            while (frames.Count > 0)
+            while (frames.TryPopFor(camera,out var frame,out bool matched))
             {
-                var frame = frames.Pop();
                 SetMaterialState(frame.previousMaterialState);
                 for (int i = 0; i < headRenderers.Length; i++) if (headRenderers[i] != null) headRenderers[i].shadowCastingMode = frame.previous[i];
-                bool matched = frame.camera == camera; frame.camera = null; pool.Push(frame);
+                frame.camera = null; pool.Push(frame);
                 if (matched) break;
             }
         }

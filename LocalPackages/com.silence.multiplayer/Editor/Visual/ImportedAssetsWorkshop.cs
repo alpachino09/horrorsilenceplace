@@ -15,18 +15,18 @@ namespace Silence.Multiplayer.Editor.Visual
 {
     public sealed class ImportedAssetsWorkshop : EditorWindow
     {
-        public const string Version="0.5.1";
+        public const string Version="0.6.0";
         [SerializeField] private DefaultAsset textureFolder,motionFolder;
         [SerializeField] private bool textures=true,motions=true,details;
         [SerializeField] private float tileMetres=4;
         [SerializeField] private ImportedTextureSet[] ground=new ImportedTextureSet[4];
-        [SerializeField] private AnimationClip[] clips=new AnimationClip[12];
+        [SerializeField] private AnimationClip[] clips=new AnimationClip[14];
         private ImportedTextureSet[] sets=Array.Empty<ImportedTextureSet>();
         private AnimationClip[] available=Array.Empty<AnimationClip>();
         private string message;
         private Vector2 scroll;
         private static readonly string[] GroundLabels={"Лесная почва","Трава","Земля / грязь","Гравий / камни"};
-        private static readonly string[] MotionLabels={"Покой","Ходьба","Бег","Спринт","Ходьба назад","Шаг влево","Шаг вправо","Бег назад","Бег влево","Бег вправо","Покой в приседе","Ходьба в приседе"};
+        private static readonly string[] MotionLabels={"Покой","Ходьба","Бег","Спринт","Ходьба назад","Шаг влево","Шаг вправо","Бег назад","Бег влево","Бег вправо","Покой в приседе","Ходьба в приседе","Ранение: покой","Ранение: ходьба"};
         [MenuItem("SILENCE/28 Imported Textures and Human Motions")]
         public static void Open()=>GetWindow<ImportedAssetsWorkshop>("SILENCE Assets");
         private void OnEnable()
@@ -40,7 +40,7 @@ namespace Silence.Multiplayer.Editor.Visual
         {
             sets=textureFolder!=null?ImportedAssetCatalog.Textures(AssetDatabase.GetAssetPath(textureFolder)):Array.Empty<ImportedTextureSet>();
             available=motionFolder!=null?ImportedAssetCatalog.Motions(AssetDatabase.GetAssetPath(motionFolder)):Array.Empty<AnimationClip>();
-            if(ground==null || ground.Length!=4)ground=new ImportedTextureSet[4];if(clips==null || clips.Length!=12)clips=new AnimationClip[12];
+            if(ground==null || ground.Length!=4)ground=new ImportedTextureSet[4];if(clips==null || clips.Length!=MotionLabels.Length)Array.Resize(ref clips,MotionLabels.Length);
             if(assign)
             {
                 for(int i=0;i<4;i++)ground[i]=sets.FirstOrDefault(s=>ImportedAssetModel.Ground(s.name+" "+Path.GetDirectoryName(AssetDatabase.GetAssetPath(s.color)))==(ImportedGround)i);

@@ -61,7 +61,7 @@ namespace Silence.Multiplayer.Editor.Visual
                 if(!prepared.TryGetValue(role.Value,out var next))
                 {
                     var selected=choices[(int)role.Value];
-                    if(EditorUtility.DisplayCancelableProgressBar("SILENCE — Human Basic Motions",role.Value+": "+selected.name,prepared.Count/12f))throw new OperationCanceledException("Установка отменена; исходный мир сохранён.");
+                    if(EditorUtility.DisplayCancelableProgressBar("SILENCE — Human Basic Motions",role.Value+": "+selected.name,(float)prepared.Count/choices.Length))throw new OperationCanceledException("Установка отменена; исходный мир сохранён.");
                     next=AnimationClipPreparation.Clone(selected,animator,folder+"/Clips/"+role.Value+".anim",true,moving,out var measured);
                     next.name="Imported_"+role.Value;EditorUtility.SetDirty(next);prepared.Add(role.Value,next);measurements.Add(role.Value,measured);
                 }

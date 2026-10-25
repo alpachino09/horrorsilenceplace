@@ -90,8 +90,10 @@ namespace Silence.Graphics.Players
         private void OnAnimatorIK(int layer)
         {
             if (!CoordinatesIK) return;
-            if(!PlayerAnimatorIK.IsFinalPass(animator,layer))
+            int finalLayer=PlayerAnimatorIK.FinalLayer(animator);
+            if(layer!=finalLayer)
             {
+                if(!CharacterIKPassRules.ClearBeforeSolve(layer,finalLayer))return;
                 // Earlier IK-enabled layers must not solve last frame's goals
                 // before the final layer contributes this frame's actual pose.
                 foreach(var goal in Goals){animator.SetIKPositionWeight(goal,0);animator.SetIKRotationWeight(goal,0);}
@@ -127,12 +129,12 @@ namespace Silence.Graphics.Players
             float speed=state!=null && state.HasVelocity?state.Velocity.magnitude:0;
             float upper=Vector3.Distance(shoulder.position,mid.position),forearm=Vector3.Distance(mid.position,wrist.position);
             float width=NaturalArmPostureModel.EffectiveTorsoWidth(torsoWidth*scale,shoulderLocal.x);
-            var plan=NaturalArmPostureModel.Plan(Rig(shoulderLocal),Rig(midLocal),Rig(local),upper,forearm,side,speed,width,palmRadius*scale,.035f*scale);
+            var plan=NaturalArmPostureModel.Plan(Rig(shoulderLocal),Rig(midLocal),Rig(local),upper,forearm,side,speed,width,palmRadius*scale,.035f*scale,relaxWeight>.01f);
             bool free=originalWeight<.001f && originalRotationWeight<.001f && actor.HeldProp==null && actor.HeldTeammate==null &&
                 (state==null || !state.Carrying && (!state.Ready || state.Grounded)) && actor.Vitals.State!=VitalState.Wounded && (actions==null || actions.AllowRelaxedArms);
             bool wasRelaxed=relaxWeight>0;
             if(!free){relaxWeight=0;if(wasRelaxed){correction=Vector3.zero;release=0;}}
-            else relaxWeight=Mathf.MoveTowards(relaxWeight,plan.Required?1:0,Time.deltaTime*6);
+            else relaxWeight=NaturalArmPostureModel.Blend(relaxWeight,plan.Required,Time.deltaTime);
             Vector3? elbowHint=null;
             if(free && relaxWeight>0)
             {

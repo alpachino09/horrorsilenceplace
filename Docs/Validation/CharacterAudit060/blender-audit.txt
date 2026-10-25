@@ -1,0 +1,22 @@
+00:00.391  blend            | Read blend: "/workspace/generated-art/HoodedGirl/Stages/11_fbx_export.blend"
+Meshes: 47 unweighted: 0
+Idle {'LeftHand': 0.0754, 'RightHand': 0.0744, 'LeftLowerArm': 0.0917, 'RightLowerArm': 0.0918}
+Walk {'LeftHand': -0.0764, 'RightHand': -0.0787, 'LeftLowerArm': 0.0894, 'RightLowerArm': 0.0892}
+WalkBack {'LeftHand': -0.0833, 'RightHand': -0.0886, 'LeftLowerArm': 0.0894, 'RightLowerArm': 0.0892}
+Run {'LeftHand': -0.0247, 'RightHand': -0.0313, 'LeftLowerArm': 0.0894, 'RightLowerArm': 0.089}
+CrouchIdle {'LeftHand': 0.2366, 'RightHand': 0.0257, 'LeftLowerArm': 0.0375, 'RightLowerArm': 0.0303}
+CrouchWalk {'LeftHand': 0.2368, 'RightHand': 0.2362, 'LeftLowerArm': 0.0371, 'RightLowerArm': 0.0321}
+CarryIdle {'LeftHand': 0.2908, 'RightHand': 0.2902, 'LeftLowerArm': 0.0388, 'RightLowerArm': 0.0391}
+CarryWalk {'LeftHand': 0.295, 'RightHand': 0.2943, 'LeftLowerArm': 0.0353, 'RightLowerArm': 0.0354}
+WoundedIdle {'LeftHand': 0.0283, 'RightHand': 0.1021, 'LeftLowerArm': 0.0384, 'RightLowerArm': 0.089}
+WoundedWalk {'LeftHand': 0.0283, 'RightHand': -0.074, 'LeftLowerArm': 0.0389, 'RightLowerArm': 0.0891}
+UseItem {'LeftHand': 0.2886, 'RightHand': 0.2451, 'LeftLowerArm': 0.039, 'RightLowerArm': 0.0256}
+TurnLeft {'LeftHand': -0.081, 'RightHand': 0.0744, 'LeftLowerArm': 0.0929, 'RightLowerArm': 0.093}
+TurnRight {'LeftHand': 0.0754, 'RightHand': -0.0848, 'LeftLowerArm': 0.0929, 'RightLowerArm': 0.093}
+StrafeLeft {'LeftHand': 0.0817, 'RightHand': 0.0586, 'LeftLowerArm': 0.0894, 'RightLowerArm': 0.0893}
+StrafeRight {'LeftHand': -0.0898, 'RightHand': 0.0807, 'LeftLowerArm': 0.0894, 'RightLowerArm': 0.0892}
+Jump {'LeftHand': 0.0743, 'RightHand': 0.0733, 'LeftLowerArm': 0.0917, 'RightLowerArm': 0.0918}
+Fall {'LeftHand': 0.0932, 'RightHand': 0.0924, 'LeftLowerArm': 0.0901, 'RightLowerArm': 0.0893}
+Land {'LeftHand': 0.0754, 'RightHand': 0.0744, 'LeftLowerArm': 0.0917, 'RightLowerArm': 0.0918}
+Death {'LeftHand': 0.0754, 'RightHand': 0.0744, 'LeftLowerArm': 0.0064, 'RightLowerArm': 0.0191}
+LookAround {'LeftHand': 0.0754, 'RightHand': 0.0744, 'LeftLowerArm': 0.0917, 'RightLowerArm': 0.0918}

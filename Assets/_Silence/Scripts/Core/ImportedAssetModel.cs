@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 namespace Silence.Core
 {
     public enum ImportedGround { Forest, Grass, Soil, Gravel }
-    public enum ImportedMotion { Idle, Walk, Run, Sprint, WalkBack, StrafeLeft, StrafeRight, RunBack, RunLeft, RunRight, CrouchIdle, CrouchWalk }
+    public enum ImportedMotion { Idle, Walk, Run, Sprint, WalkBack, StrafeLeft, StrafeRight, RunBack, RunLeft, RunRight, CrouchIdle, CrouchWalk, WoundedIdle, WoundedWalk }
     public enum ImportedMap { Unknown, Color, Normal, Roughness, Smoothness, Occlusion, Height, Metallic }
 
     public static class ImportedAssetModel
@@ -32,7 +32,9 @@ namespace Silence.Core
         public static ImportedMotion? Motion(string name)
         {
             string w=Words(name);
-            if(Any(w,"turn","turning","pivot","stairs","stair","climb","climbing","carry","carrying","wounded","injured","sad","attack","aim","shoot","rifle","pistol","bow"))return null;
+            if(Any(w,"turn","turning","pivot","stairs","stair","climb","climbing","carry","carrying","sad","attack","aim","shoot","rifle","pistol","bow"))return null;
+            bool injured=Any(w,"wounded","injured","limp","limping");
+            if(injured)return Any(w,"walk","walking","limp","limping")?(ImportedMotion?)ImportedMotion.WoundedWalk:Has(w,"idle")?ImportedMotion.WoundedIdle:null;
             bool walk=Any(w,"walk","walking"),run=Any(w,"run","running","jog","jogging"),crouch=Any(w,"crouch","crouched","crouching"),idle=Has(w,"idle");
             bool back=Any(w,"back","backward","backwards"),left=Has(w,"left"),right=Has(w,"right"),strafe=Any(w,"strafe","strafing","sidestep");
             if(crouch)return walk?(ImportedMotion?)ImportedMotion.CrouchWalk:idle?ImportedMotion.CrouchIdle:null;
@@ -76,7 +78,7 @@ namespace Silence.Core
             w=Regex.Replace(w," [1248] k "," ");
             return Regex.Replace(w," +"," ").Trim();
         }
-        public static bool Moving(ImportedMotion role)=>role!=ImportedMotion.Idle && role!=ImportedMotion.CrouchIdle;
+        public static bool Moving(ImportedMotion role)=>role!=ImportedMotion.Idle && role!=ImportedMotion.CrouchIdle && role!=ImportedMotion.WoundedIdle;
         public static float CadenceRatio(float oldSpeed,float newSpeed)
         {
             if(!Finite(oldSpeed) || !Finite(newSpeed) || oldSpeed<.15f || newSpeed<.15f)
