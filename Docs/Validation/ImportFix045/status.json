@@ -1,0 +1,28 @@
+{
+  "version": "0.4.5",
+  "scope": "Two CS0618 warnings in BasicMotionsCatalog; package import API only",
+  "unity_source_version": "6000.6.7f1",
+  "modern_api": "UnityEditor.AssetPackage.Package.Import(string, bool)",
+  "version_guard": "UNITY_6000_6_OR_NEWER",
+  "interactive_arguments_preserved": true,
+  "scene_regeneration_required": false,
+  "animation_reimport_required": false,
+  "syntax_files": 164,
+  "configurations": 7,
+  "syntax_errors": 0,
+  "selected_scope_errors": 0,
+  "static_structure": {
+    "passed": 243,
+    "failed": 0
+  },
+  "delivery": {
+    "files": 191,
+    "passed": 387,
+    "bytes": 367040,
+    "sha256": "46cff4ca14bc0ca69810891736e387b6a32843ef4b29e1e66646f3c9fe446f94"
+  },
+  "native_unity_compilation_run": false,
+  "new_tests_added": false,
+  "core_tests_rerun": false,
+  "core_tests_unchanged_report": "Docs/Validation/CharacterRework044/core-tests.txt"
+}

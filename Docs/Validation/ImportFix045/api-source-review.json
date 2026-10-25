@@ -1,0 +1,19 @@
+{
+  "kind": "API source review and static C# checks; not native Unity compilation",
+  "unity_version": "6000.6.7f1",
+  "commit": "d0e5e3e00a4f454bc2853234708c3d7c67ebca9a",
+  "native_compilation_run": false,
+  "change": "BasicMotionsCatalog package import uses Package.Import in UNITY_6000_6_OR_NEWER; legacy import retained only for older editors. Both interactive argument values are preserved.",
+  "files": [
+    {
+      "path": "Modules/AssetPackageEditor/Managed/AssetPackage.bindings.cs",
+      "sha256": "60d79d357af1013c242b6b56c8b6e06453727acd20735f338f79eb418d7c3808",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/AssetPackageEditor/Managed/AssetPackage.bindings.cs"
+    },
+    {
+      "path": "Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs",
+      "sha256": "5bd51868444fecb9e111028028cc36c21aa409ee9ca95a57fc38cd75676091ef",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/AssetDatabase/Editor/ScriptBindings/AssetDatabase.bindings.cs"
+    }
+  ]
+}

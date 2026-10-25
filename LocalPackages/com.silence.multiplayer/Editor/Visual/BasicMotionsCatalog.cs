@@ -41,8 +41,16 @@ namespace Silence.Multiplayer.Editor.Visual
             if (Names.All(name => File.Exists(Root + name + ".anim")))
             { Load(); Debug.Log("SILENCE: все 23 Humanoid-клипа уже импортированы. Можно выполнять шаг 2."); return; }
             if (Directory.Exists("Assets/PolyOne"))
-            { AssetDatabase.ImportPackage(path, true); Debug.Log("SILENCE: найдены существующие ресурсы PolyOne. В стандартном окне импорта выбери недостающие файлы; затем проверь все 23 клипа."); return; }
-            AssetDatabase.ImportPackage(path, false);
+            { ImportPackage(path, true); Debug.Log("SILENCE: найдены существующие ресурсы PolyOne. В стандартном окне импорта выбери недостающие файлы; затем проверь все 23 клипа."); return; }
+            ImportPackage(path, false);
+        }
+        private static void ImportPackage(string path, bool interactive)
+        {
+#if UNITY_6000_6_OR_NEWER
+            UnityEditor.AssetPackage.Package.Import(path, interactive);
+#else
+            AssetDatabase.ImportPackage(path, interactive);
+#endif
         }
         public static AnimationClip[] FallbackClips(Animator source)
         {

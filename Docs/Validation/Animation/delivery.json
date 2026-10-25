@@ -1,8 +1,8 @@
 {
   "kind": "delivery integrity/static updater compatibility; not a Unity test",
-  "archive": "Downloads/SILENCE_HumanMotion_0.4.4.zip",
-  "bytes": 366510,
-  "sha256": "03ac4b0204b7065238c12554d5e908ab2ffac6512336010549b272d10dc8fc7d",
+  "archive": "Downloads/SILENCE_HumanMotion_0.4.5.zip",
+  "bytes": 367040,
+  "sha256": "46cff4ca14bc0ca69810891736e387b6a32843ef4b29e1e66646f3c9fe446f94",
   "passed": 387,
   "failed": 0,
   "checks": [

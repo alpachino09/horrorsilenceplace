@@ -1,5 +1,5 @@
 {
-  "version": "Human Motion 0.4.4 — Character Rework",
+  "version": "Human Motion 0.4.5 — Unity package import API fix",
   "branch": "codex/player-character-integration",
   "core_nunit": {
     "passed": 198,
@@ -15,18 +15,18 @@
     "configurations": 7,
     "errors": 0,
     "unity_api_binding_checked": false,
-    "report": "Docs/Validation/CharacterRework044/source-checks.txt"
+    "report": "Docs/Validation/ImportFix045/source-checks.txt"
   },
   "static_structure": {
     "passed": 243,
     "failed": 0,
-    "report": "Docs/Validation/CharacterRework044/structure.json"
+    "report": "Docs/Validation/ImportFix045/structure.json"
   },
   "delivery": {
     "files": 191,
     "passed": 387,
-    "bytes": 366510,
-    "sha256": "03ac4b0204b7065238c12554d5e908ab2ffac6512336010549b272d10dc8fc7d"
+    "bytes": 367040,
+    "sha256": "46cff4ca14bc0ca69810891736e387b6a32843ef4b29e1e66646f3c9fe446f94"
   },
   "actual_source_anim_files": 23,
   "source_fbx_bones": 65,
@@ -81,5 +81,11 @@
     "native_unity_play_tested": false,
     "complete_artistic_rebuild": false,
     "explicit_ik_coordinator": true
+  },
+  "import_api_fix": {
+    "warnings_targeted": 2,
+    "source": "LocalPackages/com.silence.multiplayer/Editor/Visual/BasicMotionsCatalog.cs",
+    "report": "Docs/Validation/ImportFix045/status.json",
+    "native_unity_compilation_run": false
   }
 }
