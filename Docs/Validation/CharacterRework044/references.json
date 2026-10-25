@@ -1,0 +1,64 @@
+[
+  {
+    "url": "https://docs.unity3d.com/Packages/com.unity.animation.rigging@1.3/manual/constraints/TwoBoneIKConstraint.html",
+    "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/class-Avatar.html",
+    "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/RootMotion.html",
+    "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "url": "https://docs.unity3d.com/6000.0/Documentation/Manual/BlendTree-2DBlending.html",
+    "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "url": "https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@17.0/manual/lit-shader.html",
+    "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/needle-mirror/com.unity.animation.rigging/master/Runtime/AnimationJobs/TwoBoneIKJob.cs",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Unity-Technologies/Graphics/master/Packages/com.unity.render-pipelines.universal/Editor/ShaderGUI/BaseShaderGUI.cs",
+    "bytes": 61318,
+    "sha256": "a90794f18d4231109d79443c421e89f8aeb5e42f5db84f752150b069426e4555",
+    "local_cache": "/tmp/silence-character-references/BaseShaderGUI.cs",
+    "status": 200
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Unity-Technologies/Graphics/master/Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader",
+    "bytes": 24169,
+    "sha256": "1ec00dad6eb08102ef586e693a5cad6f27443143a0c881667e6305e61bb08628",
+    "local_cache": "/tmp/silence-character-references/Lit.shader",
+    "status": 200
+  },
+  {
+    "url": "https://github.com/needle-mirror/com.unity.animation.rigging/blob/1bd2bf88886c18e9012b90f9c3c331bc85c2f513/Documentation~/constraints/TwoBoneIKConstraint.md",
+    "sha256": "f8da8d6cf3d918699adef714111be680860f7c78ae5a570d9e2c4a8714961f49",
+    "bytes": 2531,
+    "read_from_public_package_git": true
+  },
+  {
+    "url": "https://github.com/needle-mirror/com.unity.animation.rigging/blob/1bd2bf88886c18e9012b90f9c3c331bc85c2f513/Runtime/AnimationJobs/TwoBoneIKConstraintJob.cs",
+    "sha256": "61e61929220ab3f098dac57dfe98487c5dfc84f7dc8bb8a39fc293d9064db37c",
+    "bytes": 6650,
+    "read_from_public_package_git": true
+  },
+  {
+    "url": "https://github.com/needle-mirror/com.unity.animation.rigging/blob/1bd2bf88886c18e9012b90f9c3c331bc85c2f513/Runtime/Utils/AnimationRuntimeUtils.cs",
+    "sha256": "57349e36a8994276ff6bf4b58e8a7ef32bab58128f0eddffe4e9a109ea06edd8",
+    "bytes": 19060,
+    "read_from_public_package_git": true
+  },
+  {
+    "url": "https://github.com/needle-mirror/com.unity.animation.rigging/blob/1bd2bf88886c18e9012b90f9c3c331bc85c2f513/Documentation~/constraints/DampedTransform.md",
+    "sha256": "f1b386a0d3246a72001f7d1beff50e1057e1645e9b5c18f1c1d98453245f9885",
+    "bytes": 1613,
+    "read_from_public_package_git": true
+  }
+]

@@ -1,39 +1,39 @@
 {
-  "version": "Human Motion 0.4.3 — Camera and Body",
+  "version": "Human Motion 0.4.4 — Character Rework",
   "branch": "codex/player-character-integration",
   "core_nunit": {
-    "passed": 185,
+    "passed": 198,
     "failed": 0,
-    "report": "Docs/Validation/PlayerView043/core-tests.txt"
+    "report": "Docs/Validation/CharacterRework044/core-tests.txt"
   },
   "python_archive_tests": {
     "passed": 9,
     "failed": 0
   },
   "csharp_syntax": {
-    "files": 154,
+    "files": 164,
     "configurations": 7,
     "errors": 0,
     "unity_api_binding_checked": false,
-    "report": "Docs/Validation/PlayerView043/source-checks.txt"
+    "report": "Docs/Validation/CharacterRework044/source-checks.txt"
   },
   "static_structure": {
-    "passed": 236,
+    "passed": 243,
     "failed": 0,
-    "report": "Docs/Validation/PlayerView043/structure.json"
+    "report": "Docs/Validation/CharacterRework044/structure.json"
   },
   "delivery": {
-    "files": 177,
-    "passed_checks": 359,
-    "bytes": 332547,
-    "sha256": "61c52ce407d7b3c800f5cd27838594594ff4b861cbd6b906f6e4e3516672e2f9"
+    "files": 191,
+    "passed": 387,
+    "bytes": 366510,
+    "sha256": "03ac4b0204b7065238c12554d5e908ab2ffac6512336010549b272d10dc8fc7d"
   },
   "actual_source_anim_files": 23,
   "source_fbx_bones": 65,
   "source_humanoid_mapping": 52,
   "gameplay_basic_clips_wired_by_generator": 14,
   "own_fallback_clips_wired_by_generator": 13,
-  "native_tests_provided_but_not_run": 6,
+  "native_tests_provided_but_not_run": 10,
   "native_unity_compilation_run": false,
   "native_unity_import_run": false,
   "unity_assets_generated_in_cloud": false,
@@ -72,5 +72,14 @@
     "new_core_cases": 15,
     "native_unity_play_tested": false,
     "report": "Docs/Animation/CAMERA_BODY_RU.md"
+  },
+  "character_rework": {
+    "menu": 27,
+    "generated_scene_minimum_protocol": 9,
+    "report": "Docs/CharacterRework/REPORT_RU.md",
+    "status": "Docs/Validation/CharacterRework044/status.json",
+    "native_unity_play_tested": false,
+    "complete_artistic_rebuild": false,
+    "explicit_ik_coordinator": true
   }
 }

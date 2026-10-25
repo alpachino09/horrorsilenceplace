@@ -1,0 +1,50 @@
+{
+  "version": "0.4.4",
+  "kind": "Character rework code and available cloud checks; native acceptance is separate",
+  "core_nunit": {
+    "passed": 198,
+    "failed": 0,
+    "new_cases": 13,
+    "random_goal_stress_samples": 1000
+  },
+  "source_blender": {
+    "game_meshes": 47,
+    "own_clips": 20,
+    "sampled_poses": 260,
+    "invalid_weights_or_links": 0,
+    "degenerate_faces": 0
+  },
+  "csharp_syntax": {
+    "files": 164,
+    "configurations": 7,
+    "errors": 0,
+    "unity_api_binding_checked": false
+  },
+  "selected_scope_errors": 0,
+  "static_structure": {
+    "passed": 243,
+    "failed": 0
+  },
+  "delivery": {
+    "files": 191,
+    "passed": 387,
+    "bytes": 366510,
+    "sha256": "03ac4b0204b7065238c12554d5e908ab2ffac6512336010549b272d10dc8fc7d"
+  },
+  "new_native_tests_provided_but_not_run": 4,
+  "total_native_tests_provided_but_not_run": 10,
+  "native_unity_compilation_run": false,
+  "native_unity_pose_sampling_run_in_cloud": false,
+  "native_unity_play_tested": false,
+  "four_player_network_tested": false,
+  "visual_quality_accepted": false,
+  "complete_artistic_model_and_clip_rework": false,
+  "real_flashlight_asset_present_in_cloud": false,
+  "remaining": [
+    "Native Unity compilation, pose sampling, materials and visual/contact acceptance",
+    "Four-player builds and performance",
+    "Artistic model refinement and authored directional crouch/start/stop/flinch clips",
+    "Actual flashlight geometry, finger contact and cap/battery marker calibration"
+  ],
+  "explicit_ik_coordinator": true
+}

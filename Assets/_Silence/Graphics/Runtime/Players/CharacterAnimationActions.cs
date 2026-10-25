@@ -11,6 +11,7 @@ namespace Silence.Graphics.Players
         [SerializeField] private PlayerContext actor;
         [SerializeField] private PlayerAnimationProfile profile;
         private Animator animator;
+        private ICharacterIKCoordinator coordinator;
         private readonly AnimationActionGate gate = new AnimationActionGate();
         private NoiseSystem subscribedNoise;
         private Vector3 point;
@@ -28,6 +29,7 @@ namespace Silence.Graphics.Players
         private void Start()
         {
             animator = GetComponent<Animator>();
+            coordinator=GetComponent<ICharacterIKCoordinator>();
             upper = animator.GetLayerIndex("UpperBody"); reactions = animator.GetLayerIndex("Reactions");
         }
         private void OnEnable() { if (actor != null) actor.AnimationCue += Receive; }
@@ -78,6 +80,8 @@ namespace Silence.Graphics.Players
                 animator.CrossFadeInFixedTime("Reactions.Trip", .08f, reactions, 0);
         }
         private void OnAnimatorIK(int layer)
+        { if(coordinator==null || !coordinator.CoordinatesIK)ApplyAnimatorIK(layer); }
+        public void ApplyAnimatorIK(int layer)
         {
             if (animator == null || !PlayerAnimatorIK.IsFinalPass(animator, layer) || !OwnsLeftHand || !animator.isHuman) return;
             var shoulder = animator.GetBoneTransform(HumanBodyBones.LeftUpperArm);

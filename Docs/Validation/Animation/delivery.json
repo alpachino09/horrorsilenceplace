@@ -1,9 +1,9 @@
 {
   "kind": "delivery integrity/static updater compatibility; not a Unity test",
-  "archive": "Downloads/SILENCE_HumanMotion_0.4.3.zip",
-  "bytes": 332547,
-  "sha256": "61c52ce407d7b3c800f5cd27838594594ff4b861cbd6b906f6e4e3516672e2f9",
-  "passed": 359,
+  "archive": "Downloads/SILENCE_HumanMotion_0.4.4.zip",
+  "bytes": 366510,
+  "sha256": "03ac4b0204b7065238c12554d5e908ab2ffac6512336010549b272d10dc8fc7d",
+  "passed": 387,
   "failed": 0,
   "checks": [
     {
@@ -164,6 +164,14 @@
     },
     {
       "check": "current complete source Assets/_Silence/Graphics/Runtime/Players/CharacterAnimationActions.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Graphics/Runtime/Players/CharacterArmIKReset.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Graphics/Runtime/Players/CharacterArmIKReset.cs",
       "passed": true
     },
     {
@@ -359,6 +367,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Scripts/Core/ArmAnatomyModel.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Core/ArmAnatomyModel.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Scripts/Core/CampaignModel.cs",
       "passed": true
     },
@@ -396,6 +412,14 @@
     },
     {
       "check": "current complete source Assets/_Silence/Scripts/Core/CreatureMotionMath.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Scripts/Core/FlashlightHandMotion.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Core/FlashlightHandMotion.cs",
       "passed": true
     },
     {
@@ -751,6 +775,22 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Scripts/Player/IArmPoseConstraints.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Player/IArmPoseConstraints.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Scripts/Player/ICharacterIKCoordinator.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Player/ICharacterIKCoordinator.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Scripts/Player/ILeftHandIKClaim.cs",
       "passed": true
     },
@@ -919,6 +959,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Tests/AnimationEditor/CharacterReworkReferenceTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/AnimationEditor/CharacterReworkReferenceTests.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Tests/AnimationEditor/NativeHumanMotionTests.cs",
       "passed": true
     },
@@ -940,6 +988,14 @@
     },
     {
       "check": "current complete source Assets/_Silence/Tests/AnimationEditor/Silence.Animation.EditorTests.asmdef",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Tests/EditMode/ArmAnatomyTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/EditMode/ArmAnatomyTests.cs",
       "passed": true
     },
     {
@@ -1087,6 +1143,38 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Docs/CharacterRework/README_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/CharacterRework/README_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Docs/CharacterRework/REFERENCES_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/CharacterRework/REFERENCES_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Docs/CharacterRework/REPORT_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/CharacterRework/REPORT_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Docs/CharacterRework/TASK_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/CharacterRework/TASK_RU.md",
+      "passed": true
+    },
+    {
       "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/CampaignProjectValidator.cs",
       "passed": true
     },
@@ -1156,6 +1244,30 @@
     },
     {
       "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/BasicMotionsCatalog.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkPreparation.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkPreparation.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterSurfaceFixer.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterSurfaceFixer.cs",
       "passed": true
     },
     {

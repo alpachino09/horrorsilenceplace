@@ -17,9 +17,9 @@ namespace Silence.Tests.Animation
     {
         private static GameObject[] Players()
         {
-            const string root = "Assets/_Silence/Generated/PlayerView";
-            if (!AssetDatabase.IsValidFolder(root)) { Assert.Ignore("Run menu 26 on your saved player world first."); return Array.Empty<GameObject>(); }
-            var result = AssetDatabase.FindAssets("t:Prefab", new[] { root }).Select(g => AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(g))).Where(p => p != null && p.GetComponent<PlayerContext>() != null).ToArray();
+            var roots = new[] { "Assets/_Silence/Generated/PlayerView", "Assets/_Silence/Generated/CharacterRework" }.Where(AssetDatabase.IsValidFolder).ToArray();
+            if (roots.Length == 0) { Assert.Ignore("Run menu 26 or 27 on your saved player world first."); return Array.Empty<GameObject>(); }
+            var result = AssetDatabase.FindAssets("t:Prefab", roots).Select(g => AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(g))).Where(p => p != null && p.GetComponent<PlayerContext>() != null).ToArray();
             if (result.Length == 0) Assert.Ignore("No camera/body player prefab has been generated."); return result;
         }
         [Test] public void CameraBodyPrefabsKeepOneAuthorityEyeAndOneLocalRig()

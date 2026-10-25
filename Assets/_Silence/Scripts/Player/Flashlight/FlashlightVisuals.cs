@@ -20,6 +20,7 @@ namespace Silence.Player
         public FlashlightArtRig Art => art;
         public FlashlightController Controller => controller;
         public Animator BodyAnimator => bodyAnimator;
+        public FlashlightAnimationController AnimationController => animationController;
         public PlayerContext Actor => actor;
         public Vector3 GripPosition { get; private set; }
         public Quaternion GripRotation { get; private set; }

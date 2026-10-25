@@ -1,0 +1,51 @@
+{
+  "source_blend_sha256": "11cde86bb731fd427e77611696cfb17c38eb39b34fd08aac3588cbf33842aeb3",
+  "source_geometry_modified": false,
+  "game_meshes": 47,
+  "lod_counts": {
+    "0": 16,
+    "1": 16,
+    "2": 15
+  },
+  "own_clips_inspected": 20,
+  "pose_samples": 260,
+  "bad_weights": 0,
+  "invalid_bone_groups": 0,
+  "degenerate_faces": 0,
+  "missing_armature_links": 0,
+  "material_names": [
+    "Brows_Dark",
+    "Eyes_GreyGreen",
+    "Fabric_Hood",
+    "Fabric_Olive",
+    "Fabric_Reinforcement",
+    "Fabric_Scarf",
+    "Hair_Cards",
+    "Hair_Dark",
+    "Lashes",
+    "Leather_Trim",
+    "Metal_Buckle",
+    "Oral_Tissue",
+    "Rubber_Sole",
+    "Skin_Face",
+    "Skin_Hands",
+    "Teeth"
+  ],
+  "fbx_files": [
+    {
+      "path": "Assets/Characters/HoodedGirl/Models/HoodedGirl_LOD0.fbx",
+      "bytes": 32928924,
+      "sha256": "c4f958586baee415182d5ce53ad8a6a8537f40188cd26baf31818c2ba8649933"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Models/HoodedGirl_LOD1.fbx",
+      "bytes": 10169484,
+      "sha256": "6f3394b768f2980fdcf0132452210026558bf2e9f853b2a61a5236eb30bcc311"
+    },
+    {
+      "path": "Assets/Characters/HoodedGirl/Models/HoodedGirl_LOD2.fbx",
+      "bytes": 8278332,
+      "sha256": "922949ecd3f14eb621434916bdd0f1eeacebdab6629de5bc1175c5cf1fccec2c"
+    }
+  ]
+}

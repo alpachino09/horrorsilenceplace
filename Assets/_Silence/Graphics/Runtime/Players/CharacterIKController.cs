@@ -12,6 +12,7 @@ namespace Silence.Graphics.Players
         private PlayerAvatarState state;
         private PlayerAvatarPresentation presentation;
         private CharacterAnimationActions actions;
+        private ICharacterIKCoordinator coordinator;
         private Transform left, right, chest;
         private Transform viewer;
         private readonly RaycastHit[] hits = new RaycastHit[12];
@@ -23,6 +24,7 @@ namespace Silence.Graphics.Players
         private void Start()
         {
             animator = GetComponent<Animator>();
+            coordinator=GetComponent<ICharacterIKCoordinator>();
             if (actor == null || profile == null || !animator.isHuman || animator.avatar == null || !animator.avatar.isValid)
             { Debug.LogError("SILENCE: character IK requires a valid Humanoid Avatar and animation profile.", this); enabled = false; return; }
             state = actor.GetComponent<PlayerAvatarState>(); presentation = actor.GetComponent<PlayerAvatarPresentation>(); actions = GetComponent<CharacterAnimationActions>();
@@ -42,12 +44,16 @@ namespace Silence.Graphics.Players
             return nearest < float.PositiveInfinity;
         }
         private void OnAnimatorIK(int layer)
+        { if(coordinator==null || !coordinator.CoordinatesIK)ApplyAnimatorIK(layer); }
+        public void ApplyAnimatorIK(int layer)
         {
             if (animator == null || !PlayerAnimatorIK.IsFinalPass(animator, layer)) return;
             // Clear last frame's goals before the interaction and flashlight owners write
             // their claims later in this same IK pass (execution order 700 / 750).
             foreach (var goal in Goals)
             { animator.SetIKPositionWeight(goal, 0); animator.SetIKRotationWeight(goal, 0); }
+            animator.SetIKHintPositionWeight(AvatarIKHint.LeftElbow, 0);
+            animator.SetIKHintPositionWeight(AvatarIKHint.RightElbow, 0);
             animator.SetLookAtWeight(0);
             if (profile == null || state == null || !state.Ready || !actor.Vitals.Alive || Time.deltaTime <= 0) return;
             bool close = actor.IsLocalOwner || viewer == null || Vector3.SqrMagnitude(viewer.position - actor.transform.position) < profile.ikDistance * profile.ikDistance;
@@ -71,7 +77,14 @@ namespace Silence.Graphics.Players
             Vector3 desiredLean = new Vector3(Mathf.Clamp(localAcceleration.z * .22f, -3, 4), 0, Mathf.Clamp(-localAcceleration.x * .25f, -4, 4));
             lean = Vector3.Lerp(lean, desiredLean, 1 - Mathf.Exp(-8 * Time.deltaTime));
             if (chest != null && (actions == null || actions.AllowFeet))
-                animator.SetBoneLocalRotation(HumanBodyBones.Chest, chest.localRotation * Quaternion.Euler(lean));
+            {
+                // Imported bone axes are not the actor axes. Apply the body-space
+                // lean through the parent's frame instead of assuming local X/Z.
+                Quaternion body=Quaternion.Euler(0,presentation!=null?presentation.BodyYaw:actor.transform.eulerAngles.y,0);
+                Quaternion worldLean=body*Quaternion.Euler(lean)*Quaternion.Inverse(body);
+                Quaternion parent=chest.parent!=null?chest.parent.rotation:Quaternion.identity;
+                animator.SetBoneLocalRotation(HumanBodyBones.Chest,Quaternion.Inverse(parent)*worldLean*parent*chest.localRotation);
+            }
             if (actor.View != null)
             {
                 Vector3 target = actions != null && actions.HasLookTarget ? actions.LookTarget : actor.View.transform.position + actor.View.transform.forward * 4;

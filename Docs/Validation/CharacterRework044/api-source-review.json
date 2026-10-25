@@ -1,0 +1,28 @@
+{
+  "kind": "Public C# API source inspection; not Unity compilation",
+  "unity_version": "6000.6.7f1",
+  "commit": "d0e5e3e00a4f454bc2853234708c3d7c67ebca9a",
+  "native_compilation_run": false,
+  "files": [
+    {
+      "path": "Modules/Animation/ScriptBindings/Animator.bindings.cs",
+      "sha256": "4665d835e263159136f0b247e20c7f24fc20e6e3051cd7b0fb184eaa12a0fd45",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/Animation/ScriptBindings/Animator.bindings.cs"
+    },
+    {
+      "path": "Runtime/Export/Graphics/GraphicsRenderers.bindings.cs",
+      "sha256": "3426763e4f89ff0c30e5992e7ee60f649a99a34e2ed42848f2b8bed0c7b5fad9",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Graphics/GraphicsRenderers.bindings.cs"
+    },
+    {
+      "path": "Runtime/Export/Graphics/Mesh.cs",
+      "sha256": "c380201555c0575cf8f4c3c71117093f4806ff29b2e26bda1fd237c8db710abc",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Graphics/Mesh.cs"
+    },
+    {
+      "path": "Runtime/Export/Director/PlayableExtensions.cs",
+      "sha256": "1397fbf9027284b1c1773e3c2ab0e36857f2ad1af720f82cc5dda252ccf88368",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Director/PlayableExtensions.cs"
+    }
+  ]
+}
