@@ -18,22 +18,29 @@ namespace Silence.Player
             {
                 ObservedActor = null;
                 if (spectator != null) { spectator.enabled = false; listener.enabled = false; }
-                actor.View.enabled = true; actor.View.GetComponent<AudioListener>().enabled = true;
+                bool legacyEye = actor.ViewRig == null;
+                actor.View.enabled = legacyEye; actor.View.GetComponent<AudioListener>().enabled = legacyEye;
                 return;
             }
             if (spectator == null)
             {
+                actor.ViewRig?.DisableRendering();
                 var root = new GameObject("Spectator view"); root.transform.SetParent(transform, false);
                 spectator = root.AddComponent<Camera>(); listener = root.AddComponent<AudioListener>();
                 spectator.CopyFrom(actor.View);
+                actor.ViewRig?.CopyCameraSettings(spectator);
             }
             actor.View.enabled = false; actor.View.GetComponent<AudioListener>().enabled = false;
             spectator.enabled = listener.enabled = true;
             PlayerContext target = null;
             foreach (var other in actor.Game.Actors) if (other != actor && other.Vitals.Alive) { target = other; break; }
-            ObservedActor = target != null ? target : actor;
+            var nextObserved = target != null ? target : actor;
+            if (ObservedActor != nextObserved)
+            { ObservedActor = nextObserved; ObservedActor.ViewRig?.CopyCameraSettings(spectator); spectator.enabled = true; }
             Transform eye = target != null ? target.View.transform : actor.View.transform;
-            spectator.transform.SetPositionAndRotation(eye.position, eye.rotation);
+            if (ObservedActor.ViewRig != null)
+            { ObservedActor.ViewRig.FirstPersonPose(out Vector3 position, out Quaternion rotation); spectator.transform.SetPositionAndRotation(position, rotation); }
+            else spectator.transform.SetPositionAndRotation(eye.position, eye.rotation);
         }
     }
 }

@@ -1,0 +1,19 @@
+{
+  "version": "0.4.3",
+  "kind": "Available cloud verification; not native Unity acceptance",
+  "new_core_cases_passed": 15,
+  "all_core_cases_passed": 185,
+  "csharp_files": 154,
+  "preprocessor_configurations": 7,
+  "syntax_errors": 0,
+  "selected_scope_errors": 0,
+  "structure_passed": 236,
+  "delivery_checks_passed": 359,
+  "new_native_tests_delivered_but_not_run": 2,
+  "native_unity_compilation_run": false,
+  "native_unity_play_tested": false,
+  "four_player_network_tested": false,
+  "source_geometry_report": "source-body-rays.json",
+  "api_source_report": "api-source-review.json",
+  "installation_and_native_checklist": "../../Animation/CAMERA_BODY_RU.md"
+}

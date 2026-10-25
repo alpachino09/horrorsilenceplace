@@ -1,36 +1,39 @@
 {
-  "version": "Human Motion 0.4.2",
+  "version": "Human Motion 0.4.3 — Camera and Body",
   "branch": "codex/player-character-integration",
   "core_nunit": {
-    "passed": 170,
-    "failed": 0
+    "passed": 185,
+    "failed": 0,
+    "report": "Docs/Validation/PlayerView043/core-tests.txt"
   },
   "python_archive_tests": {
     "passed": 9,
     "failed": 0
   },
   "csharp_syntax": {
-    "files": 146,
+    "files": 154,
     "configurations": 7,
     "errors": 0,
-    "unity_api_binding_checked": false
+    "unity_api_binding_checked": false,
+    "report": "Docs/Validation/PlayerView043/source-checks.txt"
   },
   "static_structure": {
-    "passed": 230,
-    "failed": 0
+    "passed": 236,
+    "failed": 0,
+    "report": "Docs/Validation/PlayerView043/structure.json"
   },
   "delivery": {
-    "files": 168,
-    "passed_checks": 341,
-    "bytes": 309622,
-    "sha256": "537ceb741bcf408ec53cb434aeb7492c8e8589fd4a97e971cb2041ed30a4006d"
+    "files": 177,
+    "passed_checks": 359,
+    "bytes": 332547,
+    "sha256": "61c52ce407d7b3c800f5cd27838594594ff4b861cbd6b906f6e4e3516672e2f9"
   },
   "actual_source_anim_files": 23,
   "source_fbx_bones": 65,
   "source_humanoid_mapping": 52,
   "gameplay_basic_clips_wired_by_generator": 14,
   "own_fallback_clips_wired_by_generator": 13,
-  "native_tests_provided_but_not_run": 4,
+  "native_tests_provided_but_not_run": 6,
   "native_unity_compilation_run": false,
   "native_unity_import_run": false,
   "unity_assets_generated_in_cloud": false,
@@ -59,5 +62,15 @@
     "errors": 0,
     "detector_regressions_passed": 8,
     "native_unity_compilation_run": false
+  },
+  "camera_body": {
+    "menu": 26,
+    "toggle_key": "V",
+    "installed_in_copy_of_current_world": true,
+    "generated_scene_minimum_protocol": 8,
+    "source_blender_geometry_inspected": true,
+    "new_core_cases": 15,
+    "native_unity_play_tested": false,
+    "report": "Docs/Animation/CAMERA_BODY_RU.md"
   }
 }

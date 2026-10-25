@@ -14,13 +14,20 @@ namespace Silence.Graphics.Players
         {
             public Camera camera;
             public ShadowCastingMode[] previous;
+            public bool previousMaterialState;
         }
         [SerializeField] private Renderer[] headRenderers = Array.Empty<Renderer>();
+        [SerializeField] private Renderer[] bodyRenderers = Array.Empty<Renderer>();
+        private Material[][] exteriorMaterials, firstPersonMaterials;
+        private readonly Dictionary<Material, Material> interiorSafeMaterials = new Dictionary<Material, Material>();
+        private bool firstPersonMaterialState;
         private ShadowCastingMode[] baseline = Array.Empty<ShadowCastingMode>();
         private PlayerContext actor;
         private readonly Stack<Frame> frames = new Stack<Frame>();
         private readonly Stack<Frame> pool = new Stack<Frame>();
         public IReadOnlyList<Renderer> HiddenRenderers => headRenderers;
+        public IReadOnlyList<Renderer> BodyRenderers => bodyRenderers;
+        public void ConfigureBody(Renderer[] renderers) { RestoreMaterials(); bodyRenderers = renderers ?? Array.Empty<Renderer>(); exteriorMaterials = null; firstPersonMaterials = null; }
         public void Configure(Renderer[] renderers)
         {
             Restore(); headRenderers = renderers ?? Array.Empty<Renderer>(); CaptureBaseline();
@@ -51,10 +58,11 @@ namespace Silence.Graphics.Players
         private void Begin(Camera camera)
         {
             if (camera == null || actor == null || headRenderers.Length == 0) return;
-            bool hide = camera == actor.View && actor.IsLocalOwner;
+            bool hide = actor.IsLocalOwner && (actor.ViewRig != null ? actor.ViewRig.IsFirstPersonCamera(camera) : camera == actor.View);
             var spectator = camera.GetComponentInParent<SpectatorView>();
             hide |= spectator != null && spectator.SpectatorCamera == camera && spectator.ObservedActor == actor;
             var frame = pool.Count > 0 ? pool.Pop() : new Frame(); frame.camera = camera;
+            frame.previousMaterialState = firstPersonMaterialState; SetMaterialState(hide);
             if (frame.previous == null || frame.previous.Length != headRenderers.Length) frame.previous = new ShadowCastingMode[headRenderers.Length];
             for (int i = 0; i < headRenderers.Length; i++)
             {
@@ -70,6 +78,7 @@ namespace Silence.Graphics.Players
             while (frames.Count > 0)
             {
                 var frame = frames.Pop();
+                SetMaterialState(frame.previousMaterialState);
                 for (int i = 0; i < headRenderers.Length; i++) if (headRenderers[i] != null) headRenderers[i].shadowCastingMode = frame.previous[i];
                 bool matched = frame.camera == camera; frame.camera = null; pool.Push(frame);
                 if (matched) break;
@@ -79,6 +88,41 @@ namespace Silence.Graphics.Players
         {
             for (int i = 0; i < Math.Min(headRenderers.Length, baseline.Length); i++) if (headRenderers[i] != null) headRenderers[i].shadowCastingMode = baseline[i];
             frames.Clear(); pool.Clear();
+            RestoreMaterials();
+        }
+        private void SetMaterialState(bool firstPerson)
+        {
+            if (firstPerson == firstPersonMaterialState || bodyRenderers.Length == 0) return;
+            if (exteriorMaterials == null)
+            {
+                exteriorMaterials = new Material[bodyRenderers.Length][]; firstPersonMaterials = new Material[bodyRenderers.Length][];
+                for (int i = 0; i < bodyRenderers.Length; i++)
+                {
+                    if (bodyRenderers[i] == null) continue;
+                    var original = bodyRenderers[i].sharedMaterials; exteriorMaterials[i] = original; var safe = new Material[original.Length];
+                    for (int j = 0; j < original.Length; j++)
+                    {
+                        var material = original[j]; safe[j] = material;
+                        if (material == null || !material.HasProperty("_Cull")) continue;
+                        if (!interiorSafeMaterials.TryGetValue(material, out var clone))
+                        {
+                            clone = new Material(material) { name = material.name + " (local first person)", hideFlags = HideFlags.DontSave };
+                            clone.SetFloat("_Cull", (float)CullMode.Back); interiorSafeMaterials.Add(material, clone);
+                        }
+                        safe[j] = clone;
+                    }
+                    firstPersonMaterials[i] = safe;
+                }
+            }
+            var materials = firstPerson ? firstPersonMaterials : exteriorMaterials;
+            for (int i = 0; i < bodyRenderers.Length; i++) if (bodyRenderers[i] != null && materials[i] != null) bodyRenderers[i].sharedMaterials = materials[i];
+            firstPersonMaterialState = firstPerson;
+        }
+        private void RestoreMaterials() { if (firstPersonMaterialState) SetMaterialState(false); }
+        private void OnDestroy()
+        {
+            RestoreMaterials(); foreach (var material in interiorSafeMaterials.Values) if (material != null) Destroy(material);
+            interiorSafeMaterials.Clear();
         }
     }
 }

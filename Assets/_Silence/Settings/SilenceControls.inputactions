@@ -202,6 +202,15 @@
           "processors": "",
           "interactions": "",
           "initialStateCheck": false
+        },
+        {
+          "name": "TogglePerspective",
+          "type": "Button",
+          "id": "0b43cfa3-d319-4c81-bb52-616d5edbcf10",
+          "expectedControlType": "Button",
+          "processors": "",
+          "interactions": "",
+          "initialStateCheck": false
         }
       ],
       "bindings": [
@@ -664,6 +673,17 @@
           "processors": "",
           "groups": "Keyboard&Mouse",
           "action": "CarefulWalk",
+          "isComposite": false,
+          "isPartOfComposite": false
+        },
+        {
+          "name": "",
+          "id": "911826d2-a24f-4f0d-acc4-270e06e46614",
+          "path": "<Keyboard>/v",
+          "interactions": "",
+          "processors": "",
+          "groups": "Keyboard&Mouse",
+          "action": "TogglePerspective",
           "isComposite": false,
           "isPartOfComposite": false
         }

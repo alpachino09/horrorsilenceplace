@@ -29,6 +29,7 @@ namespace Silence.Multiplayer.Editor.Visual
             if (GUILayout.Button("2. Подключить анимации к КОПИИ текущего мира")) Run(() => { string path = Install(); if (!string.IsNullOrEmpty(path)) message = "Создан мир с анимациями: " + path + ". Он уже открыт. Play → Создать сессию → Начать раунд."; });
             if (GUILayout.Button("Проверить ссылки и настройку текущего мира")) Run(() => { if (ValidateCurrent()) message = "Ссылки проверены. Далее нужны Play и отдельные Host/Client."; });
             if (GUILayout.Button("3. Создать отдельную площадку проверки")) Run(() => AnimationLabBuilder.Create());
+            if (GUILayout.Button("Камера и тело: вид от первого/третьего лица (26)")) PlayerViewWorkshop.Open();
             if (GUILayout.Button("Вернуться в последний мир с анимациями")) Run(OpenLastWorld);
             if (GUILayout.Button("Собрать текущий мир: Host и Client")) Run(() => { if (ValidateCurrent()) NetworkFarmGenerator.BuildScene(SceneManager.GetActiveScene().path); });
             if (!string.IsNullOrEmpty(message)) EditorGUILayout.HelpBox(message, MessageType.Info);
@@ -51,7 +52,8 @@ namespace Silence.Multiplayer.Editor.Visual
             return managers[0];
         }
         private static IEnumerable<NetworkPrefab> Entries(NetworkManager manager) => manager.NetworkConfig.Prefabs.NetworkPrefabsLists.Where(l => l != null).SelectMany(l => l.PrefabList)
-            .Concat(manager.NetworkConfig.Prefabs.Prefabs).Where(p => p != null && p.Prefab != null).GroupBy(p => p.Prefab).Select(g => g.First());
+            .Concat(manager.NetworkConfig.Prefabs.Prefabs).Where(p => p != null && p.Prefab != null)
+            .GroupBy(p => (p.Override, p.Prefab, p.SourcePrefabToOverride, p.SourceHashToOverride, p.OverridingTargetPrefab)).Select(g => g.First());
         public static string Install()
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Сначала останови Play.");
@@ -100,6 +102,7 @@ namespace Silence.Multiplayer.Editor.Visual
                         (animator.GetComponent<CharacterIKController>() ?? animator.gameObject.AddComponent<CharacterIKController>()).Configure(actor, profile);
                         (animator.GetComponent<CharacterAnimationActions>() ?? animator.gameObject.AddComponent<CharacterAnimationActions>()).Configure(actor, profile);
                         (animator.GetComponent<FootstepAnimationBridge>() ?? animator.gameObject.AddComponent<FootstepAnimationBridge>()).Configure(actor);
+                        PlayerViewWorkshop.ConfigurePlayer(contents, folder);
                         if (PrefabUtility.SaveAsPrefabAsset(contents, playerPath) == null) throw new IOException("Не удалось сохранить анимированного игрока.");
                     }
                     finally { PrefabUtility.UnloadPrefabContents(contents); }
@@ -115,7 +118,7 @@ namespace Silence.Multiplayer.Editor.Visual
                     if (!replacements.ContainsKey(entry.Prefab)) registry.Add(entry);
                 foreach (var prefab in replacements.Values) registry.Add(new NetworkPrefab { Prefab = prefab });
                 config.PlayerPrefab = replacements[original]; config.ForceSamePrefabs = true;
-                config.ProtocolVersion = checked((ushort)Math.Max(7, sourceManager.NetworkConfig.ProtocolVersion + 1));
+                config.ProtocolVersion = checked((ushort)Math.Max(8, sourceManager.NetworkConfig.ProtocolVersion + 1));
                 config.Prefabs = new NetworkPrefabs { NetworkPrefabsLists = new List<NetworkPrefabsList> { registry } };
                 manager.NetworkConfig = config; EditorUtility.SetDirty(manager); EditorUtility.SetDirty(registry); AssetDatabase.SaveAssets();
                 if (!EditorSceneManager.SaveScene(copy, target)) throw new IOException("Не удалось сохранить мир с анимациями.");

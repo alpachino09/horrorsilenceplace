@@ -9,7 +9,7 @@ namespace Silence.Input
         private InputActionAsset instance;
         private InputAction move, look, lookStick, sprint, crouch, jump;
         private InputAction interact, flashlight, inventory, pause, capture;
-        private InputAction drop, throwItem, doorControl, reloadFlashlight, holsterFlashlight, carefulWalk;
+        private InputAction drop, throwItem, doorControl, reloadFlashlight, holsterFlashlight, carefulWalk, togglePerspective;
         private readonly InputAction[] useSlots = new InputAction[5];
         public InputActionAsset Template => template;
         public Vector2 Move => move?.ReadValue<Vector2>() ?? Vector2.zero;
@@ -17,6 +17,7 @@ namespace Silence.Input
         public Vector2 StickLook => lookStick?.ReadValue<Vector2>() ?? Vector2.zero;
         public bool Sprint => sprint != null && sprint.IsPressed();
         public bool CarefulWalk => carefulWalk != null && carefulWalk.IsPressed();
+        public bool TogglePerspectivePressed => togglePerspective != null && togglePerspective.WasPressedThisFrame();
         public bool Crouch => crouch != null && crouch.IsPressed();
         public bool JumpPressed => jump != null && jump.WasPressedThisFrame();
         public bool InteractPressed => interact != null && interact.WasPressedThisFrame();
@@ -54,6 +55,17 @@ namespace Silence.Input
             drop = Optional("Drop"); throwItem = Optional("Throw"); doorControl = Optional("DoorControl");
             reloadFlashlight = Optional("ReloadFlashlight"); holsterFlashlight = Optional("HolsterFlashlight");
             carefulWalk = Optional("CarefulWalk");
+            togglePerspective = Optional("TogglePerspective");
+            // Existing generated templates may predate the new action. Extend only
+            // this player's private input instance, preserving the stored template.
+            if (togglePerspective == null)
+            {
+                var gameplay = instance.FindActionMap("Gameplay", true);
+                bool keyTaken = false;
+                foreach (var binding in gameplay.bindings) if (binding.path == "<Keyboard>/v") keyTaken = true;
+                togglePerspective = gameplay.AddAction("TogglePerspective", InputActionType.Button);
+                if (!keyTaken) togglePerspective.AddBinding("<Keyboard>/v");
+            }
             for (int i = 0; i < 5; i++) useSlots[i] = Optional("Use" + (i + 1));
             instance.Enable();
         }

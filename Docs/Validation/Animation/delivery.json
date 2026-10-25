@@ -1,9 +1,9 @@
 {
   "kind": "delivery integrity/static updater compatibility; not a Unity test",
-  "archive": "Downloads/SILENCE_HumanMotion_0.4.2.zip",
-  "bytes": 309622,
-  "sha256": "537ceb741bcf408ec53cb434aeb7492c8e8589fd4a97e971cb2041ed30a4006d",
-  "passed": 341,
+  "archive": "Downloads/SILENCE_HumanMotion_0.4.3.zip",
+  "bytes": 332547,
+  "sha256": "61c52ce407d7b3c800f5cd27838594594ff4b861cbd6b906f6e4e3516672e2f9",
+  "passed": 359,
   "failed": 0,
   "checks": [
     {
@@ -167,6 +167,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Graphics/Runtime/Players/CharacterArmPoseSafety.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Graphics/Runtime/Players/CharacterArmPoseSafety.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Graphics/Runtime/Players/CharacterIKController.cs",
       "passed": true
     },
@@ -228,6 +236,14 @@
     },
     {
       "check": "current complete source Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarVisibility.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Graphics/Runtime/Players/PlayerCameraRig.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Graphics/Runtime/Players/PlayerCameraRig.cs",
       "passed": true
     },
     {
@@ -436,6 +452,14 @@
     },
     {
       "check": "current complete source Assets/_Silence/Scripts/Core/PlayerMotionModel.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Scripts/Core/PlayerViewModel.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Core/PlayerViewModel.cs",
       "passed": true
     },
     {
@@ -735,6 +759,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Scripts/Player/IPlayerViewRig.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Player/IPlayerViewRig.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Scripts/Player/PlayerAnimationCue.cs",
       "passed": true
     },
@@ -895,6 +927,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Tests/AnimationEditor/PlayerViewReferenceTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/AnimationEditor/PlayerViewReferenceTests.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Tests/AnimationEditor/Silence.Animation.EditorTests.asmdef",
       "passed": true
     },
@@ -951,6 +991,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Tests/EditMode/PlayerViewTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/EditMode/PlayerViewTests.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Tests/EditMode/Silence.EditModeTests.asmdef",
       "passed": true
     },
@@ -980,6 +1028,14 @@
     },
     {
       "check": "current complete source Docs/Animation/AUDIT_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Docs/Animation/CAMERA_BODY_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/Animation/CAMERA_BODY_RU.md",
       "passed": true
     },
     {
@@ -1148,6 +1204,22 @@
     },
     {
       "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerAvatarWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerViewCalibration.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerViewCalibration.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerViewWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerViewWorkshop.cs",
       "passed": true
     },
     {

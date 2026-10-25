@@ -17,6 +17,7 @@
     <Compile Include="../../Assets/_Silence/Tests/EditMode/PlayerMotionTests.cs" />
     <Compile Include="../../Assets/_Silence/Tests/EditMode/FlashlightTests.cs" />
     <Compile Include="../../Assets/_Silence/Tests/EditMode/CharacterAnimationTests.cs" />
+    <Compile Include="../../Assets/_Silence/Tests/EditMode/PlayerViewTests.cs" />
     <Compile Include="../../Assets/Characters/HoodedGirl/Editor/HoodedGirlPreparation.cs" />
     <Compile Include="../HoodedGirl/Tests/HumanoidMappingTests.cs" />
     <None Include="../HoodedGirl/Tests/fbx_hierarchy.json" Link="HoodedGirl-fbx-hierarchy.json" CopyToOutputDirectory="PreserveNewest" />

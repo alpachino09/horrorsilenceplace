@@ -1,0 +1,46 @@
+{
+  "kind": "Actual saved Blender source, skinned Idle, downward ray into Body_Clothed; not Unity rendering",
+  "old_eye": {
+    "origin": [
+      0.0,
+      0.0,
+      1.6399999856948853
+    ],
+    "hit": true,
+    "position": [
+      0.0,
+      -0.07484184950590134,
+      0.7845537662506104
+    ],
+    "front_facing": true,
+    "distance": 0.8587138652801514
+  },
+  "natural_eye": {
+    "origin": [
+      0.0,
+      -0.1592857539653778,
+      1.5973304510116577
+    ],
+    "hit": true,
+    "position": [
+      0.0,
+      -0.18786032497882843,
+      1.270721673965454
+    ],
+    "front_facing": true,
+    "distance": 0.3278563916683197
+  },
+  "source_idle_hands": {
+    "Left": [
+      0.27103832364082336,
+      -0.04423486813902855,
+      0.8921193480491638
+    ],
+    "Right": [
+      -0.2710382640361786,
+      -0.04423476755619049,
+      0.8921191692352295
+    ]
+  },
+  "native_unity_tested": false
+}

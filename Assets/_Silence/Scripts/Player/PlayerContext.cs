@@ -16,6 +16,10 @@ namespace Silence.Player
         public PlayerSettings Settings => settings;
         public PlayerInputReader Input => input;
         public Camera View => view;
+        // View remains the authoritative eye/aim transform. Rendering can use a local
+        // first/third-person rig without moving server interaction rays or the lamp.
+        public IPlayerViewRig ViewRig { get; set; }
+        public Camera RenderView => ViewRig != null && ViewRig.ActiveCamera != null ? ViewRig.ActiveCamera : view;
         public InventoryModel Inventory { get; } = new InventoryModel();
         public ActorVitals Vitals { get; } = new ActorVitals();
         public StaminaModel Stamina { get; } = new StaminaModel();

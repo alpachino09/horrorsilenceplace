@@ -27,6 +27,7 @@ namespace Silence.Graphics.Players
         private Vector3 previousDirection;
         private float nextPivot;
         public Animator Model => model;
+        public Transform FacingRoot => facingRoot;
         public PlayerAnimationProfile AnimationProfile => animationProfile;
         public PlayerMotionFrame MotionFrame { get; private set; }
         public float BodyYaw { get; private set; }

@@ -47,6 +47,7 @@ namespace Silence.Graphics.Players
         private void LateUpdate()
         {
             if (actor == null || observer == null) return;
+            if (actor.ViewRig != null && !rawPreview) { actor.ViewRig.CameraOverride = false; observer.enabled = false; return; }
             observer.enabled = thirdPerson || rawPreview; actor.View.enabled = !observer.enabled;
             if (!observer.enabled) return;
             Vector3 target = actor.transform.position + Vector3.up * .95f;
@@ -61,6 +62,7 @@ namespace Silence.Graphics.Players
             if (!rawPreview)
             {
                 rawPreview = true;
+                if (actor.ViewRig != null) actor.ViewRig.CameraOverride = true;
                 motor.enabled = look.enabled = scanner.enabled = presentation.enabled = false;
                 if (ik != null) ik.enabled = false; if (actions != null) actions.enabled = false; if (footsteps != null) footsteps.enabled = false;
                 actor.Input.enabled = false; animator.runtimeAnimatorController = null; PlayerLook.Capture(false);
@@ -74,6 +76,7 @@ namespace Silence.Graphics.Players
             if (graph.IsValid()) graph.Destroy();
             if (!rawPreview) return;
             rawPreview = false;
+            if (actor != null && actor.ViewRig != null) actor.ViewRig.CameraOverride = false;
             if (animator != null) { animator.runtimeAnimatorController = controller; animator.applyRootMotion = false; animator.Rebind(); }
             if (actor != null && actor.Input != null) actor.Input.enabled = true;
             if (motor != null) motor.enabled = true; if (look != null) look.enabled = true;
@@ -91,7 +94,9 @@ namespace Silence.Graphics.Players
             GUILayout.Label("SILENCE — отдельная площадка анимаций");
             GUILayout.Label("WASD · Shift: бег · Alt: осторожно · Ctrl: присесть · Space: прыжок · E: дверь/подбор. Esc освобождает мышь.");
             if (GUILayout.Button("Начать управление мышью")) { EndRaw(); PlayerLook.Capture(true); }
-            if (GUILayout.Button(thirdPerson ? "Камера от первого лица" : "Камера снаружи — посмотреть тело")) thirdPerson = !thirdPerson;
+            bool external = actor.ViewRig != null ? actor.ViewRig.ThirdPerson : thirdPerson;
+            if (GUILayout.Button(external ? "Камера от первого лица" : "Камера снаружи — посмотреть тело"))
+            { if (actor.ViewRig != null) actor.ViewRig.SetThirdPerson(!external); else thirdPerson = !thirdPerson; }
             if (!rawPreview)
             {
                 GUILayout.Label("Скорость: " + motor.PlanarVelocity.magnitude.ToString("F2") + " м/с · Присед: " + motor.IsCrouched + " · Здоровье: " + actor.Vitals.State);
@@ -123,7 +128,8 @@ namespace Silence.Graphics.Players
         private void OnDisable()
         {
             if (actor != null && animator != null) EndRaw(); else if (graph.IsValid()) graph.Destroy();
-            if (observer != null) observer.enabled = false; if (actor != null && actor.View != null) actor.View.enabled = true;
+            if (actor != null && actor.ViewRig != null) actor.ViewRig.CameraOverride = false;
+            if (observer != null) observer.enabled = false; if (actor != null && actor.View != null) actor.View.enabled = actor.ViewRig == null;
         }
     }
 }

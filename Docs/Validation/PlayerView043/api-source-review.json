@@ -1,0 +1,45 @@
+{
+  "kind": "Public C# API source inspection, not native compilation",
+  "unity_version": "6000.6.7f1",
+  "commit": "d0e5e3e00a4f454bc2853234708c3d7c67ebca9a",
+  "native_compilation_run": false,
+  "files": [
+    {
+      "path": "Runtime/Export/Camera/Camera.bindings.cs",
+      "sha256": "b61eefac983a519c3f1da41a22c15a03cf03a0f5130a01c32cbc6ba1cf54666b",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Camera/Camera.bindings.cs"
+    },
+    {
+      "path": "Modules/Physics/ScriptBindings/Physics.bindings.cs",
+      "sha256": "0efec1ba04065b1909972b636d6abe8115c29399b08c41ff635ef2469e9a13ae",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/Physics/ScriptBindings/Physics.bindings.cs"
+    },
+    {
+      "path": "Modules/JSONSerialize/Public/JsonUtility.bindings.cs",
+      "sha256": "6107aa3ceac5582ad55d01233ae5d99c0bf1f0dccf21ac0b95deca1215faa161",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/JSONSerialize/Public/JsonUtility.bindings.cs"
+    },
+    {
+      "path": "Editor/Mono/EditorSceneManager.bindings.cs",
+      "sha256": "b3f1a2f2b2f83144399d39f3b969efdb362d5d23c3b07673988a16093f1b3536",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Editor/Mono/EditorSceneManager.bindings.cs"
+    },
+    {
+      "path": "Modules/Animation/ScriptBindings/Animator.bindings.cs",
+      "sha256": "4665d835e263159136f0b247e20c7f24fc20e6e3051cd7b0fb184eaa12a0fd45",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/Animation/ScriptBindings/Animator.bindings.cs"
+    }
+  ],
+  "additional_urp_review": {
+    "path": "Packages/com.unity.render-pipelines.universal/Runtime/UniversalAdditionalCameraData.cs",
+    "sha256": "41d646a2b1feb044e81c4ae0f8612f1c45de0635b004817f618912e36f0fc24b",
+    "url": "https://github.com/Unity-Technologies/Graphics/blob/master/Packages/com.unity.render-pipelines.universal/Runtime/UniversalAdditionalCameraData.cs",
+    "exact_user_urp_version_confirmed": false,
+    "finding": "Cached m_Camera is NonSerialized; serialized volume and camera render settings can be copied without replacing the destination Camera cache."
+  },
+  "geometry_probe": {
+    "command": "/tmp/silence-bpy52-env/bin/python Tools/PlayerView/inspect_source_body.py --blend /workspace/generated-art/HoodedGirl/Stages/11_fbx_export.blend --report Docs/Validation/PlayerView043/source-body-rays.json",
+    "source_sha256": "11cde86bb731fd427e77611696cfb17c38eb39b34fd08aac3588cbf33842aeb3",
+    "source_modified": false
+  }
+}
