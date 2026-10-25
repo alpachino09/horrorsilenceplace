@@ -11,7 +11,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "0.4.7"
+VERSION = "0.4.8"
 NAME = "SILENCE_HumanMotion_" + VERSION
 DIRECTORIES = ["Assets/_Silence/Scripts", "Assets/_Silence/Editor", "Assets/_Silence/Tests",
                "Assets/_Silence/Settings", "Assets/_Silence/Graphics",
@@ -31,6 +31,12 @@ def build():
     for path in (ROOT / "Docs/CharacterRework").glob("*.md"):
         files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
     files["README_RU.md"] = (f"SILENCE Human Motion {VERSION}\n\n"
+        "0.4.8 исправляет ложные ошибки Пустые bounds для Teeth_Lower/Teeth_Upper/Tongue и их LOD.\n"
+        "Размер localBounds зависит от масштаба FBX: маленький меш не является пустым.\n"
+        "Обнови код через 00 из этой распакованной папки, дождись компиляции.\n"
+        "В уже созданном ..._Character мире нажми 27 → Проверить ссылки камеры и персонажа.\n"
+        "Для этого исправления не нужно создавать ещё одну копию мира или повторять 25.\n"
+        "Подробности: Docs/CharacterRework/SMALL_BOUNDS_FIX_RU.md.\n\n"
         "0.4.7: измерение skin по костям и bind poses вместо преобразования результата BakeMesh.\n"
         "Это обновление для ошибки Basic_Idle / Body_Clothed / размер 130 метров после 0.4.6.\n"
         "Останови Play, обнови код через 00 из этой распакованной папки, дождись компиляции.\n"

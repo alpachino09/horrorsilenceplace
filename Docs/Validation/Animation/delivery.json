@@ -1,9 +1,9 @@
 {
   "kind": "delivery integrity/static updater compatibility; not a Unity test",
-  "archive": "Downloads/SILENCE_HumanMotion_0.4.7.zip",
-  "bytes": 384845,
-  "sha256": "f7ba4eed15dcfbe35f79f735f8f913b350ecf56c8a3e942c6e0fd69dca21e01d",
-  "passed": 403,
+  "archive": "Downloads/SILENCE_HumanMotion_0.4.8.zip",
+  "bytes": 388315,
+  "sha256": "699acbff08d9bd7320ccc101f65f81adc6c52e071335b04460986185c9c8cb1f",
+  "passed": 405,
   "failed": 0,
   "checks": [
     {
@@ -1220,6 +1220,14 @@
     },
     {
       "check": "current complete source Docs/CharacterRework/SKINNING_SCALE_FIX_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Docs/CharacterRework/SMALL_BOUNDS_FIX_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/CharacterRework/SMALL_BOUNDS_FIX_RU.md",
       "passed": true
     },
     {

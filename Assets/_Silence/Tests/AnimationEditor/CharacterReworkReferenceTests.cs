@@ -13,6 +13,25 @@ namespace Silence.Tests.Animation
     // Native Unity tests supplied for Test Runner. They are not cloud pass counts.
     public sealed class CharacterReworkReferenceTests
     {
+        [Test] public void ExistingSmallMouthBoundsAreUsableWithoutRebuildingThePrefab()
+        {
+            var root=new GameObject("Teeth_Upper");var renderer=root.AddComponent<SkinnedMeshRenderer>();
+            var bounds=new Bounds(new Vector3(0,.016f,0),new Vector3(.0005f,.0002f,.0001f));
+            var mesh=new Mesh();mesh.vertices=new[]{bounds.min,bounds.max,new Vector3(bounds.min.x,bounds.max.y,bounds.max.z)};mesh.triangles=new[]{0,1,2};
+            mesh.boneWeights=Enumerable.Repeat(new BoneWeight{boneIndex0=0,weight0=1},3).ToArray();mesh.bindposes=new[]{Matrix4x4.identity};
+            renderer.sharedMesh=mesh;renderer.bones=new[]{root.transform};renderer.rootBone=root.transform;
+            try
+            {
+                root.transform.localScale=Vector3.one*100;renderer.localBounds=bounds;
+                var value=renderer.localBounds;
+                Assert.That(value.extents.sqrMagnitude,Is.LessThan(.0001f));
+                Assert.That(Silence.Core.SkinBoundsModel.IsUsable(new Silence.Core.RigVector(value.center.x,value.center.y,value.center.z),
+                    new Silence.Core.RigVector(value.extents.x,value.extents.y,value.extents.z)),Is.True);
+                Assert.That(renderer.localBounds,Is.EqualTo(bounds));
+            }
+            finally{UnityEngine.Object.DestroyImmediate(root);UnityEngine.Object.DestroyImmediate(mesh);}
+        }
+
         [Test] public void OpaqueRepairPreservesTextureAndRgbWhileRestoringDepthAndAlpha()
         {
             var shader=Shader.Find("Universal Render Pipeline/Lit");if(shader==null)Assert.Ignore("URP Lit is required.");

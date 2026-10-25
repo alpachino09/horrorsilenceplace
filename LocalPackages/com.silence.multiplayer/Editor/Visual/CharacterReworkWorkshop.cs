@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using Unity.Netcode;
 using Silence.Player;
 using Silence.Graphics.Players;
+using Silence.Core;
 
 namespace Silence.Multiplayer.Editor.Visual
 {
@@ -47,7 +48,13 @@ namespace Silence.Multiplayer.Editor.Visual
                 if(!File.Exists(reportPath) || !JsonUtility.FromJson<CharacterReworkPreparation.Report>(File.ReadAllText(reportPath)).nativePoseSampled)errors.Add("Нет измерения поз для "+player.name);
                 foreach(var renderer in player.GetComponentsInChildren<Renderer>(true))
                 {
-                    if(renderer is SkinnedMeshRenderer skin && skin.localBounds.extents.sqrMagnitude<.0001f)errors.Add("Пустые bounds: "+renderer.name);
+                    if(renderer is SkinnedMeshRenderer skin)
+                    {
+                        if(skin.sharedMesh==null || skin.sharedMesh.vertexCount==0)errors.Add("Нет skin-геометрии: "+renderer.name);
+                        var bounds=skin.localBounds;var center=bounds.center;var extents=bounds.extents;
+                        if(!SkinBoundsModel.IsUsable(new RigVector(center.x,center.y,center.z),new RigVector(extents.x,extents.y,extents.z)))
+                            errors.Add("Некорректные bounds: "+renderer.name+", center="+center+", extents="+extents);
+                    }
                     foreach(var material in renderer.sharedMaterials)
                         if(CharacterSurfaceFixer.IsSolid(renderer,material) &&
                             (!material.HasProperty("_Surface") || material.GetFloat("_Surface")!=0 || material.GetFloat("_ZWrite")!=1 || material.renderQueue!=2000 || material.GetColor("_BaseColor").a!=1))

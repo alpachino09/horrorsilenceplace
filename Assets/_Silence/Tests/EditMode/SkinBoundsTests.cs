@@ -6,6 +6,26 @@ namespace Silence.Tests
 {
     public sealed class SkinBoundsTests
     {
+        [TestCase(.001f)] [TestCase(.00001f)] [TestCase(.00000001f)]
+        public void SmallFacialPartsAreValidInLocalMeshUnits(float scale)
+        {
+            var extents=new RigVector(.02f*scale,.01f*scale,.005f*scale);
+            Assert.That(SkinBoundsModel.IsUsable(new RigVector(0,0,0),extents),Is.True);
+            Assert.That(RigVector.Dot(extents,extents),Is.LessThan(.0001f));
+        }
+        [Test] public void ZeroBoundsAreStillRejected()
+            => Assert.That(SkinBoundsModel.IsUsable(new RigVector(0,1,0),new RigVector(0,0,0)),Is.False);
+        [Test] public void FlatSurfaceWithFiniteNonzeroSizeIsValid()
+            => Assert.That(SkinBoundsModel.IsUsable(new RigVector(0,1,0),new RigVector(.01f,0,.02f)),Is.True);
+        [TestCase(float.NaN)] [TestCase(float.PositiveInfinity)] [TestCase(float.NegativeInfinity)]
+        public void NonfiniteBoundsAreRejected(float value)
+        {
+            Assert.That(SkinBoundsModel.IsUsable(new RigVector(value,0,0),new RigVector(1,1,1)),Is.False);
+            Assert.That(SkinBoundsModel.IsUsable(new RigVector(0,0,0),new RigVector(1,value,1)),Is.False);
+        }
+        [Test] public void NegativeExtentIsRejected()
+            => Assert.That(SkinBoundsModel.IsUsable(new RigVector(0,0,0),new RigVector(.01f,-.01f,.01f)),Is.False);
+
         [Test] public void FbxNonuniformScaleDoesNotInventAnOversizedCharacter()
         {
             var e=new RigVector(.005f,100,25);

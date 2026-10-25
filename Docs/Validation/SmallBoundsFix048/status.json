@@ -1,0 +1,39 @@
+{
+  "version": "0.4.8",
+  "scope": "Fix minimum-local-size false positives for Teeth/Tongue LOD bounds; validate existing generated scene without modifying assets",
+  "core_tests": {
+    "passed": 222,
+    "failed": 0,
+    "new_regression_cases": 9
+  },
+  "csharp_source_checks": {
+    "files": 170,
+    "configurations": 7,
+    "syntax_errors": 0,
+    "guard_errors": 0,
+    "selected_scope_errors": 0,
+    "unity_api_binding_checked": false
+  },
+  "static_structure": {
+    "passed": 247,
+    "failed": 0
+  },
+  "delivery": {
+    "files": 200,
+    "passed": 405,
+    "bytes": 388315,
+    "sha256": "699acbff08d9bd7320ccc101f65f81adc6c52e071335b04460986185c9c8cb1f"
+  },
+  "new_native_test_cases_provided_but_not_run": 1,
+  "native_unity_compilation_run": false,
+  "native_unity_test_runner_run": false,
+  "native_unity_play_tested": false,
+  "user_report": "Reference validation reached; only nine small-mouth renderer bounds errors reported in three LODs",
+  "precise_user_native_bounds_received": false,
+  "arbitrary_minimum_local_size_removed": true,
+  "empty_mesh_still_rejected": true,
+  "zero_or_nonfinite_bounds_still_rejected": true,
+  "existing_bounds_or_mesh_changed": false,
+  "regenerate_scene_required": false,
+  "repeat_menu_25_required": false
+}
