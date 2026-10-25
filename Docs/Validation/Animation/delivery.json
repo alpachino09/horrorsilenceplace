@@ -1,9 +1,9 @@
 {
   "kind": "delivery integrity/static updater compatibility; not a Unity test",
-  "archive": "Downloads/SILENCE_HumanMotion_0.4.9.zip",
-  "bytes": 393673,
-  "sha256": "f401f317914b10760cc4b5ac185d801a8e479ce9897c41bad71acf864b8424ac",
-  "passed": 414,
+  "archive": "Downloads/SILENCE_HumanMotion_0.5.0.zip",
+  "bytes": 432353,
+  "sha256": "be77184c5511a3da5292122649f2771cc6e4270ff38d7b3f2bca2d5211e0ad9f",
+  "passed": 623,
   "failed": 0,
   "checks": [
     {
@@ -39,11 +39,779 @@
       "passed": true
     },
     {
-      "check": "compiled workshop exposes current version",
+      "check": "bounds workshop exposes its compiled revision",
       "passed": true
     },
     {
       "check": "obsolete bounds error removed from shipped workshop",
+      "passed": true
+    },
+    {
+      "check": "imported asset workshop exposes current delivery version",
+      "passed": true
+    },
+    {
+      "check": "full installer template rendered",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/Characters/HoodedGirl/Editor/HoodedGirlPreparation.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/Characters/HoodedGirl/Editor/Silence.HoodedGirl.Editor.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/Characters/HoodedGirl/Scripts/HoodedGirlDemo.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/Characters/HoodedGirl/Scripts/Silence.HoodedGirl.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/Creatures/SilencePredator/Scripts/MonsterAnimationController.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Editor/Silence.Editor.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Editor/SilenceInteractionDiagnostics.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Editor/SilenceMultiplayerInstaller.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Editor/SilenceProjectValidator.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Editor/SilenceSceneGenerator.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Editor/SilenceSourceUpdater.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/CreatureModelPresentation.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/FarmFogVolume.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/FlashlightPresentation.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/GraphicsQualityManager.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/GraphicsQualityProfile.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/LegacyRendererMask.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/CharacterAnimationActions.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/CharacterArmIKReset.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/CharacterArmPoseSafety.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/CharacterIKController.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/FootstepAnimationBridge.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/HumanMotionLab.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/PlayerAnimationProfile.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarDefinition.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarFace.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarPresentation.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/PlayerAvatarVisibility.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/PlayerCameraRig.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Players/PlayerFootContacts.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/Silence.Graphics.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/VesperGamePresentation.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/VisualAtmosphere.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Graphics/Runtime/VisualSettingsUI.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/AssemblyInfo.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Audio/CreatureAudio.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Audio/MaskingAmbientSound.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Audio/MicrophoneNoiseMeter.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Audio/WorldAudio.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Config/ChapterDefinition.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Config/GameplaySettings.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Config/PlayerSettings.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/AcousticModels.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/ArmAnatomyModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/CampaignModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/CharacterAnimationModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/CommandInbox.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/CreatureMind.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/CreatureMotionMath.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/FlashlightHandMotion.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/FlashlightModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/ImportedAssetModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/InteractionGate.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/InteractionRules.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/InventoryModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/NoiseMath.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/PlayerCommand.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/PlayerMotionModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/PlayerViewModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/SessionAdmission.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/Silence.Core.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/SkinBoundsModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/SkinPoseModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Core/SurvivalModel.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Creatures/CreatureVisual.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Creatures/HearingCreature.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Creatures/RuntimeNavigation.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Gameplay/GameplayDirector.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Gameplay/WorldAtmosphere.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Input/PlayerInputReader.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/BreakableBarrier.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/CarryableProp.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/ChapterExit.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/IInteractable.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/Interactable.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/InteractionDiagnostics.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/InteractionScanner.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/ItemPickup.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/ManualDoor.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/MissionRadio.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/PrototypeDoor.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/PrototypeRadio.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Interactions/TeammateAid.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Inventory/ItemDefinition.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Missions/BootstrapLoader.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Missions/PrototypeExit.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Networking/FarmBootstrap.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Networking/IWorldAuthority.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Networking/OfflineWorldAuthority.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/ActorGameplayInput.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/FirstPersonMotor.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/Flashlight/FlashlightAnimationController.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/Flashlight/FlashlightArtRig.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/Flashlight/FlashlightAudioController.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/Flashlight/FlashlightController.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/Flashlight/FlashlightProfile.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/Flashlight/FlashlightVisuals.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/IArmPoseConstraints.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/ICharacterIKCoordinator.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/ILeftHandIKClaim.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/IPlayerViewRig.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/PlayerAnimationCue.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/PlayerAnimatorIK.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/PlayerAvatarState.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/PlayerContext.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/PlayerFlashlight.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/PlayerLook.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Player/SpectatorView.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Save/CampaignSaveStore.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/SceneQuery.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/Silence.Runtime.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/SoundSimulation/AcousticMaskingZone.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/SoundSimulation/AcousticOcclusion.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/SoundSimulation/NoiseEvent.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/SoundSimulation/NoiseSystem.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/SoundSimulation/SurfaceMaterial.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/UI/GameplayHud.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/UI/PrototypeHud.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Scripts/UI/PrototypePreferences.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Settings/SilenceControls.inputactions",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/AnimationEditor/CharacterReworkReferenceTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/AnimationEditor/ImportedAssetsReferenceTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/AnimationEditor/NativeHumanMotionTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/AnimationEditor/PlayerViewReferenceTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/AnimationEditor/Silence.Animation.EditorTests.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/AnimationEditor/SkinPoseReferenceTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/ArmAnatomyTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/CharacterAnimationTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/CoreTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/FlashlightTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/GameplayModelTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/ImportedAssetTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/NetworkRulesTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/PlayerMotionTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/PlayerViewTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/Silence.EditModeTests.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/SkinBoundsTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/EditMode/SkinPoseTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/PlayMode/FarmSmokeTests.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source Assets/_Silence/Tests/PlayMode/Silence.PlayModeTests.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/CampaignProjectValidator.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/CampaignSceneGenerator.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/CampaignWorldBuilder.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/NetworkFarmGenerator.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/NetworkProjectValidator.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Silence.Multiplayer.Editor.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/AnimationClipPreparation.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/AnimationLabBuilder.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/BasicMotionsCatalog.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkPreparation.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterSurfaceFixer.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/CreatureArtWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/FlashlightWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedAssetCatalog.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedAssetsWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedGroundInstaller.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedMotionInstaller.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/LightingConfigurator.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerAnimationControllerBuilder.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerAnimationWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerAvatarWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerViewCalibration.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/PlayerViewWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/Silence.Visual.Editor.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/SkinPoseSampler.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/TerrainBuilder.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/VegetationPainter.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/VesperGameInstaller.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/VisualAssetImporter.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/VisualAssetLibrary.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/VisualFarmRebuilder.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/VisualPerformanceRecorder.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/VisualSceneValidator.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Editor/Visual/VisualWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/FlashlightNetworkSync.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/GameplayActorNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/GameplayCreatureNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/GameplayPackets.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/GameplaySmokeProbe.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/GameplayWorldNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/NetworkInteractable.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/NetworkPackets.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/NetworkPlayer.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/NetworkSession.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/NetworkSmokeProbe.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/NetworkWorldAuthority.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/PlayerAvatarNetwork.cs",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/Runtime/Silence.Multiplayer.asmdef",
+      "passed": true
+    },
+    {
+      "check": "full installer includes verified source LocalPackages/com.silence.multiplayer/package.json",
       "passed": true
     },
     {
@@ -452,6 +1220,14 @@
     },
     {
       "check": "current complete source Assets/_Silence/Scripts/Core/FlashlightModel.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Scripts/Core/ImportedAssetModel.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Core/ImportedAssetModel.cs",
       "passed": true
     },
     {
@@ -1007,6 +1783,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Tests/AnimationEditor/ImportedAssetsReferenceTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/AnimationEditor/ImportedAssetsReferenceTests.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Tests/AnimationEditor/NativeHumanMotionTests.cs",
       "passed": true
     },
@@ -1076,6 +1860,14 @@
     },
     {
       "check": "current complete source Assets/_Silence/Tests/EditMode/GameplayModelTests.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Tests/EditMode/ImportedAssetTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/EditMode/ImportedAssetTests.cs",
       "passed": true
     },
     {
@@ -1164,6 +1956,14 @@
     },
     {
       "check": "current complete source Docs/Animation/DIAGNOSTIC_FIX_041_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Docs/Animation/IMPORTED_ASSETS_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/Animation/IMPORTED_ASSETS_RU.md",
       "passed": true
     },
     {
@@ -1272,6 +2072,10 @@
     },
     {
       "check": "manifest bytes Install_Bounds_Fix.command",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Install_Update.command",
       "passed": true
     },
     {
@@ -1384,6 +2188,38 @@
     },
     {
       "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/FlashlightWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedAssetCatalog.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedAssetCatalog.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedAssetsWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedAssetsWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedGroundInstaller.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedGroundInstaller.cs",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedMotionInstaller.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedMotionInstaller.cs",
       "passed": true
     },
     {

@@ -28,8 +28,14 @@ def verify():
         for rel in ["LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkWorkshop.cs", "Assets/_Silence/Scripts/Core/SkinBoundsModel.cs"]:
             check(hashlib.sha256(archive.read(NAME+"/"+rel)).hexdigest() in installer,"installer hash matches shipped source "+rel)
         workshop=archive.read(NAME+"/LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkWorkshop.cs").decode()
-        check('Version="'+manifest["version"]+'"' in workshop and "Версия проверки: " in workshop,"compiled workshop exposes current version")
+        check('Version="0.4.9"' in workshop and "Версия проверки: " in workshop,"bounds workshop exposes its compiled revision")
         check("Пустые bounds:" not in workshop,"obsolete bounds error removed from shipped workshop")
+        imported=archive.read(NAME+"/LocalPackages/com.silence.multiplayer/Editor/Visual/ImportedAssetsWorkshop.cs").decode()
+        check('Version="'+manifest["version"]+'"' in imported,"imported asset workshop exposes current delivery version")
+        full=archive.read(NAME+"/Install_Update.command").decode()
+        check("@FILE_LIST@" not in full and "@HASH_LIST@" not in full and "@VERSION@" not in full,"full installer template rendered")
+        for row in manifest["files"]:
+            if row['path'].startswith(('Assets/','LocalPackages/')):check(row['path'] in full and row['sha256'] in full,'full installer includes verified source '+row['path'])
         for row in manifest["files"]:
             data = archive.read(NAME + "/" + row["path"])
             check(len(data) == row["bytes"] and hashlib.sha256(data).hexdigest() == row["sha256"], "manifest bytes " + row["path"])

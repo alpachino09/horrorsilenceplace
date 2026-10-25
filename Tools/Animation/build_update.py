@@ -7,11 +7,12 @@ selected separately by its owner in menu 25.
 """
 import hashlib
 import json
+import shlex
 from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "0.4.9"
+VERSION = "0.5.0"
 NAME = "SILENCE_HumanMotion_" + VERSION
 DIRECTORIES = ["Assets/_Silence/Scripts", "Assets/_Silence/Editor", "Assets/_Silence/Tests",
                "Assets/_Silence/Settings", "Assets/_Silence/Graphics",
@@ -35,7 +36,22 @@ def build():
                         ("@BOUNDS_SHA256@", "Assets/_Silence/Scripts/Core/SkinBoundsModel.cs")]:
         installer = installer.replace(token, hashlib.sha256(files[path]).hexdigest())
     files["Install_Bounds_Fix.command"] = installer.encode()
+    source_files=sorted(p for p in files if p.startswith(("Assets/","LocalPackages/")))
+    full=(ROOT/"Tools/Animation/install_update.command").read_text().replace("@VERSION@",VERSION)
+    full=full.replace("@FILE_LIST@","\n".join("  "+shlex.quote(p) for p in source_files))
+    full=full.replace("@HASH_LIST@","\n".join("  "+shlex.quote(hashlib.sha256(files[p]).hexdigest()) for p in source_files))
+    files["Install_Update.command"]=full.encode()
     files["README_RU.md"] = (f"SILENCE Human Motion {VERSION}\n\n"
+        "Новое 0.5.0: подключение импортированных ObjectiveEnvironment_Assets и Kevin Iglesias.\n"
+        "Сохрани мир, закрой Unity, распакуй архив в Downloads. В macOS Terminal выполни:\n"
+        "bash ~/Downloads/SILENCE_HumanMotion_0.5.0/Install_Update.command\n"
+        "Выбери папку своего Unity-проекта. После установки открой его и дождись компиляции.\n"
+        "SILENCE → 28 Imported Textures and Human Motions → Найти импортированные ассеты.\n"
+        "Проверь наборы земли и клипы Покой / Ходьба / Бег. Затем создай ОДНУ копию текущего мира.\n"
+        "Откроется ..._Assets. Нажми проверку в 28, затем Play. V — посмотреть движения снаружи.\n"
+        "Только Install_Update.command устанавливает весь код окна 28; прежний Bounds Fix — отдельная старая правка.\n"
+        "Исходные TerrainData, слои, материалы, контроллеры и лицензионные ассеты сохраняются.\n"
+        "Подробности: Docs/Animation/IMPORTED_ASSETS_RU.md.\n\n"
         "Если после 0.4.8 снова появляется прежний текст Пустые bounds со строкой 58:\n"
         "закрой Unity и выполни в macOS Terminal команду:\n"
         "bash ~/Downloads/SILENCE_HumanMotion_0.4.9/Install_Bounds_Fix.command\n"

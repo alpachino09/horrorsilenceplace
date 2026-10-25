@@ -174,7 +174,7 @@ namespace Silence.Multiplayer.Editor.Visual
                             }
                             report.skins[r].maximumPoseActorSize=Vector3.Max(report.skins[r].maximumPoseActorSize,actorBounds.size);
                             if(!hasBounds[r]){measured[r]=bounds;hasBounds[r]=true;}else measured[r].Encapsulate(bounds);
-                            bool neutral=clips[c].name=="Idle" || clips[c].name=="Basic_Idle" || clips[c].name.EndsWith("|Idle",StringComparison.Ordinal);
+                            bool neutral=clips[c].name=="Idle" || clips[c].name=="Basic_Idle" || clips[c].name=="Imported_Idle" || clips[c].name.EndsWith("|Idle",StringComparison.Ordinal);
                             if(f!=0 || !neutral || !copy.name.StartsWith("Body_Clothed",StringComparison.Ordinal))continue;
                             var vertices=sampler.ActorVertices;var weights=copy.sharedMesh.boneWeights;
                             var torso=new HashSet<int>(copy.bones.Select((b,i)=>new{b,i}).Where(b=>b.b==hip || b.b==upper || b.b==animator.GetBoneTransform(HumanBodyBones.Spine) || b.b==animator.GetBoneTransform(HumanBodyBones.Chest)).Select(b=>b.i));

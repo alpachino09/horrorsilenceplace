@@ -1,0 +1,57 @@
+{
+  "version": "0.5.0",
+  "scope": "Import existing user-owned terrain texture sets and Human Basic Motions into a copy of the current game world",
+  "user_confirmed_folders": [
+    "Kevin Iglesias",
+    "ObjectiveEnvironment_Assets"
+  ],
+  "third_party_files_published": false,
+  "actual_imported_assets_present_in_cloud": false,
+  "core_tests": {
+    "passed": 264,
+    "failed": 0,
+    "new_cases": 42
+  },
+  "full_installer_tests": {
+    "passed": 5,
+    "failed": 0,
+    "exact_shipped_script_sha256": "3a9faedcc3fc302b55d623e5b3b6c239f79d6a0beb9749417e43cb18cf8d3fb8",
+    "platform": "Linux bash; macOS picker not run",
+    "preserves_meta_world_and_vendor_assets": true,
+    "new_files_and_rollback_tested": true
+  },
+  "csharp_source_checks": {
+    "files": 177,
+    "configurations": 7,
+    "syntax_errors": 0,
+    "guard_errors": 0,
+    "selected_scope_errors": 0,
+    "unity_api_binding_checked": false
+  },
+  "static_structure": {
+    "passed": 249,
+    "failed": 0
+  },
+  "delivery": {
+    "files": 211,
+    "passed": 623,
+    "bytes": 432353,
+    "sha256": "be77184c5511a3da5292122649f2771cc6e4270ff38d7b3f2bca2d5211e0ad9f"
+  },
+  "new_native_tests_provided_but_not_run": 3,
+  "native_unity_compilation_run": false,
+  "native_rendering_tested": false,
+  "native_animation_playback_tested": false,
+  "host_client_tested": false,
+  "gameplay_runtime_rewritten": false,
+  "original_scene_or_licensed_assets_overwritten_by_scene_installer": false,
+  "new_menu": "SILENCE/28 Imported Textures and Human Motions",
+  "motion_loop_roles": 12,
+  "separate_sprint_absent_uses_selected_run_with_measured_cadence": true,
+  "ground_targets": [
+    "Terrain layers",
+    "ground-like flat MeshRenderer slots"
+  ],
+  "original_terrain_heights_and_alphamaps_changed": false,
+  "assetstore_access": "Both user-provided Asset Store URLs returned proxy 403; page content not read; actual local resources selected in Unity"
+}

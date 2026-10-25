@@ -39,4 +39,9 @@ __pycache__/
 # User-supplied third-party animation art stays local; import the original licensed package.
 Assets/PolyOne/
 Assets/PolyOne.meta
+# Imported licensed Asset Store packages remain on the owner's machine.
+Assets/Kevin Iglesias/
+Assets/Kevin Iglesias.meta
+Assets/ObjectiveEnvironment_Assets/
+Assets/ObjectiveEnvironment_Assets.meta
 *.unitypackage

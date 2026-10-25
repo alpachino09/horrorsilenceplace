@@ -13,6 +13,12 @@ namespace Silence.Multiplayer.Editor.Visual
 {
     public static class AnimationClipPreparation
     {
+        public static Measurements MeasureCopy(AnimationClip source,Animator target,bool moving)
+        {
+            var copy=Object.Instantiate(source);
+            try{return Sample(copy,target,true,moving);}
+            finally{Object.DestroyImmediate(copy);}
+        }
         [Serializable] public sealed class Measurements
         {
             public string clip, source;
@@ -48,8 +54,12 @@ namespace Silence.Multiplayer.Editor.Visual
             Scene preview = EditorSceneManager.NewPreviewScene(); GameObject instance = null; PlayableGraph graph = default;
             try
             {
-                instance = Object.Instantiate(source.gameObject); instance.name = "SILENCE isolated clip sampler";
-                SceneManager.MoveGameObjectToScene(instance, preview); instance.hideFlags = HideFlags.HideAndDontSave;
+#if UNITY_6000_6_OR_NEWER
+                instance = Object.Instantiate(source.gameObject,new InstantiateParameters{scene=preview,worldSpace=true});
+#else
+                instance = Object.Instantiate(source.gameObject);SceneManager.MoveGameObjectToScene(instance, preview);
+#endif
+                instance.name = "SILENCE isolated clip sampler";instance.hideFlags = HideFlags.HideAndDontSave;
                 foreach (var component in instance.GetComponentsInChildren<MonoBehaviour>(true)) component.enabled = false;
                 instance.transform.SetPositionAndRotation(Vector3.zero, source.transform.rotation);
                 instance.transform.localScale = source.transform.lossyScale;

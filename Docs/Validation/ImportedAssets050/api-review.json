@@ -1,0 +1,52 @@
+{
+  "kind": "Public API review for 6000.6.7f1; not native compilation",
+  "commit": "d0e5e3e00a4f454bc2853234708c3d7c67ebca9a",
+  "native_compilation_run": false,
+  "facts": [
+    "TerrainLayer diffuse/normal/mask textures, tileSize, remap min/max are public",
+    "TextureImporter sRGBTexture/isReadable/textureCompression and SaveAndReimport are public",
+    "Texture2D GetPixelBilinear and PNG encoding use temporary local readable data-map copies",
+    "Animator controllers and blend trees are copied before replacements; runtime uses existing motor/IK"
+  ],
+  "assetstore_pages": [
+    {
+      "url": "https://assetstore.unity.com/packages/2d/textures-materials/floors/realistic-terrain-textures-free-279940",
+      "result": "proxy 403; not read"
+    },
+    {
+      "url": "https://assetstore.unity.com/packages/3d/animations/human-basic-motions-free-154271",
+      "result": "proxy 403; not read"
+    }
+  ],
+  "actual_imported_folders_confirmed_by_user": [
+    "Kevin Iglesias",
+    "ObjectiveEnvironment_Assets"
+  ],
+  "files": [
+    {
+      "path": "Modules/Terrain/Public/TerrainLayer.bindings.cs",
+      "sha256": "34c06bd8a9adbae025536c98086aed112302d6fa44778b5942fe7c99ea6e72a3",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/Terrain/Public/TerrainLayer.bindings.cs"
+    },
+    {
+      "path": "Modules/Terrain/Public/TerrainData.bindings.cs",
+      "sha256": "961b966973d328c1b9fd5cd542924d0268622893357cfc1932880d23c1e9caaf",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/Terrain/Public/TerrainData.bindings.cs"
+    },
+    {
+      "path": "Editor/Mono/AssetPipeline/TextureImporter.bindings.cs",
+      "sha256": "a0d18767771d90ca759bd63df1a7fc05400acbc4ceeb64b47a0bd8a27b71f748",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Editor/Mono/AssetPipeline/TextureImporter.bindings.cs"
+    },
+    {
+      "path": "Runtime/Export/Graphics/Texture.cs",
+      "sha256": "7aee9e21912f57ad9398fe535ef07af3fe146a932fcd955ee32f0c9516a555ee",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Graphics/Texture.cs"
+    },
+    {
+      "path": "Editor/Mono/Animation/AnimatorController.cs",
+      "sha256": "291c9b6f5b3ce7fa10f343c3ccd588e52ed5bf0a62271374db31d267cf8e9657",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Editor/Mono/Animation/AnimatorController.cs"
+    }
+  ]
+}
