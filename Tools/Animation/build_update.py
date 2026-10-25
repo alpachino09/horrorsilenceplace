@@ -11,7 +11,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "0.4.8"
+VERSION = "0.4.9"
 NAME = "SILENCE_HumanMotion_" + VERSION
 DIRECTORIES = ["Assets/_Silence/Scripts", "Assets/_Silence/Editor", "Assets/_Silence/Tests",
                "Assets/_Silence/Settings", "Assets/_Silence/Graphics",
@@ -30,7 +30,20 @@ def build():
         files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
     for path in (ROOT / "Docs/CharacterRework").glob("*.md"):
         files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
+    installer = (ROOT / "Tools/Animation/install_bounds_fix.command").read_text()
+    for token, path in [("@WORKSHOP_SHA256@", "LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkWorkshop.cs"),
+                        ("@BOUNDS_SHA256@", "Assets/_Silence/Scripts/Core/SkinBoundsModel.cs")]:
+        installer = installer.replace(token, hashlib.sha256(files[path]).hexdigest())
+    files["Install_Bounds_Fix.command"] = installer.encode()
     files["README_RU.md"] = (f"SILENCE Human Motion {VERSION}\n\n"
+        "Если после 0.4.8 снова появляется прежний текст Пустые bounds со строкой 58:\n"
+        "закрой Unity и выполни в macOS Terminal команду:\n"
+        "bash ~/Downloads/SILENCE_HumanMotion_0.4.9/Install_Bounds_Fix.command\n"
+        "Выбери папку своего Unity-проекта, где лежат Assets, Packages и ProjectSettings.\n"
+        "Скрипт заменит только два файла кода, сохранит их резервные копии и сверит SHA-256.\n"
+        "Открой этот проект, дождись компиляции, открой 27. Сверху должна быть Версия проверки: 0.4.9.\n"
+        "Нажми только Проверить ссылки камеры и персонажа в уже открытом ..._Character мире.\n"
+        "Ещё одна копия мира не нужна. Подробнее: Docs/CharacterRework/INSTALL_VERIFY_RU.md.\n\n"
         "0.4.8 исправляет ложные ошибки Пустые bounds для Teeth_Lower/Teeth_Upper/Tongue и их LOD.\n"
         "Размер localBounds зависит от масштаба FBX: маленький меш не является пустым.\n"
         "Обнови код через 00 из этой распакованной папки, дождись компиляции.\n"
@@ -82,7 +95,7 @@ def build():
         for path, data in sorted(files.items()):
             info = zipfile.ZipInfo(NAME + "/" + path, (2026, 10, 25, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
-            info.external_attr = 0o100644 << 16
+            info.external_attr = (0o100755 if path.endswith(".command") else 0o100644) << 16
             archive.writestr(info, data)
     print(destination.relative_to(ROOT), len(files), "files,", destination.stat().st_size, "bytes")
     return destination

@@ -14,16 +14,20 @@ namespace Silence.Multiplayer.Editor.Visual
 {
     public sealed class CharacterReworkWorkshop : EditorWindow
     {
+        public const string Version="0.4.9";
         private string message;
         [MenuItem("SILENCE/27 Character Rework and Audit")]
         public static void Open()=>GetWindow<CharacterReworkWorkshop>("SILENCE Character");
         private void OnGUI()
         {
-            EditorGUILayout.HelpBox("Сначала открой свой нынешний игровой мир с героиней. Установка создаст отдельную копию: непрозрачные материалы кожи/одежды, общая защита рук, проверка skin weights и bounds по настоящим клипам. Модель и мир не пересоздаются. Это техническая переработка; визуальная приёмка выполняется в Play.",MessageType.Info);
-            if(GUILayout.Button("Создать копию мира: исправить и проверить персонажей"))
-                try{string path=PlayerViewWorkshop.Install(true);if(path!=null)message="Открыта копия "+path+". Play → Создать сессию → Начать раунд. V — камера. Проверь руки и материалы.";}catch(Exception e){message=e.Message;Debug.LogException(e);}
+            EditorGUILayout.LabelField("Версия проверки: "+Version,EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("Проект",Path.GetFullPath("."),EditorStyles.wordWrappedLabel);
+            EditorGUILayout.LabelField("Открытый мир",SceneManager.GetActiveScene().path,EditorStyles.wordWrappedLabel);
+            EditorGUILayout.HelpBox("Если игровой мир уже создан через 27, нажми «Проверить ссылки камеры и персонажа». Обновление проверки bounds не требует ещё одной копии мира. Кнопка создания копии нужна для первой установки или изменения персонажей. Внешний вид проверяется в Play.",MessageType.Info);
             if(GUILayout.Button("Проверить ссылки камеры и персонажа"))
                 try{message=ValidateCurrent()?"Ссылки и материалы проверены. Остаётся визуальная проверка в Play.":"Смотри Console.";}catch(Exception e){message=e.Message;Debug.LogException(e);}
+            if(GUILayout.Button("Создать копию мира: исправить и проверить персонажей"))
+                try{string path=PlayerViewWorkshop.Install(true);if(path!=null)message="Открыта копия "+path+". Play → Создать сессию → Начать раунд. V — камера. Проверь руки и материалы.";}catch(Exception e){message=e.Message;Debug.LogException(e);}
             if(GUILayout.Button("Собрать текущий мир: Host и Client"))
                 try{if(ValidateCurrent())NetworkFarmGenerator.BuildScene(SceneManager.GetActiveScene().path);}catch(Exception e){message=e.Message;Debug.LogException(e);}
             if(!string.IsNullOrEmpty(message))EditorGUILayout.HelpBox(message,MessageType.Info);
@@ -61,7 +65,7 @@ namespace Silence.Multiplayer.Editor.Visual
                             errors.Add("Непрозрачность не настроена: "+renderer.name+" / "+material.name);
                 }
             }
-            Directory.CreateDirectory("Library/Silence");string report="SILENCE Character Rework reference validation — Failures: "+errors.Count+"\n"+string.Join("\n",errors)+"\nReferences/settings only. Native Play, contacts, visual quality and multiplayer remain to be reviewed.\n";
+            Directory.CreateDirectory("Library/Silence");string report="SILENCE Character Rework "+Version+" reference validation — Failures: "+errors.Count+"\nProject: "+Path.GetFullPath(".")+"\nScene: "+SceneManager.GetActiveScene().path+"\n"+string.Join("\n",errors)+"\nReferences/settings only. Native Play, contacts, visual quality and multiplayer remain to be reviewed.\n";
             File.WriteAllText("Library/Silence/CharacterReworkValidation.txt",report);if(errors.Count==0)Debug.Log(report);else Debug.LogError(report);return errors.Count==0;
         }
     }

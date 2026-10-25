@@ -1,0 +1,47 @@
+{
+  "version": "0.4.9",
+  "scope": "Direct two-file offline installer with backup, integrity checks and rollback; visible compiled validator version and project path",
+  "user_evidence": "Fresh screenshot still logs obsolete error text and Debug.LogError at old line 58; base player/camera validations pass in already-generated Character world",
+  "precise_reason_old_code_remains_on_mac_confirmed": false,
+  "installation_tests": {
+    "passed": 5,
+    "failed": 0,
+    "platform": "Linux bash, exact installer extracted from delivered ZIP",
+    "path_spaces_tested": true,
+    "copy_failure_rollback_tested": true
+  },
+  "bash_syntax_checked": true,
+  "macos_folder_picker_executed": false,
+  "native_unity_compilation_run": false,
+  "native_unity_play_tested": false,
+  "core_logic_changed_since_048": false,
+  "previous_048_core_tests": {
+    "passed": 222,
+    "failed": 0
+  },
+  "csharp_source_checks": {
+    "files": 170,
+    "configurations": 7,
+    "syntax_errors": 0,
+    "guard_errors": 0,
+    "selected_scope_errors": 0,
+    "unity_api_binding_checked": false
+  },
+  "static_structure": {
+    "passed": 247,
+    "failed": 0
+  },
+  "delivery": {
+    "files": 202,
+    "passed": 414,
+    "bytes": 393673,
+    "sha256": "f401f317914b10760cc4b5ac185d801a8e479ce9897c41bad71acf864b8424ac"
+  },
+  "direct_installer_files": [
+    "LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkWorkshop.cs",
+    "Assets/_Silence/Scripts/Core/SkinBoundsModel.cs"
+  ],
+  "existing_meta_world_or_art_changed_by_direct_installer": false,
+  "regenerate_scene_required": false,
+  "receipt": "Library/Silence/BoundsFixInstalled.txt"
+}

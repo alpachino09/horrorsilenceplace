@@ -1,9 +1,9 @@
 {
   "kind": "delivery integrity/static updater compatibility; not a Unity test",
-  "archive": "Downloads/SILENCE_HumanMotion_0.4.8.zip",
-  "bytes": 388315,
-  "sha256": "699acbff08d9bd7320ccc101f65f81adc6c52e071335b04460986185c9c8cb1f",
-  "passed": 405,
+  "archive": "Downloads/SILENCE_HumanMotion_0.4.9.zip",
+  "bytes": 393673,
+  "sha256": "f401f317914b10760cc4b5ac185d801a8e479ce9897c41bad71acf864b8424ac",
+  "passed": 414,
   "failed": 0,
   "checks": [
     {
@@ -20,6 +20,30 @@
     },
     {
       "check": "no vendor assets, scenes, models or .meta",
+      "passed": true
+    },
+    {
+      "check": "Mac installer executable permission",
+      "passed": true
+    },
+    {
+      "check": "installer hashes rendered",
+      "passed": true
+    },
+    {
+      "check": "installer hash matches shipped source LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkWorkshop.cs",
+      "passed": true
+    },
+    {
+      "check": "installer hash matches shipped source Assets/_Silence/Scripts/Core/SkinBoundsModel.cs",
+      "passed": true
+    },
+    {
+      "check": "compiled workshop exposes current version",
+      "passed": true
+    },
+    {
+      "check": "obsolete bounds error removed from shipped workshop",
       "passed": true
     },
     {
@@ -1191,6 +1215,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Docs/CharacterRework/INSTALL_VERIFY_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/CharacterRework/INSTALL_VERIFY_RU.md",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Docs/CharacterRework/README_RU.md",
       "passed": true
     },
@@ -1236,6 +1268,10 @@
     },
     {
       "check": "current complete source Docs/CharacterRework/TASK_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Install_Bounds_Fix.command",
       "passed": true
     },
     {

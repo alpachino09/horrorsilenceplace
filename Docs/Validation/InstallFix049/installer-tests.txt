@@ -1,0 +1,10 @@
+test_reinstall_keeps_correct_sources_and_separate_backups (__main__.BoundsInstallerTests.test_reinstall_keeps_correct_sources_and_separate_backups) ... ok
+test_replaces_only_two_sources_preserves_meta_world_and_backs_up_both (__main__.BoundsInstallerTests.test_replaces_only_two_sources_preserves_meta_world_and_backs_up_both) ... ok
+test_second_copy_failure_restores_both_original_sources (__main__.BoundsInstallerTests.test_second_copy_failure_restores_both_original_sources) ... ok
+test_tampered_archive_source_is_rejected_before_any_write (__main__.BoundsInstallerTests.test_tampered_archive_source_is_rejected_before_any_write) ... ok
+test_wrong_folder_is_rejected_without_project_changes (__main__.BoundsInstallerTests.test_wrong_folder_is_rejected_without_project_changes) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.504s
+
+OK

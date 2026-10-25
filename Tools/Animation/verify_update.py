@@ -21,6 +21,15 @@ def verify():
         check(all(p.startswith(NAME + "/") and ".." not in PurePosixPath(p).parts for p in entries), "one safe extracted root")
         check(not any(PurePosixPath(p).suffix in {".meta", ".anim", ".fbx", ".unity", ".prefab", ".controller", ".unitypackage"} or "/PolyOne/" in p or "/Generated/" in p for p in entries), "no vendor assets, scenes, models or .meta")
         manifest = json.loads(archive.read(NAME + "/delivery-manifest.json"))
+        installer_entry=NAME+"/Install_Bounds_Fix.command"
+        installer=archive.read(installer_entry).decode()
+        check(archive.getinfo(installer_entry).external_attr >> 16 & 0o111, "Mac installer executable permission")
+        check("@WORKSHOP_SHA256@" not in installer and "@BOUNDS_SHA256@" not in installer, "installer hashes rendered")
+        for rel in ["LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkWorkshop.cs", "Assets/_Silence/Scripts/Core/SkinBoundsModel.cs"]:
+            check(hashlib.sha256(archive.read(NAME+"/"+rel)).hexdigest() in installer,"installer hash matches shipped source "+rel)
+        workshop=archive.read(NAME+"/LocalPackages/com.silence.multiplayer/Editor/Visual/CharacterReworkWorkshop.cs").decode()
+        check('Version="'+manifest["version"]+'"' in workshop and "Версия проверки: " in workshop,"compiled workshop exposes current version")
+        check("Пустые bounds:" not in workshop,"obsolete bounds error removed from shipped workshop")
         for row in manifest["files"]:
             data = archive.read(NAME + "/" + row["path"])
             check(len(data) == row["bytes"] and hashlib.sha256(data).hexdigest() == row["sha256"], "manifest bytes " + row["path"])
