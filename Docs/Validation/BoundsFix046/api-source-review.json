@@ -1,0 +1,39 @@
+{
+  "kind": "Public API/source review, not native Unity compilation",
+  "unity_version": "6000.6.7f1",
+  "commit": "d0e5e3e00a4f454bc2853234708c3d7c67ebca9a",
+  "native_compilation_run": false,
+  "facts": [
+    "Animator.Update/Play, fireEvents and applyRootMotion are public",
+    "InstantiateParameters.scene is public in the target editor",
+    "BakeMesh(Mesh,bool useScale) is public",
+    "Averaged scale of a union of poses does not measure hip travel"
+  ],
+  "files": [
+    {
+      "path": "Editor/Mono/Animation/AnimatorController.cs",
+      "sha256": "291c9b6f5b3ce7fa10f343c3ccd588e52ed5bf0a62271374db31d267cf8e9657",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Editor/Mono/Animation/AnimatorController.cs"
+    },
+    {
+      "path": "Modules/Animation/ScriptBindings/Animator.bindings.cs",
+      "sha256": "4665d835e263159136f0b247e20c7f24fc20e6e3051cd7b0fb184eaa12a0fd45",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Modules/Animation/ScriptBindings/Animator.bindings.cs"
+    },
+    {
+      "path": "Runtime/Export/Scripting/UnityEngineObject.bindings.cs",
+      "sha256": "b044b1c23d11b40e78d9695140e7c7f0c3d3d0b800015136a9758ba0b3f76097",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Scripting/UnityEngineObject.bindings.cs"
+    },
+    {
+      "path": "Runtime/Export/Graphics/GraphicsRenderers.bindings.cs",
+      "sha256": "3426763e4f89ff0c30e5992e7ee60f649a99a34e2ed42848f2b8bed0c7b5fad9",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Graphics/GraphicsRenderers.bindings.cs"
+    },
+    {
+      "path": "Runtime/Export/Geometry/Bounds.cs",
+      "sha256": "42a826516773c292104735f034441cc5bedf2339a3ded790103853ca323671c3",
+      "url": "https://github.com/Unity-Technologies/UnityCsReference/blob/d0e5e3e00a4f454bc2853234708c3d7c67ebca9a/Runtime/Export/Geometry/Bounds.cs"
+    }
+  ]
+}

@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.Playables;
+using UnityEditor.Animations;
 using UnityEngine.SceneManagement;
 using Silence.Player;
+using Silence.Core;
 using Silence.Graphics.Players;
 using Object = UnityEngine.Object;
 
@@ -19,6 +19,7 @@ namespace Silence.Multiplayer.Editor.Visual
         [Serializable] public sealed class Report
         {
             public string kind="Unity Editor geometry/pose measurements; native Play acceptance is separate";
+            public string samplingMode="Isolated AnimatorController, applyRootMotion=false, reset between clips";
             public int opaqueMaterials, normalizedMeshes, sampledClips, sampledPoses;
             public bool nativePoseSampled, envelopeSampled, nativePlayTested;
             public float torsoWidth, torsoDepth;
@@ -26,8 +27,20 @@ namespace Silence.Multiplayer.Editor.Visual
             public List<Skin> skins=new List<Skin>();
             public List<Pose> poses=new List<Pose>();
         }
-        [Serializable] public sealed class Skin { public string renderer, mesh; public int vertices, repairedVertices; public Vector3 sampledBoundsSize; }
+        [Serializable] public sealed class Skin { public string renderer, mesh; public int vertices, repairedVertices; public Vector3 sampledBoundsSize, maximumPoseActorSize; }
         [Serializable] public sealed class Pose { public string clip; public float seconds, leftWristFromHips, rightWristFromHips; public Vector3 leftWrist, rightWrist; }
+        [Serializable] public sealed class Failure
+        {
+            public string version="0.4.6", scene, clip, clipPath, renderer, message;
+            public float seconds, expectedHeight, planarHipTravel;
+            public Vector3 localBoundsSize, actorBoundsSize, rendererScale;
+        }
+        private sealed class Rest
+        {
+            public Transform transform;public Vector3 position,scale;public Quaternion rotation;
+            public Rest(Transform t){transform=t;position=t.localPosition;rotation=t.localRotation;scale=t.localScale;}
+            public void Restore(){transform.localPosition=position;transform.localRotation=rotation;transform.localScale=scale;}
+        }
         private static Transform VisualRoot(PlayerContext actor,Animator animator)
         {
             var t=animator.transform;while(t.parent!=null && t.parent!=actor.transform)t=t.parent;
@@ -71,45 +84,79 @@ namespace Silence.Multiplayer.Editor.Visual
                 renderer.quality=SkinQuality.Bone4;report.skins.Add(record);
             }
             report.normalizedMeshes=repaired.Count;
-            Sample(actor,model,visual,renderers,report);
+            Sample(actor,model,visual,renderers,report,folder);
             model.GetComponent<CharacterArmPoseSafety>().ConfigureEnvelope(report.torsoWidth,report.torsoDepth);
             File.WriteAllText(folder+"/character-audit.json",JsonUtility.ToJson(report,true));
             return report;
         }
         private static bool Invalid(int index,float weight,int count)=>weight>0 && (index<0 || index>=count);
-        private static void Sample(PlayerContext actor,Animator source,Transform visual,SkinnedMeshRenderer[] originals,Report report)
+        public static Bounds ToActorBounds(Bounds bounds,Matrix4x4 matrix)
+        {
+            RigVector V(Vector4 v)=>new RigVector(v.x,v.y,v.z);
+            var e=SkinBoundsModel.TransformExtents(new RigVector(bounds.extents.x,bounds.extents.y,bounds.extents.z),V(matrix.GetColumn(0)),V(matrix.GetColumn(1)),V(matrix.GetColumn(2)));
+            return new Bounds(matrix.MultiplyPoint3x4(bounds.center),new Vector3(e.X,e.Y,e.Z)*2);
+        }
+        private static void Sample(PlayerContext actor,Animator source,Transform visual,SkinnedMeshRenderer[] originals,Report report,string folder)
         {
             var clips=source.runtimeAnimatorController.animationClips.Where(c=>c!=null && c.isHumanMotion && c.name!="BreathGame").Distinct().ToArray();
             if(clips.Length==0)throw new InvalidOperationException("Нет Humanoid-клипов для проверки деформаций.");
-            Scene preview=EditorSceneManager.NewPreviewScene();GameObject clone=null;PlayableGraph graph=default;Mesh baked=null;
+            Scene preview=EditorSceneManager.NewPreviewScene();GameObject clone=null;Mesh baked=null;
+            string controllerPath=folder+"/__PoseSampling.controller";
             var measured=new Bounds[originals.Length];var hasBounds=new bool[originals.Length];float width=.08f,depth=.07f;
+            var context=new Failure{scene=SceneManager.GetActiveScene().path,expectedHeight=actor.Settings.standingHeight};
             try
             {
+#if UNITY_6000_6_OR_NEWER
+                clone=Object.Instantiate(visual.gameObject,new InstantiateParameters{scene=preview,worldSpace=false});
+#else
                 clone=Object.Instantiate(visual.gameObject);SceneManager.MoveGameObjectToScene(clone,preview);
+#endif
                 foreach(var behaviour in clone.GetComponentsInChildren<MonoBehaviour>(true))behaviour.enabled=false;
                 Matrix4x4 local=actor.transform.worldToLocalMatrix*visual.localToWorldMatrix;
                 clone.transform.SetPositionAndRotation(local.GetColumn(3),local.rotation);clone.transform.localScale=local.lossyScale;
-                var animator=clone.GetComponentInChildren<Animator>(true);animator.runtimeAnimatorController=null;animator.applyRootMotion=false;animator.cullingMode=AnimatorCullingMode.AlwaysAnimate;animator.Rebind();
+                var animator=clone.GetComponentInChildren<Animator>(true);animator.runtimeAnimatorController=null;animator.applyRootMotion=false;
+                animator.fireEvents=false;animator.cullingMode=AnimatorCullingMode.AlwaysAnimate;animator.Rebind();
+                var rest=clone.GetComponentsInChildren<Transform>(true).Select(t=>new Rest(t)).ToArray();
                 var copies=clone.GetComponentsInChildren<SkinnedMeshRenderer>(true).ToDictionary(r=>AnimationUtility.CalculateTransformPath(r.transform,clone.transform));
                 baked=new Mesh{name="SILENCE temporary pose bounds"};
-                graph=PlayableGraph.Create("SILENCE character deformation audit");graph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
-                var output=AnimationPlayableOutput.Create(graph,"Avatar",animator);graph.Play();
+                // Match gameplay's controller root-motion processing. Raw clip
+                // Playables and state retained from a preceding clip are not used.
+                var controller=AnimatorController.CreateAnimatorControllerAtPath(controllerPath);
+                var originalController=source.runtimeAnimatorController as AnimatorController;
+                if(originalController==null)throw new InvalidOperationException("Нужен сохранённый AnimatorController для проверки поз.");
+                foreach(var parameter in originalController.parameters)controller.AddParameter(parameter.name,parameter.type);
+                var machine=controller.layers[0].stateMachine;var state=machine.AddState("AuditPose");machine.defaultState=state;state.iKOnFeet=false;
+                int stateHash=Animator.StringToHash("Base Layer.AuditPose");
                 for(int c=0;c<clips.Length;c++)
                 {
+                    context.clip=clips[c].name;context.clipPath=AssetDatabase.GetAssetPath(clips[c]);context.renderer=null;context.planarHipTravel=0;
                     if(EditorUtility.DisplayCancelableProgressBar("SILENCE — проверка персонажа",clips[c].name,(float)c/clips.Length))throw new OperationCanceledException("Проверка отменена; исходный мир сохранён.");
-                    var playable=AnimationClipPlayable.Create(graph,clips[c]);playable.SetApplyFootIK(false);playable.SetApplyPlayableIK(false);output.SetSourcePlayable(playable);
+                    animator.runtimeAnimatorController=null;
+                    foreach(var pose in rest)pose.Restore();
+                    state.motion=clips[c];EditorUtility.SetDirty(state);EditorUtility.SetDirty(controller);animator.runtimeAnimatorController=controller;animator.applyRootMotion=false;animator.Rebind();
+                    Vector3 firstHip=Vector3.zero;bool loop=AnimationUtility.GetAnimationClipSettings(clips[c]).loopTime;
                     for(int f=0;f<9;f++)
                     {
-                        float seconds=clips[c].length*f/8;playable.SetTime(seconds);graph.Evaluate(0);
+                        context.seconds=clips[c].length*f/8;context.renderer=null;context.localBoundsSize=context.actorBoundsSize=Vector3.zero;
+                        animator.Play(stateHash,0,f/8f);animator.Update(0);
+                        if(animator.GetCurrentAnimatorStateInfo(0).fullPathHash!=stateHash)throw new InvalidOperationException("Не запущено изолированное состояние проверки: "+clips[c].name);
                         var hip=animator.GetBoneTransform(HumanBodyBones.Hips);var upper=animator.GetBoneTransform(HumanBodyBones.UpperChest) ?? animator.GetBoneTransform(HumanBodyBones.Chest);
                         var left=animator.GetBoneTransform(HumanBodyBones.LeftHand);var right=animator.GetBoneTransform(HumanBodyBones.RightHand);
-                        report.poses.Add(new Pose{clip=clips[c].name,seconds=seconds,leftWrist=left.position,rightWrist=right.position,leftWristFromHips=Vector3.Distance(left.position,hip.position),rightWristFromHips=Vector3.Distance(right.position,hip.position)});
+                        if(!Finite(hip.position))throw new InvalidOperationException("Некорректная позиция Hips: "+clips[c].name);
+                        if(f==0)firstHip=hip.position;
+                        context.planarHipTravel=Mathf.Max(context.planarHipTravel,Vector3.ProjectOnPlane(hip.position-firstHip,Vector3.up).magnitude);
+                        if(loop && context.planarHipTravel>.5f)throw new InvalidOperationException("Измерено движение Hips в цикле "+clips[c].name+": "+context.planarHipTravel.ToString("F3")+" м. Нужна проверка root motion именно этого клипа; исходный мир сохранён.");
+                        report.poses.Add(new Pose{clip=clips[c].name,seconds=context.seconds,leftWrist=left.position,rightWrist=right.position,leftWristFromHips=Vector3.Distance(left.position,hip.position),rightWristFromHips=Vector3.Distance(right.position,hip.position)});
                         for(int r=0;r<originals.Length;r++)
                         {
-                            var copy=copies[report.skins[r].renderer];copy.BakeMesh(baked);baked.RecalculateBounds();
-                            if(!hasBounds[r]){measured[r]=baked.bounds;hasBounds[r]=true;}else measured[r].Encapsulate(baked.bounds);
-                            // Calibrate the envelope only from neutral clothed torso
-                            // vertices influenced by actual spine/hips bones, not arms.
+                            var copy=copies[report.skins[r].renderer];context.renderer=report.skins[r].renderer;
+                            baked.Clear();copy.BakeMesh(baked,false);baked.RecalculateBounds();
+                            var bounds=baked.bounds;var actorBounds=ToActorBounds(bounds,copy.transform.localToWorldMatrix);
+                            context.localBoundsSize=bounds.size;context.actorBoundsSize=actorBounds.size;context.rendererScale=copy.transform.lossyScale;
+                            if(!Finite(bounds.center) || !Finite(bounds.size) || !Finite(actorBounds.center) || !Finite(actorBounds.size))throw new InvalidOperationException("Неконечная геометрия в "+clips[c].name+", "+copy.name);
+                            if(actorBounds.size.magnitude>actor.Settings.standingHeight*4)throw new InvalidOperationException("Слишком большая отдельная поза: "+clips[c].name+", t="+context.seconds.ToString("F3")+", "+copy.name+", размер в метрах "+actorBounds.size+". Исходный мир сохранён.");
+                            report.skins[r].maximumPoseActorSize=Vector3.Max(report.skins[r].maximumPoseActorSize,actorBounds.size);
+                            if(!hasBounds[r]){measured[r]=bounds;hasBounds[r]=true;}else measured[r].Encapsulate(bounds);
                             bool neutral=clips[c].name=="Idle" || clips[c].name.EndsWith("|Idle",StringComparison.Ordinal);
                             if(f!=0 || !neutral || !copy.name.StartsWith("Body_Clothed",StringComparison.Ordinal))continue;
                             var vertices=baked.vertices;var weights=copy.sharedMesh.boneWeights;
@@ -124,22 +171,31 @@ namespace Silence.Multiplayer.Editor.Visual
                         }
                         report.sampledPoses++;
                     }
-                    playable.Destroy();report.sampledClips++;
+                    report.sampledClips++;
                 }
                 for(int r=0;r<originals.Length;r++)
                 {
                     if(!hasBounds[r])throw new InvalidOperationException("Не получены bounds: "+originals[r].name);
-                    var b=measured[r];
-                    if(!Finite(b.center) || !Finite(b.size))throw new InvalidOperationException("Неконечные координаты меша/позы: "+originals[r].name);
-                    float modelScale=Mathf.Max(.001f,originals[r].transform.lossyScale.magnitude/Mathf.Sqrt(3));
-                    if(b.size.magnitude*modelScale>actor.Settings.standingHeight*4)
-                        throw new InvalidOperationException("Анимация уводит меш далеко от капсулы: "+originals[r].name+". Сначала подготовь in-place клипы через 25. Исходный мир сохранён.");
-                    b.Expand(.10f);originals[r].localBounds=b;report.skins[r].sampledBoundsSize=b.size;
+                    // This union is for renderer culling only. Its size is not a
+                    // measurement of planar body travel or a single deformed pose.
+                    var bounds=measured[r];
+                    var padding=ToActorBounds(new Bounds(Vector3.zero,Vector3.one*.10f),originals[r].transform.worldToLocalMatrix*actor.transform.localToWorldMatrix);
+                    bounds.Expand(padding.size);originals[r].localBounds=bounds;report.skins[r].sampledBoundsSize=bounds.size;
                 }
                 report.torsoWidth=report.envelopeSampled?Mathf.Clamp(width+.01f,.08f,.30f):.18f;report.torsoDepth=report.envelopeSampled?Mathf.Clamp(depth+.01f,.07f,.25f):.13f;report.nativePoseSampled=true;
             }
+            catch(Exception error)
+            {
+                context.message=error.Message;
+                try{Directory.CreateDirectory("Library/Silence");File.WriteAllText("Library/Silence/CharacterReworkFailure.json",JsonUtility.ToJson(context,true));}
+                catch(Exception io){Debug.LogWarning("Не записана диагностика: "+io.Message);}
+                throw new InvalidOperationException(error.Message+" Диагностика: Library/Silence/CharacterReworkFailure.json",error);
+            }
             finally
-            { EditorUtility.ClearProgressBar();if(graph.IsValid())graph.Destroy();if(baked!=null)Object.DestroyImmediate(baked);if(clone!=null)Object.DestroyImmediate(clone);EditorSceneManager.ClosePreviewScene(preview); }
+            {
+                EditorUtility.ClearProgressBar();if(baked!=null)Object.DestroyImmediate(baked);if(clone!=null)Object.DestroyImmediate(clone);
+                AssetDatabase.DeleteAsset(controllerPath);EditorSceneManager.ClosePreviewScene(preview);
+            }
         }
         private static bool Finite(Vector3 p)=>!float.IsNaN(p.x) && !float.IsNaN(p.y) && !float.IsNaN(p.z) && !float.IsInfinity(p.x) && !float.IsInfinity(p.y) && !float.IsInfinity(p.z);
     }

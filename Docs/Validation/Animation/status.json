@@ -1,39 +1,39 @@
 {
-  "version": "Human Motion 0.4.5 — Unity package import API fix",
+  "version": "Human Motion 0.4.6 — Bounds audit fix",
   "branch": "codex/player-character-integration",
   "core_nunit": {
-    "passed": 198,
+    "passed": 202,
     "failed": 0,
-    "report": "Docs/Validation/CharacterRework044/core-tests.txt"
+    "report": "Docs/Validation/BoundsFix046/core-tests.txt"
   },
   "python_archive_tests": {
     "passed": 9,
     "failed": 0
   },
   "csharp_syntax": {
-    "files": 164,
+    "files": 166,
     "configurations": 7,
     "errors": 0,
     "unity_api_binding_checked": false,
-    "report": "Docs/Validation/ImportFix045/source-checks.txt"
+    "report": "Docs/Validation/BoundsFix046/source-checks.txt"
   },
   "static_structure": {
-    "passed": 243,
+    "passed": 245,
     "failed": 0,
-    "report": "Docs/Validation/ImportFix045/structure.json"
+    "report": "Docs/Validation/BoundsFix046/structure.json"
   },
   "delivery": {
-    "files": 191,
-    "passed": 387,
-    "bytes": 367040,
-    "sha256": "46cff4ca14bc0ca69810891736e387b6a32843ef4b29e1e66646f3c9fe446f94"
+    "files": 194,
+    "passed": 393,
+    "bytes": 373649,
+    "sha256": "b6d9bf327e107dba3831dfe2ece0fe2dc513700c3a3b41f938e9d54ceb34951e"
   },
   "actual_source_anim_files": 23,
   "source_fbx_bones": 65,
   "source_humanoid_mapping": 52,
   "gameplay_basic_clips_wired_by_generator": 14,
   "own_fallback_clips_wired_by_generator": 13,
-  "native_tests_provided_but_not_run": 10,
+  "native_tests_provided_but_not_run": 11,
   "native_unity_compilation_run": false,
   "native_unity_import_run": false,
   "unity_assets_generated_in_cloud": false,
@@ -86,6 +86,11 @@
     "warnings_targeted": 2,
     "source": "LocalPackages/com.silence.multiplayer/Editor/Visual/BasicMotionsCatalog.cs",
     "report": "Docs/Validation/ImportFix045/status.json",
+    "native_unity_compilation_run": false
+  },
+  "bounds_fix": {
+    "report": "Docs/CharacterRework/BOUNDS_FIX_RU.md",
+    "validation": "Docs/Validation/BoundsFix046/status.json",
     "native_unity_compilation_run": false
   }
 }

@@ -11,7 +11,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "0.4.5"
+VERSION = "0.4.6"
 NAME = "SILENCE_HumanMotion_" + VERSION
 DIRECTORIES = ["Assets/_Silence/Scripts", "Assets/_Silence/Editor", "Assets/_Silence/Tests",
                "Assets/_Silence/Settings", "Assets/_Silence/Graphics",
@@ -31,6 +31,11 @@ def build():
     for path in (ROOT / "Docs/CharacterRework").glob("*.md"):
         files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
     files["README_RU.md"] = (f"SILENCE Human Motion {VERSION}\n\n"
+        "0.4.6 исправляет проверку bounds в пункте 27: отдельные позы, полная матрица масштаба, изолированный AnimatorController.\n"
+        "Если 27 остановился на Body_Clothed: обнови через 00, дождись компиляции и снова создай копию через 27\n"
+        "из своего ТЕКУЩЕГО ..._Motion мира. Повторять импорт пакета и генерацию анимаций через 25 ради старого сообщения не нужно.\n"
+        "Протокол вручную не меняй: он настроится при успешной установке копии.\n"
+        "При повторном отказе детали сохраняются в Library/Silence/CharacterReworkFailure.json.\n\n"
         "0.4.5 исправляет два жёлтых CS0618 в BasicMotionsCatalog: новый API импорта для Unity 6.6+.\n"
         "Если 0.4.4 уже установлена: обнови код через 00, дождись компиляции и нажми Console → Clear.\n"
         "Ради этих предупреждений не нужно повторять импорт пакета или создание мира через 27.\n\n"

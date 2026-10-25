@@ -29,8 +29,14 @@ namespace Silence.Multiplayer.Editor.Visual
         }
         public static bool ValidateCurrent()
         {
+            if(EditorApplication.isPlayingOrWillChangePlaymode)throw new InvalidOperationException("Сначала останови Play.");
+            var managers=SceneManager.GetActiveScene().GetRootGameObjects().SelectMany(r=>r.GetComponentsInChildren<NetworkManager>(true)).ToArray();
+            if(managers.Length!=1){Debug.Log("SILENCE: сначала открой сохранённый игровой мир с одним NetworkManager и создай его копию через 27.");return false;}
+            var manager=managers[0];var playerPrefab=manager.NetworkConfig.PlayerPrefab;
+            string mainAudit=playerPrefab!=null?Path.GetDirectoryName(AssetDatabase.GetAssetPath(playerPrefab))+"/character-audit.json":null;
+            if(manager.NetworkConfig.ProtocolVersion<9 || mainAudit==null || !File.Exists(mainAudit))
+            {Debug.Log("SILENCE: открыт исходный мир. Копия из 27 ещё не установлена; её камеру/материалы пока проверять рано. Сначала успешно заверши «Создать копию мира». Версию протокола вручную менять не нужно.");return false;}
             if(!PlayerViewWorkshop.ValidateCurrent())return false;
-            var manager=SceneManager.GetActiveScene().GetRootGameObjects().SelectMany(r=>r.GetComponentsInChildren<NetworkManager>(true)).Single();
             var errors=new List<string>();
             if(manager.NetworkConfig.ProtocolVersion<9)errors.Add("Нужна копия мира из меню 27, protocol >= 9.");
             var players=manager.NetworkConfig.Prefabs.NetworkPrefabsLists.Where(l=>l!=null).SelectMany(l=>l.PrefabList).Concat(manager.NetworkConfig.Prefabs.Prefabs)

@@ -1,0 +1,9 @@
+  Silence.CoreTests -> /workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll
+Test run for /workspace/horrorsilenceplace/Tools/CoreTests/bin/Debug/net8.0/Silence.CoreTests.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Results File: /tmp/silence-bounds-fix-tests/BoundsFix.trx
+
+Passed!  - Failed:     0, Passed:   202, Skipped:     0, Total:   202, Duration: 127 ms - Silence.CoreTests.dll (net8.0)

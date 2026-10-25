@@ -67,5 +67,27 @@ namespace Silence.Tests.Animation
                     {Assert.That(material.GetFloat("_Surface"),Is.EqualTo(0));Assert.That(material.GetFloat("_ZWrite"),Is.EqualTo(1));Assert.That(material.GetColor("_BaseColor").a,Is.EqualTo(1));}
             }
         }
+        [Test] public void ControllerBasedBoundsAuditPreservesSourceClipsAndActiveWorld()
+        {
+            const string root="Assets/_Silence/Generated/HumanMotion";
+            if(!AssetDatabase.IsValidFolder(root))Assert.Ignore("Install animation player via 25 first.");
+            var player=AssetDatabase.FindAssets("t:Prefab",new[]{root}).Select(g=>AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(g))).LastOrDefault(p=>p!=null && p.GetComponent<PlayerContext>()!=null);
+            if(player==null)Assert.Ignore("No installed animation player available.");
+            var originals=player.GetComponent<PlayerAvatarPresentation>().Model.runtimeAnimatorController.animationClips.Select(AssetDatabase.GetAssetPath).Where(File.Exists).Distinct().ToDictionary(p=>p,File.ReadAllBytes);
+            var active=UnityEngine.SceneManagement.SceneManager.GetActiveScene();int count=UnityEngine.SceneManagement.SceneManager.sceneCount;bool dirty=active.isDirty;
+            string folder="Assets/_Silence/Generated/BoundsAudit-"+Guid.NewGuid().ToString("N");Directory.CreateDirectory(folder);AssetDatabase.Refresh();
+            string path=folder+"/Player.prefab";Assert.That(AssetDatabase.CopyAsset(AssetDatabase.GetAssetPath(player),path));
+            var contents=PrefabUtility.LoadPrefabContents(path);
+            try
+            {
+                PlayerViewWorkshop.ConfigurePlayer(contents,folder);
+                var report=CharacterReworkPreparation.Prepare(contents,folder);
+                Assert.That(report.nativePoseSampled);Assert.That(report.samplingMode,Does.Contain("AnimatorController"));Assert.That(report.skins.All(s=>s.maximumPoseActorSize.magnitude>0));
+                Assert.That(AssetDatabase.LoadAssetAtPath<UnityEditor.Animations.AnimatorController>(folder+"/__PoseSampling.controller"),Is.Null);
+                foreach(var original in originals)Assert.That(File.ReadAllBytes(original.Key),Is.EqualTo(original.Value));
+                Assert.That(UnityEngine.SceneManagement.SceneManager.GetActiveScene(),Is.EqualTo(active));Assert.That(UnityEngine.SceneManagement.SceneManager.sceneCount,Is.EqualTo(count));Assert.That(active.isDirty,Is.EqualTo(dirty));
+            }
+            finally{PrefabUtility.UnloadPrefabContents(contents);AssetDatabase.DeleteAsset(folder);}
+        }
     }
 }

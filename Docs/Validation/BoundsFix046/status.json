@@ -1,0 +1,37 @@
+{
+  "version": "0.4.6",
+  "scope": "Character rework bounds and preview sampling fix",
+  "core_tests": {
+    "passed": 202,
+    "failed": 0,
+    "new_cases": 4,
+    "affine_corner_comparisons": 100
+  },
+  "csharp_syntax": {
+    "files": 166,
+    "configurations": 7,
+    "errors": 0,
+    "unity_api_binding_checked": false
+  },
+  "static_structure": {
+    "passed": 245,
+    "failed": 0
+  },
+  "selected_scope_errors": 0,
+  "delivery": {
+    "files": 194,
+    "passed": 393,
+    "bytes": 373649,
+    "sha256": "b6d9bf327e107dba3831dfe2ece0fe2dc513700c3a3b41f938e9d54ceb34951e"
+  },
+  "native_tests_provided_but_not_run": 11,
+  "new_native_tests_provided_but_not_run": 1,
+  "native_unity_compilation_run": false,
+  "native_unity_pose_sampling_run": false,
+  "user_failure_reproduced_in_native_unity": false,
+  "precise_original_failure_measurements_available": false,
+  "new_failure_report": "Library/Silence/CharacterReworkFailure.json",
+  "original_scene_preserved_on_failure": true,
+  "manual_protocol_change_required": false,
+  "repeat_menu_25_required_for_old_generic_bounds_error": false
+}

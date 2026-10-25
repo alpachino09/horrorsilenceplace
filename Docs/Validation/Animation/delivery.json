@@ -1,9 +1,9 @@
 {
   "kind": "delivery integrity/static updater compatibility; not a Unity test",
-  "archive": "Downloads/SILENCE_HumanMotion_0.4.5.zip",
-  "bytes": 367040,
-  "sha256": "46cff4ca14bc0ca69810891736e387b6a32843ef4b29e1e66646f3c9fe446f94",
-  "passed": 387,
+  "archive": "Downloads/SILENCE_HumanMotion_0.4.6.zip",
+  "bytes": 373649,
+  "sha256": "b6d9bf327e107dba3831dfe2ece0fe2dc513700c3a3b41f938e9d54ceb34951e",
+  "passed": 393,
   "failed": 0,
   "checks": [
     {
@@ -500,6 +500,14 @@
     },
     {
       "check": "current complete source Assets/_Silence/Scripts/Core/Silence.Core.asmdef",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Assets/_Silence/Scripts/Core/SkinBoundsModel.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Scripts/Core/SkinBoundsModel.cs",
       "passed": true
     },
     {
@@ -1063,6 +1071,14 @@
       "passed": true
     },
     {
+      "check": "manifest bytes Assets/_Silence/Tests/EditMode/SkinBoundsTests.cs",
+      "passed": true
+    },
+    {
+      "check": "current complete source Assets/_Silence/Tests/EditMode/SkinBoundsTests.cs",
+      "passed": true
+    },
+    {
       "check": "manifest bytes Assets/_Silence/Tests/PlayMode/FarmSmokeTests.cs",
       "passed": true
     },
@@ -1140,6 +1156,14 @@
     },
     {
       "check": "current complete source Docs/Animation/TASK_RU.md",
+      "passed": true
+    },
+    {
+      "check": "manifest bytes Docs/CharacterRework/BOUNDS_FIX_RU.md",
+      "passed": true
+    },
+    {
+      "check": "current complete source Docs/CharacterRework/BOUNDS_FIX_RU.md",
       "passed": true
     },
     {
